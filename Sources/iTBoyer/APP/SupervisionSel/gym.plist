@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>gym相关配置帮助</key>
+	<string> xcodebuild -help命令</string>
+	<key>compileBitcode</key>
+	<true/>
+	<key>embedOnDemandResourcesAssetPacksInBundle</key>
+	<false/>
+	<key>manifest</key>
+	<dict>
+		<key>appURL</key>
+		<string></string>
+		<key>displayImageURL</key>
+		<string></string>
+		<key>fullSizeImageURL.</key>
+		<string></string>
+		<key>assetPackManifestURL</key>
+		<string></string>
+	</dict>
+	<key>method</key>
+	<string>Describes how Xcode should export the archive. Available options: app-store, ad-hoc, package, enterprise, development, and developer-id. The list of options varies based on the type of archive. Defaults to development.</string>
+	<key>onDemandResourcesAssetPacksBaseURL</key>
+	<string>For non-App Store exports, if the app uses On Demand Resources and embedOnDemandResourcesAssetPacksInBundle isn&apos;t YES, this should be a base URL specifying where asset packs are going to be hosted. This configures the app to download asset packs from the specified URL.</string>
+	<key>teamID</key>
+	<string>The Developer Portal team to use for this export. Defaults to the team used to build the archive.</string>
+	<key>thinning</key>
+	<string></string>
+	<key>uploadBitcode</key>
+	<false/>
+	<key>uploadSymbols</key>
+	<true/>
+</dict>
+</plist>
