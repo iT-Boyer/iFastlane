@@ -20,12 +20,13 @@ extension Fastfile
 //        match() //获取证书
         // 证书管理的模式开关
 //        automaticCodeSigning(path: "Blink.xcodeproj",useAutomaticSigning:true)
-        gym(scheme:"Blink",
-              outputDirectory: "build",
-                configuration: "Debug",
-                 exportMethod: "development",
-                 //exportXcargs: "-allowProvisioningUpdates",
-                          sdk: OptionalConfigValue("\(iossdk)")
+        gym(project: "/Users/boyer/Desktop/blink/Blink.xcodeproj",
+            scheme:"Blink",
+            outputDirectory: "build",
+            configuration: "Debug",
+            exportMethod: "development",
+            //exportXcargs: "-allowProvisioningUpdates",
+            sdk: OptionalConfigValue("\(iossdk)")
         )
         
         installOnDevice(deviceId: OptionalConfigValue("\(ipad)"), ipa: OptionalConfigValue("\(ipaPath)"))

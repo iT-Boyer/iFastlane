@@ -4,9 +4,9 @@
 import PackageDescription
 
 let package = Package(
-    name: "iFastlane",
+    name: "Runner",
     products: [
-        .executable(name: "fastlaneRunner", targets: ["fastlaneRunner"])
+        .executable(name: "Runner", targets: ["Runner"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -17,7 +17,7 @@ let package = Package(
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         .executableTarget(
-            name: "fastlaneRunner",
+            name: "Runner",
             dependencies: ["Fastlane","SwiftyJSON"],
             path: "swift",
             exclude: ["iTBoyer/APP/iBlink/gym.plist","iTBoyer/APP/SupervisionSel/gym.plist"],

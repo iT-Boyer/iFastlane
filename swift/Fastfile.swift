@@ -11,8 +11,8 @@ import Fastlane
 
 class Fastfile: LaneFile {
     
-    // let iossdk = "iphoneos13.5" //xcodebuild -showsdks 查看当前支持的sdk清单
-    let iossdk = "iphoneos14.4"
+    // let iossdk = "iphoneos15.0" //xcodebuild -showsdks 查看当前支持的sdk清单
+    let iossdk = "iphoneos15.0"
     let plus8 = "52eee8ae3cd6f61bdb77aa7551e3539fd755d023"
     let ipad  = "d22f8060709e390aaa4d36231b931c2d61a4173a"
     var appName = "金和" //如果是中文时，必须赋值，例如：金和
