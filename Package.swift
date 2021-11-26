@@ -18,7 +18,7 @@ let package = Package(
         .executableTarget(
             name: "iFastlane",
             dependencies: ["Fastlane","SwiftyJSON"],
-	    path: "Sources"
+	    path: "swift"
 	)
     ]
 )
