@@ -10,7 +10,8 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-    	.package(name: "Fastlane", url: "https://github.com/fastlane/fastlane", from: "2.179.0"),
+//    	.package(name: "Fastlane", url: "https://github.com/fastlane/fastlane", from: "2.179.0"),
+        .package(name: "Fastlane", path: "/Users/boyer/Desktop/fastlane"),
         .package(url: "https://github.com/SwiftyJSON/SwiftyJSON.git", from: "5.0.1")
     ],
     targets: [

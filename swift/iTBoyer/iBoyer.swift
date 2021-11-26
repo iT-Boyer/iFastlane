@@ -26,7 +26,7 @@ extension Fastfile {
 //    }
     
     func downFilelane() {
-//        desc("从iTunes connect 下载符号表")
+        desc("从iTunes connect 下载符号表")
         downloadDsyms(username: "724987481@qq.com", appIdentifier: "com.jinher.yangguangshipin")
     }
     

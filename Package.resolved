@@ -2,15 +2,6 @@
   "object": {
     "pins": [
       {
-        "package": "Fastlane",
-        "repositoryURL": "https://github.com/fastlane/fastlane",
-        "state": {
-          "branch": null,
-          "revision": "dac31640214dc976da675e863d0efbd4a99cb526",
-          "version": "2.198.1"
-        }
-      },
-      {
         "package": "SwiftShell",
         "repositoryURL": "https://github.com/kareman/SwiftShell",
         "state": {

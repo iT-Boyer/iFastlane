@@ -16,7 +16,7 @@ extension Fastfile
     }
     
     func blinkLane() {
-//        desc("使用个人账号,实现真机运行")
+        desc("使用个人账号,实现真机运行")
 //        match() //获取证书
         // 证书管理的模式开关
 //        automaticCodeSigning(path: "Blink.xcodeproj",useAutomaticSigning:true)
@@ -35,7 +35,7 @@ extension Fastfile
     
     //MARK:- 真机运行
     func blinkcerLane() {
-//       desc("搭建fastlane测试")
+       desc("搭建fastlane测试")
        match(teamId:"C556M74S8M",teamName:"Brainhoop Inc.", gitUrl:"https://iTBoyer:jiwangQ3203@gitee.com/iTBoyer/iMatchProfile.git", gitBranch:"master")
        gym(scheme:"Blink",exportTeamId:"C556M74S8M")
        //        installOnDevice(deviceId: plus8, ipa: "build/Blink.ipa")

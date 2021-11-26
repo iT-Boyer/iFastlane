@@ -1,4 +1,5 @@
 import Foundation
+import Fastlane
 /**
  distribute app to pgyer beta testing service
 

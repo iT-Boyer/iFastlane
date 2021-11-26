@@ -12,7 +12,7 @@ import Fastlane
 extension Fastfile
 {
     func iSmallLane() {
-//        desc("搭建fastlane测试")
+        desc("搭建fastlane测试")
         
         match(teamId: "9CA5KUE8T7",
             teamName: "BEIJING JINHER SOFTWARE CO.LTD.",

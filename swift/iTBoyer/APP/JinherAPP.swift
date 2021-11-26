@@ -12,7 +12,7 @@ extension Fastfile
 {
     //MARK: 开发者证书
     func JHAppLane() {
-//        desc("金和APP使用公司证书,实现真机运行")
+        desc("金和APP使用公司证书,实现真机运行")
 //        match(type:"development", appIdentifier:["com.jinher.jingquezhili"],teamId:"9CA5KUE8T7")
         gym(//workspace: "YGPatrol.xcworkspace",
               project: "JHUniversalApp.xcodeproj",
