@@ -29,7 +29,8 @@ extension Fastfile
         )
         
         installOnDevice(deviceId: OptionalConfigValue("\(ipad)"), ipa: OptionalConfigValue("\(ipaPath)"))
-        uploadPgyer() //发布到蒲公英
+        //发布到蒲公英
+        pgyer(apiKey: "318c51ed714a80fa0beab1abc022965b", userKey: "5d4309fb86e31ab180ae6cbdf42f8e2f")
         iPappLane()   //发布到github
     }
     

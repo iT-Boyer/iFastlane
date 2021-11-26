@@ -21,6 +21,8 @@ extension Fastfile
     func uploadPgyer(api_key: String? = "318c51ed714a80fa0beab1abc022965b",
                      user_key: String? = "5d4309fb86e31ab180ae6cbdf42f8e2f",
                      desc: String? = "update by fastlane") {
+        pgyer(apiKey: api_key!, userKey: user_key!)
+        
 //        let command = RubyCommand(commandID: "",
 //                                  methodName: "pgyer",
 //                                  className: nil,

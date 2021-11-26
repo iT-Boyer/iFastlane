@@ -12,7 +12,7 @@ import Fastlane
 extension Fastfile
 {
     func iPappLane() {
-//       desc("发布到iPaapp库中....")
+       desc("发布到iPaapp库中....")
        echo(message: "发布---\(appName)")
        //执行shell命令 ./hsg/hugo/iPapp/iPapp.sh Blink BlinkName
        sh(command: "\(iPappDir)/iPapp.sh \(ipaPath)", log:true)
