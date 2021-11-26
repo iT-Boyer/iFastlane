@@ -7,7 +7,30 @@ extension Fastfile
 {
     func bundleLane() {
         let bund = Bundle()
-        bund.bundleMe()
+        let todoBundle = bund.bundleMe()
+        bund.sortTodoBundleBySize(todo: todoBundle)
+    }
+    
+    func bundlezipTestLane(withOptions options:[String: String]?) {
+        
+        if let name = options?["name"], name == "hsg",
+            let say:String = options?["say"], say.count > 0{
+            // Only when submit is true
+            echo(message: "：\(name)向你说：\(say)")
+        }
+    }
+    
+    //压缩目录下文件
+    //runner lane optimgzip dir /Users/boyer/Desktop/img
+    func optimgzipLane(withOptions options:[String: String]?) {
+        let bund = Bundle()
+        if let dir = options?["dir"], dir.count > 0{
+            // Only when submit is true
+            echo(message: "路径：\(dir)")
+            bund.zipcmd(folder: dir)
+        }else{
+            print("非法地址")
+        }
     }
 }
 
@@ -64,8 +87,33 @@ class Bundle {
             }
         }
     }
+    
+    func bundlezip(bundles:[String]) {
+        let todoPath = SwiftShell.run(bash: "find . -name \"*.bundle\"").stdout
+        let todoPathArr = todoPath.split(separator: "\n")
+        for item in todoPathArr {
+            for todo in bundles {
+                if item.contains(todo+".bundle") {
+                    print(item)
+                    let bundlePath = "/Users/boyer/hsg/JHMainApp"+item
+                    //进入bundle目录，开始执行压缩命令
+                    zipcmd(folder: bundlePath)
+                }
+            }
+        }
+    }
+    
+    func zipcmd(folder:String) {
+        SwiftShell.main.currentdirectory = folder
+        let pngPath = SwiftShell.run(bash: "find . -name \"*.png\"").stdout
+        let pngArr = pngPath.split(separator: "\n")
+//        echo(message: "图片路径：\(pngArr)")
+        let optimageCMD = "/Applications/Optimage.app/Contents/MacOS/cli/optimage"
+        let output = try! runAsync(optimageCMD, "--lossy", pngArr).finish().stdout.read()
+        print(output)
+    }
 
-    func bundleMe() {
+    func bundleMe()->Array<String> {
         
         let bundles = findBundleInPath(path: "/Users/boyer/hsg/JHMainApp")
         
@@ -80,7 +128,7 @@ class Bundle {
             }
         }
         //
-        sortTodoBundleBySize(todo: todoBundle)
+        return todoBundle
     }
 }
 

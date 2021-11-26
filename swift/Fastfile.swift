@@ -39,9 +39,9 @@ class Fastfile: LaneFile {
         slack(message: "chenggong", slackUrl: "https://hooks.slack.com/services/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",success:false)
     }
     
-    /** 支持带参数的lane
-        调用语法：fastlane [lane] key:value key2:value2
-        终端调用：fastlane helloLane name:hsg say:hello
+    /** 支持带参数的lane 升级之后 使用空格 来拼接key:value
+        调用语法：fastlane [lane] key value key2 value2
+        终端调用：fastlane helloLane name hsg say hello
      */
     func helloLane(withOptions options:[String: String]?) {
         
