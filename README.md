@@ -1,6 +1,6 @@
 fastlane documentation
 ================
-# Installation
+# 安装
 
 Make sure you have the latest version of the Xcode command line tools installed:
 
@@ -10,11 +10,12 @@ xcode-select --install
 
 Install _fastlane_ using
 ```
+brew install fastlane 
+//或
 [sudo] gem install fastlane -NV
 ```
-or alternatively using `brew install fastlane`
 
-# Available Actions
+# Runner 用法
 ## iOS
 ### ios custom_lane
 ```
