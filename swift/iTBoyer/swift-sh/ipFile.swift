@@ -47,6 +47,8 @@ extension Fastfile
         }
     }
     
+    
+    
 }
 
 class ipFile {
@@ -82,6 +84,65 @@ class ipFile {
         }
         return hostKey
     }
+    
+    func fetchSource(){
+        //源码库清单
+        let linkFile = "/Users/boyer/Desktop/all_link_path.h"
+        //负责的库
+        let ipgitfile = "/Users/boyer/Desktop/ipfileGit.txt"
+        //本地源码目录
+        let home = "/Users/boyer/hsg"
+        SwiftShell.main.currentdirectory = home
+        
+        let link = SwiftShell.run(bash: "cat \(linkFile)").stdout
+        let linkArr = link.split(separator: "\n")
+        
+        let ipgit = SwiftShell.run(bash: "cat \(ipgitfile)").stdout
+        let ipgitArr = ipgit.split(separator: "\n")
+        
+        let hsg = SwiftShell.run(bash: "ls ./").stdout
+        let currArr = hsg.split(separator: "\n")
+        
+        var repos:[String] = []
+        for git in ipgitArr {
+            var exist = false
+            for dir in currArr {
+                if dir == git {
+                    exist = true
+                    break
+                }
+            }
+            if !exist {
+                repos.append(String(git))
+            }
+        }
+        
+        print("待clone：\(repos)")
+        //需要clone项目
+        var urls:[String:String] = [:]
+        for repo in repos {
+            
+            for link in linkArr {
+                if link.contains(repo) {
+                    urls[repo] = String(link)
+                    break
+                }
+            }
+        }
+        print(urls)
+        
+        for (key,url) in urls {
+            
+            do{
+                let output = try runAsync("git","clone", "-b", "master", url).finish().stdout.read()
+                print(output)
+            }catch
+            {
+                print("\(key)：无权限")
+            }
+        }
+    }
+    
     //加载json文件中已经压缩过的targets
     func loadJsonData(path:String,proj:String) -> JSON? {
         
