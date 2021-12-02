@@ -38,7 +38,7 @@ extension Fastfile
             let files = proJSON["fileName"]
             let keys = proJSON["keys"]
 //            let ipfilekeys = proJSON["ipfilekeys"]
-            print("工作量：\(files.count)\n \(files)")
+            print("工作量：\(files.count)\n \(files.rawValue)")
             print("域名：\(keys)")
 //            print("ipFile：\(ipfilekeys.rawValue)")
 //            print(proJSON)
@@ -85,6 +85,14 @@ class ipFile {
     //加载json文件中已经压缩过的targets
     func loadJsonData(path:String,proj:String) -> JSON? {
         
+        let folder = "/Users/boyer/hsg/\(proj)"
+        SwiftShell.main.currentdirectory = folder
+        let dirstr = SwiftShell.run(bash: "find . -name \"JHUrlStringManager.h\"").stdout
+        let dirArr = dirstr.split(separator: "\n")
+        if dirArr.count > 0 {
+            print("已添加工具包：JHUrlStringManager.h")
+        }
+        
         let jsonData = NSData.init(contentsOfFile: path)! as Data
         // 项目名
         let projects = try! JSON(data: jsonData)
@@ -96,14 +104,19 @@ class ipFile {
                 continue
             }
             var dataDic:[String:Any] = [:]
-            var filenames:[String] = []
+            var filesArr:[String] = []
             var hostkeys:[String] = []
             for (_,libsJson):(String, JSON) in targetsJson {
                 
                 for (libname,targetJson):(String, JSON) in libsJson {
                     
                     for (filen,linesJson):(String, JSON) in targetJson {
-                        filenames.append(filen)
+                        let filestr = SwiftShell.run(bash: "find . -name \"\(filen)\"").stdout
+                        let fileDir = filestr.split(separator: "\n")
+                        
+                        if let ocfile:NSString = fileDir.first as NSString? {
+                            filesArr.append(ocfile as String)
+                        }
                         let lines:[String] = linesJson.rawValue as! [String]
                         for line in lines {
                             //正则匹配xxx.iuoooo.com
@@ -126,7 +139,7 @@ class ipFile {
                 }
             }
             dataDic["keys"] = hostkeys
-            dataDic["fileName"] = filenames
+            dataDic["fileName"] = filesArr
             let json:JSON = JSON(rawValue: dataDic)!
             return json
         }
