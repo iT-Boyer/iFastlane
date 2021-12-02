@@ -34,8 +34,14 @@ extension Fastfile
             // Only when submit is true
             let ipFile = ipFile()
             let iuooooPath = "/Users/boyer/Desktop/result-urls.json"
-            let projDic:JSON = ipFile.loadJsonData(path: iuooooPath, proj: value)!
-            print(projDic.rawValue)
+            let proJSON:JSON = ipFile.loadJsonData(path: iuooooPath, proj: value)!
+            let files = proJSON["fileName"]
+            let keys = proJSON["keys"]
+//            let ipfilekeys = proJSON["ipfilekeys"]
+            print("工作量：\(files.count)\n \(files)")
+            print("域名：\(keys)")
+//            print("ipFile：\(ipfilekeys.rawValue)")
+//            print(proJSON)
         }else{
             print("非法地址")
         }
@@ -64,7 +70,18 @@ class ipFile {
         }
         return hosts;
     }
-    
+    func hostKey(host:String) -> String {
+        let dicInfo:[String:String]! = NSDictionary(contentsOfFile: ipfilePath) as? [String : String]
+        var hostKey = ""
+        for key:String in dicInfo.keys {
+            let value = dicInfo[key]
+            if value == host {
+                hostKey = key
+                break
+            }
+        }
+        return hostKey
+    }
     //加载json文件中已经压缩过的targets
     func loadJsonData(path:String,proj:String) -> JSON? {
         
@@ -80,8 +97,7 @@ class ipFile {
             }
             var dataDic:[String:Any] = [:]
             var filenames:[String] = []
-            var ipfilekeys:[Any] = []
-            var iustrkeys:[String] = []
+            var hostkeys:[String] = []
             for (_,libsJson):(String, JSON) in targetsJson {
                 
                 for (libname,targetJson):(String, JSON) in libsJson {
@@ -91,21 +107,25 @@ class ipFile {
                         let lines:[String] = linesJson.rawValue as! [String]
                         for line in lines {
                             //正则匹配xxx.iuoooo.com
-                            let regex = Regex("\\w*.iuoooo.com")
-                            let iustr:String! = regex.firstMatch(in: line)?.matchedString
-                            if iustrkeys.contains(iustr) {
-                                continue
+                            let regex = Regex("[^\\\"@]*iuoooo.com")
+                            let host:String! = regex.firstMatch(in: line)?.matchedString
+                            var isexist = false
+                            for hostkey in hostkeys {
+                                if hostkey.contains(host) {
+                                    isexist = true
+                                    break
+                                }
                             }
-                            iustrkeys.append(iustr)
-                            //在ipfile文件中查询key
-                            let keys = hostList(keyword: iustr)
-                            ipfilekeys.append(keys)
+                            if !isexist {
+                                //在ipfile文件中查询key
+                                let hostKey = hostKey(host:host)
+                                hostkeys.append(hostKey+":"+host)
+                            }
                         }
                     }
                 }
             }
-            dataDic["keys"] = iustrkeys
-            dataDic["ipfilekeys"] = ipfilekeys
+            dataDic["keys"] = hostkeys
             dataDic["fileName"] = filenames
             let json:JSON = JSON(rawValue: dataDic)!
             return json
