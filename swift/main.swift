@@ -8,9 +8,10 @@
 import Foundation
 import Fastlane
 let ipFiles = ipFile()
+print("Hello, world!")
 //let iuooooPath = "/Users/boyer/Desktop/result-urls.json"
 //let projDics = ipFiles.loadJsonData(path: iuooooPath, proj: "JHBluetoothLibrary")
 //print(projDics)
-ipFiles.fetchSource()
+//ipFiles.fetchSource()
 
 //Main().run(with: Fastfile())

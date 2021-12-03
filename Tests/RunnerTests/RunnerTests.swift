@@ -1,7 +1,7 @@
 import XCTest
 import class Foundation.Bundle
 
-final class iFastlaneTests: XCTestCase {
+final class RunnerTests: XCTestCase {
     func testExample() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
@@ -15,7 +15,7 @@ final class iFastlaneTests: XCTestCase {
         // Mac Catalyst won't have `Process`, but it is supported for executables.
         #if !targetEnvironment(macCatalyst)
 
-        let fooBinary = productsDirectory.appendingPathComponent("iFastlane")
+        let fooBinary = productsDirectory.appendingPathComponent("Runner")
 
         let process = Process()
         process.executableURL = fooBinary
