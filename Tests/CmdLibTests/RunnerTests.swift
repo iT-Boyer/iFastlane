@@ -1,14 +1,19 @@
 import XCTest
 import class Foundation.Bundle
-//import Runner
+import Nimble
+@testable import CmdLib
 
 final class RunnerTests: XCTestCase {
     
     func test2Tools() {
-        print("test2 测试")
-//        let arrtool:CmdTools = CmdTools(name: "hah")
-//        let arr = arrtool.arrDiff(arr1: ["1","2","3"], arr2: ["3","4","5"])
-//        print(arr)
+        let arr1 = ["1","2","3"]
+        let arr2 = ["3","4","5"]
+        let arr = CmdTools().arrDiff(arr1: arr1, arr2: arr2)
+        let exparr = ["1","2","5"]
+        print("结果：\(arr)")
+//        expect("\(arr)").to(contain("hao"))
+        expect(arr).toNot(contain("4"))
+        expect(["Atlantic", "Pacific"]).toNot(contain("Mississippi"))
     }
     func testExample() throws {
         // This is an example of a functional test case.
