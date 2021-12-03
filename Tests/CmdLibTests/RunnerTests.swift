@@ -1,7 +1,15 @@
 import XCTest
 import class Foundation.Bundle
+//import Runner
 
 final class RunnerTests: XCTestCase {
+    
+    func test2Tools() {
+        print("test2 测试")
+//        let arrtool:CmdTools = CmdTools(name: "hah")
+//        let arr = arrtool.arrDiff(arr1: ["1","2","3"], arr2: ["3","4","5"])
+//        print(arr)
+    }
     func testExample() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct

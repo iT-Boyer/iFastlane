@@ -51,7 +51,10 @@ extension Fastfile
     
 }
 
-class ipFile {
+public class ipFile {
+    public init() {
+        
+    }
     //读取bundle文件路径
     //调用shell命令
     let ipfilePath = "/Users/boyer/hsg/JHMainApp/JHUniversalApp/JHUniversalApp/Resource/ipFile.plist"

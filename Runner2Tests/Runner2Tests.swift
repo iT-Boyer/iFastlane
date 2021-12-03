@@ -1,15 +1,13 @@
 //
-//  ToolsTests.swift
-//  RunnerTests
+//  Runner2Tests.swift
+//  Runner2Tests
 //
 //  Created by boyer on 2021/12/3.
 //
 
 import XCTest
-import Quick
-import Nimble
 
-class ToolsTests: XCTestCase {
+class Runner2Tests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -26,7 +24,7 @@ class ToolsTests: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        self.measure {
+        measure {
             // Put the code you want to measure the time of here.
         }
     }

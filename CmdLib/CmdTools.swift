@@ -7,8 +7,7 @@
 
 import Foundation
 
-class Tools {
-    
+class CmdTools:NSObject {
     //给两个数组，求：两个数组不相同的元素数组
     func arrDiff(arr1:[String], arr2:[String]) -> [String] {
         //转为set集合类型
