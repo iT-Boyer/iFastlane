@@ -3,6 +3,7 @@ import SwiftyJSON // https://github.com/SwiftyJSON/SwiftyJSON.git
 import SwiftShell // https://github.com/kareman/SwiftShell
 import Fastlane   // ~/hsg/fastlane
 import Regex
+import CmdLib
 
 extension Fastfile
 {
@@ -106,20 +107,21 @@ public class ipFile {
         let hsg = SwiftShell.run(bash: "ls ./").stdout
         let currArr = hsg.split(separator: "\n")
         
-        var repos:[String] = []
-        for git in ipgitArr {
-            var exist = false
-            for dir in currArr {
-                if dir == git {
-                    exist = true
-                    break
-                }
-            }
-            if !exist {
-                repos.append(String(git))
-            }
-        }
+//        var repos:[String] = []
+//        for git in ipgitArr {
+//            var exist = false
+//            for dir in currArr {
+//                if dir == git {
+//                    exist = true
+//                    break
+//                }
+//            }
+//            if !exist {
+//                repos.append(String(git))
+//            }
+//        }
         
+        let repos = CmdLib.CmdTools().arrDiff(arr1: currArr, arr2: ipgitArr)
         print("待clone：\(repos)")
         //需要clone项目
         var urls:[String:String] = [:]
@@ -127,7 +129,7 @@ public class ipFile {
             
             for link in linkArr {
                 if link.contains(repo) {
-                    urls[repo] = String(link)
+                    urls[String(repo)] = String(link)
                     break
                 }
             }
