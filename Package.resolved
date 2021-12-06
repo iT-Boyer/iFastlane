@@ -33,7 +33,7 @@
         "repositoryURL": "https://github.com/it-boyer/Nimble.git",
         "state": {
           "branch": "main",
-          "revision": "15f0d0beb0bbf69e5515cda2bc0394f05d36b52b",
+          "revision": "84779863d524964bd76259228e0f14de10025f12",
           "version": null
         }
       },
@@ -62,6 +62,15 @@
           "branch": null,
           "revision": "bd86ca0141e3cfb333546de5a11ede63f0c4a0e6",
           "version": "4.0.0"
+        }
+      },
+      {
+        "package": "Regex",
+        "repositoryURL": "https://github.com/sharplet/Regex",
+        "state": {
+          "branch": null,
+          "revision": "76c2b73d4281d77fc3118391877efd1bf972f515",
+          "version": "2.1.1"
         }
       },
       {

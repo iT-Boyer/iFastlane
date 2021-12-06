@@ -14,7 +14,7 @@ let package = Package(
     ],
     dependencies: [
         .package(name: "Fastlane", path: "/Users/boyer/hsg/fastlane"),
-        .package(name: "Regex", path: "/Users/boyer/hsg/Regex"),
+        .package(name: "Regex", url: "https://github.com/sharplet/Regex",.upToNextMajor(from: "2.1.1")),
         .package(url: "https://github.com/SwiftyJSON/SwiftyJSON.git", from: "5.0.1"),
         .package(url: "https://github.com/pvieito/PythonKit.git",  .branch("master")),
         .package(url: "https://github.com/apple/swift-argument-parser", from: "1.0.0"),

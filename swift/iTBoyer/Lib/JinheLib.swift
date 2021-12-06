@@ -20,7 +20,5 @@ extension Fastfile
          outputDirectory: outDir,
            configuration: "Debug"
         )
-        
-        createXcframework(frameworks: <#T##OptionalConfigValue<[String]>?#>, frameworksWithDsyms: <#T##OptionalConfigValue<[String : Any]>?#>, libraries: <#T##OptionalConfigValue<[String]>?#>, librariesWithHeadersOrDsyms: <#T##OptionalConfigValue<[String : Any]>?#>, output: <#T##String#>, allowInternalDistribution: <#T##OptionalConfigValue<Bool>#>)
     }
 }
