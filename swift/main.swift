@@ -16,4 +16,4 @@ print("Hello, world!")
 //print(projDics)
 //ipFiles.fetchSource()
 
-//Main().run(with: Fastfile())
+Main().run(with: Fastfile())
