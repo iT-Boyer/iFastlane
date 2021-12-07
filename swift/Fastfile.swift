@@ -8,6 +8,7 @@
 
 import Foundation
 import Fastlane
+import AppKit
 
 class Fastfile: LaneFile {
     
@@ -22,15 +23,19 @@ class Fastfile: LaneFile {
     var ipaPath = ""
     
    //:MARK
-    func beforeAll() {
+    func beforeAll(with lane: String) {
         outDir = iPappDir+"/"+ipaName //\(iPappDir)/\(ipaName)"
         ipaPath = outDir + "" + ipaName + ".ipa" //\(outDir)/\(ipaName).ipa"
 //        cocoapods(podfile:"./Podfile")
 //        cocoapods()
+        echo(message: "最先执行的初始化操作：beforeAll")
+        print("最先执行的初始化操作：beforeAll")
+        log(message: "最先执行的初始化操作：beforeAll")
     }
     
-    func afterAll(currentLane: String) {
+    func afterAll(with lane: String) {
         //
+        print("结束时间：afterAll")
         slack(message: "成功", slackUrl: "https://hooks.slack.com/services/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",success:true)
     }
     
@@ -38,7 +43,7 @@ class Fastfile: LaneFile {
         //
         slack(message: "chenggong", slackUrl: "https://hooks.slack.com/services/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",success:false)
     }
-    
+//
     /** 支持带参数的lane 升级之后 使用空格 来拼接key:value
         调用语法：fastlane [lane] key value key2 value2
         终端调用：fastlane helloLane name hsg say hello

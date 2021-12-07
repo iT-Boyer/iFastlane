@@ -16,7 +16,7 @@ class CmdToolsTests: QuickSpec {
             //
             let arr1 = "1,2,3".split(separator: ",")
             let arr2 = "3,4,5".split(separator: ",")
-            let arr = CmdTools().arrDiff(arr1: arr1, arr2: arr2)
+            let arr = CmdTools.arrDiff(arr1: arr1, arr2: arr2)
             let exparr = ["2", "1", "5", "4"]
             print("预期结果：\(exparr) \n实际输入：\(arr[1]) \n\(arr)" )
             expect(arr).toNot(contain(arr[0]))

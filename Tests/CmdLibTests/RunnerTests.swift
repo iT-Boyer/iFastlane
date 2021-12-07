@@ -22,7 +22,7 @@ final class RunnerTests: XCTestCase {
 
         let process = Process()
         process.executableURL = fooBinary
-
+        process.arguments = ["lane","ipProj","proj","JHECShoppingCartComponent"]
         let pipe = Pipe()
         process.standardOutput = pipe
 

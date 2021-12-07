@@ -35,5 +35,15 @@ extension Fastfile
     //5. 调用gym脚本编译，在Desktop/libs得到.a文件
     //6. 归档：移动到最终目录
     //7. copy到主工程，并替换
+    // 已自检
+    //    1. iuoooo.com & api_host_*
+    //    2. ipFile.plist & ipServiceFile.plist
+    //    3. 域名的宏替换
+    //    4. 其他 plist 配置文件
+    func checkLibLane(projPath:String,target:String)
+    {
+        
+    }
+    
 
 }

@@ -119,7 +119,7 @@ public class ipFile {
 //            }
 //        }
         
-        let repos = CmdLib.CmdTools().arrDiff(arr1: currArr, arr2: ipgitArr)
+        let repos = CmdTools.arrDiff(arr1: currArr, arr2: ipgitArr)
         print("待clone：\(repos)")
         //需要clone项目
         var urls:[String:String] = [:]
