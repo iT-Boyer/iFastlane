@@ -10,9 +10,9 @@ import Quick
 import Nimble
 import XcodeProj
 import PathKit
+import Regex
 import SwiftShell
 @testable import CmdLib
-import XCTest
 
 /**
  //1. 获取库名称+lib名
@@ -25,7 +25,7 @@ import XCTest
  */
 class XcodeProjTests: QuickSpec {
     override func spec() {
-        describe("学习使用XcodeProj工具") {
+        xdescribe("学习使用XcodeProj工具") {
             var pbxproj:PBXProj!
             beforeEach {
                 let runnerDir = Path(#file).parent().parent().parent()
@@ -104,6 +104,57 @@ class XcodeProjTests: QuickSpec {
                     }
                 }
                 print(libDic)
+            }
+        }
+        
+        fdescribe("在target源码文件中查询关键字") {
+            var srcfiles:[Path] = []
+            beforeEach {
+                //项目名+target名
+                let srcPath = "/Users/boyer/hsg/iFastlane/"
+                let target = "Runner"
+                let projPath = srcPath+target+".xcodeproj"
+                
+                let xcodeProj = try! XcodeProj(path: Path(projPath))
+                let pbxproj = xcodeProj.pbxproj
+                let targets:[PBXTarget] = pbxproj.targets(named: target)
+                let runner = targets[0]
+                let sources = runner.buildPhases[0] as! PBXSourcesBuildPhase
+                let files = sources.files!
+                print("文件数：\(files.count)")
+//                let pbfile:PBXBuildFile = sources.files![0]
+                for buildfile in files {
+                    let element:PBXFileElement = buildfile.file!
+                    let filePath:Path = try! element.fullPath(sourceRoot: Path(srcPath))!
+                    srcfiles.append(filePath)
+                }
+            }
+            
+            it("关键字查询行 正则") {
+                let keyword = "Runnertexts"
+                print("文件:\(srcfiles)")
+                //方案一
+                //cat grep正则 查找
+                //替换 sed 替换 写入文件
+                
+                //方案二
+                //1 path.read
+                //2 Regex正则输入
+                let file1 = srcfiles[0]
+                let filetxt:String = try! file1.read()
+                print("文件：\(filetxt)")
+                let reg = Regex.init("^(public|let args).*$",options: [.ignoreCase, .anchorsMatchLines])
+                let matchingLines = reg.allMatches(in: filetxt).map {
+                    $0.matchedString
+                }
+                print("在\(file1.lastComponent)中\n匹配到的行：\(matchingLines)")
+                
+                //3 regex正则替换
+                let result = filetxt.replacingFirst(matching: "public", with: "H$1, $2!")
+                print(result)
+                
+                //4 path.write 更新文件
+                try! file1.write(result)
             }
         }
     }
