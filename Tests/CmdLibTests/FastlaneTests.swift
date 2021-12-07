@@ -8,6 +8,7 @@
 import Quick
 import Nimble
 import SwiftShell
+import Fastlane
 @testable import CmdLib
 
 class FastlaneTests: QuickSpec {
@@ -18,5 +19,22 @@ class FastlaneTests: QuickSpec {
             let output = try! runAsync(runner, "lane", "buildLib").finish().stdout.read()
             print(output)
         }
+        
+//        it("gym方法使用") {
+//            let outDir = "/Users/boyer/Desktop/libs"
+//            let projPath = "/Users/boyer/hsg/jhgsguesslikeshoppinglistcomponent/JHGuessLikesCommodityListComponent/JHGuessLikesCommodityListComponent.xcodeproj"
+//            gym(project:OptionalConfigValue(stringLiteral:projPath),
+//                      scheme: "JHGuessLikesCommodityLibrary",
+//             outputDirectory: outDir,
+//               configuration: "Debug",
+//                skipPackageIpa: .userDefined(true),
+//                skipArchive: .userDefined(true)
+//            )
+//        }
+//        xcodebuild -resolvePackageDependencies -scheme JHGuessLikesCommodityListComponent -project /Users/boyer/hsg/jhgsguesslikeshoppinglistcomponent/JHGuessLikesCommodityListComponent/JHGuessLikesCommodityListComponent.xcodeproj -configuration Debug
+//        
+//        xcodebuild -showBuildSettings -scheme JHGuessLikesCommodityListComponent -project /Users/boyer/hsg/jhgsguesslikeshoppinglistcomponent/JHGuessLikesCommodityListComponent/JHGuessLikesCommodityListComponent.xcodeproj -configuration Debug
+        
+//        xcodebuild -showBuildSettings -scheme JHGuessLikesCommodityLibrary -project /Users/boyer/hsg/jhgsguesslikeshoppinglistcomponent/JHGuessLikesCommodityListComponent/JHGuessLikesCommodityListComponent.xcodeproj -configuration Debug
     }
 }
