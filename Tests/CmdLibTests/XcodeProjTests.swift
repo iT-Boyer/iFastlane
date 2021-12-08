@@ -12,6 +12,7 @@ import XcodeProj
 import PathKit
 import Regex
 import SwiftShell
+import SwiftyJSON
 @testable import CmdLib
 
 /**
@@ -25,7 +26,7 @@ import SwiftShell
  */
 class XcodeProjTests: QuickSpec {
     override func spec() {
-        xdescribe("学习使用XcodeProj工具") {
+        describe("学习使用XcodeProj工具") {
             var pbxproj:PBXProj!
             beforeEach {
                 let runnerDir = Path(#file).parent().parent().parent()
@@ -34,14 +35,46 @@ class XcodeProjTests: QuickSpec {
                 pbxproj = xcodeproj.pbxproj
             }
             
+            it("打印buildsetting 信息") {
+                let key = "CURRENT_PROJECT_VERSION"
+//                for conf in pbxproj.buildConfigurations{
+//                    let version = conf.buildSettings[key]
+//                    print("版本号：\(version)")
+//                }
+                let prefixkey = "GCC_PREFIX_HEADER"
+//                for conf in pbxproj.buildConfigurations where conf.buildSettings[prefixkey] != nil {
+//                    let prefixPath:String = conf.buildSettings[prefixkey] as! String
+//                    print("宏文件：\(prefixPath)")
+//                }
+                pbxproj.nativeTargets.forEach{ target in
+                    if target.name == "Runner" {
+                        let configlist:XCConfigurationList = target.buildConfigurationList!
+                        //方式一
+                        let conf:XCBuildConfiguration! = configlist.configuration(name: "Release")
+                        print("\(conf.name)\n宏文件1：\(conf.buildSettings[prefixkey])")
+                        //方式二
+                        configlist.buildConfigurations.forEach { config in
+                            let prefix = config.buildSettings[prefixkey]
+                            print("\(config.name)\n宏文件2：\(prefix)")
+                        }
+                    }
+                }
+            }
+            
             it("打印target相关信息") {
                 pbxproj.nativeTargets.forEach{ target in
                     if target.name == "Runner" {
                         print("target名称："+target.name)
 //                        pbxproj.buildFiles.forEach { print("\(type(of: $0.file!)) \(String(describing: $0.file!.path))") }
-                        let config = target.buildConfigurationList
+                        
                         let phaseRef = target.buildPhases
-                        let sources:PBXSourcesBuildPhase = phaseRef[0] as! PBXSourcesBuildPhase
+                        var sources:PBXSourcesBuildPhase!
+                        phaseRef.forEach { phase in
+                            if phase is PBXSourcesBuildPhase {
+                                sources = phase as? PBXSourcesBuildPhase
+                                return
+                            }
+                        }
                         
                         let frameworks:PBXFrameworksBuildPhase = phaseRef[1] as! PBXFrameworksBuildPhase
                         let depRef = target.dependencies
@@ -69,7 +102,7 @@ class XcodeProjTests: QuickSpec {
                     
                 }
             }
-            fit("通过目录和lib名称初始化pbxproj") {
+            it("通过目录和lib名称初始化pbxproj") {
                 let repo = "iFastlane"
                 let libs = ["Runner.a","CmdLib.a"]
                 var libDic:[String:String] = [:]
@@ -107,7 +140,7 @@ class XcodeProjTests: QuickSpec {
             }
         }
         
-        fdescribe("在target源码文件中查询关键字") {
+        xdescribe("在target源码文件中查询关键字") {
             var srcfiles:[Path] = []
             beforeEach {
                 //项目名+target名
@@ -119,7 +152,13 @@ class XcodeProjTests: QuickSpec {
                 let pbxproj = xcodeProj.pbxproj
                 let targets:[PBXTarget] = pbxproj.targets(named: target)
                 let runner = targets[0]
-                let sources = runner.buildPhases[0] as! PBXSourcesBuildPhase
+                var sources:PBXSourcesBuildPhase!
+                runner.buildPhases.forEach { phase in
+                    if phase is PBXSourcesBuildPhase {
+                        sources = phase as? PBXSourcesBuildPhase
+                        return
+                    }
+                }
                 let files = sources.files!
                 print("文件数：\(files.count)")
 //                let pbfile:PBXBuildFile = sources.files![0]
@@ -155,6 +194,37 @@ class XcodeProjTests: QuickSpec {
                 
                 //4 path.write 更新文件
                 try! file1.write(result)
+            }
+        }
+        
+        fdescribe("开始写工具方法") {
+            it("自检git库中静态库源码文件匹配到的行内容") {
+                let ipprojPath = Path("/Users/boyer/Desktop/ipfileGit.txt")
+                let ipprojlist:String = try! ipprojPath.read()
+                let iparr = ipprojlist.split(separator: "\n")
+                
+                let megit = Path("/Users/boyer/hsg")
+                let mygitArr = try! megit.children()
+                var repos:[String] = []
+                var others:[String] = []
+                for git in iparr {
+                    var exist = false
+                    for dir in mygitArr {
+                        if dir.lastComponent == git {
+                            exist = true
+                            break
+                        }
+                    }
+                    if exist {
+                        repos.append(String(git))
+                    }else{
+                        others.append(String(git))
+                    }
+                }
+                print("正在检查：\(iparr.count)个项目 \n有 \(others.count) 不存在:\(JSON(others))")
+                repos.forEach { repo in
+                    CmdTools.checkproj(repo: String(repo))
+                }
             }
         }
     }

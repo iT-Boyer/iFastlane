@@ -9,6 +9,8 @@ import Foundation
 import SwiftShell
 import PathKit
 import XcodeProj
+import Regex
+import SwiftyJSON
 
 public class CmdTools {
     //给两个数组，求：两个数组不相同的元素数组
@@ -75,6 +77,89 @@ public class CmdTools {
                 print(output)
             } catch {
                 print("\(name)：无权限")
+            }
+        }
+    }
+    
+    //通过lib.a文件清单获取proj字典
+    static public func checkproj(repo:String)
+    {
+        //拼接路径
+        let repoPath = "/Users/boyer/hsg/\(repo)/"
+        // 使用find命令搜索 xcode项目
+        SwiftShell.main.currentdirectory = repoPath
+
+        let findresult = SwiftShell.run(bash: "find . -path ./.build -prune -o -name \"*.xcodeproj\"").stdout
+        let dirArr = findresult.split(separator: "\n")
+        
+        dirArr.forEach { dir in
+            if !dir.hasSuffix("xcodeproj")
+                || dir.contains("Pods")
+                || dir.contains("jinher.app.IntelDecision"){
+                return
+            }
+            let projPath = dir.replacingOccurrences(of: "./", with: repoPath)
+            
+            let projfile = Path(projPath)
+            print("项目路径：\(projfile.parent())")
+            let xcodeproj = try! XcodeProj(path: projfile)
+            let pbxproj = xcodeproj.pbxproj
+            pbxproj.nativeTargets.forEach { target in
+                let type = target.productType
+                if target.productType == .staticLibrary
+                {
+                    print("检查\(target.name) 类型：\(type!)")
+                    //获取宏prefix文件
+                    let configlist:XCConfigurationList = target.buildConfigurationList!
+                    let conf:XCBuildConfiguration! = configlist.configuration(name: "Release")
+                    if let prefix = conf.buildSettings["GCC_PREFIX_HEADER"]{
+                        print("宏文件：\(prefix)")
+                    }
+                    
+                    
+                    let phaseRef = target.buildPhases
+                    var sources:PBXSourcesBuildPhase!
+                    phaseRef.forEach { phase in
+                        if phase is PBXSourcesBuildPhase {
+                            sources = phase as? PBXSourcesBuildPhase
+                            return
+                        }
+                    }
+//                    let sources:PBXSourcesBuildPhase = phaseRef[0] as! PBXSourcesBuildPhase
+                    let files = sources.files!
+                    print("包含\(files.count)个源文件")
+                    for buildfile in files {
+                        if buildfile.file == nil {
+                            continue
+                        }
+                        let element:PBXFileElement = buildfile.file!
+                        let filePath:Path = try! element.fullPath(sourceRoot: projfile.parent())!
+                        //.m.h   .swift
+                        
+                        let filetxt:String = try! filePath.read()
+//                        print("文件：\(filetxt)")
+                        //(\\[.*?api_host)|((=|:).*?iuooo.*/)
+                        let reg = Regex(".*(\"api_host|iuooo|ipFile\").*\n",options: [.ignoreCase, .anchorsMatchLines])
+                        let matchingLines = reg.allMatches(in: filetxt).compactMap { resul ->String? in
+                            var str = resul.matchedString
+                            guard str.contains("JHUrlStringManager") else {
+                                let space = NSCharacterSet.whitespaces
+                                str = str.trimmingCharacters(in: space)
+                                if str.hasPrefix("//")
+                                    || str.contains("if ([api_host_adm")
+                                {
+                                    return nil
+                                }
+                                   return str
+                            }
+                            return nil
+                        }
+                        if matchingLines.count > 0 {
+                            let json = JSON.init(matchingLines)
+                            print("\(filePath)\n遗留\(matchingLines.count)条\n\(json)")
+                        }
+                    }
+                }
             }
         }
     }
