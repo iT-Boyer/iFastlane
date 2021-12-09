@@ -120,7 +120,10 @@ public class CmdTools {
                         let reg = Regex(".*(\"api_host|iuooo|ipFile\").*\n",options: [.ignoreCase, .anchorsMatchLines])
                         let matchingLines = reg.allMatches(in: filetxt).compactMap { resul ->String? in
                             var str = resul.matchedString
-                            guard str.contains("JHUrlStringManager") else {
+                            guard str.contains("JHUrlStringManager")
+                                    || str.contains("fullURL(with")
+                                    || str.contains("domain(for")
+                            else {
                                 let space = NSCharacterSet.whitespaces
                                 str = str.trimmingCharacters(in: space)
                                 if str.hasPrefix("//")
@@ -173,7 +176,11 @@ public class CmdTools {
             }
             let element:PBXFileElement = pbfile.file!
             let filePath:Path = try! element.fullPath(sourceRoot: srcPath)!
-            return filePath
+            let ext = filePath.extension
+            if (ext == ".mm" || ext == "swift" || ext == "m"){
+                return filePath
+            }
+            return nil
         }
         
         headers = srcfiles.compactMap{ filePath in

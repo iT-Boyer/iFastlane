@@ -206,7 +206,7 @@ class XcodeProjTests: QuickSpec {
                 print("文件:\(headers)")
             }
             
-            fit("关键字查询行 正则") {
+            it("关键字查询行 正则") {
                 let keyword = "Runnertexts"
                 //方案一
                 //cat grep正则 查找
@@ -216,25 +216,29 @@ class XcodeProjTests: QuickSpec {
                 //1 path.read
                 //2 Regex正则输入
                 let file1 = srcfiles[0]
-//                let filetxt:String = try! file1.read()
-//                print("文件：\(filetxt)")
-//                let reg = Regex.init(".*(\"api_host|iuooo|ipFile\").*\n",options: [.ignoreCase, .anchorsMatchLines])
-//                let matchingLines = reg.allMatches(in: filetxt).map {
-//                    $0.matchedString
-//                }
-//                print("在\(file1.lastComponent)中\n匹配到的行：\(matchingLines)")
+                let filetxt:String = try! file1.read()
+                print("文件：\(filetxt)")
+                let reg = Regex.init(".*(\"api_host|iuooo|ipFile\").*\n",options: [.ignoreCase, .anchorsMatchLines])
+                let matchingLines = reg.allMatches(in: filetxt).map {
+                    $0.matchedString
+                }
+                print("在\(file1.lastComponent)中\n匹配到的行：\(matchingLines)")
                 
-//                //3 regex正则替换
-//                let result = filetxt.replacingFirst(matching: "public", with: "H$1, $2!")
-//                print(result)
-//
-//                //4 path.write 更新文件
-//                try! file1.write(result)
+                //3 regex正则替换
+                let result = filetxt.replacingFirst(matching: "public", with: "H$1, $2!")
+                print(result)
+
+                //4 path.write 更新文件
+                try! file1.write(result)
             }
         }
         
-        describe("开始写工具方法") {
-            it("自检git库中静态库源码文件匹配到的行内容") {
+        describe("自检git库中静态库源码文件匹配到的行内容") {
+            fit("指定库名，检查单个项目") {
+                CmdTools.checkproj(repo: "jhsmallspace")
+            }
+            
+            it("从库清单文件中，批量检查") {
                 let ipprojPath = Path("/Users/boyer/Desktop/ipfileGit.txt")
                 let ipprojlist:String = try! ipprojPath.read()
                 let iparr = ipprojlist.split(separator: "\n")

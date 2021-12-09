@@ -51,10 +51,11 @@ extension Fastfile
             CmdTools.checkproj(repo: value)
         }
     }
-    //runner lane checkAllLibs list filePath
-    //runner lane checkAllLibs list ~/Desktop/ipfileGit.txt
-    func checkAllLibsLane(withOptions options: [String : String]?) {
-        if let value = options?["list"], value.count > 0
+    
+    //runner lane checkLibs listpath filePath
+    //runner lane checkLibs listpath ~/Desktop/checklist.txt
+    func checkLibsLane(withOptions options: [String : String]?) {
+        if let value = options?["listpath"], value.count > 0
         {
             let ipprojPath = Path(value)
             let ipprojlist:String = try! ipprojPath.read()

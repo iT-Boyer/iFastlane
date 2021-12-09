@@ -2,6 +2,7 @@ import Foundation
 import SwiftyJSON // https://github.com/SwiftyJSON/SwiftyJSON.git
 import SwiftShell // https://github.com/kareman/SwiftShell
 import Fastlane   // ~/hsg/fastlane
+import PathKit
 import Regex
 import CmdLib
 
@@ -47,9 +48,90 @@ extension Fastfile
             print("非法地址")
         }
     }
-    
-    
-    
+
+    /// 传入repo清单文件，解析判断是否在本地，然后clone到本地，切换到pri-deploy-step2分支
+    /// - Parameter options: repofile.txt 的路径
+    /// e: runner lane clone repo ~/Desktop/repofile.txt
+    func cloneLane(withOptions options: [String : String]?) {
+        
+        if let repo = options?["repo"], repo.count > 0{
+            //源码库清单
+            let linkFile = "/Users/boyer/Desktop/all_link_path.h"
+            //负责的库
+            let filePath:String = repo
+            //本地源码目录
+            let home = "/Users/boyer/hsg"
+            SwiftShell.main.currentdirectory = home
+            
+            let link = SwiftShell.run(bash: "cat \(linkFile)").stdout
+            let linkArr = link.split(separator: "\n")
+            
+            let ipgit = SwiftShell.run(bash: "cat \(filePath)").stdout
+            let ipgitArr = ipgit.split(separator: "\n")
+            
+            let hsg = SwiftShell.run(bash: "ls ./").stdout
+            let currArr = hsg.split(separator: "\n")
+            
+            var repos:[String] = []
+            var locals:[String] = []
+            for git in ipgitArr {
+                var exist = false
+                for dir in currArr {
+                    if dir == git {
+                        exist = true
+                        break
+                    }
+                }
+                if !exist {
+                    repos.append(String(git))
+                }else{
+                    //存在的库写入checklist.txt文件，用于下一步检查
+//                    SwiftShell.run(bash: "echo \(git) >> ~/Desktop/checklist.txt")
+                    locals.append(String(git))
+                }
+            }
+            print("待clone\(repos.count)：\(JSON(repos))\n 已存在的：\(locals.count) \n\(JSON(locals))")
+            locals.forEach { reponame in
+                let repodir = "/Users/boyer/hsg/"+reponame
+                SwiftShell.main.currentdirectory = repodir
+                do{
+                    //开始更新
+//                    print("开始更新:\(reponame)")
+                    let output = try runAsync("git","fetch").finish().stdout.read()
+                    let output1 = try runAsync("git","checkout","pri-deploy-step2").finish().stdout.read()
+//                    print(output+"\n切换分支：\(output1)")
+                }catch
+                {
+                    print("\(reponame)：更新失败 \(error.localizedDescription)")
+                }
+            }
+            
+            //需要clone项目
+            var urls:[String:String] = [:]
+            for repo in repos {
+                
+                for link in linkArr {
+                    if link.contains(repo) {
+                        urls[String(repo)] = String(link)
+                        break
+                    }
+                }
+            }
+            print("存在的路径：\(urls.count)\n\(urls)")
+            SwiftShell.main.currentdirectory = "/Users/boyer/hsg"
+            for (key,url) in urls {
+                do{
+                    let output = try runAsync("git","clone", "-b", "pri-deploy-step2", url).finish().stdout.read()
+                    print(output)
+                }catch
+                {
+                    SwiftShell.run(bash: "echo \(url) >> ~/Desktop/checklist.txt")
+                    print("\(key)：无权限")
+                }
+            }
+        }
+        
+    }
 }
 
 public class ipFile {
@@ -74,6 +156,10 @@ public class ipFile {
         }
         return hosts;
     }
+    
+    /// 域名key：读取iPFile.plist文件，比较host是否存在，当存在时，返回该 key
+    /// - Parameter host: 域名 sns.iuoooo.con
+    /// - Returns: key ipfile.plist文件中key ，api_host_sns
     func hostKey(host:String) -> String {
         let dicInfo:[String:String]! = NSDictionary(contentsOfFile: ipfilePath) as? [String : String]
         var hostKey = ""
@@ -85,65 +171,6 @@ public class ipFile {
             }
         }
         return hostKey
-    }
-    
-    func fetchSource(){
-        //源码库清单
-        let linkFile = "/Users/boyer/Desktop/all_link_path.h"
-        //负责的库
-        let ipgitfile = "/Users/boyer/Desktop/ipfileGit.txt"
-        //本地源码目录
-        let home = "/Users/boyer/hsg"
-        SwiftShell.main.currentdirectory = home
-        
-        let link = SwiftShell.run(bash: "cat \(linkFile)").stdout
-        let linkArr = link.split(separator: "\n")
-        
-        let ipgit = SwiftShell.run(bash: "cat \(ipgitfile)").stdout
-        let ipgitArr = ipgit.split(separator: "\n")
-        
-        let hsg = SwiftShell.run(bash: "ls ./").stdout
-        let currArr = hsg.split(separator: "\n")
-        
-//        var repos:[String] = []
-//        for git in ipgitArr {
-//            var exist = false
-//            for dir in currArr {
-//                if dir == git {
-//                    exist = true
-//                    break
-//                }
-//            }
-//            if !exist {
-//                repos.append(String(git))
-//            }
-//        }
-        
-        let repos = CmdTools.arrDiff(arr1: currArr, arr2: ipgitArr)
-        print("待clone：\(repos)")
-        //需要clone项目
-        var urls:[String:String] = [:]
-        for repo in repos {
-            
-            for link in linkArr {
-                if link.contains(repo) {
-                    urls[String(repo)] = String(link)
-                    break
-                }
-            }
-        }
-        print(urls)
-        
-        for (key,url) in urls {
-            
-            do{
-                let output = try runAsync("git","clone", "-b", "master", url).finish().stdout.read()
-                print(output)
-            }catch
-            {
-                print("\(key)：无权限")
-            }
-        }
     }
     
     //加载json文件中已经压缩过的targets
