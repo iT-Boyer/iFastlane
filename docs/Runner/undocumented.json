@@ -79,6 +79,13 @@
     },
     {
       "file": "/Users/boyer/hsg/iFastlane/swift/Fastfile.swift",
+      "line": 13,
+      "symbol": "Fastfile",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/Fastfile.swift",
       "line": 14,
       "symbol": "Fastfile",
       "symbol_kind": "source.lang.swift.decl.class",
@@ -172,13 +179,6 @@
       "file": "/Users/boyer/hsg/iFastlane/swift/Fastfile.swift",
       "line": 54,
       "symbol": "Fastfile.onError(currentLane:errorInfo:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/boyer/hsg/iFastlane/swift/Fastfile.swift",
-      "line": 72,
-      "symbol": "Fastfile.JaaaaLane()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },

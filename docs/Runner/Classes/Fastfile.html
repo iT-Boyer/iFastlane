@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           Runner 1.0.0 Docs
         </a>
-         (14% documented)
+         (15% documented)
       </p>
     
       <div class="header-col--secondary">
@@ -453,33 +453,6 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@Runner@objc(cs)Fastfile(im)JaaaaLane"></a>
-                    <a name="//apple_ref/swift/Method/JaaaaLane()" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Runner@objc(cs)Fastfile(im)JaaaaLane">JaaaaLane()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="kt">JaaaaLane</span><span class="p">()</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/c:@CM@Runner@objc(cs)Fastfile(im)podPushLaneWithOptions:"></a>
                     <a name="//apple_ref/swift/Method/podPushLane(withOptions:)" class="dashAnchor"></a>
                     <a class="token" href="#/c:@CM@Runner@objc(cs)Fastfile(im)podPushLaneWithOptions:">podPushLane(withOptions:<wbr>)</a>
@@ -852,6 +825,59 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">downFilelane</span><span class="p">()</span></code></pre>
 
                         </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@Runner@objc(cs)Fastfile(im)docLaneWithOptions:"></a>
+                    <a name="//apple_ref/swift/Method/docLane(withOptions:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@Runner@objc(cs)Fastfile(im)docLaneWithOptions:">docLane(withOptions:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>使用jazzy工具生成苹果级别的官方文档</p>
+
+<ul>
+<li>lane的价值在于集成开发，可以在afterAll之后，生成更新库文档。</li>
+<li>目前jazzy配置文件路径为固定，需要通过代码更新来配置文件</li>
+<li>后续优化，通过入参指定配置文件路径，生成文档</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">docLane</span><span class="p">(</span><span class="n">withOptions</span> <span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>options</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>fastlane入参字典
+例子: runner lane doc 库名称</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
