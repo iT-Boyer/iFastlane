@@ -177,7 +177,7 @@ public class CmdTools {
             let element:PBXFileElement = pbfile.file!
             let filePath:Path = try! element.fullPath(sourceRoot: srcPath)!
             let ext = filePath.extension
-            if (ext == ".mm" || ext == "swift" || ext == "m"){
+            if (ext == "mm" || ext == "swift" || ext == "m"){
                 return filePath
             }
             return nil
