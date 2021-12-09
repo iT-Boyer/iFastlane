@@ -109,33 +109,11 @@ public class CmdTools {
                 if target.productType == .staticLibrary
                 {
                     print("检查\(target.name) 类型：\(type!)")
-                    //获取宏prefix文件
-                    let configlist:XCConfigurationList = target.buildConfigurationList!
-                    let conf:XCBuildConfiguration! = configlist.configuration(name: "Release")
-                    if let prefix = conf.buildSettings["GCC_PREFIX_HEADER"]{
-                        print("宏文件：\(prefix)")
-                    }
                     
-                    
-                    let phaseRef = target.buildPhases
-                    var sources:PBXSourcesBuildPhase!
-                    phaseRef.forEach { phase in
-                        if phase is PBXSourcesBuildPhase {
-                            sources = phase as? PBXSourcesBuildPhase
-                            return
-                        }
-                    }
-//                    let sources:PBXSourcesBuildPhase = phaseRef[0] as! PBXSourcesBuildPhase
-                    let files = sources.files!
-                    print("包含\(files.count)个源文件")
-                    for buildfile in files {
-                        if buildfile.file == nil {
-                            continue
-                        }
-                        let element:PBXFileElement = buildfile.file!
-                        let filePath:Path = try! element.fullPath(sourceRoot: projfile.parent())!
-                        //.m.h   .swift
-                        
+                    let allFiles = CmdTools.AllfilesOf(target: target,srcPath: projfile.parent())
+                    var rusult:[String:JSON] = [:]
+                    allFiles.forEach { filePath in
+                        //匹配关键字
                         let filetxt:String = try! filePath.read()
 //                        print("文件：\(filetxt)")
                         //(\\[.*?api_host)|((=|:).*?iuooo.*/)
@@ -155,13 +133,77 @@ public class CmdTools {
                             return nil
                         }
                         if matchingLines.count > 0 {
+//                            print("\(filePath)\n遗留\(matchingLines.count)条")
                             let json = JSON.init(matchingLines)
-                            print("\(filePath)\n遗留\(matchingLines.count)条\n\(json)")
+                            rusult[filePath.string] = json
                         }
+                    }
+                    if rusult.count > 0 {
+                        print("\(rusult)")
+                    }else{
+                        print("\(target.name):已处理完毕")
                     }
                 }
             }
         }
+    }
+    
+    static func AllfilesOf(target:PBXTarget, srcPath:Path) -> [Path] {
+        var srcfiles:[Path] = []
+        //头文件+宏文件
+        var headers:[Path] = []
+        //获取源文件+头文件
+        var sources:PBXSourcesBuildPhase!
+        target.buildPhases.forEach { phase in
+            if phase is PBXSourcesBuildPhase {
+                sources = phase as? PBXSourcesBuildPhase
+                return
+            }
+        }
+        
+        srcfiles = sources.files!.compactMap{ pbfile in
+            if pbfile.file == nil {
+                return nil
+            }
+            let element:PBXFileElement = pbfile.file!
+            let filePath:Path = try! element.fullPath(sourceRoot: srcPath)!
+            return filePath
+        }
+        
+        headers = srcfiles.compactMap{ filePath in
+            //判断当是.m 文件时，匹配.h文件，是否存在，添加到源文件数组
+            var pathstr = filePath.string
+            if pathstr.hasSuffix(".m") || pathstr.hasSuffix(".mm"){
+                pathstr.replaceFirst(matching: "\\.m{1,2}$", with: ".h")
+                let fileheader = Path(pathstr)
+                if fileheader.exists {
+                    return fileheader
+                }else{
+                    print("不存在：\(fileheader)")
+                }
+            }
+            return nil
+        }
+        
+        //添加宏文件
+        //获取宏prefix文件
+        let configlist:XCConfigurationList = target.buildConfigurationList!
+        let conf:XCBuildConfiguration! = configlist.configuration(name: "Release")
+        if let prefix = conf.buildSettings["GCC_PREFIX_HEADER"]{
+            //$(SRCROOT)/YGPatrol/PrefixHeader.pch
+            print("宏文件：\(prefix)")
+            var prefixStr = "\(prefix)"
+            if prefixStr.hasPrefix("$(SRCROOT)/") {
+                prefixStr.replaceFirst(matching: "\\$\\(SRCROOT\\)/", with: "")
+            }
+            let prefixPath = srcPath+Path(prefixStr)
+            if prefixPath.exists {
+                headers.append(prefixPath)
+            }
+        }
+        
+        print("源文件：\(srcfiles.count),头/宏文件：\(headers.count)")
+        return srcfiles+headers
     }
 }
 
