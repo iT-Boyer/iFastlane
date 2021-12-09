@@ -1,0 +1,460 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/Appfile.swift",
+      "line": 1,
+      "symbol": "appIdentifier",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/Appfile.swift",
+      "line": 2,
+      "symbol": "appleID",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/Fastfile.swift",
+      "line": 6,
+      "symbol": "Fastfile",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/Fastfile.swift",
+      "line": 8,
+      "symbol": "Fastfile",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/Fastfile.swift",
+      "line": 11,
+      "symbol": "Fastfile",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/Fastfile.swift",
+      "line": 11,
+      "symbol": "Fastfile",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/Fastfile.swift",
+      "line": 11,
+      "symbol": "Fastfile",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/Fastfile.swift",
+      "line": 12,
+      "symbol": "Fastfile",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/Fastfile.swift",
+      "line": 12,
+      "symbol": "Fastfile",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/Fastfile.swift",
+      "line": 12,
+      "symbol": "Fastfile",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/Fastfile.swift",
+      "line": 12,
+      "symbol": "Fastfile",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/Fastfile.swift",
+      "line": 14,
+      "symbol": "Fastfile",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/Fastfile.swift",
+      "line": 14,
+      "symbol": "Fastfile",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/Fastfile.swift",
+      "line": 14,
+      "symbol": "Fastfile",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/Fastfile.swift",
+      "line": 17,
+      "symbol": "Fastfile.iossdk",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/Fastfile.swift",
+      "line": 18,
+      "symbol": "Fastfile.plus8",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/Fastfile.swift",
+      "line": 19,
+      "symbol": "Fastfile.ipad",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/Fastfile.swift",
+      "line": 20,
+      "symbol": "Fastfile.appName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/Fastfile.swift",
+      "line": 21,
+      "symbol": "Fastfile.ipaName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/Fastfile.swift",
+      "line": 22,
+      "symbol": "Fastfile.iPappDir",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/Fastfile.swift",
+      "line": 23,
+      "symbol": "Fastfile.outDir",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/Fastfile.swift",
+      "line": 24,
+      "symbol": "Fastfile.ipaPath",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/Fastfile.swift",
+      "line": 27,
+      "symbol": "Fastfile.beforeAll(with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/Fastfile.swift",
+      "line": 37,
+      "symbol": "Fastfile.afterAll(with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/Fastfile.swift",
+      "line": 54,
+      "symbol": "Fastfile.onError(currentLane:errorInfo:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/Fastfile.swift",
+      "line": 72,
+      "symbol": "Fastfile.JaaaaLane()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/Gymfile.swift",
+      "line": 9,
+      "symbol": "Gymfile",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/Gymfile.swift",
+      "line": 15,
+      "symbol": "Gymfile.configuration",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/Gymfile.swift",
+      "line": 16,
+      "symbol": "Gymfile.exportMethod",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/Matchfile.swift",
+      "line": 2,
+      "symbol": "Matchfile",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/Matchfile.swift",
+      "line": 5,
+      "symbol": "Matchfile.username",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/APP/CocoaPods.swift",
+      "line": 12,
+      "symbol": "myRepo",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/APP/JinherAPP.swift",
+      "line": 14,
+      "symbol": "Fastfile.JHAppLane()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/APP/SupervisionSel/SupervisionSel.swift",
+      "line": 14,
+      "symbol": "Fastfile.superTestLane()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/APP/SupervisionSel/SupervisionSel.swift",
+      "line": 26,
+      "symbol": "Fastfile.superInstallLane()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/APP/SupervisionSel/SupervisionSel.swift",
+      "line": 45,
+      "symbol": "Fastfile.superSimLane()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/APP/iBlink/iBlink.swift",
+      "line": 14,
+      "symbol": "Fastfile.blinksignLane()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/APP/iBlink/iBlink.swift",
+      "line": 18,
+      "symbol": "Fastfile.blinkLane()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/APP/iBlink/iBlink.swift",
+      "line": 39,
+      "symbol": "Fastfile.blinkcerLane()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/APP/iSmallApp.swift",
+      "line": 14,
+      "symbol": "Fastfile.iSmallLane()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/Lib/JinheLib.swift",
+      "line": 18,
+      "symbol": "Fastfile.buildLibLane(projPath:target:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/Lib/JinheLib.swift",
+      "line": 47,
+      "symbol": "Fastfile.checkLibLane(withOptions:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/Lib/JinheLib.swift",
+      "line": 56,
+      "symbol": "Fastfile.checkAllLibsLane(withOptions:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/iBoyer.swift",
+      "line": 28,
+      "symbol": "Fastfile.downFilelane()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/iPapp.swift",
+      "line": 14,
+      "symbol": "Fastfile.iPappLane()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/iPapp.swift",
+      "line": 21,
+      "symbol": "Fastfile.uploadIPApp()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/swift-sh/BundleMe.swift",
+      "line": 8,
+      "symbol": "Fastfile.bundleLane()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/swift-sh/BundleMe.swift",
+      "line": 14,
+      "symbol": "Fastfile.bundlezipTestLane(withOptions:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/swift-sh/BundleMe.swift",
+      "line": 25,
+      "symbol": "Fastfile.optimgzipLane(withOptions:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/swift-sh/BundleMe.swift",
+      "line": 37,
+      "symbol": "Bundle",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/swift-sh/BundleMe.swift",
+      "line": 42,
+      "symbol": "Bundle.findBundleInPath(path:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/swift-sh/BundleMe.swift",
+      "line": 59,
+      "symbol": "Bundle.loadJsonData(path:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/swift-sh/BundleMe.swift",
+      "line": 75,
+      "symbol": "Bundle.sortTodoBundleBySize(todo:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/swift-sh/BundleMe.swift",
+      "line": 91,
+      "symbol": "Bundle.bundlezip(bundles:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/swift-sh/BundleMe.swift",
+      "line": 106,
+      "symbol": "Bundle.zipcmd(folder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/swift-sh/BundleMe.swift",
+      "line": 116,
+      "symbol": "Bundle.bundleMe()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/swift-sh/ipFile.swift",
+      "line": 12,
+      "symbol": "Fastfile.ipFileLane(withOptions:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/swift-sh/ipFile.swift",
+      "line": 32,
+      "symbol": "Fastfile.ipProjLane(withOptions:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/swift-sh/ipFile.swift",
+      "line": 55,
+      "symbol": "ipFile",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/swift-sh/ipFile.swift",
+      "line": 59,
+      "symbol": "ipFile.ipfilePath",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/swift-sh/ipFile.swift",
+      "line": 60,
+      "symbol": "ipFile.iuooooPath",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/swift-sh/ipFile.swift",
+      "line": 65,
+      "symbol": "ipFile.hostList(keyword:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/swift-sh/ipFile.swift",
+      "line": 77,
+      "symbol": "ipFile.hostKey(host:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/swift-sh/ipFile.swift",
+      "line": 90,
+      "symbol": "ipFile.fetchSource()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/swift-sh/ipFile.swift",
+      "line": 150,
+      "symbol": "ipFile.loadJsonData(path:proj:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/boyer/hsg/iFastlane"
+}

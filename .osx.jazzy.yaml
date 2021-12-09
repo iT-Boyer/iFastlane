@@ -1,0 +1,13 @@
+author: Runner
+author_url: http://it-boyer.github.io
+github_url: https://github.com/it-boyer/iFastlane
+root_url: https://github.com/it-boyer/iFastlane
+module: Runner
+output: docs/Runner
+theme: fullwidth
+min_acl: internal
+module_version: 1.0.0
+sdk: macosx
+clean: true
+swift_build_tool: spm
+#xcodebuild_argume nts: [-workspace, '../../hexo.xcworkspace', -scheme, 'Runner',USE_SWIFT_RESPONSE_FILE=NO]

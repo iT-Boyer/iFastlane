@@ -148,6 +148,12 @@ public class CmdTools {
         }
     }
     
+    
+    /// 筛选target下所有文件
+    /// - Parameters:
+    ///   - target: 指定target实例，依赖XcodeProj库
+    ///   - srcPath: 源码根目录
+    /// - Returns: 所有文件的Path实例数组
     static func AllfilesOf(target:PBXTarget, srcPath:Path) -> [Path] {
         var srcfiles:[Path] = []
         //头文件+宏文件

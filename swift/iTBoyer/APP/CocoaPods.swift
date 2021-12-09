@@ -34,12 +34,4 @@ extension Fastfile
             let arr = [myRepo]
             podPush(path: OptionalConfigValue("\(path)"), repo: OptionalConfigValue("PodRepo"), allowWarnings: warning, sources: .userDefined(arr))
         }
-        
-        
-        func jazzyLane(withOptions options:[String: String]?) {
-            //生成日志
-            desc("jazzy生成日志")
-            jazzy(config: ".iOS.jazzy.yaml")
-    //        jazzy(config: ".osx.jazzy.yaml")
-        }
 }

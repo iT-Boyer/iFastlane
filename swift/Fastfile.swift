@@ -8,6 +8,7 @@
 
 import Foundation
 import Fastlane
+import Regex
 import AppKit
 
 class Fastfile: LaneFile {
@@ -34,8 +35,19 @@ class Fastfile: LaneFile {
     }
     
     func afterAll(with lane: String) {
-        //
-        print("结束时间：afterAll")
+        
+        print("结束：afterAll")
+        print("开始Jazzy生成文档")
+        switch lane {
+        case Regex("Lib"):
+            print("生成CmdLib库文档")
+            jazzy(config: "~/hsg/iFastlane/CmdLib/jazzy.yaml", moduleVersion: "1.0.0")
+        case Regex("Log"):
+            print("生成LogSwift库")
+        default:
+            jazzy(config: ".osx.jazzy.yaml", moduleVersion: "1.0.0")
+        }
+    
         slack(message: "成功", slackUrl: "https://hooks.slack.com/services/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",success:true)
     }
     

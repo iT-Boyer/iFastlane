@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Runner  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+
+    <a title="Runner  Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="index.html">
+          Runner 1.0.0 Docs
+        </a>
+         (14% documented)
+      </p>
+    
+      <div class="header-col--secondary">
+        <form role="search" action="search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </div>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/it-boyer/iFastlane">
+            <img class="header-icon" src="img/gh.png" alt="GitHub"/>
+            View on GitHub
+          </a>
+        </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="dash-feed://https%3A%2F%2Fgithub.com%2Fit-boyer%2FiFastlane%2Fdocsets%2FRunner.xml">
+            <img class="header-icon" src="img/dash.png" alt="Dash"/>
+            Install in Dash
+          </a>
+        </p>
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="index.html">Runner Reference</a>
+      <img class="carat" src="img/carat.png" alt=""/>
+      Runner  Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/Bundle.html">Bundle</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/Fastfile.html">Fastfile</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/Gymfile.html">Gymfile</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/Matchfile.html">Matchfile</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/ipFile.html">ipFile</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Global%20Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Global%20Variables.html#/s:6Runner13appIdentifierSSvp">appIdentifier</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Global%20Variables.html#/s:6Runner7appleIDSSvp">appleID</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Global%20Variables.html#/s:6Runner6myRepoSSvp">myRepo</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Functions.html#/s:6Runner6actspm8apiToken11developmentySS_8Fastlane19OptionalConfigValueOySbGtF">actspm(apiToken:development:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Functions.html#/s:6Runner5pgyer6apiKey04userD03apk3ipa8password17updateDescription11installTypeySS_SS8Fastlane19OptionalConfigValueOySSSgGA4NtF">pgyer(apiKey:userKey:apk:ipa:password:updateDescription:installType:)</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content top-matter">
+            
+            <h1 id='fastlane-documentation' class='heading'>fastlane documentation</h1>
+<h1 id='安装' class='heading'>安装</h1>
+
+<p>Make sure you have the latest version of the Xcode command line tools installed:</p>
+<pre class="highlight plaintext"><code>xcode-select --install
+</code></pre>
+
+<p>Install <em>fastlane</em> using</p>
+<pre class="highlight plaintext"><code>brew install fastlane 
+//或
+[sudo] gem install fastlane -NV
+</code></pre>
+<h1 id='runner-用法' class='heading'>Runner 用法</h1>
+<h2 id='ios' class='heading'>iOS</h2>
+<h3 id='ios-custom_lane' class='heading'>ios custom_lane</h3>
+<pre class="highlight plaintext"><code>fastlane ios custom_lane
+</code></pre>
+
+<p>Description of what the lane does</p>
+
+<hr>
+
+<p>This README.md is auto-generated and will be re-generated every time <a href="https://fastlane.tools"><em>fastlane</em></a> is run.
+More information about fastlane can be found on <a href="https://fastlane.tools">fastlane.tools</a>.
+The documentation of fastlane can be found on <a href="https://docs.fastlane.tools">docs.fastlane.tools</a>.</p>
+
+<ul>
+<li>单元测试：可执行程序 不支持unit单元测试
+通过新建一个通用库（工具类，常用方法等），例如：cmdlib，配合单元测试。</li>
+<li>可执行文件
+
+<ul>
+<li>无法开启 Allow testing Host Application APIs</li>
+</ul></li>
+<li>集成Quick框架，使用单元测试联调swift脚本：例如 求：两个集合的差集
+使用单元测试描述场景，测试用例驱动开发
+
+<ul>
+<li>遗留问题：Nimbe 单元测试没有提示，需要解决。</li>
+<li>用例思维：学会测试行为，达到单元测试精确定位。<br></li>
+<li>命令行测试：为命令行项目设置测试 Target</li>
+</ul></li>
+<li>补齐提示：swift repl 交互下，支持Tab快捷键 打印补齐提示</li>
+<li><p>swiftPM命令：spi &ndash;type 高级使用。创建管理 Framework库，可执行文件。</p>
+
+<ul>
+<li>编译单个target：swift build &ndash;target Runne
+<a href="https://dzone.com/articles/unit-testing-with-swift-pm">https://dzone.com/articles/unit-testing-with-swift-pm</a></li>
+</ul>
+
+<p>Use resources in unit tests with Swift Package Manager
+<a href="https://stackoverflow.com/questions/47177036/use-resources-in-unit-tests-with-swift-package-manager">https://stackoverflow.com/questions/47177036/use-resources-in-unit-tests-with-swift-package-manager</a>
+回滚方法的使用
+git reset 退回到某一个节点
+git revert 撤销某个节点：重点理解。
+git revert -n hashold^&hellip;hashnew 撤销从某段区间的提交，类似回滚操作。
+<a href="https://blog.csdn.net/allanGold/article/details/111372750">https://blog.csdn.net/allanGold/article/details/111372750</a></p></li>
+<li><p>优化jinher瘦包相关命令行：抽取通用方法到cmdlib中，通过quick单元测试</p></li>
+<li><p>强化BDD测试驱动开发思维方式：</p></li>
+<li><p>swift基础语法的掌握
+string和substring的区别
+集合的算法：差集，并集，交集，基本算法学习</p></li>
+<li><p>整理库权限库检索的方法fetchSource，转为fastlane命令</p></li>
+</ul>
+
+          </div>
+        </section>
+
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2021 <a class="link" href="http://it-boyer.github.io" target="_blank" rel="external noopener">Runner</a>. All rights reserved. (Last updated: 2021-12-09)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+    </section>
+  </body>
+</html>
