@@ -92,6 +92,30 @@ public class CmdTools {
         }
     }
     
+    /// 把项目工程添加到指定的workspace现有的分组中，分组必须已经存在。
+    /// - Parameters:
+    ///   - workspacePath: 目标workspace路径
+    ///   - proj: 要添加的proj 文件路径
+    ///   - toGroup: 要添加group名
+    public static func addProjTo(workspace workspacePath:Path, proj:Path, toGroup:String = "其他") {
+        //workspace处理
+        let workspace:XCWorkspace = try! XCWorkspace(path: workspacePath)
+        let roots = workspace.data.children
+        roots.forEach { element in
+            if case let XCWorkspaceDataElement.group(second) = element {
+                let secondName = second.name!
+                if secondName == toGroup {
+                    print("二级：\(toGroup) 下:\(second.children.count)个")
+                    //添加文件file
+                    let location: XCWorkspaceDataElementLocationType = .absolute(proj.string)
+                    let file = XCWorkspaceDataFileRef(location: location)
+                    let fileElement = XCWorkspaceDataElement.file(file)
+                    second.children.append(fileElement)
+                }
+            }
+        }
+        try! workspace.write(path: workspacePath)
+    }
     
     /// 筛选target下所有文件
     /// - Parameters:
@@ -158,5 +182,36 @@ public class CmdTools {
         
         print("源文件：\(srcfiles.count),头/宏文件：\(headers.count)")
         return srcfiles+headers
+    }
+    
+    
+    /// 获取repo库中，所有的xcodeproj文件路径
+    /// - Parameter repo: 库local路径
+    /// - Returns: xcodeproj文件路径集合
+    public static func AllProjOf(repo:Path) -> [Path]
+    {
+        let repoProjs = try! repo.recursiveChildren()
+        //错误：Generic parameter 'ElementOfResult' could not be inferred
+//        repoProjs.compactMap{ proj in
+//                                if proj.match("*.xcodeproj") {
+//                                    let pp:Path = proj
+//                                    return pp
+//                                }
+//                                return nil
+//                                print("\(proj)")
+//        }
+        //通配符：仅支持对当前目录匹配，无法递归所有目录
+//        let pattern = ("**/*.xcodeproj").description
+//                            let paths = Path.glob(pattern)
+//        let paths = repo.glob(pattern)
+//        print("proj文件：\(paths)")
+        
+        var projArr:[Path] = []
+        repoProjs.forEach { proj in
+            if proj.match("*.xcodeproj") {
+                projArr.append(proj)
+            }
+        }
+        return repoProjs
     }
 }

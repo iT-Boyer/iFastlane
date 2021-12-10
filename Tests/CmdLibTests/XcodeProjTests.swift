@@ -10,9 +10,7 @@ import Quick
 import Nimble
 import XcodeProj
 import PathKit
-import Regex
-import SwiftShell
-import SwiftyJSON
+import Foundation
 @testable import CmdLib
 
 /**
@@ -26,6 +24,56 @@ import SwiftyJSON
  */
 class XcodeProjTests: QuickSpec {
     override func spec() {
+        
+        fdescribe("workspace使用") {
+            var workspace:XCWorkspace!
+            var workspacePath:Path!
+            beforeEach {
+                workspacePath = Path("/Users/boyer/hsg/jhygpatrol/YGPatrol.xcworkspace")
+                workspace = try! XCWorkspace(path: workspacePath)
+            }
+            
+            it("添加proj到workspaces") {
+                //
+                print("childen:\(workspace.data.children.count)")
+                let roots = workspace.data.children
+                roots.forEach { element in
+                    if case let XCWorkspaceDataElement.group(second) = element {
+                        let secondName = second.name!
+                        if secondName == "其他" {
+                            print("二级：\(second.name!) 下:\(second.children.count)个")
+                            second.children.forEach { proj in
+                                if case let XCWorkspaceDataElement.file(third) = proj {
+                                    //../WithoutWorkspace/WithoutWorkspace.xcodeproj
+                                    let thirdName:XCWorkspaceDataElementLocationType = third.location
+//                                    print("类型：\(thirdName.schema) \n\(thirdName.path)")
+                                }
+                            }
+                            //加入新的proj
+                            //添加group
+                            let groupLocation: XCWorkspaceDataElementLocationType = .absolute(JHSources().string)
+                            let group = XCWorkspaceDataGroup(location: groupLocation,
+                                                             name: "JHSourcesX",
+                                                             children: [])
+                            let groupelement = XCWorkspaceDataElement.group(group)
+                            
+                            second.children.append(groupelement)
+                            
+                            //添加文件file
+                            let proj = root()+"Runner.xcodeproj"
+                            let location: XCWorkspaceDataElementLocationType = .absolute(proj.string)
+                            let file = XCWorkspaceDataFileRef(location: location)
+                            let fileElement = XCWorkspaceDataElement.file(file)
+                            second.children.append(fileElement)
+                        }
+                    }
+                }
+            }
+            afterEach {
+                try! workspace.write(path: Resources()+"Test.xcworkspace")
+            }
+        }
+        
         describe("学习使用XcodeProj工具") {
             var pbxproj:PBXProj!
             beforeEach {
@@ -100,99 +148,6 @@ class XcodeProjTests: QuickSpec {
 //                        })
                     }
                     
-                }
-            }
-        }
-        
-        describe("target操作练习：JHPatrolSDK") {
-            //源文件+头文件+宏文件
-            
-            var target:PBXTarget!
-            var projPath:Path!
-            beforeEach {
-                //项目名+target名
-                projPath = Path("/Users/boyer/hsg/jhygpatrol/YGPatrol.xcodeproj")
-                let targetName = "JHPatrolSDK"
-                
-                let xcodeProj = try! XcodeProj(path: projPath)
-                let pbxproj = xcodeProj.pbxproj
-                let targets:[PBXTarget] = pbxproj.targets(named: targetName)
-                target = targets[0]
-            }
-            
-            it("获取.m/.h/.pch文件的路径集合") {
-                _ = CmdTools.AllfilesOf(target: target, srcPath: projPath.parent())
-            }
-        }
-        
-        describe("检查repo目录") {
-            var repoName:String!
-            beforeEach {
-                repoName = "jhygpatrol"
-                
-            }
-            
-            it("打印repo目录下的所有工程项目下的target") {
-                let repoPath = "/Users/boyer/hsg/\(repoName)/"
-                // 使用find命令搜索 xcode项目
-                SwiftShell.main.currentdirectory = repoPath
-                //忽略目录用法 -path ./.build -prune -o
-                //https://cloud.tencent.com/developer/article/1543082
-                //https://segmentfault.com/a/1190000022722569
-                let findresult = SwiftShell.run(bash: "find . -path ./.build -prune -o -name \"*.xcodeproj\"").stdout
-                let dirArr = findresult.split(separator: "\n")
-                
-                dirArr.forEach { dir in
-                    if !dir.hasSuffix("xcodeproj")
-                        || dir.contains("Pods")
-                        || dir.contains("jinher.app.IntelDecision"){
-                        return
-                    }
-                    let projPath = dir.replacingOccurrences(of: "./", with: repoPath)
-                    
-                    let projfile = Path(projPath)
-                    print("项目路径：\(projfile.parent())")
-                    let xcodeproj = try! XcodeProj(path: projfile)
-                    let pbxproj = xcodeproj.pbxproj
-                    pbxproj.nativeTargets.forEach { target in
-                        let type = target.productType
-                        if target.productType == .staticLibrary
-                        {
-                            print("检查\(target.name) 类型：\(type!)")
-                        }
-                    }
-                }
-            }
-            it("单库检查域名：单个库检查") {
-                CmdTools.checkproj(repo: "jhsmallspace")
-            }
-            
-            it("批量检查域名：从清单文件中，批量排查域名替换情况") {
-                let ipprojPath = JHSources()+"todo.txt"
-                let ipprojlist:String = try! ipprojPath.read()
-                let iparr = ipprojlist.split(separator: "\n")
-                
-                let megit = Path("/Users/boyer/hsg")
-                let mygitArr = try! megit.children()
-                var repos:[String] = []
-                var others:[String] = []
-                for git in iparr {
-                    var exist = false
-                    for dir in mygitArr {
-                        if dir.lastComponent == git {
-                            exist = true
-                            break
-                        }
-                    }
-                    if exist {
-                        repos.append(String(git))
-                    }else{
-                        others.append(String(git))
-                    }
-                }
-                print("正在检查：\(iparr.count)个项目 \n有 \(others.count) 不存在:\(JSON(others))")
-                repos.forEach { repo in
-                    CmdTools.checkproj(repo: String(repo))
                 }
             }
         }
