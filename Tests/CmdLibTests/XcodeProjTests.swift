@@ -102,12 +102,38 @@ class XcodeProjTests: QuickSpec {
                     
                 }
             }
-            it("通过目录和lib名称初始化pbxproj") {
-                let repo = "iFastlane"
-                let libs = ["Runner.a","CmdLib.a"]
-                var libDic:[String:String] = [:]
-                //拼接路径
-                let repoPath = "/Users/boyer/hsg/\(repo)/"
+        }
+        
+        describe("target操作练习：JHPatrolSDK") {
+            //源文件+头文件+宏文件
+            
+            var target:PBXTarget!
+            var projPath:Path!
+            beforeEach {
+                //项目名+target名
+                projPath = Path("/Users/boyer/hsg/jhygpatrol/YGPatrol.xcodeproj")
+                let targetName = "JHPatrolSDK"
+                
+                let xcodeProj = try! XcodeProj(path: projPath)
+                let pbxproj = xcodeProj.pbxproj
+                let targets:[PBXTarget] = pbxproj.targets(named: targetName)
+                target = targets[0]
+            }
+            
+            it("获取.m/.h/.pch文件的路径集合") {
+                _ = CmdTools.AllfilesOf(target: target, srcPath: projPath.parent())
+            }
+        }
+        
+        describe("检查repo目录") {
+            var repoName:String!
+            beforeEach {
+                repoName = "jhygpatrol"
+                
+            }
+            
+            it("打印repo目录下的所有工程项目下的target") {
+                let repoPath = "/Users/boyer/hsg/\(repoName)/"
                 // 使用find命令搜索 xcode项目
                 SwiftShell.main.currentdirectory = repoPath
                 //忽略目录用法 -path ./.build -prune -o
@@ -116,130 +142,33 @@ class XcodeProjTests: QuickSpec {
                 let findresult = SwiftShell.run(bash: "find . -path ./.build -prune -o -name \"*.xcodeproj\"").stdout
                 let dirArr = findresult.split(separator: "\n")
                 
-                dirArr.forEach { path in
-                    if !path.hasSuffix("xcodeproj") {
+                dirArr.forEach { dir in
+                    if !dir.hasSuffix("xcodeproj")
+                        || dir.contains("Pods")
+                        || dir.contains("jinher.app.IntelDecision"){
                         return
                     }
-                    let projpath = path.replacingOccurrences(of: "./", with: repoPath)
-                    print("项目路径：\(projpath)")
-                    let path = Path(projpath)
-                    let xcodeproj = try! XcodeProj(path: path)
-                    pbxproj = xcodeproj.pbxproj
+                    let projPath = dir.replacingOccurrences(of: "./", with: repoPath)
                     
-                    libs.forEach { libname in
-                        pbxproj.nativeTargets.forEach { target in
-                            if libname.contains(target.name) {
-                                //确定
-                                libDic[libname] = projpath
-                                return
-                            }
+                    let projfile = Path(projPath)
+                    print("项目路径：\(projfile.parent())")
+                    let xcodeproj = try! XcodeProj(path: projfile)
+                    let pbxproj = xcodeproj.pbxproj
+                    pbxproj.nativeTargets.forEach { target in
+                        let type = target.productType
+                        if target.productType == .staticLibrary
+                        {
+                            print("检查\(target.name) 类型：\(type!)")
                         }
                     }
                 }
-                print(libDic)
             }
-        }
-        
-        describe("在target源码文件中查询关键字") {
-            var srcfiles:[Path] = []
-            //头文件+宏文件
-            var headers:[Path] = []
-            beforeEach {
-                //项目名+target名
-                let projPath:Path = Path("/Users/boyer/hsg/jhygpatrol/YGPatrol.xcodeproj")
-                let srcPath = projPath.parent()
-                let target = "JHPatrolSDK"
-                
-                let xcodeProj = try! XcodeProj(path: projPath)
-                let pbxproj = xcodeProj.pbxproj
-                let targets:[PBXTarget] = pbxproj.targets(named: target)
-                let runner = targets[0]
-                
-                //获取源文件+头文件
-                var sources:PBXSourcesBuildPhase!
-                runner.buildPhases.forEach { phase in
-                    if phase is PBXSourcesBuildPhase {
-                        sources = phase as? PBXSourcesBuildPhase
-                        return
-                    }
-                }
-                
-                srcfiles = sources.files!.compactMap{ pbfile in
-                    let element:PBXFileElement = pbfile.file!
-                    let filePath:Path = try! element.fullPath(sourceRoot: projPath.parent())!
-                    return filePath
-                }
-                
-                headers = srcfiles.compactMap{ filePath in
-                    //判断当是.m 文件时，匹配.h文件，是否存在，添加到源文件数组
-                    var pathstr = filePath.string
-                    if pathstr.hasSuffix(".m") || pathstr.hasSuffix(".mm"){
-                        pathstr.replaceFirst(matching: "\\.m{1,2}$", with: ".h")
-                        let fileheader = Path(pathstr)
-                        if fileheader.exists {
-                            return fileheader
-                        }else{
-                            print("不存在：\(fileheader)")
-                        }
-                    }
-                    return nil
-                }
-                
-                //添加宏文件
-                //获取宏prefix文件
-                let configlist:XCConfigurationList = runner.buildConfigurationList!
-                let conf:XCBuildConfiguration! = configlist.configuration(name: "Release")
-                if let prefix = conf.buildSettings["GCC_PREFIX_HEADER"]{
-                    //$(SRCROOT)/YGPatrol/PrefixHeader.pch
-                    print("宏文件：\(prefix)")
-                    var prefixStr = "\(prefix)"
-                    if prefixStr.hasPrefix("$(SRCROOT)/") {
-                        prefixStr.replaceFirst(matching: "\\$\\(SRCROOT\\)/", with: "")
-                    }
-                    let prefixPath = srcPath+Path(prefixStr)
-                    if prefixPath.exists {
-                        headers.append(prefixPath)
-                    }
-                }
-                
-                print("源文件：\(srcfiles.count),头/宏文件：\(headers.count)")
-                print("文件:\(headers)")
-            }
-            
-            it("关键字查询行 正则") {
-                let keyword = "Runnertexts"
-                //方案一
-                //cat grep正则 查找
-                //替换 sed 替换 写入文件
-                
-                //方案二
-                //1 path.read
-                //2 Regex正则输入
-                let file1 = srcfiles[0]
-                let filetxt:String = try! file1.read()
-                print("文件：\(filetxt)")
-                let reg = Regex.init(".*(\"api_host|iuooo|ipFile\").*\n",options: [.ignoreCase, .anchorsMatchLines])
-                let matchingLines = reg.allMatches(in: filetxt).map {
-                    $0.matchedString
-                }
-                print("在\(file1.lastComponent)中\n匹配到的行：\(matchingLines)")
-                
-                //3 regex正则替换
-                let result = filetxt.replacingFirst(matching: "public", with: "H$1, $2!")
-                print(result)
-
-                //4 path.write 更新文件
-                try! file1.write(result)
-            }
-        }
-        
-        describe("自检git库中静态库源码文件匹配到的行内容") {
-            fit("指定库名，检查单个项目") {
+            it("单库检查域名：单个库检查") {
                 CmdTools.checkproj(repo: "jhsmallspace")
             }
             
-            it("从库清单文件中，批量检查") {
-                let ipprojPath = Path("/Users/boyer/Desktop/ipfileGit.txt")
+            it("批量检查域名：从清单文件中，批量排查域名替换情况") {
+                let ipprojPath = JHSources()+"todo.txt"
                 let ipprojlist:String = try! ipprojPath.read()
                 let iparr = ipprojlist.split(separator: "\n")
                 
