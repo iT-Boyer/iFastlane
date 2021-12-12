@@ -34,7 +34,7 @@ public class CmdTools {
 
         let findresult = SwiftShell.run(bash: "find . -path ./.build -prune -o -name \"*.xcodeproj\"").stdout
         let dirArr = findresult.split(separator: "\n")
-        
+        // TODO: 做测试
         dirArr.forEach { dir in
             if !dir.hasSuffix("xcodeproj")
                 || dir.contains("Pods")
