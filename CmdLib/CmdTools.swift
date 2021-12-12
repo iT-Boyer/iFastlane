@@ -12,6 +12,7 @@ import XcodeProj
 import Regex
 import SwiftyJSON
 
+// TODO: log test
 public class CmdTools {
     //给两个数组，求：两个数组不相同的元素数组
     static public func arrDiff(arr1:[Substring], arr2:[Substring]) -> [Substring] {
@@ -34,7 +35,6 @@ public class CmdTools {
 
         let findresult = SwiftShell.run(bash: "find . -path ./.build -prune -o -name \"*.xcodeproj\"").stdout
         let dirArr = findresult.split(separator: "\n")
-        // TODO: 做测试
         dirArr.forEach { dir in
             if !dir.hasSuffix("xcodeproj")
                 || dir.contains("Pods")
