@@ -49,6 +49,15 @@ extension Fastfile
         }
     }
 
+    func branchnameLane()
+    {
+        SwiftShell.main.currentdirectory = (Path.home+"hsg/jhygpatrol").string
+        let pwd = SwiftShell.run(bash: "pwd").stdout
+        let name = gitBranch()
+        let rmeote = gitRemoteBranch()
+
+        print("\(pwd)\n name: \(name) \n \(rmeote)")
+    }
     /// 传入repo清单文件，解析判断是否在本地，然后clone到本地，切换到pri-deploy-step2分支
     /// - Parameter options: repofile.txt 的路径
     /// e: runner lane clone repo ~/Desktop/repofile.txt

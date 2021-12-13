@@ -32,6 +32,16 @@ class CmdToolsTests: QuickSpec {
             expect(["Atlantic", "Pacific"]).toNot(contain("Mississippi"))
         }
         
+        fdescribe("repo库管理：clone,pull,push") {
+            xit("push测试") {
+                let repos = try! (JHSources()+"done.txt").read().split(separator: "\n")
+                CmdTools.reposAction(repos: repos, action: "push", branch: "pri-deploy-step2")
+            }
+            fit("clone测试") {
+                let repos = try! (JHSources()+"remote.txt").read().split(separator: "\n")
+                CmdTools.reposAction(repos: repos, action: "clone", branch: "pri-deploy-step2")
+            }
+        }
         
         describe("workspac中添加项目") {
             it("通过库名清单，添加到YGPatrol的 其他 分组") {
@@ -69,7 +79,7 @@ class CmdToolsTests: QuickSpec {
             }
         }
         
-        fdescribe("检查repo目录") {
+        describe("检查repo目录") {
             var repoName:String!
             beforeEach {
                 repoName = "jhygpatrol"

@@ -14,12 +14,16 @@ import Fastlane
 class FastlaneTests: QuickSpec {
  
     override func spec() {
-        it("编译静态库到桌面目录") {
+        xit("编译静态库到桌面目录") {
             let runner = "/Users/boyer/hsg/iFastlane/Runner"
             let output = try! runAsync(runner, "lane", "buildLib").finish().stdout.read()
             print(output)
         }
         
+        it("版本控制") {
+            let branchname = gitBranch()
+            print("分支名称：\(branchname)")
+        }
 //        it("gym方法使用") {
 //            let outDir = "/Users/boyer/Desktop/libs"
 //            let projPath = "/Users/boyer/hsg/jhgsguesslikeshoppinglistcomponent/JHGuessLikesCommodityListComponent/JHGuessLikesCommodityListComponent.xcodeproj"

@@ -1,7 +1,6 @@
 jhrouting
 userentermessage
 jhadvertisement
-jhuserfunction
 JHBluetoothLibrary
 jhmessagecenterbusinessdownloadlibrary
 jhygpatrol

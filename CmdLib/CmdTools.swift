@@ -222,4 +222,45 @@ public class CmdTools {
         }
         return repoProjs
     }
+
+    // TODO: 给定清单，clone 代码
+    // 1. clone
+    // 2. pull
+    // 3. push
+    static func reposAction(repos:[Substring], action:String, branch:String){
+
+        let log = JHSources()+"error.log"
+        repos.forEach{ repo in
+            let repoPath = Path.home+"hsg"+String(repo)
+            SwiftShell.main.currentdirectory = repoPath.string
+            print("开始:\(repo) 分支：\(branch)")
+//            do{
+//                // TODO: 拼接路径
+//                //  pull / push
+//                if action == "push" || action == "pull"{
+//                    //开始更新
+//                    let out = try runAsync("git",action,"origin",branch).finish().stdout.read()
+//                    print("push结果：\(out)")
+//                }else{
+//                    // TODO: 获取git远程路径
+//                    // clone
+//                    let allLinks = (JHSources()+"all_link_path.h").string.split(separator: "\n")
+//                    for link in allLinks
+//                    {
+//                        if link.contains(repo)
+//                        {
+//                            let out = try runAsync("git",action,link).finish().finish().stdout.read()
+//                            SwiftShell.run(bash: "echo \(out) >> \(log.string)")
+//                            print("clone结果：\(out)")
+//                        }
+//                    }
+//                }
+//            }catch{
+//                let err = "\(repo)：更新失败 \(error.localizedDescription)"
+////                SwiftShell.run("echo \(err) >> \(log.string)")
+//                SwiftShell.run(bash: "echo \(err) >> \(log.string)")
+////                print("\(repo)：更新失败 \(error.localizedDescription)")
+//            }
+        }
+    }
 }
