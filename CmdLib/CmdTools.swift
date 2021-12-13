@@ -31,7 +31,8 @@ public class CmdTools {
         let repoPath = "/Users/boyer/hsg/\(repo)/"
         // 使用find命令搜索 xcode项目
         SwiftShell.main.currentdirectory = repoPath
-
+        let outputstr = try! runAsync("git","pull","origin","pri-deploy-step2").finish().stdout.read()
+        print("拉去最新源码：\(outputstr)")
         let findresult = SwiftShell.run(bash: "find . -path ./.build -prune -o -name \"*.xcodeproj\"").stdout
         let dirArr = findresult.split(separator: "\n")
         dirArr.forEach { dir in
@@ -44,7 +45,14 @@ public class CmdTools {
             
             let projfile = Path(projPath)
             print("项目路径：\(projfile.parent())")
-            let xcodeproj = try! XcodeProj(path: projfile)
+            let xcodeproj:XcodeProj!
+            do {
+                xcodeproj = try XcodeProj(path: projfile)
+            } catch {
+                print("\(projfile)项目无效")
+                return
+            }
+            
             let pbxproj = xcodeproj.pbxproj
             pbxproj.nativeTargets.forEach { target in
                 let type = target.productType
@@ -63,7 +71,8 @@ public class CmdTools {
                         let matchingLines = reg.allMatches(in: filetxt).compactMap { resul ->String? in
                             var str = resul.matchedString
 //                            str.contains("JHUrlStringManager") || str.contains("fullURL(with") || str.contains("domain(for")
-                            guard Regex("JHUrlStringManager\\.{0.1}").matches(str) else {
+                            guard Regex("JHUrlStringManager\\.{0,1}").matches(str) else {
+                                // 删除行前空格
                                 let space = NSCharacterSet.whitespaces
                                 str = str.trimmingCharacters(in: space)
                                 if str.hasPrefix("//")

@@ -69,7 +69,7 @@ class CmdToolsTests: QuickSpec {
             }
         }
         
-        describe("检查repo目录") {
+        fdescribe("检查repo目录") {
             var repoName:String!
             beforeEach {
                 repoName = "jhygpatrol"
@@ -77,7 +77,7 @@ class CmdToolsTests: QuickSpec {
             }
             
             it("打印repo目录下的所有工程项目下的target") {
-                let repoPath = "/Users/boyer/hsg/\(repoName)/"
+                let repoPath = "/Users/boyer/hsg/\(String(describing: repoName))/"
                 // 使用find命令搜索 xcode项目
                 SwiftShell.main.currentdirectory = repoPath
                 //忽略目录用法 -path ./.build -prune -o
@@ -107,12 +107,12 @@ class CmdToolsTests: QuickSpec {
                     }
                 }
             }
-            it("单库检查域名：单个库检查") {
+            xit("单库检查域名：单个库检查") {
                 CmdTools.checkproj(repo: "jhsmallspace")
             }
             
             it("批量检查域名：从清单文件中，批量排查域名替换情况") {
-                let ipprojPath = JHSources()+"todo.txt"
+                let ipprojPath = JHSources()+"abcheck.txt"
                 let ipprojlist:String = try! ipprojPath.read()
                 let iparr = ipprojlist.split(separator: "\n")
                 
