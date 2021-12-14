@@ -221,9 +221,8 @@ public class CmdTools {
         return srcfiles+headers
     }
     
-    
     /// 获取repo库中，所有的xcodeproj文件路径
-    /// - Parameter repo: 库local路径
+    /// - Parameter repo: 库local路径:~/hsg/jhygpotrol
     /// - Returns: xcodeproj文件路径集合
     public static func AllProjOf(repo:Path) -> [Path]
     {
@@ -252,6 +251,22 @@ public class CmdTools {
         return projArr
     }
 
+    /// 获取xcodeproj文件中所有的静态库target 名称数组
+    /// - Parameter proj: 库xcodeproj路径
+    /// - Returns: 静态库名称数组
+    public static func targetsOf(proj:Path)->[String]{
+
+        // 初始化pbxcodeproj
+        let xcodeproj = try! XcodeProj(path: proj)
+        let pbxproj = xcodeproj.pbxproj
+        var targets:[String]! = []
+        pbxproj.nativeTargets.forEach{target in
+            if target.productType == .staticLibrary {
+                targets.append(target.name)
+            }
+        }
+        return targets
+    }
     // TODO: 给定清单，clone 代码
     // 1. clone
     // 2. pull

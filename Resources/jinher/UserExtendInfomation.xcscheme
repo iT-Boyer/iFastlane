@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme
+   LastUpgradeVersion = "1.0"
+   version = "1.0"
+   wasCreatedForAppExtension = "YES">
+   <BuildAction
+      parallelizeBuildables = "YES"
+      buildImplicitDependencies = "NO"
+      runPostActionsOnFailure = "NO">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "81D2C6771B9E772700828120"
+               BuildableName = "libUserExtendInfomation.a"
+               BlueprintName = "UserExtendInfomation"
+               ReferencedContainer = "UserExtendMessage.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
+   </BuildAction>
+   <TestAction
+      buildConfiguration = "Debug"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      shouldUseLaunchSchemeArgsEnv = "YES">
+      <Testables>
+      </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "81D2C6771B9E772700828120"
+            BuildableName = "libUserExtendInfomation.a"
+            BlueprintName = "UserExtendInfomation"
+            ReferencedContainer = "UserExtendMessage.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+   </TestAction>
+   <ProfileAction
+      buildConfiguration = "Debug"
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      savedToolIdentifier = ""
+      useCustomWorkingDirectory = "NO"
+      debugDocumentVersioning = "YES"
+      enableTestabilityWhenProfilingTests = "No">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "81D2C6771B9E772700828120"
+            BuildableName = "libUserExtendInfomation.a"
+            BlueprintName = "UserExtendInfomation"
+            ReferencedContainer = "UserExtendMessage.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+   </ProfileAction>
+</Scheme>

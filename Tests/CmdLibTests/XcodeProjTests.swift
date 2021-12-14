@@ -33,7 +33,70 @@ class XcodeProjTests: QuickSpec {
                 workspace = try! XCWorkspace(path: workspacePath)
             }
             
-            it("添加proj到workspaces") {
+            fit("生成xcscheme") {
+                ///"container:UserExtendMessage.xcodeproj"
+                ///https://kemchenj.github.io/2018-06-03/
+//                let decoder = XcodeprojPropertyListDecoder()
+//                let plistDecoder = PropertyListDecoder()
+//                let blueprint =  try! PBXObject(from: plistDecoder)
+//                let buildRef = XCScheme.BuildableReference.init(referencedContainer: "UserExtendMessage.xcodeproj",
+//                                                                blueprint: blueprint,
+//                                                                buildableName: "libUserExtendInfomation.a",
+//                                                                blueprintName: "UserExtendInfomation")
+                
+                let projPath = Path.home + Path("hsg/userentermessage/UserExtendMessage/UserExtendMessage.xcodeproj")
+                let xcodeproj = try! XcodeProj(path: projPath)
+                let pbxproj = xcodeproj.pbxproj
+                let target = pbxproj.nativeTargets[1]
+                let uuid = target.uuid
+                let buildRef = XCScheme.BuildableReference.init(referencedContainer: projPath.lastComponent,
+                                                                blueprintIdentifier: uuid,
+                                                                buildableName: "lib\(target.name).a",
+                                                                blueprintName: target.name)
+                let entry = XCScheme.BuildAction.Entry.init(buildableReference: buildRef,
+                                                            buildFor: XCScheme.BuildAction.Entry.BuildFor.default)
+                let buildAction = XCScheme.BuildAction.init(buildActionEntries: [entry],
+                                                            preActions: [],
+                                                            postActions: [],
+                                                            parallelizeBuild: true,
+                                                            buildImplicitDependencies: false,
+                                                            runPostActionsOnFailure: false)
+
+                let testAction = XCScheme.TestAction.init(buildConfiguration: "Debug",
+                                                           macroExpansion: buildRef,
+                                                          selectedDebuggerIdentifier: "Xcode.DebuggerFoundation.Debugger.LLDB",
+                                                          selectedLauncherIdentifier: "Xcode.DebuggerFoundation.Debugger.LLDB",
+                                                          shouldUseLaunchSchemeArgsEnv: true
+                                                        )
+                let profileAction = XCScheme.ProfileAction.init(buildableProductRunnable:nil,//  XCScheme.BuildableProductRunnable?,
+                                                                buildConfiguration: "Debug",
+                                                                preActions: [],
+                                                                postActions: [],
+                                                                macroExpansion: buildRef,
+                                                                shouldUseLaunchSchemeArgsEnv: true,
+                                                                savedToolIdentifier: "",
+                                                                useCustomWorkingDirectory: false,
+                                                                debugDocumentVersioning: true,
+                                                                askForAppToLaunch: false,
+                                                                commandlineArguments: nil,
+                                                                environmentVariables: nil,
+                                                                enableTestabilityWhenProfilingTests: false)
+                let scheme = XCScheme.init(name: target.name,
+                                           lastUpgradeVersion: "1.0",
+                                           version: "1.0",
+                                           buildAction:buildAction,
+                                           testAction: testAction,
+                                           launchAction: nil,
+                                           profileAction: profileAction,
+                                           analyzeAction: nil,
+                                           archiveAction: nil,
+                                           wasCreatedForAppExtension: true)
+                
+                let schemePath = JHSources()+"\(target.name).xcscheme"
+                try! scheme.write(path: schemePath, override: true)
+            }
+            
+            xit("添加proj到workspaces") {
                 //
                 print("childen:\(workspace.data.children.count)")
                 let roots = workspace.data.children
@@ -126,7 +189,8 @@ class XcodeProjTests: QuickSpec {
                         
                         let frameworks:PBXFrameworksBuildPhase = phaseRef[1] as! PBXFrameworksBuildPhase
                         let depRef = target.dependencies
-                        
+                        let uuid = target.uuid
+                        print("本项目uuid：\(uuid)")
                         let type = target.productType
                         print("本项目类型：\(type!)")
                         print("本项目依赖了\(depRef.count)个库")
