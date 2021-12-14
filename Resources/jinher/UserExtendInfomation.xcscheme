@@ -19,7 +19,7 @@
                BlueprintIdentifier = "81D2C6771B9E772700828120"
                BuildableName = "libUserExtendInfomation.a"
                BlueprintName = "UserExtendInfomation"
-               ReferencedContainer = "UserExtendMessage.xcodeproj">
+               ReferencedContainer = "container:UserExtendMessage.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -27,7 +27,7 @@
    <TestAction
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -37,7 +37,7 @@
             BlueprintIdentifier = "81D2C6771B9E772700828120"
             BuildableName = "libUserExtendInfomation.a"
             BlueprintName = "UserExtendInfomation"
-            ReferencedContainer = "UserExtendMessage.xcodeproj">
+            ReferencedContainer = "container:UserExtendMessage.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -54,7 +54,7 @@
             BlueprintIdentifier = "81D2C6771B9E772700828120"
             BuildableName = "libUserExtendInfomation.a"
             BlueprintName = "UserExtendInfomation"
-            ReferencedContainer = "UserExtendMessage.xcodeproj">
+            ReferencedContainer = "container:UserExtendMessage.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

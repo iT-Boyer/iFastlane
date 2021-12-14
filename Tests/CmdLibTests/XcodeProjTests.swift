@@ -49,7 +49,7 @@ class XcodeProjTests: QuickSpec {
                 let pbxproj = xcodeproj.pbxproj
                 let target = pbxproj.nativeTargets[1]
                 let uuid = target.uuid
-                let buildRef = XCScheme.BuildableReference.init(referencedContainer: projPath.lastComponent,
+                let buildRef = XCScheme.BuildableReference.init(referencedContainer: "container:\(projPath.lastComponent)",
                                                                 blueprintIdentifier: uuid,
                                                                 buildableName: "lib\(target.name).a",
                                                                 blueprintName: target.name)
@@ -65,7 +65,7 @@ class XcodeProjTests: QuickSpec {
                 let testAction = XCScheme.TestAction.init(buildConfiguration: "Debug",
                                                            macroExpansion: buildRef,
                                                           selectedDebuggerIdentifier: "Xcode.DebuggerFoundation.Debugger.LLDB",
-                                                          selectedLauncherIdentifier: "Xcode.DebuggerFoundation.Debugger.LLDB",
+                                                          selectedLauncherIdentifier: "Xcode.DebuggerFoundation.Launcher.LLDB",
                                                           shouldUseLaunchSchemeArgsEnv: true
                                                         )
                 let profileAction = XCScheme.ProfileAction.init(buildableProductRunnable:nil,//  XCScheme.BuildableProductRunnable?,
@@ -92,7 +92,7 @@ class XcodeProjTests: QuickSpec {
                                            archiveAction: nil,
                                            wasCreatedForAppExtension: true)
                 
-                let schemePath = JHSources()+"\(target.name).xcscheme"
+                let schemePath = projPath+"xcshareddata/xcschemes/\(target.name).xcscheme"
                 try! scheme.write(path: schemePath, override: true)
             }
             
