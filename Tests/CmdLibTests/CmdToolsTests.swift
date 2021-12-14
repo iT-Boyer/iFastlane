@@ -32,18 +32,18 @@ class CmdToolsTests: QuickSpec {
             expect(["Atlantic", "Pacific"]).toNot(contain("Mississippi"))
         }
         
-        fdescribe("repo库管理：clone,pull,push") {
-            xit("push测试") {
+        describe("repo库管理：clone,pull,push") {
+            it("push测试") {
                 let repos = try! (JHSources()+"done.txt").read().split(separator: "\n")
                 CmdTools.reposAction(repos: repos, action: "push", branch: "pri-deploy-step2")
             }
-            fit("clone测试") {
+            it("clone测试") {
                 let repos = try! (JHSources()+"remote.txt").read().split(separator: "\n")
                 CmdTools.reposAction(repos: repos, action: "clone", branch: "pri-deploy-step2")
             }
         }
         
-        describe("workspac中添加项目") {
+        fdescribe("workspac中添加项目") {
             it("通过库名清单，添加到YGPatrol的 其他 分组") {
                 let workspacePath = Path("/Users/boyer/hsg/jhygpatrol/YGPatrol.xcworkspace")
                 let abCheckPath:Path = JHSources()+"abcheck.txt"
@@ -53,7 +53,7 @@ class CmdToolsTests: QuickSpec {
                 abChecklist.forEach { repo in
                     let arr = CmdTools.AllProjOf(repo: root().parent()+"\(repo)")
                     arr.forEach { path in
-                        CmdTools.addProjTo(workspace: workspacePath, proj: path)
+                        CmdTools.addProjTo(workspace: workspacePath, proj: path, toGroup: "ABCheck")
                     }
                 }
             }

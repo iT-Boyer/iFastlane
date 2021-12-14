@@ -111,18 +111,45 @@ public class CmdTools {
         //workspace处理
         let workspace:XCWorkspace = try! XCWorkspace(path: workspacePath)
         let roots = workspace.data.children
+
+        func fileElement()->XCWorkspaceDataElement{
+            //添加文件file
+            let location: XCWorkspaceDataElementLocationType = .absolute(proj.string)
+            let filePath = XCWorkspaceDataFileRef(location: location)
+            let file = XCWorkspaceDataElement.file(filePath)
+            return file
+        }
+        
+        func groupElement()->XCWorkspaceDataElement{
+            let groupLocation: XCWorkspaceDataElementLocationType = .absolute(JHSources().string)
+            let childrens = [fileElement()]
+            let groupData = XCWorkspaceDataGroup(location: groupLocation,
+                                             name: toGroup,
+                                             children: childrens)
+            let group = XCWorkspaceDataElement.group(groupData)
+            return group
+        }
+
+        // 判断组是否存在
+        var exist = false
         roots.forEach { element in
             if case let XCWorkspaceDataElement.group(second) = element {
                 let secondName = second.name!
                 if secondName == toGroup {
-                    print("二级：\(toGroup) 下:\(second.children.count)个")
-                    //添加文件file
-                    let location: XCWorkspaceDataElementLocationType = .absolute(proj.string)
-                    let file = XCWorkspaceDataFileRef(location: location)
-                    let fileElement = XCWorkspaceDataElement.file(file)
+                    exist = true
+                    print("二级：\(toGroup) 下:\(second.children.count)个文件")
+                    let fileElement = fileElement()
                     second.children.append(fileElement)
+                    //添加完成退出循环
+                    return
                 }
             }
+        }
+
+        if !exist {
+            //TODO: 添加组
+            let newGroup = groupElement()
+            workspace.data.children.append(newGroup)
         }
         try! workspace.write(path: workspacePath)
     }
@@ -222,7 +249,7 @@ public class CmdTools {
                 projArr.append(proj)
             }
         }
-        return repoProjs
+        return projArr
     }
 
     // TODO: 给定清单，clone 代码
