@@ -73,8 +73,7 @@ public class CmdTools {
                         let reg = Regex(".*(\"api_host|iuooo|ipFile\").*\n",options: [.ignoreCase, .anchorsMatchLines])
                         let matchingLines = reg.allMatches(in: filetxt).compactMap { resul ->String? in
                             var str = resul.matchedString
-//                            str.contains("JHUrlStringManager") || str.contains("fullURL(with") || str.contains("domain(for")
-                            guard Regex("JHUrlStringManager\\.{0,1}").matches(str) else {
+                            guard Regex("JHUrlStringManager\\.{0,1}|JHBaseDomain").matches(str) else {
                                 // 删除行前空格
                                 let space = NSCharacterSet.whitespaces
                                 str = str.trimmingCharacters(in: space)

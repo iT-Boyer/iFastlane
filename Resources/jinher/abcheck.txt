@@ -1,15 +1,1 @@
-jhlocationmsgupload
-jhnewpayment
-c6module
-jhxjsearchlibrary
-jhmessagecentershell
-goldmodule
-acrossnetengin
-jhgoldpay
-jhnativepublishcomponent
-upgradecenter
-jhgeneralwvdelegate
-jhyizhibo
-jinherccp
-jhlactivitycomponent
-publishinfo
+
