@@ -150,7 +150,14 @@ class XcodeProjTests: QuickSpec {
             beforeEach {
                 let runnerDir = Path(#file).parent().parent().parent()
                 let path = Path("\(runnerDir)/Runner.xcodeproj")
-                let xcodeproj = try! XcodeProj(path: path)
+                print("项目路径：\(path.parent())")
+                let xcodeproj:XcodeProj!
+                do {
+                    xcodeproj = try XcodeProj(path: path)
+                } catch {
+                    print("\(path)项目无效")
+                    return
+                }
                 pbxproj = xcodeproj.pbxproj
             }
             
