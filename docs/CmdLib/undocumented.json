@@ -16,44 +16,16 @@
     },
     {
       "file": "/Users/boyer/hsg/iFastlane/CmdLib/CmdTools.swift",
-      "line": 26,
-      "symbol": "CmdTools.loadProj(proj:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/boyer/hsg/iFastlane/CmdLib/CmdTools.swift",
-      "line": 54,
-      "symbol": "CmdTools.printGitUrl(arr:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/boyer/hsg/iFastlane/CmdLib/CmdTools.swift",
-      "line": 70,
-      "symbol": "CmdTools.pushGitUrl(arr:msg:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/boyer/hsg/iFastlane/CmdLib/CmdTools.swift",
-      "line": 85,
-      "symbol": "CmdTools.checkproj(repo:)",
+      "line": 300,
+      "symbol": "CmdTools.createScheme(projPath:target:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/boyer/hsg/iFastlane/CmdLib/CmdTools.swift",
-      "line": 216,
-      "symbol": "runnerPath()",
-      "symbol_kind": "source.lang.swift.decl.function.free",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/boyer/hsg/iFastlane/CmdLib/CmdTools.swift",
-      "line": 220,
-      "symbol": "iosProjectDictionary()",
-      "symbol_kind": "source.lang.swift.decl.function.free",
+      "line": 363,
+      "symbol": "CmdTools.reposAction(repos:action:branch:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     }
   ],

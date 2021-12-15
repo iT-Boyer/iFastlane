@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           Runner 1.0.0 Docs
         </a>
-         (15% documented)
+         (23% documented)
       </p>
     
       <div class="header-col--secondary">
@@ -724,9 +724,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@CM@Runner@objc(cs)Fastfile(im)buildLibLaneWithProjPath:target:"></a>
-                    <a name="//apple_ref/swift/Method/buildLibLane(projPath:target:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@CM@Runner@objc(cs)Fastfile(im)buildLibLaneWithProjPath:target:">buildLibLane(projPath:<wbr>target:<wbr>)</a>
+                    <a name="/c:@CM@Runner@objc(cs)Fastfile(im)buildLibLaneWithOptions:"></a>
+                    <a name="//apple_ref/swift/Method/buildLibLane(withOptions:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@Runner@objc(cs)Fastfile(im)buildLibLaneWithOptions:">buildLibLane(withOptions:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -734,14 +734,76 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>编译静态库，实现指定生成路径</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">buildLibLane</span><span class="p">(</span><span class="nv">projPath</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">target</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">buildLibLane</span><span class="p">(</span><span class="n">withOptions</span> <span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>projPath</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>xcodeproj文件路径</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>target</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>target名称
+runner lane buildLib projPath ..xcodeproj target libname</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@Runner@objc(cs)Fastfile(im)buildTargetsLaneWithOptions:"></a>
+                    <a name="//apple_ref/swift/Method/buildTargetsLane(withOptions:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@Runner@objc(cs)Fastfile(im)buildTargetsLaneWithOptions:">buildTargetsLane(withOptions:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>批量编译清单文件下的项目文件中的target
+list 路径
+监测到静态库的进行编译命令
+runner lane buildTargets file 清单文件</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">buildTargetsLane</span><span class="p">(</span><span class="n">withOptions</span> <span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]?)</span></code></pre>
 
                         </div>
                       </div>
@@ -761,7 +823,11 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>检查单个库中域名替换的情况</p>
+
+<ul>
+<li>用法例子：runner lane checkLib repo test</li>
+</ul>
 
                       </div>
                       <div class="declaration">
@@ -772,15 +838,134 @@
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>options</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>库名称</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@CM@Runner@objc(cs)Fastfile(im)checkAllLibsLaneWithOptions:"></a>
-                    <a name="//apple_ref/swift/Method/checkAllLibsLane(withOptions:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@CM@Runner@objc(cs)Fastfile(im)checkAllLibsLaneWithOptions:">checkAllLibsLane(withOptions:<wbr>)</a>
+                    <a name="/c:@CM@Runner@objc(cs)Fastfile(im)checkLibsLaneWithOptions:"></a>
+                    <a name="//apple_ref/swift/Method/checkLibsLane(withOptions:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@Runner@objc(cs)Fastfile(im)checkLibsLaneWithOptions:">checkLibsLane(withOptions:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>检索库清单库目录，检查域名替换的情况</p>
+
+<ul>
+<li>用法例子：runner lane checkLibs listpath ~/Desktop/checklist.txt</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">checkLibsLane</span><span class="p">(</span><span class="n">withOptions</span> <span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>options</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>库名称清单文件路径</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@Runner@objc(cs)Fastfile(im)addProjLaneWithOptions:"></a>
+                    <a name="//apple_ref/swift/Method/addProjLane(withOptions:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@Runner@objc(cs)Fastfile(im)addProjLaneWithOptions:">addProjLane(withOptions:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>通过项目库清单文件，向workspace中的分组中添加项目工程引用</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">addProjLane</span><span class="p">(</span><span class="n">withOptions</span> <span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>options</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><ul>
+<li>work: workspace路径</li>
+<li>list: 项目库清单文件</li>
+<li>group: 分组名</li>
+</ul></p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@Runner@objc(cs)Fastfile(im)ipFileLaneWithOptions:"></a>
+                    <a name="//apple_ref/swift/Method/ipFileLane(withOptions:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@Runner@objc(cs)Fastfile(im)ipFileLaneWithOptions:">ipFileLane(withOptions:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -795,9 +980,110 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">checkAllLibsLane</span><span class="p">(</span><span class="n">withOptions</span> <span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]?)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">ipFileLane</span><span class="p">(</span><span class="n">withOptions</span> <span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]?)</span></code></pre>
 
                         </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@Runner@objc(cs)Fastfile(im)ipProjLaneWithOptions:"></a>
+                    <a name="//apple_ref/swift/Method/ipProjLane(withOptions:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@Runner@objc(cs)Fastfile(im)ipProjLaneWithOptions:">ipProjLane(withOptions:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">ipProjLane</span><span class="p">(</span><span class="n">withOptions</span> <span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]?)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@Runner@objc(cs)Fastfile(im)branchnameLane"></a>
+                    <a name="//apple_ref/swift/Method/branchnameLane()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@Runner@objc(cs)Fastfile(im)branchnameLane">branchnameLane()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">branchnameLane</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@Runner@objc(cs)Fastfile(im)cloneLaneWithOptions:"></a>
+                    <a name="//apple_ref/swift/Method/cloneLane(withOptions:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@Runner@objc(cs)Fastfile(im)cloneLaneWithOptions:">cloneLane(withOptions:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>传入repo清单文件，解析判断是否在本地，然后clone到本地，切换到pri-deploy-step2分支</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">cloneLane</span><span class="p">(</span><span class="n">withOptions</span> <span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>options</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>repofile.txt 的路径
+e: runner lane clone repo ~/Desktop/repofile.txt</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -1102,60 +1388,6 @@
                     </section>
                   </div>
                 </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@CM@Runner@objc(cs)Fastfile(im)ipFileLaneWithOptions:"></a>
-                    <a name="//apple_ref/swift/Method/ipFileLane(withOptions:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@CM@Runner@objc(cs)Fastfile(im)ipFileLaneWithOptions:">ipFileLane(withOptions:<wbr>)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">ipFileLane</span><span class="p">(</span><span class="n">withOptions</span> <span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]?)</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@CM@Runner@objc(cs)Fastfile(im)ipProjLaneWithOptions:"></a>
-                    <a name="//apple_ref/swift/Method/ipProjLane(withOptions:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@CM@Runner@objc(cs)Fastfile(im)ipProjLaneWithOptions:">ipProjLane(withOptions:<wbr>)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">ipProjLane</span><span class="p">(</span><span class="n">withOptions</span> <span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]?)</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
               </ul>
             </div>
           </div>
@@ -1164,7 +1396,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2021 <a class="link" href="http://it-boyer.github.io" target="_blank" rel="external noopener">Runner</a>. All rights reserved. (Last updated: 2021-12-09)</p>
+      <p>&copy; 2021 <a class="link" href="http://it-boyer.github.io" target="_blank" rel="external noopener">Runner</a>. All rights reserved. (Last updated: 2021-12-15)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
     </section>
   </body>

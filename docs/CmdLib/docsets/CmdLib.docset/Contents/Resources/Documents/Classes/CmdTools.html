@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           CmdLib 1.0.0 Docs
         </a>
-         (11% documented)
+         (66% documented)
       </p>
     
       <div class="header-col--secondary">
@@ -68,10 +68,13 @@
             <a class="nav-group-name-link" href="../Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Functions.html#/s:6CmdLib20iosProjectDictionary7PathKit0F0V_SDySSypGtyF">iosProjectDictionary()</a>
+                <a class="nav-group-task-link" href="../Functions.html#/s:6CmdLib9JHSources7PathKit0D0VyF">JHSources()</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Functions.html#/s:6CmdLib10runnerPath0D3Kit0D0VyF">runnerPath()</a>
+                <a class="nav-group-task-link" href="../Functions.html#/s:6CmdLib9Resources7PathKit0D0VyF">Resources()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:6CmdLib4root7PathKit0D0VyF">root()</a>
               </li>
             </ul>
           </li>
@@ -128,87 +131,6 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6CmdLib0A5ToolsC8loadProj4projySS_tF"></a>
-                    <a name="//apple_ref/swift/Method/loadProj(proj:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6CmdLib0A5ToolsC8loadProj4projySS_tF">loadProj(proj:<wbr>)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">loadProj</span><span class="p">(</span><span class="nv">proj</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:6CmdLib0A5ToolsC11printGitUrl3arrySaySSG_tF"></a>
-                    <a name="//apple_ref/swift/Method/printGitUrl(arr:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6CmdLib0A5ToolsC11printGitUrl3arrySaySSG_tF">printGitUrl(arr:<wbr>)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">printGitUrl</span><span class="p">(</span><span class="nv">arr</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">])</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:6CmdLib0A5ToolsC10pushGitUrl3arr3msgySaySSG_SStF"></a>
-                    <a name="//apple_ref/swift/Method/pushGitUrl(arr:msg:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6CmdLib0A5ToolsC10pushGitUrl3arr3msgySaySSG_SStF">pushGitUrl(arr:<wbr>msg:<wbr>)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">pushGitUrl</span><span class="p">(</span><span class="nv">arr</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">],</span> <span class="nv">msg</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/s:6CmdLib0A5ToolsC9checkproj4repoySS_tFZ"></a>
                     <a name="//apple_ref/swift/Method/checkproj(repo:)" class="dashAnchor"></a>
                     <a class="token" href="#/s:6CmdLib0A5ToolsC9checkproj4repoySS_tFZ">checkproj(repo:<wbr>)</a>
@@ -219,7 +141,11 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>检查源码库目录下所有的xcodeproj文件，获取源码文件清单，匹配域名字段</p>
+
+<ul>
+<li>根据repo库名：jhygpatrol，拼接为本地路径：~/hsg/jhygpatrol</li>
+</ul>
 
                       </div>
                       <div class="declaration">
@@ -229,6 +155,95 @@
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">checkproj</span><span class="p">(</span><span class="nv">repo</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>repo</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>库名称</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6CmdLib0A5ToolsC9addProjTo9workspace4proj7toGroupy7PathKit0K0V_AJSStFZ"></a>
+                    <a name="//apple_ref/swift/Method/addProjTo(workspace:proj:toGroup:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6CmdLib0A5ToolsC9addProjTo9workspace4proj7toGroupy7PathKit0K0V_AJSStFZ">addProjTo(workspace:<wbr>proj:<wbr>toGroup:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>把项目工程添加到指定的workspace现有的分组中，分组必须已经存在。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">addProjTo</span><span class="p">(</span><span class="n">workspace</span> <span class="nv">workspacePath</span><span class="p">:</span> <span class="kt">Path</span><span class="p">,</span> <span class="nv">proj</span><span class="p">:</span> <span class="kt">Path</span><span class="p">,</span> <span class="nv">toGroup</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"其他"</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>workspacePath</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>目标workspace路径</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>proj</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>要添加的proj 文件路径</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>toGroup</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>要添加group名</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -295,6 +310,160 @@
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6CmdLib0A5ToolsC9AllProjOf4repoSay7PathKit0H0VGAH_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/AllProjOf(repo:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6CmdLib0A5ToolsC9AllProjOf4repoSay7PathKit0H0VGAH_tFZ">AllProjOf(repo:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>获取repo库中，所有的xcodeproj文件路径</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="kt">AllProjOf</span><span class="p">(</span><span class="nv">repo</span><span class="p">:</span> <span class="kt">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Path</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>repo</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>库local路径:~/hsg/jhygpotrol</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>xcodeproj文件路径集合</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6CmdLib0A5ToolsC9targetsOf4projSay9XcodeProj9PBXTargetCG7PathKit0J0V_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/targetsOf(proj:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6CmdLib0A5ToolsC9targetsOf4projSay9XcodeProj9PBXTargetCG7PathKit0J0V_tFZ">targetsOf(proj:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>获取xcodeproj文件中所有的静态库target 名称数组</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">targetsOf</span><span class="p">(</span><span class="nv">proj</span><span class="p">:</span> <span class="kt">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">PBXTarget</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>proj</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>库xcodeproj路径</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>静态库名称数组</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6CmdLib0A5ToolsC12createScheme8projPath6targety0G3Kit0G0V_9XcodeProj15PBXNativeTargetCtFZ"></a>
+                    <a name="//apple_ref/swift/Method/createScheme(projPath:target:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6CmdLib0A5ToolsC12createScheme8projPath6targety0G3Kit0G0V_9XcodeProj15PBXNativeTargetCtFZ">createScheme(projPath:<wbr>target:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">createScheme</span><span class="p">(</span><span class="nv">projPath</span><span class="p">:</span> <span class="kt">Path</span><span class="p">,</span> <span class="nv">target</span><span class="p">:</span> <span class="kt">PBXNativeTarget</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6CmdLib0A5ToolsC11reposAction0D06action6branchySaySsG_S2StFZ"></a>
+                    <a name="//apple_ref/swift/Method/reposAction(repos:action:branch:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6CmdLib0A5ToolsC11reposAction0D06action6branchySaySsG_S2StFZ">reposAction(repos:<wbr>action:<wbr>branch:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">reposAction</span><span class="p">(</span><span class="nv">repos</span><span class="p">:</span> <span class="p">[</span><span class="kt">Substring</span><span class="p">],</span> <span class="nv">action</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">branch</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
           </div>
@@ -303,7 +472,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2021 <a class="link" href="http://it-boyer.github.io" target="_blank" rel="external noopener">it-boyer</a>. All rights reserved. (Last updated: 2021-12-09)</p>
+      <p>&copy; 2021 <a class="link" href="http://it-boyer.github.io" target="_blank" rel="external noopener">it-boyer</a>. All rights reserved. (Last updated: 2021-12-15)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
     </section>
   </body>

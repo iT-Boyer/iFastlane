@@ -23,7 +23,7 @@
     },
     {
       "file": "/Users/boyer/hsg/iFastlane/swift/Fastfile.swift",
-      "line": 8,
+      "line": 9,
       "symbol": "Fastfile",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
@@ -100,13 +100,6 @@
     },
     {
       "file": "/Users/boyer/hsg/iFastlane/swift/Fastfile.swift",
-      "line": 14,
-      "symbol": "Fastfile",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/boyer/hsg/iFastlane/swift/Fastfile.swift",
       "line": 17,
       "symbol": "Fastfile.iossdk",
       "symbol_kind": "source.lang.swift.decl.var.instance",
@@ -159,6 +152,13 @@
       "line": 24,
       "symbol": "Fastfile.ipaPath",
       "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/Fastfile.swift",
+      "line": 26,
+      "symbol": "Fastfile",
+      "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
@@ -281,23 +281,58 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/Lib/JinheLib.swift",
-      "line": 18,
-      "symbol": "Fastfile.buildLibLane(projPath:target:)",
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/Lib/ipFile.swift",
+      "line": 13,
+      "symbol": "Fastfile.ipFileLane(withOptions:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/Lib/JinheLib.swift",
-      "line": 47,
-      "symbol": "Fastfile.checkLibLane(withOptions:)",
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/Lib/ipFile.swift",
+      "line": 33,
+      "symbol": "Fastfile.ipProjLane(withOptions:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/Lib/JinheLib.swift",
-      "line": 56,
-      "symbol": "Fastfile.checkAllLibsLane(withOptions:)",
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/Lib/ipFile.swift",
+      "line": 52,
+      "symbol": "Fastfile.branchnameLane()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/Lib/ipFile.swift",
+      "line": 146,
+      "symbol": "ipFile",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/Lib/ipFile.swift",
+      "line": 150,
+      "symbol": "ipFile.ipfilePath",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/Lib/ipFile.swift",
+      "line": 151,
+      "symbol": "ipFile.iuooooPath",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/Lib/ipFile.swift",
+      "line": 156,
+      "symbol": "ipFile.hostList(keyword:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/Lib/ipFile.swift",
+      "line": 186,
+      "symbol": "ipFile.loadJsonData(path:proj:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -389,69 +424,6 @@
       "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/swift-sh/BundleMe.swift",
       "line": 116,
       "symbol": "Bundle.bundleMe()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/swift-sh/ipFile.swift",
-      "line": 12,
-      "symbol": "Fastfile.ipFileLane(withOptions:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/swift-sh/ipFile.swift",
-      "line": 32,
-      "symbol": "Fastfile.ipProjLane(withOptions:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/swift-sh/ipFile.swift",
-      "line": 55,
-      "symbol": "ipFile",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/swift-sh/ipFile.swift",
-      "line": 59,
-      "symbol": "ipFile.ipfilePath",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/swift-sh/ipFile.swift",
-      "line": 60,
-      "symbol": "ipFile.iuooooPath",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/swift-sh/ipFile.swift",
-      "line": 65,
-      "symbol": "ipFile.hostList(keyword:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/swift-sh/ipFile.swift",
-      "line": 77,
-      "symbol": "ipFile.hostKey(host:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/swift-sh/ipFile.swift",
-      "line": 90,
-      "symbol": "ipFile.fetchSource()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/boyer/hsg/iFastlane/swift/iTBoyer/swift-sh/ipFile.swift",
-      "line": 150,
-      "symbol": "ipFile.loadJsonData(path:proj:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     }
