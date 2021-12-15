@@ -43,7 +43,7 @@ class CmdToolsTests: QuickSpec {
             }
         }
         
-        fdescribe("workspac中添加项目") {
+        describe("workspac中添加项目") {
             it("通过库名清单，添加到YGPatrol的 其他 分组") {
                 let workspacePath = Path("/Users/boyer/hsg/jhygpatrol/YGPatrol.xcworkspace")
                 let abCheckPath:Path = JHSources()+"abcheck.txt"
@@ -54,6 +54,24 @@ class CmdToolsTests: QuickSpec {
                     let arr = CmdTools.AllProjOf(repo: root().parent()+"\(repo)")
                     arr.forEach { path in
                         CmdTools.addProjTo(workspace: workspacePath, proj: path, toGroup: "ABCheck")
+                    }
+                }
+            }
+        }
+        fdescribe("生成xcscheme") {
+            it("批量编译proj项目中的target") {
+                let abCheckPath:Path = JHSources()+"done.txt"
+                let abCheck:String = try! abCheckPath.read()
+                let abChecklist = abCheck.split(separator: "\n")
+                abChecklist.forEach { repo in
+                    let arr = CmdTools.AllProjOf(repo: root().parent()+"\(repo)")
+                    
+                    arr.forEach { path in
+                        let targets = CmdTools.targetsOf(proj: path)
+                        targets.forEach { target in
+                            //
+                            CmdTools.createScheme(projPath: path, target: target)
+                        }
                     }
                 }
             }

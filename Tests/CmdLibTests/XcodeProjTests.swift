@@ -25,7 +25,15 @@ import Foundation
 class XcodeProjTests: QuickSpec {
     override func spec() {
         
-        fdescribe("workspace使用") {
+        describe("Path 创建folder") {
+            it("创建folder目录") {
+                let test = Path.home+"Desktop/test/test/test.txt"
+                try! test.makeIterator()
+                try! test.write("other")
+            }
+        }
+        
+        describe("workspace使用") {
             var workspace:XCWorkspace!
             var workspacePath:Path!
             beforeEach {
@@ -33,7 +41,7 @@ class XcodeProjTests: QuickSpec {
                 workspace = try! XCWorkspace(path: workspacePath)
             }
             
-            fit("生成xcscheme") {
+            it("生成xcscheme") {
                 ///"container:UserExtendMessage.xcodeproj"
                 ///https://kemchenj.github.io/2018-06-03/
 //                let decoder = XcodeprojPropertyListDecoder()
@@ -96,7 +104,7 @@ class XcodeProjTests: QuickSpec {
                 try! scheme.write(path: schemePath, override: true)
             }
             
-            xit("添加proj到workspaces") {
+            it("添加proj到workspaces") {
                 //
                 print("childen:\(workspace.data.children.count)")
                 let roots = workspace.data.children
@@ -137,7 +145,7 @@ class XcodeProjTests: QuickSpec {
             }
         }
         
-        describe("学习使用XcodeProj工具") {
+        fdescribe("学习使用XcodeProj工具") {
             var pbxproj:PBXProj!
             beforeEach {
                 let runnerDir = Path(#file).parent().parent().parent()
@@ -172,44 +180,58 @@ class XcodeProjTests: QuickSpec {
                 }
             }
             
-            it("打印target相关信息") {
+            fit("打印target相关信息") {
                 pbxproj.nativeTargets.forEach{ target in
                     if target.name == "Runner" {
                         print("target名称："+target.name)
 //                        pbxproj.buildFiles.forEach { print("\(type(of: $0.file!)) \(String(describing: $0.file!.path))") }
-                        
-                        let phaseRef = target.buildPhases
-                        var sources:PBXSourcesBuildPhase!
-                        phaseRef.forEach { phase in
-                            if phase is PBXSourcesBuildPhase {
-                                sources = phase as? PBXSourcesBuildPhase
-                                return
-                            }
-                        }
-                        
-                        let frameworks:PBXFrameworksBuildPhase = phaseRef[1] as! PBXFrameworksBuildPhase
-                        let depRef = target.dependencies
+                        //Target属性
                         let uuid = target.uuid
                         print("本项目uuid：\(uuid)")
                         let type = target.productType
                         print("本项目类型：\(type!)")
-                        print("本项目依赖了\(depRef.count)个库")
-                        let num = sources.files?.count
-                        print("本项目包含\(num!)个源文件")
-                        //解析源码文件清单
-                        let pbfile:PBXBuildFile = sources.files![0]
-                        let element:PBXFileElement = pbfile.file!
-                        let filename = element.path!
-                        let sourceTree:PBXSourceTree = element.sourceTree!
-                        print("文件类型：\(String(describing: element))")
-                        print("文件名称：\(String(describing: filename))")
                         
-                        let group:PBXFileElement = element.parent!
-                        print("\(filename)的group目录：\(String(describing: group.path!))")
-//                        sources.files?.forEach({ thefile in
-//                            print("文件类型：\(thefile.file)")
-//                            print("文件路径：\(thefile.file?.name)")
-//                        })
+                        /// buildRules 源码属性 依赖
+                        let phaseRef = target.buildPhases
+                        let depRef = target.dependencies
+                        print("本项目依赖了\(depRef.count)个库")
+                        
+                        var sources:PBXSourcesBuildPhase! //源码
+                        var frameworks:PBXFrameworksBuildPhase! //依赖
+                        var resources:PBXResourcesBuildPhase!
+                        phaseRef.forEach { phase in
+                            switch phase {
+                            case is PBXFrameworksBuildPhase:
+                                frameworks = phase as? PBXFrameworksBuildPhase
+                            case is PBXSourcesBuildPhase: //解析源码文件清单
+                                sources = phase as? PBXSourcesBuildPhase
+                                let num = sources.files?.count
+                                print("本项目包含\(num!)个源文件")
+                                let pbfile:PBXBuildFile = sources.files![0]
+                                let element:PBXFileElement = pbfile.file!
+                                let filename = element.path!
+//                                let group:PBXFileElement = element.parent!
+//                                let sourceTree:PBXSourceTree = element.sourceTree!
+//                                print("文件类型：\(String(describing: element))")
+                                print("文件名称：\(String(describing: filename))")
+//                                print("\(filename)的group目录：\(String(describing: group.path!))")
+                            case is PBXResourcesBuildPhase: //解析资源文件清单
+                                resources = phase as? PBXResourcesBuildPhase
+                                let num = resources.files?.count
+                                print("本项目包含\(num!)个源文件")
+                                resources.files?.forEach { buildfile in
+                                    let element:PBXFileElement = buildfile.file!
+                                    let filename = element.path!
+//                                    let group:PBXFileElement = element.parent!
+//                                    let sourceTree:PBXSourceTree = element.sourceTree!
+//                                    print("文件类型：\(String(describing: element))")
+                                    print("文件名称：\(String(describing: filename))")
+//                                    print("\(filename)的group目录：\(String(describing: group.path!))")
+                                }
+                            default:
+                                print("")
+                            }
+                        }
                     }
                     
                 }

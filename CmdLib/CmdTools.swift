@@ -163,15 +163,34 @@ public class CmdTools {
         var srcfiles:[Path] = []
         //头文件+宏文件
         var headers:[Path] = []
+        //info.plist文件
+        var infos:[Path] = []
         //获取源文件+头文件
         var sources:PBXSourcesBuildPhase!
+        var resources:PBXResourcesBuildPhase!
         target.buildPhases.forEach { phase in
-            if phase is PBXSourcesBuildPhase {
+            switch phase {
+            case is PBXSourcesBuildPhase:
                 sources = phase as? PBXSourcesBuildPhase
-                return
+            case is PBXResourcesBuildPhase:
+                resources = phase as? PBXResourcesBuildPhase
+            default:
+                print("default")
             }
         }
         
+        infos = resources.files!.compactMap{ buildFile in
+            if buildFile.file == nil {
+                return nil
+            }
+            let element:PBXFileElement = buildFile.file!
+            let filePath:Path = try! element.fullPath(sourceRoot: srcPath)!
+            let ext = filePath.extension
+            if (ext == "plist"){
+                return filePath
+            }
+            return nil
+        }
         srcfiles = sources.files!.compactMap{ pbfile in
             if pbfile.file == nil {
                 return nil
@@ -217,8 +236,8 @@ public class CmdTools {
             }
         }
         
-        print("源文件：\(srcfiles.count),头/宏文件：\(headers.count)")
-        return srcfiles+headers
+        print("源文件：\(srcfiles.count),头/宏文件：\(headers.count),info.plist文件：\(infos.count)")
+        return srcfiles+headers+infos
     }
     
     /// 获取repo库中，所有的xcodeproj文件路径
@@ -226,6 +245,10 @@ public class CmdTools {
     /// - Returns: xcodeproj文件路径集合
     public static func AllProjOf(repo:Path) -> [Path]
     {
+        if !repo.exists {
+            print("\(repo)文件不存在")
+            return []
+        }
         let repoProjs = try! repo.recursiveChildren()
         //错误：Generic parameter 'ElementOfResult' could not be inferred
 //        repoProjs.compactMap{ proj in
@@ -254,25 +277,79 @@ public class CmdTools {
     /// 获取xcodeproj文件中所有的静态库target 名称数组
     /// - Parameter proj: 库xcodeproj路径
     /// - Returns: 静态库名称数组
-    public static func targetsOf(proj:Path)->[String]{
+    public static func targetsOf(proj:Path)->[PBXNativeTarget]{
 
         // 初始化pbxcodeproj
         let xcodeproj = try! XcodeProj(path: proj)
         let pbxproj = xcodeproj.pbxproj
-        var targets:[String]! = []
-        pbxproj.nativeTargets.forEach{target in
+        let staticLibs = pbxproj.nativeTargets.compactMap{ target->PBXNativeTarget? in
             if target.productType == .staticLibrary {
-                targets.append(target.name)
+                return target
             }
+            return nil
         }
-        return targets
+        return staticLibs
     }
+    public static func createScheme(projPath:Path,target:PBXNativeTarget){
+        let uuid = target.uuid
+        //
+        let schemeDir = projPath+"xcshareddata/xcschemes"
+        let schemePath = schemeDir+"\(target.name).xcscheme"
+        if schemePath.exists{
+            print("\(target.name).scheme已存在,不需要新建")
+            return
+        }
+        SwiftShell.run(bash: "mkdir -p \(schemeDir.string)")
+        let buildRef = XCScheme.BuildableReference.init(referencedContainer: "container:\(projPath.lastComponent)",
+                                                        blueprintIdentifier: uuid,
+                                                        buildableName: "lib\(target.name).a",
+                                                        blueprintName: target.name)
+        let entry = XCScheme.BuildAction.Entry.init(buildableReference: buildRef,
+                                                    buildFor: XCScheme.BuildAction.Entry.BuildFor.default)
+        let buildAction = XCScheme.BuildAction.init(buildActionEntries: [entry],
+                                                    preActions: [],
+                                                    postActions: [],
+                                                    parallelizeBuild: true,
+                                                    buildImplicitDependencies: false,
+                                                    runPostActionsOnFailure: false)
+
+        let testAction = XCScheme.TestAction.init(buildConfiguration: "Debug",
+                                                   macroExpansion: buildRef,
+                                                  selectedDebuggerIdentifier: "Xcode.DebuggerFoundation.Debugger.LLDB",
+                                                  selectedLauncherIdentifier: "Xcode.DebuggerFoundation.Launcher.LLDB",
+                                                  shouldUseLaunchSchemeArgsEnv: true
+                                                )
+        let profileAction = XCScheme.ProfileAction.init(buildableProductRunnable:nil,//  XCScheme.BuildableProductRunnable?,
+                                                        buildConfiguration: "Debug",
+                                                        preActions: [],
+                                                        postActions: [],
+                                                        macroExpansion: buildRef,
+                                                        shouldUseLaunchSchemeArgsEnv: true,
+                                                        savedToolIdentifier: "",
+                                                        useCustomWorkingDirectory: false,
+                                                        debugDocumentVersioning: true,
+                                                        askForAppToLaunch: false,
+                                                        commandlineArguments: nil,
+                                                        environmentVariables: nil,
+                                                        enableTestabilityWhenProfilingTests: false)
+        let scheme = XCScheme.init(name: target.name,
+                                   lastUpgradeVersion: "1.0",
+                                   version: "1.0",
+                                   buildAction:buildAction,
+                                   testAction: testAction,
+                                   launchAction: nil,
+                                   profileAction: profileAction,
+                                   analyzeAction: nil,
+                                   archiveAction: nil,
+                                   wasCreatedForAppExtension: true)
+        try! scheme.write(path: schemePath, override: true)
+    }
+    
     // TODO: 给定清单，clone 代码
     // 1. clone
     // 2. pull
     // 3. push
     static func reposAction(repos:[Substring], action:String, branch:String){
-
         let log = JHSources()+"error.log"
         repos.forEach{ repo in
             print("开始:\(repo) 分支：\(branch)")
