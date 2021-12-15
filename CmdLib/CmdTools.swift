@@ -371,7 +371,7 @@ public class CmdTools {
         try! scheme.write(path: schemePath, override: true)
     }
     
-    // TODO: 给定清单，clone 代码
+    // DONE: 给定清单，clone 代码
     // 1. clone
     // 2. pull
     // 3. push
@@ -386,7 +386,7 @@ public class CmdTools {
         repos.forEach{ repo in
             print("开始:\(repo) 分支：\(branch)")
             do{
-                // TODO: 拼接路径
+                // DONE: 拼接路径
                 //  pull / push
                 if action == "push" || action == "pull"{
                     //开始更新
@@ -395,7 +395,7 @@ public class CmdTools {
                     let out = try runAsync("git",action,"origin",branch).finish().stdout.read()
                     print("\(action)结果：\(out)")
                 }else{
-                    // TODO: 获取git远程路径
+                    // DONE: 获取git远程路径
                     // clone
                     let allLinks = try! (JHSources()+"all_link_path.h").read().split(separator: "\n")
                     SwiftShell.main.currentdirectory = (Path.home+"hsg").string
