@@ -368,7 +368,13 @@ public class CmdTools {
     // 1. clone
     // 2. pull
     // 3. push
-    static func reposAction(repos:[Substring], action:String, branch:String){
+    
+    /// 下载，更新，push 库
+    /// - Parameters:
+    ///   - repos: 批量处理的库名清单文件/存储在hsg/目录下
+    ///   - action: 支持clone pull push 三种命令
+    ///   - branch: 指定分支名
+    public static func reposAction(repos:[Substring], action:String, branch:String){
         let log = JHSources()+"error.log"
         repos.forEach{ repo in
             print("开始:\(repo) 分支：\(branch)")
@@ -380,7 +386,7 @@ public class CmdTools {
                     let repoPath = Path.home+"hsg"+String(repo)
                     SwiftShell.main.currentdirectory = repoPath.string
                     let out = try runAsync("git",action,"origin",branch).finish().stdout.read()
-                    print("push结果：\(out)")
+                    print("\(action)结果：\(out)")
                 }else{
                     // TODO: 获取git远程路径
                     // clone

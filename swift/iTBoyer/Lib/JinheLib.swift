@@ -45,9 +45,9 @@ extension Fastfile
     }
 
     /// 批量编译清单文件下的项目文件中的target
-    /// list 路径
-    /// 监测到静态库的进行编译命令
-    /// runner lane buildTargets file 清单文件
+    /// - Parameters:
+    ///    - file: 路径 abcheck.txt
+    ///- 命令： runner lane buildTargets file 清单文件
     func buildTargetsLane(withOptions options: [String : String]?)
     {
         if let value = options?["file"], value.count > 0
@@ -55,21 +55,36 @@ extension Fastfile
             let repolist = try! Path("\(value)").read().split(separator: "\n")
             repolist.forEach{repo in
                 let repoPath = root().parent()+String(repo)
-                if repoPath.exists{
-                    let projArr = CmdTools.AllProjOf(repo: repoPath)
-                    // print("projArr: \(projArr)")
-                    projArr.forEach{projPath in
-                        let targets = CmdTools.targetsOf(proj: projPath)
-                        targets.forEach{target in
-                            if target.productType == .staticLibrary {
-                                CmdTools.createScheme(projPath: projPath, target: target)
-                                buildLibLane(withOptions: ["projPath":projPath.string,"target":target.name])
-                            }
+                buildRepoLane(withOptions: ["path":repoPath.string])
+            }
+        }
+    }
+    /// 批量编译清单文件下的项目文件中的target
+    /// - Parameters:
+    ///     - path: 路径 hsg/jhygpatrol/
+    /// - 命令：runner lane buildRepo path repopath
+    func buildRepoLane(withOptions options: [String : String]?)
+    {
+        if let value = options?["path"], value.count > 0
+        {
+            let repoPath = Path("\(value)")
+            if repoPath.exists{
+                //更新代码
+                let reponame = repoPath.lastComponent
+                CmdTools.reposAction(repos: reponame.split(separator: ";"), action: "pull", branch: "pri-deploy-step2")
+                let projArr = CmdTools.AllProjOf(repo: repoPath)
+                // print("projArr: \(projArr)")
+                projArr.forEach{projPath in
+                    let targets = CmdTools.targetsOf(proj: projPath)
+                    targets.forEach{target in
+                        if target.productType == .staticLibrary {
+                            CmdTools.createScheme(projPath: projPath, target: target)
+                            buildLibLane(withOptions: ["projPath":projPath.string,"target":target.name])
                         }
                     }
-                }else{
-                    print("不存在的目录: \(repoPath)")
                 }
+            }else{
+                print("不存在的目录: \(repoPath)")
             }
         }
     }
