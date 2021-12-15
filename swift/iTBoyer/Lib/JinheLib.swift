@@ -61,7 +61,10 @@ extension Fastfile
                     projArr.forEach{projPath in
                         let targets = CmdTools.targetsOf(proj: projPath)
                         targets.forEach{target in
-                            buildLibLane(withOptions: ["projPath":projPath.string,"target":target.name])
+                            if target.productType == .staticLibrary {
+                                CmdTools.createScheme(projPath: projPath, target: target)
+                                buildLibLane(withOptions: ["projPath":projPath.string,"target":target.name])
+                            }
                         }
                     }
                 }else{

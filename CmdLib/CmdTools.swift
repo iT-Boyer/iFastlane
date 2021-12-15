@@ -284,7 +284,7 @@ public class CmdTools {
     /// 获取xcodeproj文件中所有的静态库target 名称数组
     /// - Parameter proj: 库xcodeproj路径
     /// - Returns: 静态库名称数组
-    public static func targetsOf(proj:Path)->[PBXTarget]{
+    public static func targetsOf(proj:Path)->[PBXNativeTarget]{
 
         print("项目路径：\(proj.parent())")
         let xcodeproj:XcodeProj!
