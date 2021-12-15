@@ -9,14 +9,7 @@
     },
     {
       "file": "/Users/boyer/hsg/iFastlane/CmdLib/CmdTools.swift",
-      "line": 18,
-      "symbol": "CmdTools.arrDiff(arr1:arr2:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/boyer/hsg/iFastlane/CmdLib/CmdTools.swift",
-      "line": 308,
+      "line": 316,
       "symbol": "CmdTools.createScheme(projPath:target:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"

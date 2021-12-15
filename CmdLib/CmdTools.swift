@@ -15,6 +15,12 @@ import SwiftyJSON
 // MARK: CmdTools文件处理工具
 public class CmdTools {
     //给两个数组，求：两个数组不相同的元素数组
+    /// 求两个数组的差集
+    /// - Parameter
+    ///   - arr1: [一个数组]
+    ///   - arr2: [一个数组]
+    ///   - returns: [返回差集]
+    ///
     static public func arrDiff(arr1:[Substring], arr2:[Substring]) -> [Substring] {
         //转为set集合类型
         let set1 = Set(arr1)
@@ -24,8 +30,9 @@ public class CmdTools {
     }
     
     /// 检查源码库目录下所有的xcodeproj文件，获取源码文件清单，匹配域名字段
-    /// - Parameter repo: 库名称
-    /// - 根据repo库名：jhygpatrol，拼接为本地路径：~/hsg/jhygpatrol
+    /// - Parameter
+    ///   - repo: 库名称
+    ///   - 根据repo库名：jhygpatrol，拼接为本地路径：~/hsg/jhygpatrol
     static public func checkproj(repo:String)
     {
         //拼接路径
@@ -248,7 +255,8 @@ public class CmdTools {
     }
     
     /// 获取repo库中，所有的xcodeproj文件路径
-    /// - Parameter repo: 库local路径:~/hsg/jhygpotrol
+    /// - Parameter
+    /// - repo: 库local路径:~/hsg/jhygpotrol
     /// - Returns: xcodeproj文件路径集合
     public static func AllProjOf(repo:Path) -> [Path]
     {
