@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AEXMLElement Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/AEXMLElement" class="dashAnchor"></a>
+    <a title="AEXMLElement Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (98% documented)</p>
+        <div class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </div>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" alt=""/>
+        AEXMLElement Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AEXMLDocument.html">AEXMLDocument</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AEXMLElement.html">AEXMLElement</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/AEXMLError.html">AEXMLError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/String.html">String</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/AEXMLOptions.html">AEXMLOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AEXMLOptions/DocumentHeader.html">– DocumentHeader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AEXMLOptions/ParserSettings.html">– ParserSettings</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>AEXMLElement</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">AEXMLElement</span></code></pre>
+
+                </div>
+              </div>
+            <p>This is base class for holding XML structure.</p>
+
+<p>You can access its structure by using subscript like this: <code>element[&quot;foo&quot;][&quot;bar&quot;]</code> which would
+return <code>&lt;bar&gt;&lt;/bar&gt;</code> element from <code>&lt;element&gt;&lt;foo&gt;&lt;bar&gt;&lt;/bar&gt;&lt;/foo&gt;&lt;/element&gt;</code> XML as an <code>AEXMLElement</code> object.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Properties"></a>
+                <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Properties"></a>
+                  <h3 class="section-name"><span>Properties</span>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML12AEXMLElementC6parentACSgvp"></a>
+                    <a name="//apple_ref/swift/Property/parent" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML12AEXMLElementC6parentACSgvp">parent</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Every <code>AEXMLElement</code> should have its parent element instead of <code><a href="../Classes/AEXMLDocument.html">AEXMLDocument</a></code> which parent is <code>nil</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">internal(set)</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">parent</span><span class="p">:</span> <span class="kt">AEXMLElement</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML12AEXMLElementC8childrenSayACGvp"></a>
+                    <a name="//apple_ref/swift/Property/children" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML12AEXMLElementC8childrenSayACGvp">children</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Child XML elements.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">internal(set)</span> <span class="k">var</span> <span class="nv">children</span><span class="p">:</span> <span class="p">[</span><span class="kt">AEXMLElement</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML12AEXMLElementC4nameSSvp"></a>
+                    <a name="//apple_ref/swift/Property/name" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML12AEXMLElementC4nameSSvp">name</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>XML Element name.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML12AEXMLElementC5valueSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/value" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML12AEXMLElementC5valueSSSgvp">value</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>XML Element value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML12AEXMLElementC10attributesSDyS2SGvp"></a>
+                    <a name="//apple_ref/swift/Property/attributes" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML12AEXMLElementC10attributesSDyS2SGvp">attributes</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>XML Element attributes.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">attributes</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML12AEXMLElementC5errorAA10AEXMLErrorOSgvp"></a>
+                    <a name="//apple_ref/swift/Property/error" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML12AEXMLElementC5errorAA10AEXMLErrorOSgvp">error</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Error value (<code>nil</code> if there is no error).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Enums/AEXMLError.html">AEXMLError</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML12AEXMLElementC6stringSSvp"></a>
+                    <a name="//apple_ref/swift/Property/string" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML12AEXMLElementC6stringSSvp">string</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>String representation of <code><a href="../Classes/AEXMLElement.html#/s:5AEXML12AEXMLElementC5valueSSSgvp">value</a></code> property (if <code><a href="../Classes/AEXMLElement.html#/s:5AEXML12AEXMLElementC5valueSSSgvp">value</a></code> is <code>nil</code> this is empty String).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">string</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML12AEXMLElementC4boolSbSgvp"></a>
+                    <a name="//apple_ref/swift/Property/bool" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML12AEXMLElementC4boolSbSgvp">bool</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Boolean representation of <code><a href="../Classes/AEXMLElement.html#/s:5AEXML12AEXMLElementC5valueSSSgvp">value</a></code> property (<code>nil</code> if <code><a href="../Classes/AEXMLElement.html#/s:5AEXML12AEXMLElementC5valueSSSgvp">value</a></code> can&rsquo;t be represented as Bool).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">bool</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML12AEXMLElementC3intSiSgvp"></a>
+                    <a name="//apple_ref/swift/Property/int" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML12AEXMLElementC3intSiSgvp">int</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Integer representation of <code><a href="../Classes/AEXMLElement.html#/s:5AEXML12AEXMLElementC5valueSSSgvp">value</a></code> property (<code>nil</code> if <code><a href="../Classes/AEXMLElement.html#/s:5AEXML12AEXMLElementC5valueSSSgvp">value</a></code> can&rsquo;t be represented as Integer).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">int</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML12AEXMLElementC6doubleSdSgvp"></a>
+                    <a name="//apple_ref/swift/Property/double" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML12AEXMLElementC6doubleSdSgvp">double</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Double representation of <code><a href="../Classes/AEXMLElement.html#/s:5AEXML12AEXMLElementC5valueSSSgvp">value</a></code> property (<code>nil</code> if <code><a href="../Classes/AEXMLElement.html#/s:5AEXML12AEXMLElementC5valueSSSgvp">value</a></code> can&rsquo;t be represented as Double).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">double</span><span class="p">:</span> <span class="kt">Double</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Init"></a>
+                <a name="//apple_ref/swift/Section/Init" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Init"></a>
+                  <h3 class="section-name"><span>Init</span>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML12AEXMLElementC4name5value10attributesACSS_SSSgSDyS2SGtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(name:value:attributes:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML12AEXMLElementC4name5value10attributesACSS_SSSgSDyS2SGtcfc">init(name:<wbr>value:<wbr>attributes:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Designated initializer - all parameters are optional.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">attributes</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[:])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>XML element name.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>value</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>XML element value (defaults to <code>nil</code>).</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>attributes</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>XML element attributes (defaults to empty dictionary).</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An initialized <code>AEXMLElement</code> object.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/XML%20Read"></a>
+                <a name="//apple_ref/swift/Section/XML Read" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/XML%20Read"></a>
+                  <h3 class="section-name"><span>XML Read</span>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML12AEXMLElementCyACSScip"></a>
+                    <a name="//apple_ref/swift/Method/subscript(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML12AEXMLElementCyACSScip">subscript(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The first element with given name <strong>(Empty element with error if not exists)</strong>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="nf">subscript</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AEXMLElement</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML12AEXMLElementC3allSayACGSgvp"></a>
+                    <a name="//apple_ref/swift/Property/all" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML12AEXMLElementC3allSayACGSgvp">all</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns all of the elements with equal name as <code>self</code> <strong>(nil if not exists)</strong>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">all</span><span class="p">:</span> <span class="p">[</span><span class="kt">AEXMLElement</span><span class="p">]?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML12AEXMLElementC5firstACSgvp"></a>
+                    <a name="//apple_ref/swift/Property/first" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML12AEXMLElementC5firstACSgvp">first</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the first element with equal name as <code>self</code> <strong>(nil if not exists)</strong>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">first</span><span class="p">:</span> <span class="kt">AEXMLElement</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML12AEXMLElementC4lastACSgvp"></a>
+                    <a name="//apple_ref/swift/Property/last" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML12AEXMLElementC4lastACSgvp">last</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the last element with equal name as <code>self</code> <strong>(nil if not exists)</strong>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">last</span><span class="p">:</span> <span class="kt">AEXMLElement</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML12AEXMLElementC5countSivp"></a>
+                    <a name="//apple_ref/swift/Property/count" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML12AEXMLElementC5countSivp">count</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns number of all elements with equal name as <code>self</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML12AEXMLElementC3all9withValueSayACGSgSS_tF"></a>
+                    <a name="//apple_ref/swift/Method/all(withValue:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML12AEXMLElementC3all9withValueSayACGSgSS_tF">all(withValue:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns all elements with given value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">all</span><span class="p">(</span><span class="n">withValue</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">AEXMLElement</span><span class="p">]?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>value</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>XML element value.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Optional Array of found XML elements.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML12AEXMLElementC3all23containingAttributeKeysSayACGSgSaySSG_tF"></a>
+                    <a name="//apple_ref/swift/Method/all(containingAttributeKeys:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML12AEXMLElementC3all23containingAttributeKeysSayACGSgSaySSG_tF">all(containingAttributeKeys:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns all elements containing given attributes.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">all</span><span class="p">(</span><span class="n">containingAttributeKeys</span> <span class="nv">keys</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">AEXMLElement</span><span class="p">]?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>attributes</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Array of attribute names.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Optional Array of found XML elements.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML12AEXMLElementC3all14withAttributesSayACGSgSDyS2SG_tF"></a>
+                    <a name="//apple_ref/swift/Method/all(withAttributes:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML12AEXMLElementC3all14withAttributesSayACGSgSDyS2SG_tF">all(withAttributes:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns all elements with given attributes.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">all</span><span class="p">(</span><span class="n">withAttributes</span> <span class="nv">attributes</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">AEXMLElement</span><span class="p">]?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>attributes</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Dictionary of Keys and Values of attributes.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Optional Array of found XML elements.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML12AEXMLElementC14allDescendants5whereSayACGSbACXE_tF"></a>
+                    <a name="//apple_ref/swift/Method/allDescendants(where:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML12AEXMLElementC14allDescendants5whereSayACGSbACXE_tF">allDescendants(where:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns all descendant elements which satisfy the given predicate.</p>
+
+<p>Searching is done vertically; children are tested before siblings. Elements appear in the list
+in the order in which they are found.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">allDescendants</span><span class="p">(</span><span class="k">where</span> <span class="nv">predicate</span><span class="p">:</span> <span class="p">(</span><span class="kt">AEXMLElement</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">AEXMLElement</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>predicate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Function which returns <code>true</code> for a desired element and <code>false</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Array of found XML elements.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML12AEXMLElementC15firstDescendant5whereACSgSbACXE_tF"></a>
+                    <a name="//apple_ref/swift/Method/firstDescendant(where:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML12AEXMLElementC15firstDescendant5whereACSgSbACXE_tF">firstDescendant(where:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the first descendant element which satisfies the given predicate, or nil if no such element is found.</p>
+
+<p>Searching is done vertically; children are tested before siblings.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">firstDescendant</span><span class="p">(</span><span class="k">where</span> <span class="nv">predicate</span><span class="p">:</span> <span class="p">(</span><span class="kt">AEXMLElement</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AEXMLElement</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>predicate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Function which returns <code>true</code> for the desired element and <code>false</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Optional AEXMLElement.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML12AEXMLElementC13hasDescendant5whereS2bACXE_tF"></a>
+                    <a name="//apple_ref/swift/Method/hasDescendant(where:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML12AEXMLElementC13hasDescendant5whereS2bACXE_tF">hasDescendant(where:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates whether the element has a descendant satisfying the given predicate.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">hasDescendant</span><span class="p">(</span><span class="k">where</span> <span class="nv">predicate</span><span class="p">:</span> <span class="p">(</span><span class="kt">AEXMLElement</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>predicate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Function which returns <code>true</code> for the desired element and <code>false</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Bool.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/XML%20Write"></a>
+                <a name="//apple_ref/swift/Section/XML Write" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/XML%20Write"></a>
+                  <h3 class="section-name"><span>XML Write</span>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML12AEXMLElementC8addChildyA2CF"></a>
+                    <a name="//apple_ref/swift/Method/addChild(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML12AEXMLElementC8addChildyA2CF">addChild(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Adds child XML element to <code>self</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">open</span> <span class="kd">func</span> <span class="nf">addChild</span><span class="p">(</span><span class="n">_</span> <span class="nv">child</span><span class="p">:</span> <span class="kt">AEXMLElement</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AEXMLElement</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>child</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Child XML element to add.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Child XML element with <code>self</code> as <code><a href="../Classes/AEXMLElement.html#/s:5AEXML12AEXMLElementC6parentACSgvp">parent</a></code>.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML12AEXMLElementC8addChild4name5value10attributesACSS_SSSgSDyS2SGtF"></a>
+                    <a name="//apple_ref/swift/Method/addChild(name:value:attributes:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML12AEXMLElementC8addChild4name5value10attributesACSS_SSSgSDyS2SGtF">addChild(name:<wbr>value:<wbr>attributes:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Adds child XML element to <code>self</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">open</span> <span class="kd">func</span> <span class="nf">addChild</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                   <span class="nv">value</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                   <span class="nv">attributes</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[:])</span> <span class="o">-&gt;</span> <span class="kt">AEXMLElement</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Child XML element name.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>value</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Child XML element value (defaults to <code>nil</code>).</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>attributes</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Child XML element attributes (defaults to empty dictionary).</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Child XML element with <code>self</code> as <code><a href="../Classes/AEXMLElement.html#/s:5AEXML12AEXMLElementC6parentACSgvp">parent</a></code>.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML12AEXMLElementC11addChildrenySayACGAEF"></a>
+                    <a name="//apple_ref/swift/Method/addChildren(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML12AEXMLElementC11addChildrenySayACGAEF">addChildren(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Adds an array of XML elements to <code>self</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">open</span> <span class="kd">func</span> <span class="nf">addChildren</span><span class="p">(</span><span class="n">_</span> <span class="nv">children</span><span class="p">:</span> <span class="p">[</span><span class="kt">AEXMLElement</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">AEXMLElement</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>children</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Child XML element array to add.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Child XML elements with <code>self</code> as <code><a href="../Classes/AEXMLElement.html#/s:5AEXML12AEXMLElementC6parentACSgvp">parent</a></code>.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML12AEXMLElementC16removeFromParentyyF"></a>
+                    <a name="//apple_ref/swift/Method/removeFromParent()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML12AEXMLElementC16removeFromParentyyF">removeFromParent()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Removes <code>self</code> from <code><a href="../Classes/AEXMLElement.html#/s:5AEXML12AEXMLElementC6parentACSgvp">parent</a></code> XML element.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">removeFromParent</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML12AEXMLElementC3xmlSSvp"></a>
+                    <a name="//apple_ref/swift/Property/xml" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML12AEXMLElementC3xmlSSvp">xml</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Complete hierarchy of <code>self</code> and <code><a href="../Classes/AEXMLElement.html#/s:5AEXML12AEXMLElementC8childrenSayACGvp">children</a></code> in <strong>XML</strong> escaped and formatted String</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">xml</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML12AEXMLElementC10xmlCompactSSvp"></a>
+                    <a name="//apple_ref/swift/Property/xmlCompact" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML12AEXMLElementC10xmlCompactSSvp">xmlCompact</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Same as <code>xmlString</code> but without <code>\n</code> and <code>\t</code> characters</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">xmlCompact</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML12AEXMLElementC9xmlSpacesSSvp"></a>
+                    <a name="//apple_ref/swift/Property/xmlSpaces" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML12AEXMLElementC9xmlSpacesSSvp">xmlSpaces</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Same as <code>xmlString</code> but with 4 spaces instead &lsquo;\t&rsquo; characters</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">xmlSpaces</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2021 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2021-12-15)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>

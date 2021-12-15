@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AEXMLDocument Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/AEXMLDocument" class="dashAnchor"></a>
+    <a title="AEXMLDocument Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (98% documented)</p>
+        <div class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </div>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" alt=""/>
+        AEXMLDocument Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AEXMLDocument.html">AEXMLDocument</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AEXMLElement.html">AEXMLElement</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/AEXMLError.html">AEXMLError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/String.html">String</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/AEXMLOptions.html">AEXMLOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AEXMLOptions/DocumentHeader.html">– DocumentHeader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AEXMLOptions/ParserSettings.html">– ParserSettings</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>AEXMLDocument</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">AEXMLDocument</span> <span class="p">:</span> <span class="kt"><a href="../Classes/AEXMLElement.html">AEXMLElement</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>This class is inherited from <code><a href="../Classes/AEXMLElement.html">AEXMLElement</a></code> and has a few addons to represent <strong>XML Document</strong>.</p>
+
+<p>XML Parsing is also done with this object.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Properties"></a>
+                <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Properties"></a>
+                  <h3 class="section-name"><span>Properties</span>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML13AEXMLDocumentC4rootAA12AEXMLElementCvp"></a>
+                    <a name="//apple_ref/swift/Property/root" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML13AEXMLDocumentC4rootAA12AEXMLElementCvp">root</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Root (the first child element) element of XML Document <strong>(Empty element with error if not exists)</strong>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">root</span><span class="p">:</span> <span class="kt"><a href="../Classes/AEXMLElement.html">AEXMLElement</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML13AEXMLDocumentC7optionsAA12AEXMLOptionsVvp"></a>
+                    <a name="//apple_ref/swift/Property/options" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML13AEXMLDocumentC7optionsAA12AEXMLOptionsVvp">options</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">options</span><span class="p">:</span> <span class="kt"><a href="../Structs/AEXMLOptions.html">AEXMLOptions</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Lifecycle"></a>
+                <a name="//apple_ref/swift/Section/Lifecycle" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Lifecycle"></a>
+                  <h3 class="section-name"><span>Lifecycle</span>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML13AEXMLDocumentC4root7optionsAcA12AEXMLElementCSg_AA12AEXMLOptionsVtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(root:options:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML13AEXMLDocumentC4root7optionsAcA12AEXMLElementCSg_AA12AEXMLOptionsVtcfc">init(root:<wbr>options:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Designated initializer - Creates and returns new XML Document object.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">root</span><span class="p">:</span> <span class="kt"><a href="../Classes/AEXMLElement.html">AEXMLElement</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">options</span><span class="p">:</span> <span class="kt"><a href="../Structs/AEXMLOptions.html">AEXMLOptions</a></span> <span class="o">=</span> <span class="kt"><a href="../Structs/AEXMLOptions.html">AEXMLOptions</a></span><span class="p">())</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>root</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Root XML element for XML Document (defaults to <code>nil</code>).</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>options</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Options for XML Document header and parser settings (defaults to <code>AEXMLOptions()</code>).</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Initialized XML Document object.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML13AEXMLDocumentC3xml7optionsAC10Foundation4DataV_AA12AEXMLOptionsVtKcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(xml:options:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML13AEXMLDocumentC3xml7optionsAC10Foundation4DataV_AA12AEXMLOptionsVtKcfc">init(xml:<wbr>options:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Convenience initializer - used for parsing XML data (by calling <code>loadXMLData:</code> internally).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">xml</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">options</span><span class="p">:</span> <span class="kt"><a href="../Structs/AEXMLOptions.html">AEXMLOptions</a></span> <span class="o">=</span> <span class="kt"><a href="../Structs/AEXMLOptions.html">AEXMLOptions</a></span><span class="p">())</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>xmlData</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>XML data to parse.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>options</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Options for XML Document header and parser settings (defaults to <code>AEXMLOptions()</code>).</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Initialized XML Document object containing parsed data. Throws error if data could not be parsed.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML13AEXMLDocumentC3xml8encoding7optionsACSS_SS10FoundationE8EncodingVAA12AEXMLOptionsVtKcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(xml:encoding:options:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML13AEXMLDocumentC3xml8encoding7optionsACSS_SS10FoundationE8EncodingVAA12AEXMLOptionsVtKcfc">init(xml:<wbr>encoding:<wbr>options:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Convenience initializer - used for parsing XML string (by calling <code>init(xmlData:options:)</code> internally).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">xml</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                        <span class="nv">encoding</span><span class="p">:</span> <span class="kt">String</span><span class="o">.</span><span class="kt">Encoding</span> <span class="o">=</span> <span class="kt">String</span><span class="o">.</span><span class="kt">Encoding</span><span class="o">.</span><span class="n">utf8</span><span class="p">,</span>
+                        <span class="nv">options</span><span class="p">:</span> <span class="kt"><a href="../Structs/AEXMLOptions.html">AEXMLOptions</a></span> <span class="o">=</span> <span class="kt"><a href="../Structs/AEXMLOptions.html">AEXMLOptions</a></span><span class="p">())</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>xmlString</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>XML string to parse.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>encoding</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String encoding for creating <code>Data</code> from <code>xmlString</code> (defaults to <code>String.Encoding.utf8</code>)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>options</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Options for XML Document header and parser settings (defaults to <code>AEXMLOptions()</code>).</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Initialized XML Document object containing parsed data. Throws error if data could not be parsed.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Parse%20XML"></a>
+                <a name="//apple_ref/swift/Section/Parse XML" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Parse%20XML"></a>
+                  <h3 class="section-name"><span>Parse XML</span>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML13AEXMLDocumentC7loadXMLyy10Foundation4DataVKF"></a>
+                    <a name="//apple_ref/swift/Method/loadXML(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML13AEXMLDocumentC7loadXMLyy10Foundation4DataVKF">loadXML(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates instance of <code>AEXMLParser</code> (private class which is simple wrapper around <code>XMLParser</code>)
+and starts parsing the given XML data. Throws error if data could not be parsed.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">loadXML</span><span class="p">(</span><span class="n">_</span> <span class="nv">data</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>data</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>XML which should be parsed.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Override"></a>
+                <a name="//apple_ref/swift/Section/Override" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Override"></a>
+                  <h3 class="section-name"><span>Override</span>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5AEXML13AEXMLDocumentC3xmlSSvp"></a>
+                    <a name="//apple_ref/swift/Property/xml" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5AEXML13AEXMLDocumentC3xmlSSvp">xml</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Override of <code>xml</code> property of <code><a href="../Classes/AEXMLElement.html">AEXMLElement</a></code> - it just inserts XML Document header at the beginning.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">override</span> <span class="k">var</span> <span class="nv">xml</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2021 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2021-12-15)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>
