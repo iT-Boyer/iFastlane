@@ -37,3 +37,4 @@ jhyizhibo
 jinherccp
 jhlactivitycomponent
 publishinfo
+richscan

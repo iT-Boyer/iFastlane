@@ -45,58 +45,53 @@ public class CmdTools {
                 return
             }
             let projPath = dir.replacingOccurrences(of: "./", with: repoPath)
-            
             let projfile = Path(projPath)
-            print("项目路径：\(projfile.parent())")
-            let xcodeproj:XcodeProj!
-            do {
-                xcodeproj = try XcodeProj(path: projfile)
-            } catch {
-                print("\(projfile)项目无效")
-                return
-            }
-            
-            let pbxproj = xcodeproj.pbxproj
+//            let allTargets = CmdTools.targetsOf(proj: projfile)
+            let xcodeProj = try! XcodeProj(path: projfile)
+            let pbxproj = xcodeProj.pbxproj
             pbxproj.nativeTargets.forEach { target in
-                let type = target.productType
-                if target.productType == .staticLibrary
-                {
-                    print("检查\(target.name) 类型：\(type!)")
-                    
-                    let allFiles = CmdTools.AllfilesOf(target: target,srcPath: projfile.parent())
-                    var rusult:[String:JSON] = [:]
-                    allFiles.forEach { filePath in
-                        //匹配关键字
-                        let filetxt:String = try! filePath.read()
+                print("检查\(target.name) 类型：\(String(describing: target.productType!))")
+                
+                let allFiles = CmdTools.AllfilesOf(target: target,srcPath: projfile.parent())
+                var rusult:[String:JSON] = [:]
+                allFiles.forEach { filePath in
+                    //匹配关键字
+                    let filetxt:String
+                    do {
+                      filetxt = try filePath.read()
+                    } catch {
+                        print("\(filePath.lastComponent)文件read()打开失败")
+                        return
+                    }
 //                        print("文件：\(filetxt)")
-                        //(\\[.*?api_host)|((=|:).*?iuooo.*/)
-                        let reg = Regex(".*(\"api_host|iuooo|ipFile\").*\n",options: [.ignoreCase, .anchorsMatchLines])
-                        let matchingLines = reg.allMatches(in: filetxt).compactMap { resul ->String? in
-                            var str = resul.matchedString
-                            guard Regex("JHUrlStringManager\\.{0,1}|JHBaseDomain").matches(str) else {
-                                // 删除行前空格
-                                let space = NSCharacterSet.whitespaces
-                                str = str.trimmingCharacters(in: space)
-                                if str.hasPrefix("//")
-                                    || str.contains("if ([api_host_adm")
-                                {
-                                    return nil
-                                }
-                                   return str
+                    //(\\[.*?api_host)|((=|:).*?iuooo.*/)
+                    let reg = Regex(".*(\"api_host|iuooo|ipFile\").*\n",options: [.ignoreCase, .anchorsMatchLines])
+                    let matchingLines = reg.allMatches(in: filetxt).compactMap { resul ->String? in
+                        var str = resul.matchedString
+                        guard Regex("JHUrlStringManager\\.{0,1}|JHBaseDomain").matches(str) else {
+                            // 删除行前空格
+                            let space = NSCharacterSet.whitespaces
+                            str = str.trimmingCharacters(in: space)
+                            if str.hasPrefix("//")
+                                || str.contains("if ([api_host_adm")
+                                || str.contains("update.iuoooo.com")
+                            {
+                                return nil
                             }
-                            return nil
+                               return str
                         }
-                        if matchingLines.count > 0 {
+                        return nil
+                    }
+                    if matchingLines.count > 0 {
 //                            print("\(filePath)\n遗留\(matchingLines.count)条")
-                            let json = JSON.init(matchingLines)
-                            rusult[filePath.string] = json
-                        }
+                        let json = JSON.init(matchingLines)
+                        rusult[filePath.string] = json
                     }
-                    if rusult.count > 0 {
-                        print("\(rusult)")
-                    }else{
-                        print("\(target.name):已处理完毕")
-                    }
+                }
+                if rusult.count > 0 {
+                    print("\(rusult)")
+                }else{
+                    print("\(target.name):已处理完毕")
                 }
             }
         }
@@ -175,64 +170,68 @@ public class CmdTools {
             case is PBXResourcesBuildPhase:
                 resources = phase as? PBXResourcesBuildPhase
             default:
-                print("default")
+                _ = ""
             }
         }
-        
-        infos = resources.files!.compactMap{ buildFile in
-            if buildFile.file == nil {
-                return nil
-            }
-            let element:PBXFileElement = buildFile.file!
-            let filePath:Path = try! element.fullPath(sourceRoot: srcPath)!
-            let ext = filePath.extension
-            if (ext == "plist"){
-                return filePath
-            }
-            return nil
-        }
-        srcfiles = sources.files!.compactMap{ pbfile in
-            if pbfile.file == nil {
-                return nil
-            }
-            let element:PBXFileElement = pbfile.file!
-            let filePath:Path = try! element.fullPath(sourceRoot: srcPath)!
-            let ext = filePath.extension
-            if (ext == "mm" || ext == "swift" || ext == "m"){
-                return filePath
-            }
-            return nil
-        }
-        
-        headers = srcfiles.compactMap{ filePath in
-            //判断当是.m 文件时，匹配.h文件，是否存在，添加到源文件数组
-            var pathstr = filePath.string
-            if pathstr.hasSuffix(".m") || pathstr.hasSuffix(".mm"){
-                pathstr.replaceFirst(matching: "\\.m{1,2}$", with: ".h")
-                let fileheader = Path(pathstr)
-                if fileheader.exists {
-                    return fileheader
-                }else{
-                    print("不存在：\(fileheader)")
+        if target.productType == .bundle {
+            infos = resources.files!.compactMap{ buildFile in
+                if buildFile.file == nil {
+                    return nil
                 }
+                let element:PBXFileElement = buildFile.file!
+                if let filePath = try! element.fullPath(sourceRoot: srcPath){
+                    let ext = filePath.extension
+                    if (ext == "plist"){
+                        return filePath
+                    }
+                }
+                return nil
             }
-            return nil
         }
-        
-        //添加宏文件
-        //获取宏prefix文件
-        let configlist:XCConfigurationList = target.buildConfigurationList!
-        let conf:XCBuildConfiguration! = configlist.configuration(name: "Release")
-        if let prefix = conf.buildSettings["GCC_PREFIX_HEADER"]{
-            //$(SRCROOT)/YGPatrol/PrefixHeader.pch
-            print("宏文件：\(prefix)")
-            var prefixStr = "\(prefix)"
-            if prefixStr.hasPrefix("$(SRCROOT)/") {
-                prefixStr.replaceFirst(matching: "\\$\\(SRCROOT\\)/", with: "")
+    
+        if target.productType == .staticLibrary {
+            srcfiles = sources.files!.compactMap{ pbfile in
+                if pbfile.file == nil {
+                    return nil
+                }
+                let element:PBXFileElement = pbfile.file!
+                let filePath:Path = try! element.fullPath(sourceRoot: srcPath)!
+                let ext = filePath.extension
+                if (ext == "mm" || ext == "swift" || ext == "m"){
+                    return filePath
+                }
+                return nil
             }
-            let prefixPath = srcPath+Path(prefixStr)
-            if prefixPath.exists {
-                headers.append(prefixPath)
+            headers = srcfiles.compactMap{ filePath in
+                //判断当是.m 文件时，匹配.h文件，是否存在，添加到源文件数组
+                var pathstr = filePath.string
+                if pathstr.hasSuffix(".m") || pathstr.hasSuffix(".mm"){
+                    pathstr.replaceFirst(matching: "\\.m{1,2}$", with: ".h")
+                    let fileheader = Path(pathstr)
+                    if fileheader.exists {
+                        return fileheader
+                    }else{
+                        print("不存在：\(fileheader)")
+                    }
+                }
+                return nil
+            }
+            
+            //添加宏文件
+            //获取宏prefix文件
+            let configlist:XCConfigurationList = target.buildConfigurationList!
+            let conf:XCBuildConfiguration! = configlist.configuration(name: "Release")
+            if let prefix = conf.buildSettings["GCC_PREFIX_HEADER"]{
+                //$(SRCROOT)/YGPatrol/PrefixHeader.pch
+                print("宏文件：\(prefix)")
+                var prefixStr = "\(prefix)"
+                if prefixStr.hasPrefix("$(SRCROOT)/") {
+                    prefixStr.replaceFirst(matching: "\\$\\(SRCROOT\\)/", with: "")
+                }
+                let prefixPath = srcPath+Path(prefixStr)
+                if prefixPath.exists {
+                    headers.append(prefixPath)
+                }
             }
         }
         
@@ -277,13 +276,21 @@ public class CmdTools {
     /// 获取xcodeproj文件中所有的静态库target 名称数组
     /// - Parameter proj: 库xcodeproj路径
     /// - Returns: 静态库名称数组
-    public static func targetsOf(proj:Path)->[PBXNativeTarget]{
+    public static func targetsOf(proj:Path)->[PBXTarget]{
 
-        // 初始化pbxcodeproj
-        let xcodeproj = try! XcodeProj(path: proj)
+        print("项目路径：\(proj.parent())")
+        let xcodeproj:XcodeProj!
+        do {
+            xcodeproj = try XcodeProj(path: proj)
+        } catch {
+            print("\(proj)项目无效")
+            return []
+        }
         let pbxproj = xcodeproj.pbxproj
         let staticLibs = pbxproj.nativeTargets.compactMap{ target->PBXNativeTarget? in
-            if target.productType == .staticLibrary {
+            if target.productType == .staticLibrary
+                || target.productType == .bundle
+            {
                 return target
             }
             return nil
@@ -291,6 +298,10 @@ public class CmdTools {
         return staticLibs
     }
     public static func createScheme(projPath:Path,target:PBXNativeTarget){
+        if target.productType == .bundle {
+            print("不支持bundle文件：\(target.name)")
+            return
+        }
         let uuid = target.uuid
         //
         let schemeDir = projPath+"xcshareddata/xcschemes"

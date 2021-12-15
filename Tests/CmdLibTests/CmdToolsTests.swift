@@ -58,7 +58,7 @@ class CmdToolsTests: QuickSpec {
                 }
             }
         }
-        fdescribe("生成xcscheme") {
+        describe("生成xcscheme") {
             it("批量编译proj项目中的target") {
                 let abCheckPath:Path = JHSources()+"done.txt"
                 let abCheck:String = try! abCheckPath.read()
@@ -70,30 +70,49 @@ class CmdToolsTests: QuickSpec {
                         let targets = CmdTools.targetsOf(proj: path)
                         targets.forEach { target in
                             //
-                            CmdTools.createScheme(projPath: path, target: target)
+//                            CmdTools.createScheme(projPath: path, target: target)
                         }
                     }
                 }
             }
         }
-        describe("target操作练习：JHPatrolSDK") {
+        fdescribe("target操作练习") {
             //源文件+头文件+宏文件
-            
-            var target:PBXTarget!
             var projPath:Path!
             beforeEach {
                 //项目名+target名
-                projPath = Path("/Users/boyer/hsg/jhygpatrol/YGPatrol.xcodeproj")
+//                /Users/boyer/hsg/jhygpatrol/YGPatrol.xcodeproj
+                ///Users/boyer/hsg/jhadvertisement/TestAdvertisement.xcodeproj
+                projPath = Path("/Users/boyer/hsg/jhadvertisement/TestAdvertisement.xcodeproj")
+            }
+            xit("获取.m/.h/.pch/.plist文件的路径集合") {
                 let targetName = "JHPatrolSDK"
                 
                 let xcodeProj = try! XcodeProj(path: projPath)
                 let pbxproj = xcodeProj.pbxproj
                 let targets:[PBXTarget] = pbxproj.targets(named: targetName)
-                target = targets[0]
-            }
-            
-            it("获取.m/.h/.pch文件的路径集合") {
+                let target = targets[0]
                 _ = CmdTools.AllfilesOf(target: target, srcPath: projPath.parent())
+            }
+            fit("获取proj中所有的target(静态库和bundle)") {
+                let targets = CmdTools.targetsOf(proj: projPath)
+                
+                targets.forEach { target1 in
+                    print("库名称：\(target1.name)")
+                    let phaseRef = target1.buildPhases
+                    phaseRef.forEach { phase in
+                        switch phase {
+                        case is PBXSourcesBuildPhase:
+                            let sources = phase as? PBXSourcesBuildPhase
+                            print("源文件数：\(sources?.files?.count)")
+                        case is PBXResourcesBuildPhase:
+                            let resources = phase as? PBXResourcesBuildPhase
+                            print("资源文件数：\(resources?.files?.count)")
+                        default:
+                            _ = ""
+                        }
+                    }
+                }
             }
         }
         
