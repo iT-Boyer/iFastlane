@@ -12,6 +12,7 @@ import XcodeProj
 import Regex
 import SwiftyJSON
 
+// MARK: CmdTools文件处理工具
 public class CmdTools {
     //给两个数组，求：两个数组不相同的元素数组
     static public func arrDiff(arr1:[Substring], arr2:[Substring]) -> [Substring] {
