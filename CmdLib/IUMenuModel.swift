@@ -8,11 +8,15 @@
 import Cocoa
 
 struct IUMenuModel: Codable {
-    let iuMenus:[IUMenus]
-    struct IUMenus:Codable {
-        let funcName:String     //功能名
-        let funcCode:String     //功能code
-        let menuName:String     //菜单名
-        let ComponentName:String//组件名
-    }
-  }
+    var menus:[IUMenu]
+}
+
+struct IUMenu:Codable {
+    let funcName:String     //功能名
+    let ComponentName:String//组件名
+    let funcCode:String     //功能code
+    var menuName:String? = nil     //菜单名
+    var menuNames:[String]? = []  //菜单名清单
+}
+
+

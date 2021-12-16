@@ -1,5 +1,5 @@
 {
-    "iuMenus": [{
+    "menus": [{
             "funcName": "电子钱包",
             "funcCode": "EWallet",
             "menuName": "企业钱包",

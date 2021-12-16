@@ -9,9 +9,65 @@
     },
     {
       "file": "/Users/boyer/hsg/iFastlane/CmdLib/CmdTools.swift",
-      "line": 315,
+      "line": 319,
       "symbol": "CmdTools.createScheme(projPath:target:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/CmdLib/IUMenuModel.swift",
+      "line": 10,
+      "symbol": "IUMenuModel",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/CmdLib/IUMenuModel.swift",
+      "line": 11,
+      "symbol": "IUMenuModel.menus",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/CmdLib/IUMenuModel.swift",
+      "line": 14,
+      "symbol": "IUMenu",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/CmdLib/IUMenuModel.swift",
+      "line": 15,
+      "symbol": "IUMenu.funcName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/CmdLib/IUMenuModel.swift",
+      "line": 16,
+      "symbol": "IUMenu.ComponentName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/CmdLib/IUMenuModel.swift",
+      "line": 17,
+      "symbol": "IUMenu.funcCode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/CmdLib/IUMenuModel.swift",
+      "line": 18,
+      "symbol": "IUMenu.menuName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/boyer/hsg/iFastlane/CmdLib/IUMenuModel.swift",
+      "line": 19,
+      "symbol": "IUMenu.menuNames",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     }
   ],

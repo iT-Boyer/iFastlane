@@ -14,12 +14,16 @@ import SwiftyJSON
 
 // MARK: CmdTools文件处理工具
 public class CmdTools {
-    //给两个数组，求：两个数组不相同的元素数组
-    /// 求两个数组的差集
-    /// - Parameters:
-    ///   - arr1: [一个数组]
-    ///   - arr2: [一个数组]
-    ///   - returns: [返回差集]
+
+    /// 概要: 求两个数组的差集
+    /// - ToDo: 清单
+    /// 传入两个数组
+    /// 返回两个数组之间的不同元素的集合
+    /// - note:
+    /// 如何更加细化获取的元素
+    /// - Parameter arr1: 数组1 对象是string
+    /// - Parameter arr2: 同上
+    /// - returns: 差集合
     static public func arrDiff(arr1:[Substring], arr2:[Substring]) -> [Substring] {
         //转为set集合类型
         let set1 = Set(arr1)
