@@ -1,0 +1,3051 @@
+{
+    "iuMenus": [{
+            "funcName": "电子钱包",
+            "funcCode": "EWallet",
+            "menuName": "企业钱包",
+            "ComponentName": "ElectronicWalletComponent"
+        },
+        {
+            "funcName": "电子钱包",
+            "funcCode": "EWallet",
+            "menuName": "我的钱包",
+            "ComponentName": "ElectronicWalletComponent"
+        },
+        {
+            "funcName": "企业文化",
+            "funcCode": "enterpriseCulture",
+            "menuName": "企业文化图片",
+            "ComponentName": "NewsRecommendComponent"
+        },
+        {
+            "funcName": "企业文化",
+            "funcCode": "enterpriseCulture",
+            "menuName": "企业文化轮播网页",
+            "ComponentName": "NewsRecommendComponent"
+        },
+        {
+            "funcName": "巡查人员管理",
+            "funcCode": "PatrolPersonManage",
+            "menuName": "上报人员管理",
+            "ComponentName": "PreciseControlCom"
+        },
+        {
+            "funcName": "智能设备",
+            "funcCode": "JH_IntelligentDevice",
+            "menuName": "5寸晨检自查",
+            "ComponentName": "IntelligentDevice"
+        },
+        {
+            "funcName": "智能设备",
+            "funcCode": "JH_IntelligentDevice",
+            "menuName": "智能设备列表",
+            "ComponentName": "IntelligentDevice"
+        },
+        {
+            "funcName": "智能设备",
+            "funcCode": "JH_IntelligentDevice",
+            "menuName": "广告机管理",
+            "ComponentName": "IntelligentDevice"
+        },
+        {
+            "funcName": "电商门店运营",
+            "funcCode": "ECommerceStoreOperate",
+            "menuName": "订单管理",
+            "ComponentName": "OrderMealComponent"
+        },
+        {
+            "funcName": "电商门店运营",
+            "funcCode": "ECommerceStoreOperate",
+            "menuName": "我的订单",
+            "ComponentName": "OrderMealComponent"
+        },
+        {
+            "funcName": "电商门店运营",
+            "funcCode": "ECommerceStoreOperate",
+            "menuName": "店铺设置",
+            "ComponentName": "OrderMealComponent"
+        },
+        {
+            "funcName": "电商门店运营",
+            "funcCode": "ECommerceStoreOperate",
+            "menuName": "溯源查询",
+            "ComponentName": "OrderMealComponent"
+        },
+        {
+            "funcName": "电商门店运营",
+            "funcCode": "ECommerceStoreOperate",
+            "menuName": "收货地址",
+            "ComponentName": "OrderMealComponent"
+        },
+        {
+            "funcName": "电商门店运营",
+            "funcCode": "ECommerceStoreOperate",
+            "menuName": "订单管理",
+            "ComponentName": "OrderMealComponent"
+        },
+        {
+            "funcName": "电商门店运营",
+            "funcCode": "ECommerceStoreOperate",
+            "menuName": "餐饮设置",
+            "ComponentName": "OrderMealComponent"
+        },
+        {
+            "funcName": "电商门店运营",
+            "funcCode": "ECommerceStoreOperate",
+            "menuName": "微信进件",
+            "ComponentName": "OrderMealComponent"
+        },
+        {
+            "funcName": "电商门店运营",
+            "funcCode": "ECommerceStoreOperate",
+            "menuName": "商品管理",
+            "ComponentName": "OrderMealComponent"
+        },
+        {
+            "funcName": "电商门店运营",
+            "funcCode": "ECommerceStoreOperate",
+            "menuName": "菜品管理",
+            "ComponentName": "OrderMealComponent"
+        },
+        {
+            "funcName": "电商门店运营",
+            "funcCode": "ECommerceStoreOperate",
+            "menuName": "优惠码核销",
+            "ComponentName": "OrderMealComponent"
+        },
+        {
+            "funcName": "电商门店运营",
+            "funcCode": "ECommerceStoreOperate",
+            "menuName": "服务员点餐",
+            "ComponentName": "OrderMealComponent"
+        },
+        {
+            "funcName": "一店一码",
+            "funcCode": "StoreQRCode",
+            "menuName": "一店一码",
+            "ComponentName": "jhLive_Android"
+        },
+        {
+            "funcName": "店铺首页",
+            "funcCode": "StoreHomePage",
+            "menuName": "店铺首页",
+            "ComponentName": "QGPShopHomeComponent"
+        },
+        {
+            "funcName": "门店地图",
+            "funcCode": "StoreInfoMap",
+            "menuName": "门店地图",
+            "ComponentName": "StoresComponent"
+        },
+        {
+            "funcName": "门店地图",
+            "funcCode": "StoreInfoMap",
+            "menuName": "门店地图",
+            "ComponentName": "StoresInfoMapComponent"
+        },
+        {
+            "funcName": "正品O2O",
+            "funcCode": "zpo2o",
+            "menuName": "正品O2O",
+            "ComponentName": "reddot"
+        },
+        {
+            "funcName": "推荐组件",
+            "funcCode": "Recommend",
+            "menuName": "新推荐组件",
+            "ComponentName": "RecommendComponent"
+        },
+        {
+            "funcName": "推荐组件",
+            "funcCode": "Recommend",
+            "menuName": "推荐组件",
+            "ComponentName": "RecommendComponent"
+        },
+        {
+            "funcName": "推荐组件",
+            "funcCode": "Recommend",
+            "menuName": "新推荐组件",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "推荐组件",
+            "funcCode": "Recommend",
+            "menuName": "推荐组件",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "推荐组件",
+            "funcCode": "Recommend",
+            "menuName": "新推荐组件",
+            "ComponentName": "QGPGoodsComponent"
+        },
+        {
+            "funcName": "推荐组件",
+            "funcCode": "Recommend",
+            "menuName": "推荐组件",
+            "ComponentName": "QGPGoodsComponent"
+        },
+        {
+            "funcName": "布局直播",
+            "funcCode": "livevideo",
+            "menuName": "布局直播",
+            "ComponentName": "QGPLiveComponent"
+        },
+        {
+            "funcName": "布局直播",
+            "funcCode": "livevideo",
+            "menuName": "布局直播",
+            "ComponentName": "LiveTencentCom"
+        },
+        {
+            "funcName": "布局直播",
+            "funcCode": "livevideo",
+            "menuName": "布局直播",
+            "ComponentName": "QGPShopHomeComponent"
+        },
+        {
+            "funcName": "多媒体栏目",
+            "funcCode": "MVPColum",
+            "menuName": "多媒体播放",
+            "ComponentName": "MVPVideoPlay"
+        },
+        {
+            "funcName": "多媒体栏目",
+            "funcCode": "MVPColum",
+            "menuName": "多媒体播放",
+            "ComponentName": "MVPImageTextShow"
+        },
+        {
+            "funcName": "多媒体栏目",
+            "funcCode": "MVPColum",
+            "menuName": "多媒体播放",
+            "ComponentName": "MVPAudioPlay"
+        },
+        {
+            "funcName": "多媒体栏目",
+            "funcCode": "MVPColum",
+            "menuName": "多媒体播放",
+            "ComponentName": "MVPPublicComponent"
+        },
+        {
+            "funcName": "多媒体栏目",
+            "funcCode": "MVPColum",
+            "menuName": "多媒体播放",
+            "ComponentName": "MVPMyStorys"
+        },
+        {
+            "funcName": "多媒体栏目",
+            "funcCode": "MVPColum",
+            "menuName": "多媒体播放",
+            "ComponentName": "MVPCategory"
+        },
+        {
+            "funcName": "五定视频",
+            "funcCode": "fivevideo",
+            "menuName": "考勤打卡",
+            "ComponentName": "MonitorVideo"
+        },
+        {
+            "funcName": "讯飞智能语音",
+            "funcCode": "kdxfznyy",
+            "menuName": "食材溯源AI",
+            "ComponentName": "ComXfunAIUI"
+        },
+        {
+            "funcName": "自检自查",
+            "funcCode": "JH_PatrolCheckSelf",
+            "menuName": "自查汇总",
+            "ComponentName": "PatrolSelfExamination_Android"
+        },
+        {
+            "funcName": "自检自查",
+            "funcCode": "JH_PatrolCheckSelf",
+            "menuName": "自检自查",
+            "ComponentName": "PatrolSelfExamination_Android"
+        },
+        {
+            "funcName": "自检自查",
+            "funcCode": "JH_PatrolCheckSelf",
+            "menuName": "自改自查",
+            "ComponentName": "PatrolSelfExamination_Android"
+        },
+        {
+            "funcName": "自检自查",
+            "funcCode": "JH_PatrolCheckSelf",
+            "menuName": "自查管理",
+            "ComponentName": "PatrolSelfExamination_Android"
+        },
+        {
+            "funcName": "分离版式",
+            "funcCode": "MCShell",
+            "menuName": "消息",
+            "ComponentName": "MessageCenterComponent"
+        },
+        {
+            "funcName": "分离版式",
+            "funcCode": "MCShell",
+            "menuName": "消息",
+            "ComponentName": "PublicContactComponent"
+        },
+        {
+            "funcName": "分离版式",
+            "funcCode": "MCShell",
+            "menuName": "消息",
+            "ComponentName": "MCShellComponent"
+        },
+        {
+            "funcName": "到店洗车",
+            "funcCode": "qgpwashcar",
+            "menuName": "扫码购",
+            "ComponentName": "WashCarComponment"
+        },
+        {
+            "funcName": "到店洗车",
+            "funcCode": "qgpwashcar",
+            "menuName": "找店加油",
+            "ComponentName": "WashCarComponment"
+        },
+        {
+            "funcName": "到店洗车",
+            "funcCode": "qgpwashcar",
+            "menuName": "找店加油",
+            "ComponentName": "WashCarComponment"
+        },
+        {
+            "funcName": "到店洗车",
+            "funcCode": "qgpwashcar",
+            "menuName": "到店洗车",
+            "ComponentName": "WashCarComponment"
+        },
+        {
+            "funcName": "到店洗车",
+            "funcCode": "qgpwashcar",
+            "menuName": "到店洗车",
+            "ComponentName": "WashCarComponment"
+        },
+        {
+            "funcName": "到店洗车",
+            "funcCode": "qgpwashcar",
+            "menuName": "扫码购",
+            "ComponentName": "WashCarComponment"
+        },
+        {
+            "funcName": "个人主页内容",
+            "funcCode": "MyPaperNew",
+            "menuName": "个人主页内容版",
+            "ComponentName": "mypaper"
+        },
+        {
+            "funcName": "积分",
+            "funcCode": "MyIntegral",
+            "menuName": "餐厅积分",
+            "ComponentName": "IntegralCom_Android"
+        },
+        {
+            "funcName": "积分",
+            "funcCode": "MyIntegral",
+            "menuName": "巡检记录",
+            "ComponentName": "IntegralCom_Android"
+        },
+        {
+            "funcName": "积分",
+            "funcCode": "MyIntegral",
+            "menuName": "提现明细",
+            "ComponentName": "IntegralCom_Android"
+        },
+        {
+            "funcName": "积分",
+            "funcCode": "MyIntegral",
+            "menuName": "我的积分",
+            "ComponentName": "IntegralCom_Android"
+        },
+        {
+            "funcName": "用户组织管理",
+            "funcCode": "UserGroupComponent",
+            "menuName": "用户组管理(门店)",
+            "ComponentName": "UserGroupComponent"
+        },
+        {
+            "funcName": "用户组织管理",
+            "funcCode": "UserGroupComponent",
+            "menuName": "用户组管理(馆)",
+            "ComponentName": "UserGroupComponent"
+        },
+        {
+            "funcName": "轮播图",
+            "funcCode": "carouselFigure",
+            "menuName": "轮播图",
+            "ComponentName": "TurnView"
+        },
+        {
+            "funcName": "易直播",
+            "funcCode": "easyvaas",
+            "menuName": "易直播",
+            "ComponentName": "EasyVaasComponent"
+        },
+        {
+            "funcName": "金和摄像机",
+            "funcCode": "JHCamreaTool",
+            "menuName": "金和摄像机",
+            "ComponentName": "JHCamreaTool"
+        },
+        {
+            "funcName": "人员管理",
+            "funcCode": "employeeManager",
+            "menuName": "人员管理",
+            "ComponentName": "OrgManageComponent"
+        },
+        {
+            "funcName": "广场论坛",
+            "funcCode": "SquareForum",
+            "menuName": "GC论坛",
+            "ComponentName": "EsplanadeComponent"
+        },
+        {
+            "funcName": "巡查管理",
+            "funcCode": "JH_Patrol",
+            "menuName": "巡查地图（已停用）",
+            "ComponentName": "PatrolManagement"
+        },
+        {
+            "funcName": "巡查管理",
+            "funcCode": "JH_Patrol",
+            "menuName": "巡查录入（已停用）",
+            "ComponentName": "PatrolManagement"
+        },
+        {
+            "funcName": "巡查管理",
+            "funcCode": "JH_Patrol",
+            "menuName": "巡查记录（已停用）",
+            "ComponentName": "PatrolManagement"
+        },
+        {
+            "funcName": "通讯录",
+            "funcCode": "CABShell",
+            "menuName": "通讯录",
+            "ComponentName": "ContactFriendShellComponent"
+        },
+        {
+            "funcName": "手机直播",
+            "funcCode": "MobileOnLive",
+            "menuName": "拍摄",
+            "ComponentName": "OnLiveForMobile"
+        },
+        {
+            "funcName": "手机直播",
+            "funcCode": "MobileOnLive",
+            "menuName": "手机直播",
+            "ComponentName": "OnLiveForMobile"
+        },
+        {
+            "funcName": "活动组件",
+            "funcCode": "ActivityCommonponent",
+            "menuName": "活动",
+            "ComponentName": "SSquareComponent"
+        },
+        {
+            "funcName": "活动组件",
+            "funcCode": "ActivityCommonponent",
+            "menuName": "活动",
+            "ComponentName": "ActivityCommonponent"
+        },
+        {
+            "funcName": "智能培训",
+            "funcCode": "JH_Training",
+            "menuName": "湖州培训",
+            "ComponentName": "Training"
+        },
+        {
+            "funcName": "智能培训",
+            "funcCode": "JH_Training",
+            "menuName": "金和培训",
+            "ComponentName": "Training"
+        },
+        {
+            "funcName": "智能培训",
+            "funcCode": "JH_Training",
+            "menuName": "餐厅培训",
+            "ComponentName": "Training"
+        },
+        {
+            "funcName": "智能培训",
+            "funcCode": "JH_Training",
+            "menuName": "共青城",
+            "ComponentName": "Training"
+        },
+        {
+            "funcName": "智能培训",
+            "funcCode": "JH_Training",
+            "menuName": "培训记录",
+            "ComponentName": "Training"
+        },
+        {
+            "funcName": "门店信息维护",
+            "funcCode": "StoreEditList",
+            "menuName": "商家运营信息",
+            "ComponentName": "jhLive_Android"
+        },
+        {
+            "funcName": "门店信息维护",
+            "funcCode": "StoreEditList",
+            "menuName": "找茬纠错",
+            "ComponentName": "jhLive_Android"
+        },
+        {
+            "funcName": "门店信息维护",
+            "funcCode": "StoreEditList",
+            "menuName": "在线巡检",
+            "ComponentName": "jhLive_Android"
+        },
+        {
+            "funcName": "门店信息维护",
+            "funcCode": "StoreEditList",
+            "menuName": "进货记录",
+            "ComponentName": "jhLive_Android"
+        },
+        {
+            "funcName": "门店信息维护",
+            "funcCode": "StoreEditList",
+            "menuName": "厨师档案",
+            "ComponentName": "jhLive_Android"
+        },
+        {
+            "funcName": "门店信息维护",
+            "funcCode": "StoreEditList",
+            "menuName": "晨检机绑定",
+            "ComponentName": "jhLive_Android"
+        },
+        {
+            "funcName": "门店信息维护",
+            "funcCode": "StoreEditList",
+            "menuName": "门店信息维护",
+            "ComponentName": "jhLive_Android"
+        },
+        {
+            "funcName": "门店信息维护",
+            "funcCode": "StoreEditList",
+            "menuName": "晨检历史",
+            "ComponentName": "jhLive_Android"
+        },
+        {
+            "funcName": "门店信息维护",
+            "funcCode": "StoreEditList",
+            "menuName": "找茬游戏",
+            "ComponentName": "jhLive_Android"
+        },
+        {
+            "funcName": "门店信息维护",
+            "funcCode": "StoreEditList",
+            "menuName": "供应商管理",
+            "ComponentName": "jhLive_Android"
+        },
+        {
+            "funcName": "我的设备",
+            "funcCode": "MyDevice",
+            "menuName": "我的设备",
+            "ComponentName": "jhLive_Android"
+        },
+        {
+            "funcName": "我的设备",
+            "funcCode": "MyDevice",
+            "menuName": "设备列表",
+            "ComponentName": "jhLive_Android"
+        },
+        {
+            "funcName": "预售",
+            "funcCode": "presale",
+            "menuName": "预售",
+            "ComponentName": "QGPGoodsActiveComponent"
+        },
+        {
+            "funcName": "预售",
+            "funcCode": "presale",
+            "menuName": "预售",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "电商搜索",
+            "funcCode": "GoodsSearch",
+            "menuName": "电商搜索",
+            "ComponentName": "QGPPublicComponentSearch"
+        },
+        {
+            "funcName": "新发现",
+            "funcCode": "NewDiscover",
+            "menuName": "新发现",
+            "ComponentName": "DiscoveryComponent"
+        },
+        {
+            "funcName": "电商测试",
+            "funcCode": "DianShangTest",
+            "menuName": "支付测试",
+            "ComponentName": "ShopTestComponent"
+        },
+        {
+            "funcName": "餐厅审核制作",
+            "funcCode": "BusinessEnterApply",
+            "menuName": "商家入驻申请",
+            "ComponentName": "StoresComponent"
+        },
+        {
+            "funcName": "餐厅审核制作",
+            "funcCode": "BusinessEnterApply",
+            "menuName": "商家入驻申请",
+            "ComponentName": "jhLive_Android"
+        },
+        {
+            "funcName": "猜你喜欢",
+            "funcCode": "GuessULike",
+            "menuName": "猜你喜欢横向",
+            "ComponentName": "RecommendComponent"
+        },
+        {
+            "funcName": "猜你喜欢",
+            "funcCode": "GuessULike",
+            "menuName": "猜你喜欢纵向",
+            "ComponentName": "RecommendComponent"
+        },
+        {
+            "funcName": "猜你喜欢",
+            "funcCode": "GuessULike",
+            "menuName": "猜你喜欢横向",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "猜你喜欢",
+            "funcCode": "GuessULike",
+            "menuName": "猜你喜欢纵向",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "溯源系统",
+            "funcCode": "JH_FoodOrigin",
+            "menuName": "供货商管理",
+            "ComponentName": "FoodOrigin"
+        },
+        {
+            "funcName": "溯源系统",
+            "funcCode": "JH_FoodOrigin",
+            "menuName": "生产商管理",
+            "ComponentName": "FoodOrigin"
+        },
+        {
+            "funcName": "溯源系统",
+            "funcCode": "JH_FoodOrigin",
+            "menuName": "进货管理",
+            "ComponentName": "FoodOrigin"
+        },
+        {
+            "funcName": "溯源系统",
+            "funcCode": "JH_FoodOrigin",
+            "menuName": "食材管理",
+            "ComponentName": "FoodOrigin"
+        },
+        {
+            "funcName": "人脸识别",
+            "funcCode": "renlianshibie",
+            "menuName": "人脸采集",
+            "ComponentName": "FaceRecognitionComponent"
+        },
+        {
+            "funcName": "人脸识别",
+            "funcCode": "renlianshibie",
+            "menuName": "晨检机人脸采集",
+            "ComponentName": "FaceRecognitionComponent"
+        },
+        {
+            "funcName": "阳光餐饮门店",
+            "funcCode": "StoreList",
+            "menuName": "门店",
+            "ComponentName": "jhLive_Android"
+        },
+        {
+            "funcName": "阳光餐饮门店",
+            "funcCode": "StoreList",
+            "menuName": "门店美食排行榜",
+            "ComponentName": "jhLive_Android"
+        },
+        {
+            "funcName": "阳光餐饮门店",
+            "funcCode": "StoreList",
+            "menuName": "门店厨师排行榜",
+            "ComponentName": "jhLive_Android"
+        },
+        {
+            "funcName": "秒杀",
+            "funcCode": "Seckill",
+            "menuName": "今日必抢",
+            "ComponentName": "QGPGoodsActiveComponent"
+        },
+        {
+            "funcName": "秒杀",
+            "funcCode": "Seckill",
+            "menuName": "秒杀",
+            "ComponentName": "QGPGoodsActiveComponent"
+        },
+        {
+            "funcName": "秒杀",
+            "funcCode": "Seckill",
+            "menuName": "今日必抢",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "秒杀",
+            "funcCode": "Seckill",
+            "menuName": "秒杀",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "中石化首页",
+            "funcCode": "GoodsZSHHome",
+            "menuName": "中石化首页",
+            "ComponentName": "QGPZSHComponent"
+        },
+        {
+            "funcName": "广场",
+            "funcCode": "SSquareComponent",
+            "menuName": "广场",
+            "ComponentName": "SSquareComponent"
+        },
+        {
+            "funcName": "优惠券中心",
+            "funcCode": "qgpcouponcenter",
+            "menuName": "领券中心",
+            "ComponentName": "QGPGoodsActiveComponent"
+        },
+        {
+            "funcName": "优惠券中心",
+            "funcCode": "qgpcouponcenter",
+            "menuName": "领券中心",
+            "ComponentName": "QGPGoodsActiveComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类22",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类8",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类26",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类18",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类7",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类8",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类0",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类1",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类19",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类17",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类4",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类3",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类3",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类2",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类13",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类11",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类9",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类12",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类13",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类29",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类21",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类10",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类16",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类15",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类11",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类16",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类24",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类9",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类12",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类20",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类14",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类20",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类23",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类25",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类6",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类18",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类1",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类19",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类30",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类4",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类17",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类7",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类27",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类15",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类2",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类28",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类10",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类6",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类5",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类14",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类5",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类22",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类8",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类26",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类18",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类7",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类8",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类0",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类1",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类19",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类17",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类4",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类3",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类3",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类2",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类13",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类11",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类9",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类12",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类13",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类29",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类21",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类10",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类16",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类15",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类11",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类16",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类24",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类9",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类12",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类20",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类14",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类20",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类23",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类25",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类6",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类18",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类1",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类19",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类30",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类4",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类17",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类7",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类27",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类15",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类2",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类28",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类10",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类6",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "易捷分类5",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类14",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "易捷电商分类",
+            "funcCode": "YJGoodsSort",
+            "menuName": "会员分类5",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "门店管理",
+            "funcCode": "StoreManage",
+            "menuName": "门店信息",
+            "ComponentName": "StoresComponent"
+        },
+        {
+            "funcName": "电商活动组件",
+            "funcCode": "GoodsActive",
+            "menuName": "专题活动列表",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "电商活动组件",
+            "funcCode": "GoodsActive",
+            "menuName": "专题活动列表",
+            "ComponentName": "QGPGoodsActiveComponent"
+        },
+        {
+            "funcName": "回放管理",
+            "funcCode": "DevicePlayBack",
+            "menuName": "回放管理",
+            "ComponentName": "jhLive_Android"
+        },
+        {
+            "funcName": "门店宣传",
+            "funcCode": "IOS_StorePictureRecomend",
+            "menuName": "门店宣传",
+            "ComponentName": "StoreBrandAtlasManagerComponent"
+        },
+        {
+            "funcName": "短视频",
+            "funcCode": "ShortVideo",
+            "menuName": "馋",
+            "ComponentName": "LiveTencentCom"
+        },
+        {
+            "funcName": "短视频",
+            "funcCode": "ShortVideo",
+            "menuName": "馋",
+            "ComponentName": "ShortVideoLiteAVComponent"
+        },
+        {
+            "funcName": "实体管理",
+            "funcCode": "EntityInformationCom",
+            "menuName": "药师管理",
+            "ComponentName": "EntityInformationCom"
+        },
+        {
+            "funcName": "实体管理",
+            "funcCode": "EntityInformationCom",
+            "menuName": "药店管理",
+            "ComponentName": "EntityInformationCom"
+        },
+        {
+            "funcName": "实体管理",
+            "funcCode": "EntityInformationCom",
+            "menuName": "建筑管理",
+            "ComponentName": "EntityInformationCom"
+        },
+        {
+            "funcName": "实体管理",
+            "funcCode": "EntityInformationCom",
+            "menuName": "维保单位列表",
+            "ComponentName": "EntityInformationCom"
+        },
+        {
+            "funcName": "实体管理",
+            "funcCode": "EntityInformationCom",
+            "menuName": "人员档案",
+            "ComponentName": "EntityInformationCom"
+        },
+        {
+            "funcName": "实体管理",
+            "funcCode": "EntityInformationCom",
+            "menuName": "维保单位电梯",
+            "ComponentName": "EntityInformationCom"
+        },
+        {
+            "funcName": "实体管理",
+            "funcCode": "EntityInformationCom",
+            "menuName": "监管电梯管理",
+            "ComponentName": "EntityInformationCom"
+        },
+        {
+            "funcName": "实体管理",
+            "funcCode": "EntityInformationCom",
+            "menuName": "使用单位电梯",
+            "ComponentName": "EntityInformationCom"
+        },
+        {
+            "funcName": "考试系统",
+            "funcCode": "examnationsystem",
+            "menuName": "发起考试",
+            "ComponentName": "AlbumsCom"
+        },
+        {
+            "funcName": "考试系统",
+            "funcCode": "examnationsystem",
+            "menuName": "监考记录",
+            "ComponentName": "AlbumsCom"
+        },
+        {
+            "funcName": "考试系统",
+            "funcCode": "examnationsystem",
+            "menuName": "参与考试",
+            "ComponentName": "AlbumsCom"
+        },
+        {
+            "funcName": "考试系统",
+            "funcCode": "examnationsystem",
+            "menuName": "考试记录",
+            "ComponentName": "AlbumsCom"
+        },
+        {
+            "funcName": "考试系统",
+            "funcCode": "examnationsystem",
+            "menuName": "发起考试",
+            "ComponentName": "ComUpload"
+        },
+        {
+            "funcName": "考试系统",
+            "funcCode": "examnationsystem",
+            "menuName": "监考记录",
+            "ComponentName": "ComUpload"
+        },
+        {
+            "funcName": "考试系统",
+            "funcCode": "examnationsystem",
+            "menuName": "参与考试",
+            "ComponentName": "ComUpload"
+        },
+        {
+            "funcName": "考试系统",
+            "funcCode": "examnationsystem",
+            "menuName": "考试记录",
+            "ComponentName": "ComUpload"
+        },
+        {
+            "funcName": "考试系统",
+            "funcCode": "examnationsystem",
+            "menuName": "发起考试",
+            "ComponentName": "QRCode"
+        },
+        {
+            "funcName": "考试系统",
+            "funcCode": "examnationsystem",
+            "menuName": "监考记录",
+            "ComponentName": "QRCode"
+        },
+        {
+            "funcName": "考试系统",
+            "funcCode": "examnationsystem",
+            "menuName": "参与考试",
+            "ComponentName": "QRCode"
+        },
+        {
+            "funcName": "考试系统",
+            "funcCode": "examnationsystem",
+            "menuName": "考试记录",
+            "ComponentName": "QRCode"
+        },
+        {
+            "funcName": "个人主页",
+            "funcCode": "mypaper",
+            "menuName": "个人主页",
+            "ComponentName": "mypaper"
+        },
+        {
+            "funcName": "新闻组件",
+            "funcCode": "NewsComponent",
+            "menuName": "关注推荐菜单",
+            "ComponentName": "NewsRecommendComponent"
+        },
+        {
+            "funcName": "新闻组件",
+            "funcCode": "NewsComponent",
+            "menuName": "热点推荐",
+            "ComponentName": "NewsRecommendComponent"
+        },
+        {
+            "funcName": "新闻组件",
+            "funcCode": "NewsComponent",
+            "menuName": "独立推荐列表",
+            "ComponentName": "NewsRecommendComponent"
+        },
+        {
+            "funcName": "社团",
+            "funcCode": "ClubComponent",
+            "menuName": "社团",
+            "ComponentName": "ClubComponent"
+        },
+        {
+            "funcName": "城市治理组件",
+            "funcCode": "CityQuestionReport",
+            "menuName": "治理",
+            "ComponentName": "CityQuestionReport_Andriod"
+        },
+        {
+            "funcName": "城市治理组件",
+            "funcCode": "CityQuestionReport",
+            "menuName": "我的贡献",
+            "ComponentName": "CityQuestionReport_Andriod"
+        },
+        {
+            "funcName": "城市治理组件",
+            "funcCode": "CityQuestionReport",
+            "menuName": "上报问题",
+            "ComponentName": "CityQuestionReport_Andriod"
+        },
+        {
+            "funcName": "城市治理组件",
+            "funcCode": "CityQuestionReport",
+            "menuName": "治理",
+            "ComponentName": "PatrolSelfExamination_Android"
+        },
+        {
+            "funcName": "城市治理组件",
+            "funcCode": "CityQuestionReport",
+            "menuName": "我的贡献",
+            "ComponentName": "PatrolSelfExamination_Android"
+        },
+        {
+            "funcName": "城市治理组件",
+            "funcCode": "CityQuestionReport",
+            "menuName": "上报问题",
+            "ComponentName": "PatrolSelfExamination_Android"
+        },
+        {
+            "funcName": "城市治理组件",
+            "funcCode": "CityQuestionReport",
+            "menuName": "治理",
+            "ComponentName": "PreciseControlCom"
+        },
+        {
+            "funcName": "城市治理组件",
+            "funcCode": "CityQuestionReport",
+            "menuName": "我的贡献",
+            "ComponentName": "PreciseControlCom"
+        },
+        {
+            "funcName": "城市治理组件",
+            "funcCode": "CityQuestionReport",
+            "menuName": "上报问题",
+            "ComponentName": "PreciseControlCom"
+        },
+        {
+            "funcName": "我的",
+            "funcCode": "more",
+            "menuName": "我的",
+            "ComponentName": "MyPersonalPager"
+        },
+        {
+            "funcName": "我的",
+            "funcCode": "more",
+            "menuName": "我的",
+            "ComponentName": "SettingComponent"
+        },
+        {
+            "funcName": "商城首页",
+            "funcCode": "ECommerceHome",
+            "menuName": "商城首页",
+            "ComponentName": "ECommHomeComponent"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "人员绩效管理",
+            "ComponentName": "MonitorVideo"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "整改",
+            "ComponentName": "MonitorVideo"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "人员排行榜",
+            "ComponentName": "MonitorVideo"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "巡查执法记录新",
+            "ComponentName": "MonitorVideo"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "企业查询新",
+            "ComponentName": "MonitorVideo"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "引擎任务列表(B端)",
+            "ComponentName": "MonitorVideo"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "发引擎任务(B端)",
+            "ComponentName": "MonitorVideo"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "电子巡查",
+            "ComponentName": "MonitorVideo"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "整改管理",
+            "ComponentName": "MonitorVideo"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "执法管理新",
+            "ComponentName": "MonitorVideo"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "发布引擎任务",
+            "ComponentName": "MonitorVideo"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "智慧监管地图",
+            "ComponentName": "MonitorVideo"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "人员绩效管理",
+            "ComponentName": "PreciseControlCom"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "整改",
+            "ComponentName": "PreciseControlCom"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "人员排行榜",
+            "ComponentName": "PreciseControlCom"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "巡查执法记录新",
+            "ComponentName": "PreciseControlCom"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "企业查询新",
+            "ComponentName": "PreciseControlCom"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "引擎任务列表(B端)",
+            "ComponentName": "PreciseControlCom"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "发引擎任务(B端)",
+            "ComponentName": "PreciseControlCom"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "电子巡查",
+            "ComponentName": "PreciseControlCom"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "整改管理",
+            "ComponentName": "PreciseControlCom"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "执法管理新",
+            "ComponentName": "PreciseControlCom"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "发布引擎任务",
+            "ComponentName": "PreciseControlCom"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "智慧监管地图",
+            "ComponentName": "PreciseControlCom"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "人员绩效管理",
+            "ComponentName": "PatrolSelfExamination_Android"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "整改",
+            "ComponentName": "PatrolSelfExamination_Android"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "人员排行榜",
+            "ComponentName": "PatrolSelfExamination_Android"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "巡查执法记录新",
+            "ComponentName": "PatrolSelfExamination_Android"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "企业查询新",
+            "ComponentName": "PatrolSelfExamination_Android"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "引擎任务列表(B端)",
+            "ComponentName": "PatrolSelfExamination_Android"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "发引擎任务(B端)",
+            "ComponentName": "PatrolSelfExamination_Android"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "电子巡查",
+            "ComponentName": "PatrolSelfExamination_Android"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "整改管理",
+            "ComponentName": "PatrolSelfExamination_Android"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "执法管理新",
+            "ComponentName": "PatrolSelfExamination_Android"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "发布引擎任务",
+            "ComponentName": "PatrolSelfExamination_Android"
+        },
+        {
+            "funcName": "主体自律2",
+            "funcCode": "PreciseControl",
+            "menuName": "智慧监管地图",
+            "ComponentName": "PatrolSelfExamination_Android"
+        },
+        {
+            "funcName": "页签版式",
+            "funcCode": "MCTabShell",
+            "menuName": "消息",
+            "ComponentName": "MessageCenterComponent"
+        },
+        {
+            "funcName": "页签版式",
+            "funcCode": "MCTabShell",
+            "menuName": "消息",
+            "ComponentName": "MCTabShellComponent"
+        },
+        {
+            "funcName": "页签版式",
+            "funcCode": "MCTabShell",
+            "menuName": "消息",
+            "ComponentName": "PublicContactComponent"
+        },
+        {
+            "funcName": "直播",
+            "funcCode": "onLive",
+            "menuName": "直播",
+            "ComponentName": "OnLive"
+        },
+        {
+            "funcName": "直播",
+            "funcCode": "onLive",
+            "menuName": "直播课堂",
+            "ComponentName": "OnLive"
+        },
+        {
+            "funcName": "直通老板",
+            "funcCode": "Supervise",
+            "menuName": "新公众监督",
+            "ComponentName": "SuperviseCom_Android"
+        },
+        {
+            "funcName": "直通老板",
+            "funcCode": "Supervise",
+            "menuName": "处理记录",
+            "ComponentName": "SuperviseCom_Android"
+        },
+        {
+            "funcName": "直通老板",
+            "funcCode": "Supervise",
+            "menuName": "用户来信",
+            "ComponentName": "SuperviseCom_Android"
+        },
+        {
+            "funcName": "直通老板",
+            "funcCode": "Supervise",
+            "menuName": "上报记录",
+            "ComponentName": "SuperviseCom_Android"
+        },
+        {
+            "funcName": "视频会议",
+            "funcCode": "VideoConferenceWebex",
+            "menuName": "视频会议",
+            "ComponentName": "MeetingsWebexComponent"
+        },
+        {
+            "funcName": "积分兑换",
+            "funcCode": "BMCExchange",
+            "menuName": "积分兑换2",
+            "ComponentName": "WashCarComponment"
+        },
+        {
+            "funcName": "积分兑换",
+            "funcCode": "BMCExchange",
+            "menuName": "积分兑换",
+            "ComponentName": "WashCarComponment"
+        },
+        {
+            "funcName": "客服",
+            "funcCode": "customer",
+            "menuName": "客服角色",
+            "ComponentName": "CustomerServiceComponent"
+        },
+        {
+            "funcName": "客服",
+            "funcCode": "customer",
+            "menuName": "客服",
+            "ComponentName": "CustomerServiceComponent"
+        },
+        {
+            "funcName": "泛组织管理",
+            "funcCode": "fzzgl",
+            "menuName": "泛组织切换",
+            "ComponentName": "Android_organization"
+        },
+        {
+            "funcName": "智慧商城",
+            "funcCode": "SmartECommerceHome",
+            "menuName": "智慧商城首页",
+            "ComponentName": "SmartECommShopCartComponent"
+        },
+        {
+            "funcName": "智慧商城",
+            "funcCode": "SmartECommerceHome",
+            "menuName": "智慧商城首页",
+            "ComponentName": "SmartECommHomeComponent"
+        },
+        {
+            "funcName": "智慧商城",
+            "funcCode": "SmartECommerceHome",
+            "menuName": "智慧商城首页",
+            "ComponentName": "SmartECommProductDetailsComponent"
+        },
+        {
+            "funcName": "活动",
+            "funcCode": "TradeActivity",
+            "menuName": "活动",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "活动",
+            "funcCode": "TradeActivity",
+            "menuName": "活动",
+            "ComponentName": "ActivityCommonponent"
+        },
+        {
+            "funcName": "活动",
+            "funcCode": "TradeActivity",
+            "menuName": "活动",
+            "ComponentName": "SSquareComponent"
+        },
+        {
+            "funcName": "活动",
+            "funcCode": "TradeActivity",
+            "menuName": "活动",
+            "ComponentName": "QGPGoodsActiveComponent"
+        },
+        {
+            "funcName": "内部组织邀请",
+            "funcCode": "organization_inner",
+            "menuName": "我的组织",
+            "ComponentName": "PersonmanageNew"
+        },
+        {
+            "funcName": "五定黑匣子2.0",
+            "funcCode": "JH_BlcackBox",
+            "menuName": "录音",
+            "ComponentName": "WorkMenuComponent2"
+        },
+        {
+            "funcName": "五定黑匣子2.0",
+            "funcCode": "JH_BlcackBox",
+            "menuName": "五定黑匣子2.0",
+            "ComponentName": "WorkMenuComponent2"
+        },
+        {
+            "funcName": "五定黑匣子2.0",
+            "funcCode": "JH_BlcackBox",
+            "menuName": "列表",
+            "ComponentName": "WorkMenuComponent2"
+        },
+        {
+            "funcName": "JC原生办公",
+            "funcCode": "jcNativeTemplate",
+            "menuName": "Joa我（原生）",
+            "ComponentName": "JC6NativeComponent"
+        },
+        {
+            "funcName": "JC原生办公",
+            "funcCode": "jcNativeTemplate",
+            "menuName": "Joa办公(原生)",
+            "ComponentName": "JC6NativeComponent"
+        },
+        {
+            "funcName": "JC原生办公",
+            "funcCode": "jcNativeTemplate",
+            "menuName": "Joa我（原生）",
+            "ComponentName": "LocalH5File"
+        },
+        {
+            "funcName": "JC原生办公",
+            "funcCode": "jcNativeTemplate",
+            "menuName": "Joa办公(原生)",
+            "ComponentName": "LocalH5File"
+        },
+        {
+            "funcName": "直播本地化",
+            "funcCode": "onLiveLocal",
+            "menuName": "本地化直播",
+            "ComponentName": "androidLiveLocal"
+        },
+        {
+            "funcName": "关注",
+            "funcCode": "follow",
+            "menuName": "关注",
+            "ComponentName": "FollowComponent"
+        },
+        {
+            "funcName": "消息中心",
+            "funcCode": "MessageCenter",
+            "menuName": "消息中心",
+            "ComponentName": "MessageCenterComponent"
+        },
+        {
+            "funcName": "电商扫一扫",
+            "funcCode": "TradeScan",
+            "menuName": "电商扫一扫",
+            "ComponentName": "QRCode"
+        },
+        {
+            "funcName": "电商扫一扫",
+            "funcCode": "TradeScan",
+            "menuName": "电商扫一扫",
+            "ComponentName": "QGPQrcodeComponent"
+        },
+        {
+            "funcName": "积分消费",
+            "funcCode": "IntegralPay",
+            "menuName": "买单设置",
+            "ComponentName": "IntegralPayCom_Android"
+        },
+        {
+            "funcName": "积分消费",
+            "funcCode": "IntegralPay",
+            "menuName": "收款明细",
+            "ComponentName": "IntegralPayCom_Android"
+        },
+        {
+            "funcName": "萤石直播old",
+            "funcCode": "YSLive",
+            "menuName": "萤石直播",
+            "ComponentName": "Ezvie"
+        },
+        {
+            "funcName": "二维码",
+            "funcCode": "QRCode",
+            "menuName": "相机二维码",
+            "ComponentName": "QRCode"
+        },
+        {
+            "funcName": "二维码",
+            "funcCode": "QRCode",
+            "menuName": "一点一码扫码",
+            "ComponentName": "QRCode"
+        },
+        {
+            "funcName": "二维码",
+            "funcCode": "QRCode",
+            "menuName": "二维码",
+            "ComponentName": "QRCode"
+        },
+        {
+            "funcName": "健康证管理",
+            "funcCode": "WorkerExperienceManager",
+            "menuName": "健康证检查",
+            "ComponentName": "EmployeeFiles"
+        },
+        {
+            "funcName": "健康证管理",
+            "funcCode": "WorkerExperienceManager",
+            "menuName": "健康证认领",
+            "ComponentName": "EmployeeFiles"
+        },
+        {
+            "funcName": "健康证管理",
+            "funcCode": "WorkerExperienceManager",
+            "menuName": "健康证管理新",
+            "ComponentName": "EmployeeFiles"
+        },
+        {
+            "funcName": "健康证管理",
+            "funcCode": "WorkerExperienceManager",
+            "menuName": "健康证管理",
+            "ComponentName": "EmployeeFiles"
+        },
+        {
+            "funcName": "健康证管理",
+            "funcCode": "WorkerExperienceManager",
+            "menuName": "健康证信息",
+            "ComponentName": "EmployeeFiles"
+        },
+        {
+            "funcName": "健康证管理",
+            "funcCode": "WorkerExperienceManager",
+            "menuName": "健康证列表管理",
+            "ComponentName": "EmployeeFiles"
+        },
+        {
+            "funcName": "健康证管理",
+            "funcCode": "WorkerExperienceManager",
+            "menuName": "健康证检查新",
+            "ComponentName": "EmployeeFiles"
+        },
+        {
+            "funcName": "健康证管理",
+            "funcCode": "WorkerExperienceManager",
+            "menuName": "食安管理员",
+            "ComponentName": "EmployeeFiles"
+        },
+        {
+            "funcName": "电商我的",
+            "funcCode": "QGPGoodsMine",
+            "menuName": "电商我的",
+            "ComponentName": "MyPersonalPager"
+        },
+        {
+            "funcName": "电商我的",
+            "funcCode": "QGPGoodsMine",
+            "menuName": "电商我的",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "电商我的",
+            "funcCode": "QGPGoodsMine",
+            "menuName": "电商我的",
+            "ComponentName": "QGPGoodsMineComponent"
+        },
+        {
+            "funcName": "电商我的",
+            "funcCode": "QGPGoodsMine",
+            "menuName": "电商我的",
+            "ComponentName": "SettingComponent"
+        },
+        {
+            "funcName": "馆馆互联",
+            "funcCode": "PavilionNet",
+            "menuName": "馆馆互联",
+            "ComponentName": "QGPShopsConnectComponent"
+        },
+        {
+            "funcName": "馆馆互联",
+            "funcCode": "PavilionNet",
+            "menuName": "馆馆互联",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "特供专区",
+            "funcCode": "SpecialZone",
+            "menuName": "特供专区",
+            "ComponentName": "SpecialSupplyAreaComponent"
+        },
+        {
+            "funcName": "附近商圈",
+            "funcCode": "NearbyBusinessCircle",
+            "menuName": "附近商圈",
+            "ComponentName": "NearbyGoodsComponent"
+        },
+        {
+            "funcName": "五定考勤_Native",
+            "funcCode": "FiveDutyPoint_Native",
+            "menuName": "工作日志",
+            "ComponentName": "WorkMenuComponent"
+        },
+        {
+            "funcName": "五定考勤_Native",
+            "funcCode": "FiveDutyPoint_Native",
+            "menuName": "智慧考勤",
+            "ComponentName": "WorkMenuComponent"
+        },
+        {
+            "funcName": "分类管理",
+            "funcCode": "CategoryManage",
+            "menuName": "商品分类",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "分类管理",
+            "funcCode": "CategoryManage",
+            "menuName": "商品分类",
+            "ComponentName": "QGPGoodsSortComponent"
+        },
+        {
+            "funcName": "智慧版个人主页",
+            "funcCode": "IntelligentMyPaper",
+            "menuName": "智慧版个人主页页",
+            "ComponentName": "AutoConfigComponent"
+        },
+        {
+            "funcName": "门店智慧沟通",
+            "funcCode": "StoreChat",
+            "menuName": "智慧沟通",
+            "ComponentName": "IntelligentCommunicate"
+        },
+        {
+            "funcName": "智能锁",
+            "funcCode": "WareLockComponent",
+            "menuName": "智能锁",
+            "ComponentName": "WareLockComponent"
+        },
+        {
+            "funcName": "菜品管理",
+            "funcCode": "DishesManagement",
+            "menuName": "菜品管理",
+            "ComponentName": "StoresComponent"
+        },
+        {
+            "funcName": "自改自查汇总",
+            "funcCode": "SummaryZGZC",
+            "menuName": "自改自查",
+            "ComponentName": "PreciseControlCom"
+        },
+        {
+            "funcName": "自改自查汇总",
+            "funcCode": "SummaryZGZC",
+            "menuName": "自改自查布局模板",
+            "ComponentName": "PreciseControlCom"
+        },
+        {
+            "funcName": "门店通讯录",
+            "funcCode": "StoreMailList",
+            "menuName": "门店通讯录",
+            "ComponentName": "IntelligentCommunicate"
+        },
+        {
+            "funcName": "门店评价管理",
+            "funcCode": "StoreEvaManage",
+            "menuName": "门店评价管理",
+            "ComponentName": "jhLive_Android"
+        },
+        {
+            "funcName": "通讯录(已停用)",
+            "funcCode": "chatAddressBook",
+            "menuName": "通讯录(已停用)",
+            "ComponentName": "ContactFriendComponent"
+        },
+        {
+            "funcName": "通讯录(已停用)",
+            "funcCode": "chatAddressBook",
+            "menuName": "通讯录(已停用)",
+            "ComponentName": "ContactGroupComponent"
+        },
+        {
+            "funcName": "店铺商品列表",
+            "funcCode": "ShopGoodsList",
+            "menuName": "独立商品列表",
+            "ComponentName": "ShopGoodsList"
+        },
+        {
+            "funcName": "店铺商品列表",
+            "funcCode": "ShopGoodsList",
+            "menuName": "新商品列表栏目",
+            "ComponentName": "ShopGoodsList"
+        },
+        {
+            "funcName": "店铺商品列表",
+            "funcCode": "ShopGoodsList",
+            "menuName": "店铺商品列表",
+            "ComponentName": "ShopGoodsList"
+        },
+        {
+            "funcName": "店铺商品列表",
+            "funcCode": "ShopGoodsList",
+            "menuName": "商品列表栏目",
+            "ComponentName": "ShopGoodsList"
+        },
+        {
+            "funcName": "外卖商城首页",
+            "funcCode": "TakeOutMall",
+            "menuName": "外卖商城首页",
+            "ComponentName": "TakeOutMallComponent"
+        },
+        {
+            "funcName": "购物车",
+            "funcCode": "ShoppingCart",
+            "menuName": "购物车",
+            "ComponentName": "ShoppingCartComponent"
+        },
+        {
+            "funcName": "门店在线购买",
+            "funcCode": "StoreBuy",
+            "menuName": "门店在线购买",
+            "ComponentName": "jhLive_Android"
+        },
+        {
+            "funcName": "金币",
+            "funcCode": "gold",
+            "menuName": "金币",
+            "ComponentName": "share"
+        },
+        {
+            "funcName": "金币",
+            "funcCode": "gold",
+            "menuName": "金币",
+            "ComponentName": "payment"
+        },
+        {
+            "funcName": "金币",
+            "funcCode": "gold",
+            "menuName": "金币",
+            "ComponentName": "gold"
+        },
+        {
+            "funcName": "沟通",
+            "funcCode": "revelations",
+            "menuName": "沟通",
+            "ComponentName": "revelations"
+        },
+        {
+            "funcName": "前景视频会议",
+            "funcCode": "VideoConferenceZoom",
+            "menuName": "前景云视频会议",
+            "ComponentName": "MeetingsZoomComponent"
+        },
+        {
+            "funcName": "电商直播",
+            "funcCode": "TradeOnlive",
+            "menuName": "电商直播",
+            "ComponentName": "QGPLiveComponent"
+        },
+        {
+            "funcName": "蓝牙外设",
+            "funcCode": "BluetoothHardware",
+            "menuName": "车辆监控",
+            "ComponentName": "BlueToothHardwareComponent"
+        },
+        {
+            "funcName": "蓝牙外设",
+            "funcCode": "BluetoothHardware",
+            "menuName": "车辆管理",
+            "ComponentName": "BlueToothHardwareComponent"
+        },
+        {
+            "funcName": "蓝牙外设",
+            "funcCode": "BluetoothHardware",
+            "menuName": "用车",
+            "ComponentName": "BlueToothHardwareComponent"
+        },
+        {
+            "funcName": "蓝牙外设",
+            "funcCode": "BluetoothHardware",
+            "menuName": "还车",
+            "ComponentName": "BlueToothHardwareComponent"
+        },
+        {
+            "funcName": "聊",
+            "funcCode": "contactmenu",
+            "menuName": "聊",
+            "ComponentName": "ContactGroupComponent"
+        },
+        {
+            "funcName": "聊",
+            "funcCode": "contactmenu",
+            "menuName": "聊",
+            "ComponentName": "ContactFriendComponent"
+        },
+        {
+            "funcName": "聊",
+            "funcCode": "contactmenu",
+            "menuName": "聊",
+            "ComponentName": "ChatComponent"
+        },
+        {
+            "funcName": "聊",
+            "funcCode": "contactmenu",
+            "menuName": "聊",
+            "ComponentName": "ContactRedPaperComponent"
+        },
+        {
+            "funcName": "聊",
+            "funcCode": "contactmenu",
+            "menuName": "聊",
+            "ComponentName": "CustomerServiceComponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "手机充值",
+            "ComponentName": "QGPYiJieComponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "我的加油卡",
+            "ComponentName": "QGPYiJieComponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "加油卡交易查询",
+            "ComponentName": "QGPYiJieComponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "车险推荐",
+            "ComponentName": "QGPYiJieComponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "油卡充值",
+            "ComponentName": "QGPYiJieComponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "兑换包",
+            "ComponentName": "QGPYiJieComponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "自驾游",
+            "ComponentName": "QGPYiJieComponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "加油钱包",
+            "ComponentName": "QGPYiJieComponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "一键加油",
+            "ComponentName": "QGPYiJieComponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "自驾游",
+            "ComponentName": "QGPYiJieComponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "易捷海购",
+            "ComponentName": "QGPYiJieComponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "加油卡交易查询",
+            "ComponentName": "QGPYiJieComponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "油卡充值",
+            "ComponentName": "QGPYiJieComponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "会员积分",
+            "ComponentName": "QGPYiJieComponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "易捷海购",
+            "ComponentName": "QGPYiJieComponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "我的卡券",
+            "ComponentName": "QGPYiJieComponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "手机充值",
+            "ComponentName": "QGPYiJieComponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "会员积分",
+            "ComponentName": "QGPYiJieComponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "兑换包",
+            "ComponentName": "QGPYiJieComponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "我的加油卡",
+            "ComponentName": "QGPYiJieComponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "移动积分兑换",
+            "ComponentName": "QGPYiJieComponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "车险推荐2",
+            "ComponentName": "QGPYiJieComponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "手机充值",
+            "ComponentName": "QGPElectronicWalletConponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "我的加油卡",
+            "ComponentName": "QGPElectronicWalletConponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "加油卡交易查询",
+            "ComponentName": "QGPElectronicWalletConponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "车险推荐",
+            "ComponentName": "QGPElectronicWalletConponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "油卡充值",
+            "ComponentName": "QGPElectronicWalletConponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "兑换包",
+            "ComponentName": "QGPElectronicWalletConponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "自驾游",
+            "ComponentName": "QGPElectronicWalletConponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "加油钱包",
+            "ComponentName": "QGPElectronicWalletConponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "一键加油",
+            "ComponentName": "QGPElectronicWalletConponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "自驾游",
+            "ComponentName": "QGPElectronicWalletConponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "易捷海购",
+            "ComponentName": "QGPElectronicWalletConponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "加油卡交易查询",
+            "ComponentName": "QGPElectronicWalletConponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "油卡充值",
+            "ComponentName": "QGPElectronicWalletConponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "会员积分",
+            "ComponentName": "QGPElectronicWalletConponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "易捷海购",
+            "ComponentName": "QGPElectronicWalletConponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "我的卡券",
+            "ComponentName": "QGPElectronicWalletConponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "手机充值",
+            "ComponentName": "QGPElectronicWalletConponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "会员积分",
+            "ComponentName": "QGPElectronicWalletConponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "兑换包",
+            "ComponentName": "QGPElectronicWalletConponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "我的加油卡",
+            "ComponentName": "QGPElectronicWalletConponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "移动积分兑换",
+            "ComponentName": "QGPElectronicWalletConponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "车险推荐2",
+            "ComponentName": "QGPElectronicWalletConponent"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "手机充值",
+            "ComponentName": "QGPElectronicWalletLib"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "我的加油卡",
+            "ComponentName": "QGPElectronicWalletLib"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "加油卡交易查询",
+            "ComponentName": "QGPElectronicWalletLib"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "车险推荐",
+            "ComponentName": "QGPElectronicWalletLib"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "油卡充值",
+            "ComponentName": "QGPElectronicWalletLib"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "兑换包",
+            "ComponentName": "QGPElectronicWalletLib"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "自驾游",
+            "ComponentName": "QGPElectronicWalletLib"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "加油钱包",
+            "ComponentName": "QGPElectronicWalletLib"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "一键加油",
+            "ComponentName": "QGPElectronicWalletLib"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "自驾游",
+            "ComponentName": "QGPElectronicWalletLib"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "易捷海购",
+            "ComponentName": "QGPElectronicWalletLib"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "加油卡交易查询",
+            "ComponentName": "QGPElectronicWalletLib"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "油卡充值",
+            "ComponentName": "QGPElectronicWalletLib"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "会员积分",
+            "ComponentName": "QGPElectronicWalletLib"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "易捷海购",
+            "ComponentName": "QGPElectronicWalletLib"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "我的卡券",
+            "ComponentName": "QGPElectronicWalletLib"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "手机充值",
+            "ComponentName": "QGPElectronicWalletLib"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "会员积分",
+            "ComponentName": "QGPElectronicWalletLib"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "兑换包",
+            "ComponentName": "QGPElectronicWalletLib"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "我的加油卡",
+            "ComponentName": "QGPElectronicWalletLib"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "移动积分兑换",
+            "ComponentName": "QGPElectronicWalletLib"
+        },
+        {
+            "funcName": "易捷币管理",
+            "funcCode": "YiJieGoldManage",
+            "menuName": "车险推荐2",
+            "ComponentName": "QGPElectronicWalletLib"
+        },
+        {
+            "funcName": "C+登录",
+            "funcCode": "COAlogin",
+            "menuName": "日程管理",
+            "ComponentName": "CPlusLoginComponent"
+        },
+        {
+            "funcName": "C+登录",
+            "funcCode": "COAlogin",
+            "menuName": "发起流程",
+            "ComponentName": "CPlusLoginComponent"
+        },
+        {
+            "funcName": "C+登录",
+            "funcCode": "COAlogin",
+            "menuName": "任务管理",
+            "ComponentName": "CPlusLoginComponent"
+        },
+        {
+            "funcName": "C+登录",
+            "funcCode": "COAlogin",
+            "menuName": "未阅寻呼",
+            "ComponentName": "CPlusLoginComponent"
+        },
+        {
+            "funcName": "C+登录",
+            "funcCode": "COAlogin",
+            "menuName": "注销",
+            "ComponentName": "CPlusLoginComponent"
+        },
+        {
+            "funcName": "C+登录",
+            "funcCode": "COAlogin",
+            "menuName": "企业头条",
+            "ComponentName": "CPlusLoginComponent"
+        },
+        {
+            "funcName": "C+登录",
+            "funcCode": "COAlogin",
+            "menuName": "外勤管理",
+            "ComponentName": "CPlusLoginComponent"
+        },
+        {
+            "funcName": "C+登录",
+            "funcCode": "COAlogin",
+            "menuName": "待办流程",
+            "ComponentName": "CPlusLoginComponent"
+        },
+        {
+            "funcName": "C+登录",
+            "funcCode": "COAlogin",
+            "menuName": "待阅",
+            "ComponentName": "CPlusLoginComponent"
+        },
+        {
+            "funcName": "C+登录",
+            "funcCode": "COAlogin",
+            "menuName": "工作日志",
+            "ComponentName": "CPlusLoginComponent"
+        },
+        {
+            "funcName": "C+登录",
+            "funcCode": "COAlogin",
+            "menuName": "发寻呼",
+            "ComponentName": "CPlusLoginComponent"
+        },
+        {
+            "funcName": "C+登录",
+            "funcCode": "COAlogin",
+            "menuName": "客户管理",
+            "ComponentName": "CPlusLoginComponent"
+        },
+        {
+            "funcName": "C+登录",
+            "funcCode": "COAlogin",
+            "menuName": "已办流程",
+            "ComponentName": "CPlusLoginComponent"
+        },
+        {
+            "funcName": "C+登录",
+            "funcCode": "COAlogin",
+            "menuName": "日程管理",
+            "ComponentName": "JCPLUS_Auto_Location"
+        },
+        {
+            "funcName": "C+登录",
+            "funcCode": "COAlogin",
+            "menuName": "发起流程",
+            "ComponentName": "JCPLUS_Auto_Location"
+        },
+        {
+            "funcName": "C+登录",
+            "funcCode": "COAlogin",
+            "menuName": "任务管理",
+            "ComponentName": "JCPLUS_Auto_Location"
+        },
+        {
+            "funcName": "C+登录",
+            "funcCode": "COAlogin",
+            "menuName": "未阅寻呼",
+            "ComponentName": "JCPLUS_Auto_Location"
+        },
+        {
+            "funcName": "C+登录",
+            "funcCode": "COAlogin",
+            "menuName": "注销",
+            "ComponentName": "JCPLUS_Auto_Location"
+        },
+        {
+            "funcName": "C+登录",
+            "funcCode": "COAlogin",
+            "menuName": "企业头条",
+            "ComponentName": "JCPLUS_Auto_Location"
+        },
+        {
+            "funcName": "C+登录",
+            "funcCode": "COAlogin",
+            "menuName": "外勤管理",
+            "ComponentName": "JCPLUS_Auto_Location"
+        },
+        {
+            "funcName": "C+登录",
+            "funcCode": "COAlogin",
+            "menuName": "待办流程",
+            "ComponentName": "JCPLUS_Auto_Location"
+        },
+        {
+            "funcName": "C+登录",
+            "funcCode": "COAlogin",
+            "menuName": "待阅",
+            "ComponentName": "JCPLUS_Auto_Location"
+        },
+        {
+            "funcName": "C+登录",
+            "funcCode": "COAlogin",
+            "menuName": "工作日志",
+            "ComponentName": "JCPLUS_Auto_Location"
+        },
+        {
+            "funcName": "C+登录",
+            "funcCode": "COAlogin",
+            "menuName": "发寻呼",
+            "ComponentName": "JCPLUS_Auto_Location"
+        },
+        {
+            "funcName": "C+登录",
+            "funcCode": "COAlogin",
+            "menuName": "客户管理",
+            "ComponentName": "JCPLUS_Auto_Location"
+        },
+        {
+            "funcName": "C+登录",
+            "funcCode": "COAlogin",
+            "menuName": "已办流程",
+            "ComponentName": "JCPLUS_Auto_Location"
+        },
+        {
+            "funcName": "签到",
+            "funcCode": "sign",
+            "menuName": "签到",
+            "ComponentName": "SignInCom_Android"
+        },
+        {
+            "funcName": "签到",
+            "funcCode": "sign",
+            "menuName": "签到设置",
+            "ComponentName": "SignInCom_Android"
+        },
+        {
+            "funcName": "巡查任务管理",
+            "funcCode": "PatrolTaskManage",
+            "menuName": "巡查任务管理",
+            "ComponentName": "PreciseControlCom"
+        },
+        {
+            "funcName": "新搜索",
+            "funcCode": "FullSearch",
+            "menuName": "新搜索",
+            "ComponentName": "SearchComponent"
+        },
+        {
+            "funcName": "新搜索",
+            "funcCode": "FullSearch",
+            "menuName": "新搜索",
+            "ComponentName": "GoodsListTemplate"
+        },
+        {
+            "funcName": "巡查执法",
+            "funcCode": "XunChaZhiFa",
+            "menuName": "添加剂管理",
+            "ComponentName": "PatrolBusinessManagement"
+        },
+        {
+            "funcName": "巡查执法",
+            "funcCode": "XunChaZhiFa",
+            "menuName": "管理制度签字",
+            "ComponentName": "PatrolBusinessManagement"
+        },
+        {
+            "funcName": "巡查执法",
+            "funcCode": "XunChaZhiFa",
+            "menuName": "商家承诺书签字",
+            "ComponentName": "PatrolBusinessManagement"
+        },
+        {
+            "funcName": "巡查执法",
+            "funcCode": "XunChaZhiFa",
+            "menuName": "巡查执法记录",
+            "ComponentName": "PatrolBusinessManagement"
+        },
+        {
+            "funcName": "巡查执法",
+            "funcCode": "XunChaZhiFa",
+            "menuName": "社区巡查进度统计",
+            "ComponentName": "PatrolBusinessManagement"
+        },
+        {
+            "funcName": "巡查执法",
+            "funcCode": "XunChaZhiFa",
+            "menuName": "消毒管理",
+            "ComponentName": "PatrolBusinessManagement"
+        },
+        {
+            "funcName": "巡查执法",
+            "funcCode": "XunChaZhiFa",
+            "menuName": "加入门店",
+            "ComponentName": "PatrolBusinessManagement"
+        },
+        {
+            "funcName": "巡查执法",
+            "funcCode": "XunChaZhiFa",
+            "menuName": "晨检管理",
+            "ComponentName": "PatrolBusinessManagement"
+        },
+        {
+            "funcName": "巡查执法",
+            "funcCode": "XunChaZhiFa",
+            "menuName": "企业查询",
+            "ComponentName": "PatrolBusinessManagement"
+        },
+        {
+            "funcName": "巡查执法",
+            "funcCode": "XunChaZhiFa",
+            "menuName": "执法管理",
+            "ComponentName": "PatrolBusinessManagement"
+        },
+        {
+            "funcName": "巡查执法",
+            "funcCode": "XunChaZhiFa",
+            "menuName": "商家整改",
+            "ComponentName": "PatrolBusinessManagement"
+        },
+        {
+            "funcName": "巡查执法",
+            "funcCode": "XunChaZhiFa",
+            "menuName": "巡查执法录入",
+            "ComponentName": "PatrolBusinessManagement"
+        },
+        {
+            "funcName": "巡查执法",
+            "funcCode": "XunChaZhiFa",
+            "menuName": "留样管理",
+            "ComponentName": "PatrolBusinessManagement"
+        },
+        {
+            "funcName": "巡查执法",
+            "funcCode": "XunChaZhiFa",
+            "menuName": "厨余垃圾管理",
+            "ComponentName": "PatrolBusinessManagement"
+        },
+        {
+            "funcName": "巡查执法",
+            "funcCode": "XunChaZhiFa",
+            "menuName": "巡查执法地图",
+            "ComponentName": "PatrolBusinessManagement"
+        },
+        {
+            "funcName": "巡查执法",
+            "funcCode": "XunChaZhiFa",
+            "menuName": "安全承诺",
+            "ComponentName": "PatrolBusinessManagement"
+        },
+    ]
+}
