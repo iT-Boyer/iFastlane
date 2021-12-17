@@ -145,7 +145,7 @@ class XcodeProjTests: QuickSpec {
             }
         }
         
-        fdescribe("学习使用XcodeProj工具") {
+        describe("学习使用XcodeProj工具") {
             var pbxproj:PBXProj!
             beforeEach {
                 let runnerDir = Path(#file).parent().parent().parent()
@@ -187,7 +187,7 @@ class XcodeProjTests: QuickSpec {
                 }
             }
             
-            fit("打印target相关信息") {
+            it("打印target相关信息") {
                 pbxproj.nativeTargets.forEach{ target in
                     if target.name == "Runner" {
                         print("target名称："+target.name)
@@ -242,6 +242,43 @@ class XcodeProjTests: QuickSpec {
                     }
                     
                 }
+            }
+        }
+        
+        fdescribe("学习SwiftPM依赖的管理") {
+            
+            var xcodeprj:XcodeProj!
+            beforeEach {
+                let runnerDir = Path(#file).parent().parent().parent()
+                let path = Path("\(runnerDir)/Runner.xcodeproj")
+                print("项目路径：\(path.parent())")
+                do {
+                    xcodeprj = try XcodeProj(path: path)
+                } catch {
+                    print("\(path)项目无效")
+                    return
+                }
+            }
+            
+            fit("更新Proj项目中的SwiftPM依赖设置") {
+                
+                var pbxproj:PBXProj = xcodeprj.pbxproj
+                let project = try! pbxproj.rootProject() // Returns a PBXProject
+                
+                // When
+                let packagePath = Path("../JHThirdPackage")
+                //XCSwiftPackageProductDependency
+                let libs = ["Alamofire","Moya","SwiftyJSON","SnapKit","Kingfisher",
+                            "SwifterSwift","CSQLite","ESPullToRefresh","IQKeyboardManagerSwift"]
+                for lib in libs{
+                    _ = try project!.addLocalSwiftPackage(path: packagePath,
+                                                                    productName: lib,
+                                                                     targetName: "Runner")
+                }
+                
+                let targ = Path("~/hsg/iFastlane/Runner.xcodeproj")
+                print("targ路径："+targ.string)
+                try! xcodeprj.write(path: targ, override: true)
             }
         }
     }
