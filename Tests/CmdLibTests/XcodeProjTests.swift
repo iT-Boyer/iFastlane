@@ -248,19 +248,32 @@ class XcodeProjTests: QuickSpec {
         fdescribe("学习SwiftPM依赖的管理") {
             
             var xcodeprj:XcodeProj!
+            var prjPath:Path!
+            var pbxproj:PBXProj!
             beforeEach {
-                let runnerDir = Path(#file).parent().parent().parent()
-                let path = Path("\(runnerDir)/Runner.xcodeproj")
-                print("项目路径：\(path.parent())")
+                prjPath = Path.home+"hsg/ihacking/iHacker/iHacker.xcodeproj"
+                print("项目路径：\(prjPath.parent())")
                 do {
-                    xcodeprj = try XcodeProj(path: path)
+                    xcodeprj = try XcodeProj(path: prjPath)
+                    pbxproj = xcodeprj.pbxproj
                 } catch {
-                    print("\(path)项目无效")
+                    print("\(String(describing: prjPath))项目无效")
                     return
                 }
             }
-            
             fit("更新Proj项目中的SwiftPM依赖设置") {
+                let project = try! pbxproj!.rootProject() // Returns a PBXProject
+                // When
+                let packagePath = Path("../RemoteImageView")
+                //XCSwiftPackageProductDependency
+                _ = try project!.addLocalSwiftPackage(path: packagePath,
+                                                      productName: "RemoteImageView",
+                                                      targetName: "iHacker")
+                
+                print("targ路径："+prjPath.string)
+                try! xcodeprj.write(path: prjPath, override: true)
+            }
+            xit("更新Proj项目中的SwiftPM依赖设置") {
                 
                 var pbxproj:PBXProj = xcodeprj.pbxproj
                 let project = try! pbxproj.rootProject() // Returns a PBXProject
