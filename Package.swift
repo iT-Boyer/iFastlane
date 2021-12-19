@@ -21,7 +21,8 @@ let package = Package(
         .package(name: "XcodeProj", url: "https://github.com/tuist/xcodeproj.git", .upToNextMajor(from: "7.11.1")),
         //quick行为测试
         .package(url: "https://github.com/Quick/Quick.git", .upToNextMajor(from: "4.0.0")),
-        .package(url: "https://github.com/it-boyer/Nimble.git",.branch("main"))
+        .package(url: "https://github.com/it-boyer/Nimble.git",.branch("main")),
+        .package(url: "https://github.com/serhii-londar/GithubAPI.git",.branch("master"))
         //Cannot find 'XCTFail' in scope
 //        .package(name: "Nimble", path: "/Users/boyer/hsg/Nimble")
     ],
@@ -33,6 +34,7 @@ let package = Package(
                                          "SwiftyJSON",
                                          "PythonKit",
                                          "XcodeProj",
+                                         "GithubAPI",
                                          .product(name: "ArgumentParser", package: "swift-argument-parser")
                                         ],
                           path: "swift",
@@ -46,6 +48,7 @@ let package = Package(
                            "SwiftyJSON",
                            "PythonKit",
                            "XcodeProj",
+                           "GithubAPI",
                            .product(name: "ArgumentParser", package: "swift-argument-parser")
                           ],
             path: "CmdLib",

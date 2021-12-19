@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "BaseAPI",
+        "repositoryURL": "https://github.com/serhii-londar/BaseAPI.git",
+        "state": {
+          "branch": null,
+          "revision": "6b8b644c547a49e657896ba49c7de2315b138f89",
+          "version": "0.2.0"
+        }
+      },
+      {
         "package": "CwlCatchException",
         "repositoryURL": "https://github.com/mattgallagher/CwlCatchException.git",
         "state": {
@@ -26,6 +35,15 @@
           "branch": null,
           "revision": "c21f7bab5ca8eee0a9998bbd17ca1d0eb45d4688",
           "version": "2.1.0"
+        }
+      },
+      {
+        "package": "GithubAPI",
+        "repositoryURL": "https://github.com/serhii-londar/GithubAPI.git",
+        "state": {
+          "branch": "master",
+          "revision": "7705cde68eaabe5fbd884af72627a4147228ba8f",
+          "version": null
         }
       },
       {
