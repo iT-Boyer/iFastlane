@@ -22,7 +22,8 @@ let package = Package(
         //quick行为测试
         .package(url: "https://github.com/Quick/Quick.git", .upToNextMajor(from: "4.0.0")),
         .package(url: "https://github.com/it-boyer/Nimble.git",.branch("main")),
-        .package(url: "https://github.com/serhii-londar/GithubAPI.git",.branch("master"))
+        .package(url: "https://github.com/serhii-londar/GithubAPI.git",.branch("master")),
+        .package(name: "GRDB", url: "https://github.com/groue/GRDB.swift.git", from: "5.17.0")
         //Cannot find 'XCTFail' in scope
 //        .package(name: "Nimble", path: "/Users/boyer/hsg/Nimble")
     ],
@@ -49,6 +50,7 @@ let package = Package(
                            "PythonKit",
                            "XcodeProj",
                            "GithubAPI",
+                           "GRDB",
                            .product(name: "ArgumentParser", package: "swift-argument-parser")
                           ],
             path: "CmdLib",

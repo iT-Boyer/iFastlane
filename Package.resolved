@@ -47,6 +47,15 @@
         }
       },
       {
+        "package": "GRDB",
+        "repositoryURL": "https://github.com/groue/GRDB.swift.git",
+        "state": {
+          "branch": null,
+          "revision": "d63392799928d60679b90fbec6a7ecfde358cdf1",
+          "version": "5.17.0"
+        }
+      },
+      {
         "package": "Nimble",
         "repositoryURL": "https://github.com/it-boyer/Nimble.git",
         "state": {
