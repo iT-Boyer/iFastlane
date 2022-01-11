@@ -34,14 +34,25 @@ class BaseAPISpec: QuickSpec {
             
             it("使用断言过滤") {
                 let pre = NSPredicate(format: "selected == 张二")
-                let arr = stus.filtered(using: pre)
+//                let arr = stus.filtered(using: pre)
+//                print("匹配到\(arr.count)人，第一名：\(arr[0].name)")
+            }
+            
+            fit("使用filter过滤") {
+                let arr = stus.filter { stu in
+                    stu.age > 22
+                }
                 print("匹配到\(arr.count)人，第一名：\(arr[0].name)")
             }
             
-            it("使用filter过滤") {
-                let arr = stus.filter { stu in
-                    stu.age == 22
+            it("使用forEach筛选") {
+                var arr:[Student] = []
+                stus.forEach { sut in
+                    if sut.name.hasPrefix("张") {
+                        arr.append(sut)
+                    }
                 }
+                print("匹配到\(arr.count)人，第一名：\(arr[0].name)")
             }
         }
     }
