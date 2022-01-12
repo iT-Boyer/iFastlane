@@ -11,7 +11,7 @@ import Nimble
 
 class BaseAPISpec: QuickSpec {
     override func spec() {
-        describe("验证筛选对象数组的方法") {
+        xdescribe("验证筛选对象数组的方法") {
             var stus:[Student] = []
             var persons:[Person] = []
             beforeEach {
@@ -67,6 +67,53 @@ class BaseAPISpec: QuickSpec {
                     }
                 }
                 print("匹配到\(arr.count)人，第一名：\(arr[0].name)")
+            }
+        }
+        
+        
+        describe("验证swift属性用法") {
+            
+            it("验证计算属性的setter方法") {
+                // 想要获取计算后的值，必须借助临时变量来辅助，例如：_number
+                var _number = 0
+                var number:Int{
+                    set{
+                        _number = newValue + 1
+                    }
+                    get{
+                        return _number
+                    }
+                }
+            }
+            
+            it("验证存储属性的观察器didSet方法") {
+                //可以使用didSet方法优化JSONCoder解析可选类型字段，避免在程序中强制解包崩溃问题。
+                var number :Int? = 0 {
+                        didSet {
+                            print(#function+":didSet")
+                            number = number ?? 0
+                            print("更新：\(number!)")
+                        }
+                    }
+                
+                number = 3
+                print("结果：\(number!)")
+                
+                number = nil
+                print("结果：\(number!)")
+            }
+            
+            fit("验证lazy属性执行时机,测试调用执行的次数") {
+                // lazy 属性 仅执行一次
+                lazy var test: String = {
+                    print("加载lazy属性test")
+                    return "TEST"
+                }()
+                
+                _ = test
+                _ = test
+                _ = test
+                print("lazy 属性 仅执行一次：\(test)")
             }
         }
     }
