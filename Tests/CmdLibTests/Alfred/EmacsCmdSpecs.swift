@@ -12,6 +12,8 @@ import SwiftShell
 
 /**
  问题1: alfred无法加载完整的bash环境，导致emacsclient 等命令，必须使用绝对地址
+ Alfred 2 Script Environment https://www.alfredforum.com/topic/789-alfred-2-script-environment/
+ 
  问题2: brew 在不同系统上，安装包的位置不一致，x86系统：/usr/local/bin/ M1系统：/opt/homebrew/bin
  
  初步考虑在alfred下通过bash shell中if语句判断emacsclient的路径位置。但是在alfred不支持echo日志打印，if语句验证有无法使用。
