@@ -89,12 +89,12 @@ class BaseAPISpec: QuickSpec {
             it("验证存储属性的观察器didSet方法") {
                 //可以使用didSet方法优化JSONCoder解析可选类型字段，避免在程序中强制解包崩溃问题。
                 var number :Int? = 0 {
-                        didSet {
-                            print(#function+":didSet")
-                            number = number ?? 0
-                            print("更新：\(number!)")
-                        }
+                    didSet {
+                        print(#function+":didSet")
+                        number = number ?? 0
+                        print("更新：\(number!)")
                     }
+                }
                 
                 number = 3
                 print("结果：\(number!)")
