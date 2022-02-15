@@ -20,6 +20,15 @@
         }
       },
       {
+        "package": "Socket",
+        "repositoryURL": "https://github.com/IBM-Swift/BlueSocket",
+        "state": {
+          "branch": null,
+          "revision": "c9894fd117457f1d006575fbfb2fdfd6f79eac03",
+          "version": "1.0.200"
+        }
+      },
+      {
         "package": "CwlCatchException",
         "repositoryURL": "https://github.com/mattgallagher/CwlCatchException.git",
         "state": {
@@ -98,6 +107,15 @@
           "branch": null,
           "revision": "76c2b73d4281d77fc3118391877efd1bf972f515",
           "version": "2.1.1"
+        }
+      },
+      {
+        "package": "Shout",
+        "repositoryURL": "https://github.com/jakeheis/Shout",
+        "state": {
+          "branch": null,
+          "revision": "fbcae228bc68d5e2352f0790079995d27b610dbc",
+          "version": "0.5.7"
         }
       },
       {
