@@ -26,6 +26,8 @@ let package = Package(
         .package(name: "GRDB", url: "https://github.com/groue/GRDB.swift.git", from: "5.17.0"),
         //ssh框架
         .package(url: "https://github.com/jakeheis/Shout", from: "0.5.5")
+        //swift版本plantuml
+        .package(url: "https://github.com/MarcoEidinger/SwiftPlantUML.git", .upToNextMajor(from: "0.5.0"))
         //Cannot find 'XCTFail' in scope
 //        .package(name: "Nimble", path: "/Users/boyer/hsg/Nimble")
     ],
