@@ -1,0 +1,9 @@
+"Bug编号","所属产品","所属模块","所属执行","相关需求","相关任务","Bug标题","关键词","严重程度","优先级","Bug类型","操作系统","浏览器","重现步骤","Bug状态","截止日期","激活次数","是否确认","抄送给","由谁创建","创建日期","影响版本","指派给","指派日期","解决者","解决方案","解决版本","解决日期","由谁关闭","关闭日期","重复ID","相关Bug","相关用例","最后修改者","修改日期","附件"
+"2250","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[_NSCoreDataTaggedObjectID count]: unrecognized selector sent to instance 0xf1bc26b9408212e8","","1-Low","3","代码错误","","","当前展示的视图控制器:ShowStoreNewMapViewController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[_NSCoreDataTaggedObjectID count]: unrecognized selector sent to instance 0xf1bc26b9408212e8
+
+","激活","0000-00-00","0","否","","余朝阳","2022-02-28 14:28:43","主干(#trunk)","李宽","2022-02-28 14:28:43","","","","0000-00-00 00:00:00","","0000-00-00 00:00:00","0","","","","0000-00-00 00:00:00","",""

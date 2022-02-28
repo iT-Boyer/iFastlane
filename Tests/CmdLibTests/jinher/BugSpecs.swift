@@ -10,7 +10,10 @@ import Quick
 import Nimble
 import Alamofire
 import SwiftyJSON
-import XCTest
+import Regex
+import CSV
+import PathKit
+@testable import CmdLib
 
 
 /**
@@ -44,8 +47,8 @@ class BugSpecs: QuickSpec {
                        "Accept":"application/json, text/javascript, */*; q=0.01",
                        "Accept-Encoding":"gzip, deflate"]
         }
-        describe("") {
-            fit("使用get请求") {
+        describe("bugly工具问题解析") {
+            xit("使用get请求") {
                 let request = URLRequest(url: URL(string: url)!)
                 var urlRequest = try! URLEncoding.default.encode(request, with: parameters)
                 urlRequest.headers["Content-Type"] = "application/json; charset=utf-8"
@@ -61,7 +64,7 @@ class BugSpecs: QuickSpec {
                         }
                     expect.fulfill()
                     }
-                self.waitForExpectations(timeout: 20)
+                self.waitForExpectations(timeout: 10)
             }
             xit("使用post+responseString") {
                 AF.request(url,
@@ -78,6 +81,71 @@ class BugSpecs: QuickSpec {
                     expect.fulfill()
                 }
                 self.waitForExpectations(timeout: 20)
+            }
+            
+            xit("正则匹配重要信息") {
+                let content = """
+                    当前展示的视图控制器:JHTabBarController
+
+                    最后实例化的视图控制器:JHUIWebViewController
+
+                    2.6.0.012920 name:NSGenericException
+                    reason:*** Collection <__NSArrayM: 0x28295e1c0> was mutated while being enumerated.
+                
+                """
+                let reg = Regex(":.*\n",options: [.ignoreCase, .anchorsMatchLines])
+                let matchingLines = reg.allMatches(in: content)
+                var bug = JHBuglyM()
+                bug.currVC = matchingLines[0].matchedString
+                bug.lastVC = matchingLines[1].matchedString
+                bug.name = matchingLines[2].matchedString
+                bug.reason = matchingLines[3].matchedString
+                bug.version =  Regex("\\d\\.\\d\\.\\d.\\d{1,}").firstMatch(in: content)?.matchedString
+                print(bug)
+            }
+            
+            fit("CSV文件解析") {
+                let filePath = JHSources().string+"/bug.csv"
+                let stream = InputStream(fileAtPath: filePath)!
+                // hasHeaderRow must be true.
+                let csv = try! CSVReader(stream: stream, hasHeaderRow: true)
+                let headerRow = csv.headerRow!
+                print("\(headerRow)")
+                while let row = csv.next() {
+                    print("\(csv["Bug标题"]!)")
+                }
+            }
+            
+            xit("读取两天的数据，去重，生成电子表格") {
+                JHBugly.parseJson(url, parameters: parameters) { bugArr in
+                    //去重
+                    let bugs = JHBugly.parseCSV(JHSources() + Path("bug.csv"))
+                    bugs.map { bug in
+                        print("reason：\(bug.reason)")
+                    }
+                    
+                    let newarr = bugArr.compactMap{ newbug-> JHBuglyM? in
+                        //bug name相同的
+                        //reason 相同的
+                        //控制器相同的
+                        var str = newbug.name!
+                        guard Regex("").matches(str) else {
+                            // 删除行前空格
+                            let space = NSCharacterSet.whitespaces
+                            str = str.trimmingCharacters(in: space)
+                            if str.hasPrefix("//")
+                                || str.contains("if ([api_host_adm")
+                                || str.contains("update.iuoooo.com")
+                            {
+                                return nil
+                            }
+                               return newbug
+                        }
+                        return nil
+                    }
+                    //格式化表格打印
+                    
+                }
             }
         }
     }

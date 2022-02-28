@@ -27,6 +27,7 @@ let package = Package(
         .package(name: "GRDB", url: "https://github.com/groue/GRDB.swift.git", from: "5.17.0"),
         //ssh框架
         .package(name: "Shout", url: "https://github.com/jakeheis/Shout", from: "0.5.5"),
+        .package(name: "CSV.swift", url: "https://github.com/yaslab/CSV.swift.git", .upToNextMinor(from: "2.4.3")),
         //swift版本plantuml
 //        .package(name: "SwiftPlantUML", url: "https://github.com/MarcoEidinger/SwiftPlantUML.git", .upToNextMajor(from: "0.5.0"))
         //Cannot find 'XCTFail' in scope
@@ -42,6 +43,7 @@ let package = Package(
                                          "XcodeProj",
                                          "GithubAPI",
                                          "Alamofire",
+                                         .product(name: "CSV", package: "CSV.swift"),
                                          .product(name: "ArgumentParser", package: "swift-argument-parser")
                                         ],
                           path: "swift",
@@ -59,6 +61,7 @@ let package = Package(
                            "GRDB",
                            "Shout",
                            "Alamofire",
+                           .product(name: "CSV", package: "CSV.swift"),
                            .product(name: "ArgumentParser", package: "swift-argument-parser")
                           ],
             path: "CmdLib",

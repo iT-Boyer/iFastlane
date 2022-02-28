@@ -14,5 +14,5 @@ public func Resources() -> Path {
 /// jinher资源目录
 /// - Returns: /Users/boyer/hsg/iFastlane/Resources/jinher
 public func JHSources() -> Path {
-    Resources()+"jinher"
+    Resources() + "jinher"
 }
