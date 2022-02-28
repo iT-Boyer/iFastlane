@@ -23,6 +23,13 @@ public struct JHBuglyM {
     public var appid:String!
     public var reason:String!
     public var detail:String!
+    
+    var description: String {
+        """
+        name: \(String(describing: name))
+        reason: \(String(describing: reason))
+        """
+    }
 }
 
 

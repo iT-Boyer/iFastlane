@@ -120,31 +120,23 @@ class BugSpecs: QuickSpec {
                 JHBugly.parseJson(url, parameters: parameters) { bugArr in
                     //去重
                     let bugs = JHBugly.parseCSV(JHSources() + Path("bug.csv"))
-                    bugs.map { bug in
-                        print("reason：\(bug.reason)")
-                    }
-                    
-                    let newarr = bugArr.compactMap{ newbug-> JHBuglyM? in
+                    let canAddArr = bugArr.compactMap{ newbug-> JHBuglyM? in
                         //bug name相同的
                         //reason 相同的
                         //控制器相同的
-                        var str = newbug.name!
-                        guard Regex("").matches(str) else {
-                            // 删除行前空格
-                            let space = NSCharacterSet.whitespaces
-                            str = str.trimmingCharacters(in: space)
-                            if str.hasPrefix("//")
-                                || str.contains("if ([api_host_adm")
-                                || str.contains("update.iuoooo.com")
-                            {
-                                return nil
+                        bugs.forEach { bug in
+                            guard Regex("").matches(bug.reason) else {
+                                //
+                                return
                             }
-                               return newbug
+                            return
                         }
                         return nil
                     }
                     //格式化表格打印
-                    
+                    canAddArr.forEach { bug in
+                        print(bug.description)
+                    }
                 }
             }
         }
