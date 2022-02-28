@@ -28,7 +28,7 @@ class SSHSpecs: QuickSpec {
                 print(output)
                 let ls = "ls -a"
                 let (status1, output1) = try ssh.capture(ls)
-//                print(output1)
+                print(output1)
             }
         }
     }

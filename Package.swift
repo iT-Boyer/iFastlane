@@ -14,6 +14,7 @@ let package = Package(
     ],
     dependencies: [
         .package(name: "Fastlane", path: "/Users/boyer/hsg/fastlane"),
+        .package(name: "Alamofire", path: "/Users/boyer/hsg/Alamofire"),
         .package(name: "Regex", url: "https://github.com/sharplet/Regex",.upToNextMajor(from: "2.1.1")),
         .package(url: "https://github.com/SwiftyJSON/SwiftyJSON.git", from: "5.0.1"),
         .package(url: "https://github.com/pvieito/PythonKit.git",  .branch("master")),
@@ -25,9 +26,9 @@ let package = Package(
         .package(url: "https://github.com/serhii-londar/GithubAPI.git",.branch("master")),
         .package(name: "GRDB", url: "https://github.com/groue/GRDB.swift.git", from: "5.17.0"),
         //ssh框架
-        .package(url: "https://github.com/jakeheis/Shout", from: "0.5.5")
+        .package(name: "Shout", url: "https://github.com/jakeheis/Shout", from: "0.5.5"),
         //swift版本plantuml
-        .package(url: "https://github.com/MarcoEidinger/SwiftPlantUML.git", .upToNextMajor(from: "0.5.0"))
+//        .package(name: "SwiftPlantUML", url: "https://github.com/MarcoEidinger/SwiftPlantUML.git", .upToNextMajor(from: "0.5.0"))
         //Cannot find 'XCTFail' in scope
 //        .package(name: "Nimble", path: "/Users/boyer/hsg/Nimble")
     ],
@@ -40,6 +41,7 @@ let package = Package(
                                          "PythonKit",
                                          "XcodeProj",
                                          "GithubAPI",
+                                         "Alamofire",
                                          .product(name: "ArgumentParser", package: "swift-argument-parser")
                                         ],
                           path: "swift",
@@ -56,6 +58,7 @@ let package = Package(
                            "GithubAPI",
                            "GRDB",
                            "Shout",
+                           "Alamofire",
                            .product(name: "ArgumentParser", package: "swift-argument-parser")
                           ],
             path: "CmdLib",
