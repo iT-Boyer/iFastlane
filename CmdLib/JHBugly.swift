@@ -22,6 +22,9 @@ public struct JHBuglyM {
     public var appname:String!
     public var appid:String!
     public var reason:String!
+    public var reason_func:String?{
+        Regex("-\\[.*?\\]").firstMatch(in: reason!)?.matchedString
+    }
     public var detail:String!
     
     var description: String {
@@ -60,7 +63,7 @@ class JHBugly {
         var urlRequest = try! URLEncoding.default.encode(request, with: parameters)
         urlRequest.headers["Content-Type"] = "application/json; charset=utf-8"
         urlRequest.headers["Accept"] = "application/json"
-        let semaphore = DispatchSemaphore(value: 0)
+//        let semaphore = DispatchSemaphore(value: 0)
         AF.request(urlRequest).response {resp in
             if resp.response?.statusCode == 200 {
                 let enc = CFStringConvertEncodingToNSStringEncoding(UInt32(CFStringEncodings.GB_18030_2000.rawValue))
@@ -69,10 +72,10 @@ class JHBugly {
                 let json = JSON(datass)
                 let bugArr = parseJson(json)
                 handler(bugArr)
-                semaphore.signal()
+//                semaphore.signal()
             }
         }
-        _ = semaphore.wait(timeout: DispatchTime.distantFuture)
+//        _ = semaphore.wait(timeout: DispatchTime.distantFuture)
     }
     
     static func parseJson(_ json:JSON) -> [JHBuglyM] {
@@ -87,23 +90,27 @@ class JHBugly {
             bug.appname = cell[6].stringValue
             let content = cell[10].stringValue
             let reg = Regex(":.*\n",options: [.ignoreCase, .anchorsMatchLines])
-            bugArr.append(bug)
             var index = 0
             _ = reg.allMatches(in: content).map { result in
+//                let space = NSCharacterSet.whitespaces
+                let returnstr = CharacterSet(charactersIn: "\n")
+                let value = result.matchedString.trimmingCharacters(in: returnstr)
                 switch index {
                 case 0:
-                    bug.currVC = result.matchedString
+                    bug.currVC = value
                 case 1:
-                    bug.lastVC = result.matchedString
+                    bug.lastVC = value
                 case 2:
-                    bug.name = result.matchedString
+                    bug.name = value
                 case 3:
-                    bug.reason = result.matchedString
+                    bug.reason = value
                 default:
-                    bug.version =  Regex("\\d\\.\\d\\.\\d.\\d{1,}").firstMatch(in: content)?.matchedString
+                    let version = Regex("\\d\\.\\d\\.\\d.\\d{1,}").firstMatch(in: content)?.matchedString
+                    bug.version = version?.trimmingCharacters(in:returnstr)
                 }
                 index += 1
             }
+            bugArr.append(bug)
         }
         return bugArr
     }
@@ -113,9 +120,9 @@ class JHBugly {
         let stream = InputStream(fileAtPath: csv.string)!
         // hasHeaderRow must be true.
         let csv = try! CSVReader(stream: stream, hasHeaderRow: true)
-        let headerRow = csv.headerRow!
+//        let headerRow = csv.headerRow!
         while let row = csv.next() {
-            print("\(csv["Bug标题"]!)")
+//            print("\(csv["Bug标题"]!)")
             var bug = JHBuglyM()
             bug.reason = csv["Bug标题"]!
             bug.detail = csv["重现步骤"]!

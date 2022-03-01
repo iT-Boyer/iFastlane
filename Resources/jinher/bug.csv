@@ -6,4 +6,2268 @@
 2.6.0.012920 name:NSInvalidArgumentException
 reason:-[_NSCoreDataTaggedObjectID count]: unrecognized selector sent to instance 0xf1bc26b9408212e8
 
+#0 CoreFoundation 0000000001958BD27C ()
+#1 libobjc.A.dylib 000000000194A979F8 objc_exception_throw()
+#2 CoreFoundation 0000000001957D9AB8 -[NSOrderedSet initWithSet:copyItems:]
+#3 CoreFoundation 0000000001958C2AC4 ()
+#4 CoreFoundation 0000000001958C475C -[NSKVONotifying_MKUserLocation setCoordinate:]
+#5 CFNetwork 000000000196067BA4 ()
+#6 CFNetwork 000000000195F4135C ()
+#7 CFNetwork 000000000195F2EF4C ()
+#8 CFNetwork 000000000195F2F430 ()
+#9 CFNetwork 000000000195EF2130 ()
+#10 libdispatch.dylib 0000000001952FCA38 ()
+#11 libdispatch.dylib 0000000001952FD7D4 ()
+#12 libdispatch.dylib 0000000001952D8DEC ()
+#13 libdispatch.dylib 0000000001952D992C ()
+#14 libdispatch.dylib 0000000001952E1E08 ()
+#15 libsystem_pthread.dylib 0000000001954DD114 _pthread_wqthread()
+#16 libsystem_pthread.dylib 0000000001954DFCD4 start_wqthread()
+
+
+
 ","激活","0000-00-00","0","否","","余朝阳","2022-02-28 14:28:43","主干(#trunk)","李宽","2022-02-28 14:28:43","","","","0000-00-00 00:00:00","","0000-00-00 00:00:00","0","","","","0000-00-00 00:00:00","",""
+"2248","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[_NSCoreDataTaggedObjectID propertyDescription]: unrecognized selector sent to instance 0x8eb1ea4e5d70a7ae","","1-Low","3","代码错误","","","当前展示的视图控制器:ShowStoreNewMapViewController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[_NSCoreDataTaggedObjectID propertyDescription]: unrecognized selector sent to instance 0x8eb1ea4e5d70a7ae
+
+#0 CoreFoundation 000000000180CC50FC ()
+#1 libobjc.A.dylib 000000000199511D64 objc_exception_throw()
+#2 CoreFoundation 000000000180DA20C4 +[NSObject _copyDescription]
+#3 CoreFoundation 000000000180C5A524 ()
+#4 CoreFoundation 000000000180C59660 -[NSKVONotifying_MKUserLocation setCoordinate:]
+#5 CoreData 0000000001882B88F0 ()
+#6 CoreData 0000000001882BCCA0 ()
+#7 CoreData 0000000001882B566C ()
+#8 CoreData 0000000001882B63D0 -[NSSQLFetchRequestContext executeRequestCore:]
+#9 CoreData 00000000018837D1F8 -[NSSQLStoreRequestContext executeRequestUsingConnection:]
+#10 CoreData 0000000001882DCEEC ()
+#11 CoreData 0000000001882AE674 ()
+#12 libdispatch.dylib 000000000180937670 ()
+#13 libdispatch.dylib 0000000001809468C4 ()
+#14 CoreData 0000000001882AC7B0 ()
+#15 CoreData 0000000001882B97A4 -[NSSQLDefaultConnectionManager handleStoreRequest:]
+#16 CoreData 0000000001882CC5C0 ()
+#17 CoreData 0000000001882C2460 ()
+#18 CoreData 0000000001882AF7CC -[NSSQLCore executeRequest:withContext:error:]
+#19 CoreData 000000000188455C88 ()
+#20 CoreData 0000000001882B70C4 ()
+#21 CoreData 0000000001882E8AC0 -[NSPersistentStoreCoordinator executeRequest:withContext:error:]
+#22 CoreData 0000000001882AD724 -[NSManagedObjectContext executeFetchRequest:error:]
+#23 JHUniversalApp 000000000106CEE068 -[SMDataCollectionApi mainUploadDataWithServiceType:opeType:otherDict:]
+#24 libdispatch.dylib 000000000180935924 ()
+#25 libdispatch.dylib 000000000180937670 ()
+#26 libdispatch.dylib 000000000180945B70 _dispatch_main_queue_callback_4CF()
+#27 CoreFoundation 000000000180C7DD84 ()
+#28 CoreFoundation 000000000180C37F5C ()
+#29 CoreFoundation 000000000180C4B468 CFRunLoopRunSpecific()
+#30 GraphicsServices 00000000019C7EB38C GSEventRunModal()
+#31 UIKitCore 0000000001835EE5D0 -[UIApplication _run]
+#32 UIKitCore 00
+
+
+
+","激活","0000-00-00","0","否","","余朝阳","2022-02-28 14:28:07","主干(#trunk)","李宽","2022-02-28 14:28:07","","","","0000-00-00 00:00:00","","0000-00-00 00:00:00","0","","","","0000-00-00 00:00:00","",""
+"2246","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","*** -[AVAssetWriterInput appendSampleBuffer:] Cannot append sample buffer: Must start a session (using -[AVAssetWriter startSessionAtSourceTime:) first","","1-Low","3","代码错误","","","当前展示的视图控制器:JHTabBarController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInternalInconsistencyException
+reason:*** -[AVAssetWriterInput appendSampleBuffer:] Cannot append sample buffer: Must start a session (using -[AVAssetWriter startSessionAtSourceTime:) first
+
+#0 CoreFoundation 0000000001A5BE8654 ()
+#1 libobjc.A.dylib 0000000001A590ABCC objc_exception_throw()
+#2 AVFoundation 0000000001AFE3B150 ()
+#3 JHUniversalApp 0000000001021BBB54 -[SCMovieManager recordSampleBuffer:]
+#4 JHUniversalApp 0000000001021BDFF4 -[SCCameraController captureOutput:didOutputSampleBuffer:fromConnection:]
+#5 AVFoundation 0000000001AFEABEE4 -[AVCaptureVideoDataOutput _processSampleBuffer:]
+#6 AVFoundation 0000000001AFEABC44 ()
+#7 CoreMedia 0000000001AC481DBC ()
+#8 CoreMedia 0000000001AC4A2570 ()
+#9 libdispatch.dylib 0000000001A58AE524 ()
+#10 libdispatch.dylib 0000000001A5856E98 ()
+#11 libdispatch.dylib 0000000001A5867430 ()
+#12 libdispatch.dylib 0000000001A585A770 ()
+#13 libdispatch.dylib 0000000001A585B294 ()
+#14 libdispatch.dylib 0000000001A586478C ()
+#15 libsystem_pthread.dylib 0000000001A58FFB74 _pthread_wqthread()
+#16 libsystem_pthread.dylib 0000000001A5902740 start_wqthread()
+
+","激活","0000-00-00","0","否","","余朝阳","2022-02-28 14:26:25","主干(#trunk)","李聪","2022-02-28 15:03:28","","","","0000-00-00 00:00:00","","0000-00-00 00:00:00","0","","","李宽","2022-02-28 15:03:28","",""
+"2245","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[GlobleManager gameCallback:]: unrecognized selector sent to instance 0x2839e4b60","","1-Low","3","代码错误","","","当前展示的视图控制器:JHTabBarController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[GlobleManager gameCallback:]: unrecognized selector sent to instance 0x2839e4b60
+
+#0 CoreFoundation 000000000180EFD0FC ()
+#1 libobjc.A.dylib 000000000199749D64 objc_exception_throw()
+#2 CoreFoundation 000000000180FDA0C4 +[NSObject _copyDescription]
+#3 CoreFoundation 000000000180E92524 ()
+#4 CoreFoundation 000000000180E91660 -[NSKVONotifying_MKUserLocation setCoordinate:]
+#5 libdispatch.dylib 000000000180B6D924 ()
+#6 libdispatch.dylib 000000000180B6F670 ()
+#7 libdispatch.dylib 000000000180B7DB70 _dispatch_main_queue_callback_4CF()
+#8 CoreFoundation 000000000180EB5D84 ()
+#9 CoreFoundation 000000000180E6FF5C ()
+#10 CoreFoundation 000000000180E83468 CFRunLoopRunSpecific()
+#11 GraphicsServices 00000000019CA2338C GSEventRunModal()
+#12 UIKitCore 0000000001838265D0 -[UIApplication _run]
+#13 UIKitCore 0000000001835A4F74 UIApplicationMain()
+#14 JHUniversalApp 0000000001062EBDE8 -[VAUIFooterView .cxx_destruct]
+#15 dyld 0000000001098A1AA4 start()
+login:w>16:05:53.374 +[FileUtil getUserInfoDic] 本地用户信息不存在！
+login:w>16:05:53.375 +[FileUtil getUserInfoDic] 本地用户信息不存在！
+
+
+
+","激活","0000-00-00","0","否","","余朝阳","2022-02-28 14:25:49","主干(#trunk)","李宽","2022-02-28 14:25:49","","","","0000-00-00 00:00:00","","0000-00-00 00:00:00","0","","","","0000-00-00 00:00:00","",""
+"2237","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","*** +[NSJSONSerialization dataWithJSONObject:options:error:]: Invalid top-level type in JSON write","","1-Low","3","代码错误","","","当前展示的视图控制器:JHCSRotationImageViewController
+
+最后实例化的视图控制器:JHCSRotationImageViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:*** +[NSJSONSerialization dataWithJSONObject:options:error:]: Invalid top-level type in JSON write
+
+#0 CoreFoundation 0000000001814F805C ()
+#1 libobjc.A.dylib 000000000199A12F54 objc_exception_throw()
+#2 Foundation 000000000182CFDEAC ()
+#3 JHUniversalApp 0000000001016F38F4 -[JHLivePlayLibrary.LiveEvaluationVC initWithCoder:]
+#4 JHUniversalApp 0000000001016F34C8 -[JHLivePlayLibrary.LiveEvaluationVC initWithCoder:]
+#5 JHUniversalApp 0000000001039BE4D0 -[JHBase.JHBaseInfo .cxx_destruct]
+#6 JHUniversalApp 0000000001039C30F4 -[JHBase.JHBaseInfo .cxx_destruct]
+#7 JHUniversalApp 0000000001038A5B08 -[Kingfisher.AnimatedImageView initWithCoder:]
+#8 JHUniversalApp 000000000103839864 -[Kingfisher.AnimatedImageView initWithCoder:]
+#9 libdispatch.dylib 000000000181168C04 ()
+#10 libdispatch.dylib 00000000018116A950 ()
+#11 libdispatch.dylib 000000000181178D30 _dispatch_main_queue_callback_4CF()
+#12 CoreFoundation 0000000001814B0CE4 ()
+#13 CoreFoundation 00000000018146AEBC ()
+#14 CoreFoundation 00000000018147E3C8 CFRunLoopRunSpecific()
+#15 GraphicsServices 00000000019CC8F38C GSEventRunModal()
+#16 UIKitCore 000000000183E240BC -[UIApplication _run]
+#17 UIKitCore 000000000183BA1BE8 UIApplicationMain()
+#18 JHUniversalApp 0000000001033B00D8 -[VAUIFooterView .cxx_destruct]
+#19 dyld 000000000106891A24 start()","激活","0000-00-00","0","否","","余朝阳","2022-02-28 14:17:52","主干(#trunk)","李宽","2022-02-28 14:17:52","","","","0000-00-00 00:00:00","","0000-00-00 00:00:00","0","","","","0000-00-00 00:00:00","",""
+"2234","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[GEOLocalizedAttribution propertyDescription]: unrecognized selector sent to instance 0x281e981e0","","1-Low","3","代码错误","","","当前展示的视图控制器:JHCSRotationImageViewController
+
+最后实例化的视图控制器:JHCSRotationImageViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[GEOLocalizedAttribution propertyDescription]: unrecognized selector sent to instance 0x281e981e0
+
+#0 CoreFoundation 000000000180E510FC ()
+#1 libobjc.A.dylib 00000000019968CD64 objc_exception_throw()
+#2 CoreFoundation 000000000180F2E0C4 +[NSObject _copyDescription]
+#3 CoreFoundation 000000000180DE6524 ()
+#4 CoreFoundation 000000000180DE5660 _CF_forwarding_prep_0()
+#5 CoreData 00000000018843E8F0 ()
+#6 CoreData 000000000188442CA0 ()
+#7 CoreData 00000000018843B66C ()
+#8 CoreData 00000000018843C3D0 -[NSSQLFetchRequestContext executeRequestCore:]
+#9 CoreData 0000000001885031F8 -[NSSQLStoreRequestContext executeRequestUsingConnection:]
+#10 CoreData 000000000188462EEC ()
+#11 CoreData 000000000188434674 ()
+#12 libdispatch.dylib 000000000180AC3670 ()
+#13 libdispatch.dylib 000000000180AD28C4 ()
+#14 CoreData 0000000001884327B0 ()
+#15 CoreData 00000000018843F7A4 -[NSSQLDefaultConnectionManager handleStoreRequest:]
+#16 CoreData 0000000001884525C0 ()
+#17 CoreData 000000000188448460 ()
+#18 CoreData 0000000001884357CC -[NSSQLCore executeRequest:withContext:error:]
+#19 CoreData 0000000001885DBC88 ()
+#20 CoreData 00000000018843D0C4 ()
+#21 CoreData 00000000018846EAC0 -[NSPersistentStoreCoordinator executeRequest:withContext:error:]
+#22 CoreData 000000000188433724 -[NSManagedObjectContext executeFetchRequest:error:]
+#23 JHUniversalApp 0000000001044B566C -[SMDataCollectionApi mainUploadDataWithServiceType:opeType:otherDict:]
+#24 libdispatch.dylib 000000000180AC1924 ()
+#25 libdispatch.dylib 000000000180AC3670 ()
+#26 libdispatch.dylib 000000000180AD1B70 _dispatch_main_queue_callback_4CF()
+#27 CoreFoundation 000000000180E09D84 ()
+#28 CoreFoundation 000000000180DC3F5C ()
+#29 CoreFoundation 000000000180DD7468 CFRunLoopRunSpecific()
+#30 GraphicsServices 00000000019C96338C GSEventRunModal()
+#31 UIKitCore 000000000183779088 -[UIApplication _run]
+#32 UIKitCore 0000000001834F7958 UIAp
+
+
+
+","激活","0000-00-00","0","否","","余朝阳","2022-02-28 14:17:09","主干(#trunk)","李宽","2022-02-28 14:17:09","","","","0000-00-00 00:00:00","","0000-00-00 00:00:00","0","","","","0000-00-00 00:00:00","",""
+"2233","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[CDEnLocation count]: unrecognized selector sent to instance 0x281d69d60","","1-Low","3","代码错误","","","当前展示的视图控制器:ShowStoreNewMapViewController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[CDEnLocation count]: unrecognized selector sent to instance 0x281d69d60
+
+#0 CoreFoundation 0000000001A37D586C ()
+#1 libobjc.A.dylib 0000000001B8744C50 objc_exception_throw()
+#2 CoreFoundation 0000000001A36DC95C -[NSOrderedSet initWithSet:copyItems:]
+#3 CoreFoundation 0000000001A37D8438 ()
+#4 CoreFoundation 0000000001A37DA740 -[NSKVONotifying_MKUserLocation setCoordinate:]
+#5 CFNetwork 0000000001A3DE58CC -[__NSCFURLLocalSessionConnection resume]
+#6 CFNetwork 0000000001A3FA5A50 -[__NSCFURLSessionTaskActiveStreamDependencyInfo init]
+#7 CFNetwork 0000000001A3F51580 -[__CFN_TaskMetrics _daemon_transactionMetrics]
+#8 CFNetwork 0000000001A3DF7470 _CFHostIsDomainTopLevelForCertificatePolicy()
+#9 libapple_nghttp2.dylib 0000000001EDF08E64 ()
+#10 libapple_nghttp2.dylib 0000000001EDF0ECCC nghttp2_session_mem_recv()
+#11 CFNetwork 0000000001A3E58938 _CFURLCachePersistMemoryToDiskNow()
+#12 libdispatch.dylib 0000000001A33F89F8 ()
+#13 CFNetwork 0000000001A3E58804 _CFURLCachePersistMemoryToDiskNow()
+#14 CFNetwork 0000000001A3E853FC -[__NSCFURLLocalSessionConnection cancel]
+#15 libdispatch.dylib 0000000001A33D7FB8 ()
+#16 libdispatch.dylib 0000000001A33C9DB0 ()
+#17 libdispatch.dylib 0000000001A33D110C ()
+#18 libdispatch.dylib 0000000001A33D1C90 ()
+#19 libdispatch.dylib 0000000001A33D2E60 ()
+#20 libdispatch.dylib 0000000001A33DBD78 ()
+#21 libsystem_pthread.dylib 0000000001EEFA7804 _pthread_wqthread()
+#22 libsystem_pthread.dylib 0000000001EEFAE75C start_wqthread()
+login:=>08:32:20.279 -[LoginAndRegister startConComponent:] 启动通讯组件启动结果JHMessageCenterStartResult LoginViewController == 0
+login:=>08:32:20.279 -[LoginAndRegister startConComponent:] 全局变量的值为 socketUID ＝ 553d1b08-3dce-415b-b33d-391dfa486262
+
+
+
+","激活","0000-00-00","0","否","","余朝阳","2022-02-28 14:16:28","主干(#trunk)","李宽","2022-02-28 14:16:28","","","","0000-00-00 00:00:00","","0000-00-00 00:00:00","0","","","","0000-00-00 00:00:00","",""
+"2231","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","Invalid parameter not satisfying: pos","","1-Low","3","代码错误","","","当前展示的视图控制器:JHTabBarController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInternalInconsistencyException
+reason:Invalid parameter not satisfying: pos
+
+#0 CoreFoundation 0000000001811250FC ()
+#1 libobjc.A.dylib 000000000199975D64 objc_exception_throw()
+#2 Foundation 0000000001829E139C ()
+#3 UIKitCore 0000000001846D0538 -[_UITextKitTextPosition compare:]
+#4 UIKitCore 000000000183556A44 -[UITextInputController comparePosition:toPosition:]
+#5 UIKitCore 0000000001846DBE10 -[UITextView comparePosition:toPosition:]
+#6 UIKitCore 0000000001846A4140 -[UITextPasteController _clampRange:]
+#7 UIKitCore 0000000001846A4934 ()
+#8 UIKitCore 0000000001846A4B4C ()
+#9 UIKitCore 0000000001846CC684 -[UITextInputController _pasteAttributedString:toRange:completion:]
+#10 UIKitCore 0000000001846A487C -[UITextPasteController _performPasteOfAttributedString:toRange:forSession:completion:]
+#11 UIKitCore 0000000001846A3B18 ()
+#12 libdispatch.dylib 000000000180D95924 ()
+#13 libdispatch.dylib 000000000180D97670 ()
+#14 libdispatch.dylib 000000000180DA5B70 _dispatch_main_queue_callback_4CF()
+#15 CoreFoundation 0000000001810DDD84 ()
+#16 CoreFoundation 000000000181097F5C ()
+#17 CoreFoundation 0000000001810AB468 CFRunLoopRunSpecific()
+#18 GraphicsServices 00000000019CC4F38C GSEventRunModal()
+#19 UIKitCore 000000000183A4E5D0 -[UIApplication _run]
+#20 UIKitCore 0000000001837CCF74 UIApplicationMain()
+#21 JHUniversalApp 000000000103D2FDE8 -[VAUIFooterView .cxx_destruct]
+#22 dyld 0000000001072C9AA4 start()
+
+
+
+","激活","0000-00-00","0","否","","余朝阳","2022-02-28 14:15:12","主干(#trunk)","郭旭","2022-02-28 15:05:03","","","","0000-00-00 00:00:00","","0000-00-00 00:00:00","0","","","李宽","2022-02-28 15:05:03","",""
+"2230","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[_NSCoreDataTaggedObjectID count]: unrecognized selector sent to instance 0xadf33752be5ea44c","","1-Low","3","代码错误","","","当前展示的视图控制器:ShowStoreNewMapViewController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[_NSCoreDataTaggedObjectID count]: unrecognized selector sent to instance 0xadf33752be5ea44c
+
+#0 CoreFoundation 000000000181C1D04C ()
+#1 libobjc.A.dylib 00000000019A291F54 objc_exception_throw()
+#2 CoreFoundation 000000000181CFA014 +[NSObject _copyDescription]
+#3 CoreFoundation 000000000181BB2474 ()
+#4 CoreFoundation 000000000181BB15B0 -[NSKVONotifying_MKUserLocation setCoordinate:]
+#5 CFNetwork 0000000001825A4FA8 -[__NSCFURLSessionTaskActiveStreamDependencyInfo init]
+#6 CFNetwork 0000000001825A50C8 -[__NSCFURLSessionTaskActiveStreamDependencyInfo init]
+#7 CFNetwork 00000000018255FFB4 -[__CFN_TaskMetrics _daemon_transactionMetrics]
+#8 CFNetwork 00000000018242A628 _CFHostIsDomainTopLevelForCertificatePolicy()
+#9 libapple_nghttp2.dylib 0000000001F14A3448 ()
+#10 libapple_nghttp2.dylib 0000000001F149E4A0 nghttp2_session_mem_recv()
+#11 CFNetwork 000000000182485254 _CFURLCachePersistMemoryToDiskNow()
+#12 libdispatch.dylib 0000000001818C0AEC ()
+#13 CFNetwork 00000000018248511C _CFURLCachePersistMemoryToDiskNow()
+#14 CFNetwork 0000000001824AF518 -[__NSCFURLLocalSessionConnection resume]
+#15 libdispatch.dylib 00000000018189E444 ()
+#16 libdispatch.dylib 00000000018188F660 ()
+#17 libdispatch.dylib 000000000181896DE4 ()
+#18 libdispatch.dylib 00000000018189798C ()
+#19 libdispatch.dylib 000000000181898C74 ()
+#20 libdispatch.dylib 0000000001818A21A8 ()
+#21 libsystem_pthread.dylib 0000000001F27A60F4 _pthread_wqthread()
+#22 libsystem_pthread.dylib 0000000001F27A5E94 start_wqthread()
+
+
+
+","激活","0000-00-00","0","否","","余朝阳","2022-02-28 14:14:26","主干(#trunk)","李宽","2022-02-28 14:14:26","","","","0000-00-00 00:00:00","","0000-00-00 00:00:00","0","","","","0000-00-00 00:00:00","",""
+"2229","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[_NSCoreDataTaggedObjectID containsKey:]: unrecognized selector sent to instance","","1-Low","3","代码错误","","","当前展示的视图控制器:ShowStoreNewMapViewController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[_NSCoreDataTaggedObjectID containsKey:]: unrecognized selector sent to instance 0xbcb013da683e1e91
+
+#0 CoreFoundation 000000000180DF10FC ()
+#1 libobjc.A.dylib 000000000199641D64 objc_exception_throw()
+#2 CoreFoundation 000000000180ECE0C4 +[NSObject _copyDescription]
+#3 CoreFoundation 000000000180D86524 ()
+#4 CoreFoundation 000000000180D85660 -[NSKVONotifying_MKUserLocation setCoordinate:]
+#5 CoreFoundation 000000000180DAB984 CFDictionaryContainsKey()
+#6 CFNetwork 0000000001815B1C4C -[__NSCFURLSessionTaskInfo pathToDownloadTaskFile]
+#7 CFNetwork 0000000001815A61BC -[NSURLSessionTask _preventsAppSSO]
+#8 CFNetwork 0000000001815B7880 -[NSURLCache dealloc]
+#9 CFNetwork 0000000001815C49C4 -[NSURLSessionConfiguration _allowsMultipathTCP]
+#10 CFNetwork 00000000018159F8C8 +[_NSCFURLProtocol canonicalRequestForRequest:task:]
+#11 CFNetwork 00000000018167E1A4 +[_NSCFURLProtocol canonicalRequestForRequest:]
+#12 CFNetwork 0000000001815F5130 -[__NSURLSessionLocal copyWithZone:]
+#13 CFNetwork 0000000001815F52BC -[__NSURLSessionLocal copyWithZone:]
+#14 CFNetwork 000000000181653294 CFURLCacheCreate()
+#15 CFNetwork 0000000001815A20A4 -[NSURLSessionConfiguration _supportsAVAssetDownloads]
+#16 CFNetwork 0000000001815DF48C +[AVAssetDownloadURLSession sessionWithConfiguration:assetDownloadDelegate:delegateQueue:]
+#17 CFNetwork 0000000001815A8094 -[NSURLSessionTaskTransactionMetrics .cxx_destruct]
+#18 CFNetwork 0000000001815DCE18 -[NSURLSessionTask _withXURLCache:]
+#19 CFNetwork 00000000018159D8BC -[NSURLRequest HTTPShouldHandleCookies]
+#20 CFNetwork 0000000001815BFC8C -[NSURLSessionConfiguration shouldUseExtendedBackgroundIdleMode]
+#21 CFNetwork 00000000018157CAE4 +[NSHTTPCookie _cf2nsCookies:]
+#22 CFNetwork 000000000181591B8C -[NSURLSessionTask setTaskDescription:]
+#23 libdispatch.dylib 000000000180A72454 ()
+#24 libdispatch.dylib 000000000180A63670 ()
+#25 libdispatch.dylib 000000000180A6ADF4 ()
+#26 libdispatch.dylib 000000000180A6B99C ()
+#27 libdispatch.dylib 000000000180A761B8 ()
+#28 libsystem_pthread.dylib 0000000001F216B0F4 _pthread_wqthread()
+#29 libsystem_pthread.dylib 0000000001F216AE94
+
+
+
+  
+","激活","0000-00-00","0","否","","霍曙光","2022-02-28 14:14:15","主干(#trunk)","李宽","2022-02-28 14:14:15","","","","0000-00-00 00:00:00","","0000-00-00 00:00:00","0","","","","0000-00-00 00:00:00","",""
+"2226","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[GEOLocalizedAttribution propertyDescription]: unrecognized selector sent","","1-Low","3","代码错误","","","当前展示的视图控制器:JHCSRotationImageViewController
+
+最后实例化的视图控制器:JHCSRotationImageViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[GEOLocalizedAttribution propertyDescription]: unrecognized selector sent to instance 0x281e981e0
+
+#0 CoreFoundation 000000000180E510FC ()
+#1 libobjc.A.dylib 00000000019968CD64 objc_exception_throw()
+#2 CoreFoundation 000000000180F2E0C4 +[NSObject _copyDescription]
+#3 CoreFoundation 000000000180DE6524 ()
+#4 CoreFoundation 000000000180DE5660 _CF_forwarding_prep_0()
+#5 CoreData 00000000018843E8F0 ()
+#6 CoreData 000000000188442CA0 ()
+#7 CoreData 00000000018843B66C ()
+#8 CoreData 00000000018843C3D0 -[NSSQLFetchRequestContext executeRequestCore:]
+#9 CoreData 0000000001885031F8 -[NSSQLStoreRequestContext executeRequestUsingConnection:]
+#10 CoreData 000000000188462EEC ()
+#11 CoreData 000000000188434674 ()
+#12 libdispatch.dylib 000000000180AC3670 ()
+#13 libdispatch.dylib 000000000180AD28C4 ()
+#14 CoreData 0000000001884327B0 ()
+#15 CoreData 00000000018843F7A4 -[NSSQLDefaultConnectionManager handleStoreRequest:]
+#16 CoreData 0000000001884525C0 ()
+#17 CoreData 000000000188448460 ()
+#18 CoreData 0000000001884357CC -[NSSQLCore executeRequest:withContext:error:]
+#19 CoreData 0000000001885DBC88 ()
+#20 CoreData 00000000018843D0C4 ()
+#21 CoreData 00000000018846EAC0 -[NSPersistentStoreCoordinator executeRequest:withContext:error:]
+#22 CoreData 000000000188433724 -[NSManagedObjectContext executeFetchRequest:error:]
+#23 JHUniversalApp 0000000001044B566C -[SMDataCollectionApi mainUploadDataWithServiceType:opeType:otherDict:]
+#24 libdispatch.dylib 000000000180AC1924 ()
+#25 libdispatch.dylib 000000000180AC3670 ()
+#26 libdispatch.dylib 000000000180AD1B70 _dispatch_main_queue_callback_4CF()
+#27 CoreFoundation 000000000180E09D84 ()
+#28 CoreFoundation 000000000180DC3F5C ()
+#29 CoreFoundation 000000000180DD7468 CFRunLoopRunSpecific()
+#30 GraphicsServices 00000000019C96338C GSEventRunModal()
+#31 UIKitCore 000000000183779088 -[UIApplication _run]
+#32 UIKitCore 0000000001834F7958 UIAp
+
+
+
+  
+","激活","0000-00-00","0","否","","霍曙光","2022-02-28 14:07:34","主干(#trunk)","霍曙光","2022-02-28 15:09:01","","","","0000-00-00 00:00:00","","0000-00-00 00:00:00","0","","","李宽","2022-02-28 15:09:01","",""
+"2101","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[_NSCoreDataTaggedObjectID isEqualToString:]: unrecognized selector sent to instance 0x93f3d68b34079f02","","1-Low","3","代码错误","","","当前展示的视图控制器:LayoutEngineViewController
+
+最后实例化的视图控制器:JHCSRotationImageViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[_NSCoreDataTaggedObjectID isEqualToString:]: unrecognized selector sent to instance 0x93f3d68b34079f02
+
+#0 CoreFoundation 00000000018C816708 ()
+#1 libobjc.A.dylib 0000000001A13207A8 objc_exception_throw()
+#2 CoreFoundation 00000000018C719BFC -[NSOrderedSet initWithSet:copyItems:]
+#3 CoreFoundation 00000000018C819260 ()
+#4 CoreFoundation 00000000018C81B560 _CF_forwarding_prep_0()
+#5 JHUniversalApp 000000000106B793CC -[WBAidManager request:didFinishLoadingWithResult:]
+#6 JHUniversalApp 000000000106B7EBFC -[WBHttpRequest handleResponseData:]
+#7 JHUniversalApp 000000000106B7EA24 -[WBHttpRequest URLSession:task:didCompleteWithError:]
+#8 CFNetwork 00000000018CFF65C0 +[NSURLSession new]
+#9 libdispatch.dylib 00000000018C401A84 ()
+#10 libdispatch.dylib 00000000018C40381C ()
+#11 libdispatch.dylib 00000000018C411C70 _dispatch_main_queue_callback_4CF()
+#12 CoreFoundation 00000000018C790340 ()
+#13 CoreFoundation 00000000018C78A218 ()
+#14 CoreFoundation 00000000018C789308 CFRunLoopRunSpecific()
+#15 GraphicsServices 0000000001A3E0C734 GSEventRunModal()
+#16 UIKitCore 00000000018F20775C -[UIApplication _run]
+#17 UIKitCore 00000000018F20CFCC UIApplicationMain()
+#18 JHUniversalApp 00000000010792D574 -[VAUIFooterView .cxx_destruct]
+#19 libdyld.dylib 00000000018C445CF8 ()
+
+
+
+","激活","0000-00-00","0","否","","余朝阳","2022-02-24 14:31:07","主干(#trunk)","李宽","2022-02-24 14:31:07","","","","0000-00-00 00:00:00","","0000-00-00 00:00:00","0","","","","0000-00-00 00:00:00","",""
+"2094","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","Attempted to scroll the table view to an out-of-bounds row (0) when there are only 0 rows in section 0. Table view: ; layer = ; contentOffset: {0, 0}; contentSize: {414, 0}; adjustedContentInset: {0, 0, 44, 0}; dataSource: >","","1-Low","3","代码错误","","","当前展示的视图控制器:JHTabBarController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSRangeException
+reason:Attempted to scroll the table view to an out-of-bounds row (0) when there are only 0 rows in section 0. Table view: ; layer = ; contentOffset: {0, 0}; contentSize: {414, 0}; adjustedContentInset: {0, 0, 44, 0}; dataSource: >
+#0 CoreFoundation 0000000001A8C8986C ()
+#1 libobjc.A.dylib 0000000001BDBF8C50 objc_exception_throw()
+#2 CoreFoundation 0000000001A8B824A4 -[NSCache init]
+#3 UIKitCore 0000000001AB84B16C -[UITableView _contentOffsetForScrollingToRowAtIndexPath:atScrollPosition:usingPresentationValues:]
+#4 UIKitCore 0000000001AB84BE0C -[UITableView _scrollToRowAtIndexPath:atScrollPosition:animated:usingPresentationValues:]
+#5 UIKitCore 0000000001AB84BC74 -[UITableView scrollToRowAtIndexPath:atScrollPosition:animated:]
+#6 JHUniversalApp 000000000103CFB624 -[TCDeviceLiveListsViewController scrollViewDidEndDecelerating:]
+#7 UIKitCore 0000000001ABB1A53C -[UIScrollView _scrollViewDidEndDeceleratingForDelegate]
+#8 UIKitCore 0000000001ABB14D94 -[UIScrollView _stopScrollDecelerationNotify:]
+#9 UIKitCore 0000000001AB85D5A8 -[UITableView _stopScrollingNotify:pin:]
+#10 UIKitCore 0000000001ABB0C028 -[UIScrollView _smoothScrollWithUpdateTime:]
+#11 UIKitCore 0000000001ABB0C2B8 -[UIScrollView _smoothScrollDisplayLink:]
+#12 QuartzCore 0000000001ABF599E8 ()
+#13 QuartzCore 0000000001AC032EAC ()
+#14 CoreFoundation 0000000001A8BE0DD0 ()
+#15 CoreFoundation 0000000001A8C05FE8 ()
+#16 CoreFoundation 0000000001A8C05378 ()
+#17 CoreFoundation 0000000001A8BFF08C ()
+#18 CoreFoundation 0000000001A8BFE21C CFRunLoopRunSpecific()
+#19 GraphicsServices 0000000001C0702784 GSEventRunModal()
+#20 UIKitCore 0000000001AB63CFE0 -[UIApplication _run]
+#21 UIKitCore 0000000001AB642854 UIApplicationMain()
+#22 JHUniversalApp 00000000010676FDE8 -[VAUIFooterView .cxx_destruct]
+#23 libdyld.dylib 0000000001A88BE6B0 ()
+
+","激活","0000-00-00","0","否","","余朝阳","2022-02-24 14:13:59","主干(#trunk)","李宽","2022-02-24 14:13:59","","","","0000-00-00 00:00:00","","0000-00-00 00:00:00","0","","","","0000-00-00 00:00:00","",""
+"2093","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[_NSCoreDataTaggedObjectID _cfMutableCopy]: unrecognized selector sent to instance 0x9f1e0bd8ab9eb10d","","1-Low","3","代码错误","","","当前展示的视图控制器:LayoutEngineViewController
+
+最后实例化的视图控制器:JHCSRotationImageViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[_NSCoreDataTaggedObjectID _cfMutableCopy]: unrecognized selector sent to instance 0x9f1e0bd8ab9eb10d
+
+#0 CoreFoundation 000000000181D390FC ()
+#1 libobjc.A.dylib 00000000019A573D64 objc_exception_throw()
+#2 CoreFoundation 000000000181E160C4 +[NSObject _copyDescription]
+#3 CoreFoundation 000000000181CCE524 ()
+#4 CoreFoundation 000000000181CCD660 _CF_forwarding_prep_0()
+#5 CFNetwork 0000000001824F59FC -[NSURLSessionTaskTransactionMetrics _apsRelayAttempted]
+#6 CFNetwork 0000000001825172B8 -[__NSCFURLSessionTaskInfo setResumedAndWaitingForEarliestBeginDate:]
+#7 CFNetwork 00000000018263FAE0 +[_NSCFSocksProxy handleIncomingConnection:queue:configuration:]
+#8 CFNetwork 0000000001824D21B4 -[NSMutableURLRequest addValue:forHTTPHeaderField:]
+#9 libdispatch.dylib 0000000001819A9924 ()
+#10 libdispatch.dylib 0000000001819AB670 ()
+#11 libdispatch.dylib 0000000001819B2DF4 ()
+#12 libdispatch.dylib 0000000001819B399C ()
+#13 libdispatch.dylib 0000000001819B4C84 ()
+#14 libdispatch.dylib 0000000001819BE1B8 ()
+#15 libsystem_pthread.dylib 0000000001F270F0F4 _pthread_wqthread()
+#16 libsystem_pthread.dylib 0000000001F270EE94 start_wqthread()
+
+
+
+","激活","0000-00-00","0","否","","余朝阳","2022-02-24 14:12:28","主干(#trunk)","余朝阳","2022-02-24 15:15:30","","","","0000-00-00 00:00:00","","0000-00-00 00:00:00","0","","","李宽","2022-02-24 15:15:30","",""
+"2090","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","An instance 0x113d85620 of class JHWebview was deallocated while key value observers were still registered with it. Current observation info: (","","1-Low","3","代码错误","","","当前展示的视图控制器:ShowStoreNewMapViewController
+
+最后实例化的视图控制器:ShowStoreNewMapViewController
+
+2.6.0.012920 name:NSInternalInconsistencyException
+reason:An instance 0x113d85620 of class JHWebview was deallocated while key value observers were still registered with it. Current observation info: (
+Context: 0x0, Property: 0x1702409f0>
+Context: 0x0, Property: 0x170e43960>
+Context: 0x0, Property: 0x170e43960>
+Context: 0x0, Property: 0x170e43960>
+Context: 0x0, Property: 0x170e43960>
+Context: 0x0, Property: 0x170e43960>
+Context: 0x0, Property: 0x170e43960>
+Context: 0x0, Property: 0x170e43960>
+)
+#0 CoreFoundation 00000000018B3DD1B8 ()
+#1 libobjc.A.dylib 000000000189E1455C objc_exception_throw()
+#2 CoreFoundation 00000000018B3DD100 -[NSException initWithCoder:]
+#3 Foundation 00000000018BE585F4 -[NSKVONotifying_SDWebImageDownloaderConfig dealloc]
+#4 libobjc.A.dylib 000000000189E2DFE0 ()
+#5 UIKit 000000000191290668 -[UIView dealloc]
+#6 libobjc.A.dylib 000000000189E2DFE0 ()
+#7 QuartzCore 00000000018E6AF438 ()
+#8 QuartzCore 00000000018E6D6A68 ()
+#9 QuartzCore 00000000018E6D7488 ()
+#10 CoreFoundation 00000000018B38A0C0 ()
+#11 CoreFoundation 00000000018B387CF0 ()
+#12 CoreFoundation 00000000018B388180 ()
+#13 CoreFoundation 00000000018B2B62B8 CFRunLoopRunSpecific()
+#14 GraphicsServices 00000000018CD6A198 GSEventRunModal()
+#15 UIKit 0000000001912FD7FC -[UIApplication _run]
+#16 UIKit 0000000001912F8534 UIApplicationMain()
+#17 JHUniversalApp
+
+
+
+","激活","0000-00-00","0","否","","余朝阳","2022-02-24 14:10:14","主干(#trunk)","霍曙光","2022-02-24 15:16:42","","","","0000-00-00 00:00:00","","0000-00-00 00:00:00","0","","","李宽","2022-02-24 15:16:42","",""
+"2089","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[_NSCoreDataTaggedObjectID isEqualToDictionary:]: unrecognized selector sent to instance 0x8633e84a7ecdcaa1","","1-Low","3","代码错误","","","当前展示的视图控制器:ShowStoreNewMapViewController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[_NSCoreDataTaggedObjectID isEqualToDictionary:]: unrecognized selector sent to instance 0x8633e84a7ecdcaa1
+
+#0 CoreFoundation 00000000018EB9186C ()
+#1 libobjc.A.dylib 0000000001A3BAAC50 objc_exception_throw()
+#2 CoreFoundation 00000000018EA9895C -[NSOrderedSet initWithSet:copyItems:]
+#3 CoreFoundation 00000000018EB94438 ()
+#4 CoreFoundation 00000000018EB96740 -[NSKVONotifying_MKUserLocation setCoordinate:]
+#5 Foundation 00000000018FE93AA0 ()
+#6 Foundation 00000000018FDB225C -[NSConcreteHashTable getItem:]
+#7 UIFoundation 000000000197E24BD8 +[NSAttributeDictionary newWithDictionary:]
+#8 UIFoundation 000000000197E26DFC -[_NSCachedAttributedString initWithString:attributes:]
+#9 UIFoundation 000000000197EB672C -[NSCoreTypesetter _stringDrawingCoreTextEngineWithOriginalString:rect:padding:graphicsContext:forceClipping:attributes:stringDrawingOptions:drawingContext:stringDrawingInterface:]
+#10 UIFoundation 000000000197EB1984 ()
+#11 UIFoundation 000000000197E1A51C -[NSString drawWithRect:options:attributes:context:]
+#12 UIKitCore 0000000001919DD898 -[UILabel _drawTextInRect:baselineCalculationOnly:]
+#13 UIKitCore 0000000001919DBA24 -[UILabel drawTextInRect:]
+#14 UIKitCore 000000000191A93080 -[UIView drawLayer:inContext:]
+#15 QuartzCore 000000000191FB1658 -[CALayer drawInContext:]
+#16 QuartzCore 000000000191E774B0 ()
+#17 QuartzCore 000000000191FB27D4 ()
+#18 QuartzCore 000000000191FB212C -[CALayer _display]
+#19 QuartzCore 000000000191FC3420 ()
+#20 QuartzCore 000000000191F08640 ()
+#21 QuartzCore 000000000191F33B08 ()
+#22 QuartzCore 000000000191F34E98 ()
+#23 CoreFoundation 00000000018EB0C358 ()
+#24 CoreFoundation 00000000018EB065C4 ()
+#25 CoreFoundation 00000000018EB06B74 ()
+#26 CoreFoundation 00000000018EB0621C CFRunLoopRunSpecific()
+#27 GraphicsServices 0000000001A66D0784 GSEventRunModal()
+#28 UIKitCore 000000000191546EE8 -[UIApplication _run]
+#29 UIKitCore 00000000019154C75C UIApplicationMain()
+#30 JHUniversalApp 00000000010506E0E4 -[VAUIFooterView .cxx_destruct]
+#31 libdyld.dyl
+
+","激活","0000-00-00","0","否","","余朝阳","2022-02-24 14:08:40","主干(#trunk)","李飞","2022-02-24 15:37:06","","","","0000-00-00 00:00:00","","0000-00-00 00:00:00","0","","","李宽","2022-02-24 15:37:06","",""
+"2087","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[_NSCoreDataTaggedObjectID objectAtIndex:]: unrecognized selector sent to instance 0x9f9bc1421197e89b","","1-Low","3","代码错误","","","当前展示的视图控制器:ShowStoreNewMapViewController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[_NSCoreDataTaggedObjectID objectAtIndex:]: unrecognized selector sent to instance 0x9f9bc1421197e89b
+
+#0 CoreFoundation 0000000001B6181344 ()
+#1 libobjc.A.dylib 0000000001B5E96CC0 objc_exception_throw()
+#2 CoreFoundation 0000000001B6080110 -[NSOrderedSet initWithSet:copyItems:]
+#3 CoreFoundation 0000000001B6185B20 ()
+#4 CoreFoundation 0000000001B6187E10 -[NSKVONotifying_MKUserLocation setCoordinate:]
+#5 VectorKit 0000000001C47BBF40 ()
+#6 VectorKit 0000000001C4A1EAF4 ()
+#7 VectorKit 0000000001C4A1E990 ()
+#8 libdispatch.dylib 0000000001B5E22134 ()
+#9 libdispatch.dylib 0000000001B5E235AC ()
+#10 libdispatch.dylib 0000000001B5E29A64 ()
+#11 libdispatch.dylib 0000000001B5E2A4CC ()
+#12 libdispatch.dylib 0000000001B5E2B574 ()
+#13 libdispatch.dylib 0000000001B5E33A5C ()
+#14 libsystem_pthread.dylib 0000000001B5E89718 _pthread_wqthread()
+#15 libsystem_pthread.dylib 0000000001B5E8F9C8 start_wqthread()
+univer:=>11:46:15.381 -[JHMessageEntity dealloc] 消息体销毁了
+univer:=>11:46:15.802 -[JHMessageEntity dealloc] 消息体销毁了
+
+
+
+","激活","0000-00-00","0","否","","余朝阳","2022-02-24 14:06:41","主干(#trunk)","邹丽","2022-02-24 15:17:34","","","","0000-00-00 00:00:00","","0000-00-00 00:00:00","0","","","李宽","2022-02-24 15:17:34","",""
+"2083","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","Unable to activate constraint with anchors and because they have no common ancestor. Does the constraint or its anchors reference items in different view hierarchies? That's illegal.","","1-Low","3","代码错误","","","
+  当前展示的视图控制器:LayoutEngineViewController
+最后实例化的视图控制器:JHCSRotationImageViewController
+2.6.0.012920 name:NSGenericException
+reason:Unable to activate constraint with anchors &spnb
+&spnb
+
+
+&spnb
+
+
+
+
+
+
+&spnb
+&spnb
+&spnb
+&spnb
+&spnb
+&spnb
+&spnb
+&spnb
+
+
+
+
+&spnb
+>
+>
+
+
+","激活","0000-00-00","0","否","","余朝阳","2022-02-24 13:52:40","主干(#trunk)","李宽","2022-02-24 13:52:40","","","","0000-00-00 00:00:00","","0000-00-00 00:00:00","0","","","","0000-00-00 00:00:00","",""
+"2075","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[CDEnLocation count]: unrecognized selector sent to instance 0x283407480","","1-Low","3","代码错误","","","当前展示的视图控制器:ShowStoreNewMapViewController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[CDEnLocation count]: unrecognized selector sent to instance 0x283407480
+
+#0 CoreFoundation 0000000001A560D654 ()
+#1 libobjc.A.dylib 0000000001A532FBCC objc_exception_throw()
+#2 CoreFoundation 0000000001A5511DD8 -[NSOrderedSet initWithSet:copyItems:]
+#3 CoreFoundation 0000000001A56117F8 ()
+#4 CoreFoundation 0000000001A561371C -[NSKVONotifying_MKUserLocation setCoordinate:]
+#5 CFNetwork 0000000001A8A23444 -[CFNetworkTimer setState:]
+#6 CFNetwork 0000000001A892139C _CFStreamErrorFromCFError()
+#7 CFNetwork 0000000001A890ABB0 -[BadPasswordProxyAuthenticationURLDelegate setFailureCount:]
+#8 CFNetwork 0000000001A88BB21C _CFURLRequestCreateArchiveList()
+#9 CFNetwork 0000000001A88C8410 CFCachedURLResponseCopyWrappedRequest()
+#10 libdispatch.dylib 0000000001A52D29A8 ()
+#11 libdispatch.dylib 0000000001A52D3524 ()
+#12 libdispatch.dylib 0000000001A52B0B3C ()
+#13 libdispatch.dylib 0000000001A52B154C ()
+#14 libdispatch.dylib 0000000001A52BA84C ()
+#15 libsystem_pthread.dylib 0000000001A5324B74 _pthread_wqthread()
+#16 libsystem_pthread.dylib 0000000001A5327740 start_wqthread()
+ResponseCode = ““Success““;
+}
+
+
+
+","激活","0000-00-00","0","否","","余朝阳","2022-02-24 11:46:10","主干(#trunk)","李飞","2022-02-24 15:37:41","","","","0000-00-00 00:00:00","","0000-00-00 00:00:00","0","","","李宽","2022-02-24 15:37:41","",""
+"2074","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[_NSCoreDataTaggedObjectID containsKey:]: unrecognized selector sent to instance","","1-Low","3","代码错误","","","当前展示的视图控制器:LayoutEngineViewController
+
+最后实例化的视图控制器:LayoutEngineViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[_NSCoreDataTaggedObjectID containsKey:]: unrecognized selector sent to instance 0x83287a272b934826
+
+#0 CoreFoundation 000000000191142708 ()
+#1 libobjc.A.dylib 0000000001A5C4C7A8 objc_exception_throw()
+#2 CoreFoundation 000000000191045BFC -[NSOrderedSet initWithSet:copyItems:]
+#3 CoreFoundation 000000000191145260 ()
+#4 CoreFoundation 000000000191147560 _CF_forwarding_prep_0()
+#5 CoreFoundation 0000000001910844F0 CFDictionaryContainsKey()
+#6 CFNetwork 00000000019193FC0C -[CFNetworkTimer dealloc]
+#7 CFNetwork 00000000019182ACC8 _CFStreamErrorFromCFError()
+#8 CFNetwork 0000000001917AFF88 CFNetworkExecuteProxyAutoConfigurationScript()
+#9 CFNetwork 000000000191983188 -[NSURLConnectionInternalConnection unscheduleFromRunLoop:forMode:]
+#10 CFNetwork 000000000191983260 -[NSURLConnectionInternalConnection unscheduleFromRunLoop:forMode:]
+#11 CFNetwork 00000000019190EA20 -[__CFNCoreLoggable initWithLoggableName:]
+#12 libdispatch.dylib 000000000190D2DA84 ()
+#13 libdispatch.dylib 000000000190D2F81C ()
+#14 libdispatch.dylib 000000000190D37004 ()
+#15 libdispatch.dylib 000000000190D37C34 ()
+#16 libdispatch.dylib 000000000190D38EE8 ()
+#17 libdispatch.dylib 000000000190D424BC ()
+#18 libsystem_pthread.dylib 0000000001DCDB27A4 _pthread_wqthread()
+#19 libsystem_pthread.dylib 0000000001DCDB974C start_wqthread()
+
+","激活","0000-00-00","0","否","","李聪","2022-02-24 11:44:34","主干(#trunk)","李聪","2022-02-24 15:24:19","","","","0000-00-00 00:00:00","","0000-00-00 00:00:00","0","","","李宽","2022-02-24 15:24:19","",""
+"2061","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","*** Collection  was mutated while being enumerated.","","1-Low","3","代码错误","","","当前展示的视图控制器:JHTabBarController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSGenericException
+reason:*** Collection <__NSArrayM: 0x283e4a790> was mutated while being enumerated.
+
+#0 CoreFoundation 0000000001B59F3180 ()
+#1 libobjc.A.dylib 0000000001B4BCB9F8 objc_exception_throw()
+#2 CoreFoundation 0000000001B59F2A48 -[__NSSingleObjectEnumerator initWithObject:]
+#3 JHUniversalApp 0000000001029694B0 -[NewUploadController upload:andIndex:callBack:]
+#4 JHUniversalApp 0000000001029691C0 -[NewUploadController getUploadDataWithRecordingModel:andIndex:callBack:]
+#5 libdispatch.dylib 0000000001B5430A38 ()
+#6 libdispatch.dylib 0000000001B54317D4 ()
+#7 libdispatch.dylib 0000000001B53D5C80 ()
+#8 libdispatch.dylib 0000000001B53E2030 ()
+#9 libdispatch.dylib 0000000001B53E28D4 ()
+#10 libsystem_pthread.dylib 0000000001B56121B4 _pthread_wqthread()
+#11 libsystem_pthread.dylib 0000000001B5614CD4 start_wqthread()
+
+
+
+","激活","0000-00-00","0","否","","余朝阳","2022-02-24 11:29:53","主干(#trunk)","李宽","2022-02-24 11:29:53","","","","0000-00-00 00:00:00","","0000-00-00 00:00:00","0","","","","0000-00-00 00:00:00","",""
+"2055","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[_NSCoreDataTaggedObjectID propertyDescription]: unrecognized selector sent to instance","","1-Low","3","代码错误","","","
+
+当前展示的视图控制器:ShowStoreNewMapViewController
+最后实例化的视图控制器:JHUIWebViewController
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[_NSCoreDataTaggedObjectID propertyDescription]: unrecognized selector sent to instance 0xb0239948f226e840
+#0 CoreFoundation 000000000180CF90FC ()
+#1 libobjc.A.dylib 000000000199533D64 objc_exception_throw()
+#2 CoreFoundation 000000000180DD60C4 +[NSObject _copyDescription]
+#3 CoreFoundation 000000000180C8E524 ()
+#4 CoreFoundation 000000000180C8D660 -[NSKVONotifying_MKUserLocation setCoordinate:]
+#5 CoreData 0000000001882E68F0 ()
+#6 CoreData 0000000001882EACA0 ()
+#7 CoreData 0000000001882E366C ()
+#8 CoreData 0000000001882E43D0 -[NSSQLFetchRequestContext executeRequestCore:]
+#9 CoreData 0000000001883AB1F8 -[NSSQLStoreRequestContext executeRequestUsingConnection:]
+#10 CoreData 00000000018830AEEC ()
+#11 CoreData 0000000001882DC674 ()
+#12 libdispatch.dylib 00000000018096B670 ()
+#13 libdispatch.dylib 00000000018097A8C4 ()
+#14 CoreData 0000000001882DA7B0 ()
+#15 CoreData 0000000001882E77A4 -[NSSQLDefaultConnectionManager handleStoreRequest:]
+#16 CoreData 0000000001882FA5C0 ()
+#17 CoreData 0000000001882F0460 ()
+#18 CoreData 0000000001882DD7CC -[NSSQLCore executeRequest:withContext:error:]
+#19 CoreData 000000000188483C88 ()
+#20 CoreData 0000000001882E50C4 ()
+#21 CoreData 000000000188316AC0 -[NSPersistentStoreCoordinator executeRequest:withContext:error:]
+#22 CoreData 0000000001882DB724 -[NSManagedObjectContext executeFetchRequest:error:]
+#23 JHUniversalApp 00000000010846E068 -[SMDataCollectionApi mainUploadDataWithServiceType:opeType:otherDict:]
+#24 libdispatch.dylib 000000000180969924 ()
+#25 libdispatch.dylib 00000000018096B670 ()
+#26 libdispatch.dylib 000000000180979B70 _dispatch_main_queue_callback_4CF()
+#27 CoreFoundation 000000000180CB1D84 ()
+#28 CoreFoundation 000000000180C6BF5C ()
+#29 CoreFoundation 000000000180C7F468 CFRunLoopRunSpecific()
+#30 GraphicsServices 00000000019C80A38C GSEventRunModal()
+#31 UIKitCore 000000000183621088 -[UIApplication _run]
+#32 UIKitCore 00
+
+
+ 
+
+
+
+","激活","0000-00-00","0","否","","李聪","2022-02-24 11:18:10","主干(#trunk)","霍曙光","2022-02-24 15:30:43","","","","0000-00-00 00:00:00","","0000-00-00 00:00:00","0","","","李宽","2022-02-24 15:30:43","",""
+"2247","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[__NSCFString lbsDesc]: unrecognized selector sent to instance 0x282a44230","","1-Low","3","代码错误","","","当前展示的视图控制器:JHTabBarController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[__NSCFString lbsDesc]: unrecognized selector sent to instance 0x282a44230
+
+#0 CoreFoundation 0000000001805DD0FC ()
+#1 libobjc.A.dylib 000000000198E2DD64 objc_exception_throw()
+#2 CoreFoundation 0000000001806BA0C4 +[NSObject _copyDescription]
+#3 CoreFoundation 000000000180572524 ()
+#4 CoreFoundation 000000000180571660 -[NSKVONotifying_MKUserLocation setCoordinate:]
+#5 JHUniversalApp 00000000010952F8D4 -[SMDataCollectionApi mainUploadDataWithServiceType:opeType:otherDict:]
+#6 libdispatch.dylib 00000000018024D924 ()
+#7 libdispatch.dylib 00000000018024F670 ()
+#8 libdispatch.dylib 00000000018025DB70 _dispatch_main_queue_callback_4CF()
+#9 CoreFoundation 000000000180595D84 ()
+#10 CoreFoundation 00000000018054FF5C ()
+#11 CoreFoundation 000000000180563468 CFRunLoopRunSpecific()
+#12 GraphicsServices 00000000019C10738C GSEventRunModal()
+#13 UIKitCore 000000000182F065D0 -[UIApplication _run]
+#14 UIKitCore 000000000182C84F74 UIApplicationMain()
+#15 JHUniversalApp 0000000001087A3DE8 -[VAUIFooterView .cxx_destruct]
+#16 dyld 00000000010BC2DAA4 start()
+
+
+
+","已解决","0000-00-00","0","是","","余朝阳","2022-02-28 14:27:19","主干(#trunk)","余朝阳","2022-03-01 11:42:36","平康","已解决","主干(#trunk)","2022-03-01 11:41:56","","0000-00-00 00:00:00","0","","","平康","2022-03-01 11:42:36","",""
+"2240","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[MTFilterDataFieldItemModel reachabilityChanged:]: unrecognized selector sent to instance 0x28286dbc0","","1-Low","3","代码错误","","","当前展示的视图控制器:JHTabBarController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[MTFilterDataFieldItemModel reachabilityChanged:]: unrecognized selector sent to instance 0x28286dbc0
+
+#0 CoreFoundation 000000000193482DC0 ()
+#1 libobjc.A.dylib 0000000001A7FDF7A8 objc_exception_throw()
+#2 CoreFoundation 0000000001933862D0 -[NSOrderedSet initWithSet:copyItems:]
+#3 CoreFoundation 000000000193485918 ()
+#4 CoreFoundation 000000000193487C10 _CF_forwarding_prep_0()
+#5 JHUniversalApp 0000000001039A8D50 -[Reachability startNotifier]
+#6 SystemConfiguration 000000000193941DAC ()
+#7 SystemConfiguration 0000000001939426F4 ()
+#8 libnetwork.dylib 0000000001940F4A54 ()
+#9 libdispatch.dylib 00000000019306DA84 ()
+#10 libdispatch.dylib 00000000019306F81C ()
+#11 libdispatch.dylib 000000000193077004 ()
+#12 libdispatch.dylib 000000000193077C00 ()
+#13 libdispatch.dylib 0000000001930824BC ()
+#14 libsystem_pthread.dylib 0000000001DF2627A4 _pthread_wqthread()
+#15 libsystem_pthread.dylib 0000000001DF26974C start_wqthread()
+
+","已解决","0000-00-00","0","是","","余朝阳","2022-02-28 14:19:46","主干(#trunk)","余朝阳","2022-02-28 14:30:11","余朝阳","已解决","主干(#trunk)","2022-02-28 14:30:00","","0000-00-00 00:00:00","0","","","余朝阳","2022-02-28 14:30:11","",""
+"2239","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[_NSCoreDataTaggedObjectID containsKey:]: unrecognized selector sent to instance 0xbcb013da683e1e91","","1-Low","3","代码错误","","","当前展示的视图控制器:ShowStoreNewMapViewController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[_NSCoreDataTaggedObjectID containsKey:]: unrecognized selector sent to instance 0xbcb013da683e1e91
+
+#0 CoreFoundation 000000000180DF10FC ()
+#1 libobjc.A.dylib 000000000199641D64 objc_exception_throw()
+#2 CoreFoundation 000000000180ECE0C4 +[NSObject _copyDescription]
+#3 CoreFoundation 000000000180D86524 ()
+#4 CoreFoundation 000000000180D85660 -[NSKVONotifying_MKUserLocation setCoordinate:]
+#5 CoreFoundation 000000000180DAB984 CFDictionaryContainsKey()
+#6 CFNetwork 0000000001815B1C4C -[__NSCFURLSessionTaskInfo pathToDownloadTaskFile]
+#7 CFNetwork 0000000001815A61BC -[NSURLSessionTask _preventsAppSSO]
+#8 CFNetwork 0000000001815B7880 -[NSURLCache dealloc]
+#9 CFNetwork 0000000001815C49C4 -[NSURLSessionConfiguration _allowsMultipathTCP]
+#10 CFNetwork 00000000018159F8C8 +[_NSCFURLProtocol canonicalRequestForRequest:task:]
+#11 CFNetwork 00000000018167E1A4 +[_NSCFURLProtocol canonicalRequestForRequest:]
+#12 CFNetwork 0000000001815F5130 -[__NSURLSessionLocal copyWithZone:]
+#13 CFNetwork 0000000001815F52BC -[__NSURLSessionLocal copyWithZone:]
+#14 CFNetwork 000000000181653294 CFURLCacheCreate()
+#15 CFNetwork 0000000001815A20A4 -[NSURLSessionConfiguration _supportsAVAssetDownloads]
+#16 CFNetwork 0000000001815DF48C +[AVAssetDownloadURLSession sessionWithConfiguration:assetDownloadDelegate:delegateQueue:]
+#17 CFNetwork 0000000001815A8094 -[NSURLSessionTaskTransactionMetrics .cxx_destruct]
+#18 CFNetwork 0000000001815DCE18 -[NSURLSessionTask _withXURLCache:]
+#19 CFNetwork 00000000018159D8BC -[NSURLRequest HTTPShouldHandleCookies]
+#20 CFNetwork 0000000001815BFC8C -[NSURLSessionConfiguration shouldUseExtendedBackgroundIdleMode]
+#21 CFNetwork 00000000018157CAE4 +[NSHTTPCookie _cf2nsCookies:]
+#22 CFNetwork 000000000181591B8C -[NSURLSessionTask setTaskDescription:]
+#23 libdispatch.dylib 000000000180A72454 ()
+#24 libdispatch.dylib 000000000180A63670 ()
+#25 libdispatch.dylib 000000000180A6ADF4 ()
+#26 libdispatch.dylib 000000000180A6B99C ()
+#27 libdispatch.dylib 000000000180A761B8 ()
+#28 libsystem_pthread.dylib 0000000001F216B0F4 _pthread_wqthread()
+#29 libsystem_pthread.dylib 0000000001F216AE94
+
+
+
+","已解决","0000-00-00","0","是","","余朝阳","2022-02-28 14:18:46","主干(#trunk)","余朝阳","2022-02-28 14:31:35","余朝阳","已解决","主干(#trunk)","2022-02-28 14:31:13","","0000-00-00 00:00:00","0","","","余朝阳","2022-02-28 14:31:35","",""
+"2235","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[MTFilterDataFieldItemModel reachabilityChanged:]: unrecognized selector sent to instance","","1-Low","3","代码错误","","","当前展示的视图控制器:JHTabBarController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[MTFilterDataFieldItemModel reachabilityChanged:]: unrecognized selector sent to instance 0x28286dbc0
+
+#0 CoreFoundation 000000000193482DC0 ()
+#1 libobjc.A.dylib 0000000001A7FDF7A8 objc_exception_throw()
+#2 CoreFoundation 0000000001933862D0 -[NSOrderedSet initWithSet:copyItems:]
+#3 CoreFoundation 000000000193485918 ()
+#4 CoreFoundation 000000000193487C10 _CF_forwarding_prep_0()
+#5 JHUniversalApp 0000000001039A8D50 -[Reachability startNotifier]
+#6 SystemConfiguration 000000000193941DAC ()
+#7 SystemConfiguration 0000000001939426F4 ()
+#8 libnetwork.dylib 0000000001940F4A54 ()
+#9 libdispatch.dylib 00000000019306DA84 ()
+#10 libdispatch.dylib 00000000019306F81C ()
+#11 libdispatch.dylib 000000000193077004 ()
+#12 libdispatch.dylib 000000000193077C00 ()
+#13 libdispatch.dylib 0000000001930824BC ()
+#14 libsystem_pthread.dylib 0000000001DF2627A4 _pthread_wqthread()
+#15 libsystem_pthread.dylib 0000000001DF26974C start_wqthread()
+
+
+
+
+
+  
+","已解决","0000-00-00","0","是","","霍曙光","2022-02-28 14:17:27","主干(#trunk)","霍曙光","2022-03-01 10:56:52","余朝阳","已解决","主干(#trunk)","2022-03-01 10:56:41","","0000-00-00 00:00:00","0","","","余朝阳","2022-03-01 10:56:52","",""
+"2232","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","Set contentURL after setting controls.","","1-Low","3","代码错误","","","当前展示的视图控制器:ShowStoreMapViewController
+
+最后实例化的视图控制器:VAListeningStoryViewController
+
+2.6.0.121413 name:ALMoviePlayerController Exception
+reason:Set contentURL after setting controls.
+
+#0 CoreFoundation 00000000018E9F59D8 ()
+#1 libobjc.A.dylib 0000000001A2D7BB54 objc_exception_throw()
+#2 CoreFoundation 00000000018E9066E4 -[NSObject isNSSet__]
+#3 JHUniversalApp 000000000102AD9DA0 -[VAALMoviePlayerController setContentURL:]
+#4 MediaPlayer 000000000195B33530 -[MPMoviePlayerController initWithContentURL:]
+#5 JHUniversalApp 000000000102AD9854 -[VAALMoviePlayerController initWithFrame:]
+#6 JHUniversalApp 000000000102AD965C -[VAALMoviePlayerController init]
+#7 JHUniversalApp 000000000102A86500 -[VACGlodalManager Build]
+#8 JHUniversalApp 00000000010262D0EC +[TLNewsHomepage myInit]
+#9 JHUniversalApp 00000000010373C8C8 -[AppDelegate initialize]
+#10 JHUniversalApp 000000000103742EFC -[AppDelegate application:didFinishLaunchingWithOptions:]
+#11 UIKitCore 00000000019125C8C0 -[UIApplication _handleDelegateCallbacksWithOptions:isSuspended:restoreState:]
+#12 UIKitCore 00000000019125E860 -[UIApplication _callInitializationDelegatesWithActions:forCanvas:payload:fromOriginatingProcess:]
+#13 UIKitCore 000000000191263F48 -[UIApplication _runWithMainScene:transitionContext:completion:]
+#14 UIKitCore 000000000190939164 -[_UISceneLifecycleMultiplexer completeApplicationLaunchWithFBSScene:transitionContext:]
+#15 UIKitCore 000000000190E622B0 _UIScenePerformActionsWithLifecycleActionMask()
+#16 UIKitCore 000000000190939C4C ()
+#17 UIKitCore 0000000001909396A0 -[_UISceneLifecycleMultiplexer _performBlock:withApplicationOfDeactivationReasons:fromReasons:]
+#18 UIKitCore 000000000190939A78 -[_UISceneLifecycleMultiplexer _evalTransitionToSettings:fromSettings:forceExit:withTransitionStore:]
+#19 UIKitCore 000000000190939334 -[_UISceneLifecycleMultiplexer uiScene:transitionedFromState:withTransitionContext:]
+#20 UIKitCore 000000000190940FE0 ()
+#21 UIKitCore 000000000190D7B1C4 +[BSAnimationSettings tryAnimatingWithSettings:actions:completion:]
+#22 UIKitCore 000000000190E799D8 _UISceneSettingsDiffActionPerformChangesWithTransitionContext()
+#23 UIKitCore 000000000190940CD4 -[_UIWindowSceneFBSSceneTransitionContextDrivenLifecycleSettingsDiffAction _performActionsForUIScene:withUpdatedFBSScene:settingsDiff:fromSettings:transitionContext:lifecycleActionType:]
+#24 UIKitCore
+
+
+
+  
+","已解决","0000-00-00","0","是","","霍曙光","2022-02-28 14:15:50","主干(#trunk)","霍曙光","2022-02-28 14:33:37","余朝阳","已解决","主干(#trunk)","2022-02-28 14:33:00","","0000-00-00 00:00:00","0","","","余朝阳","2022-02-28 14:33:37","",""
+"2227","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","+[NSJSONSerialization dataWithJSONObject:options:error:]: Invalid","","1-Low","3","代码错误","","","当前展示的视图控制器:JHCSRotationImageViewController
+
+最后实例化的视图控制器:JHCSRotationImageViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:*** +[NSJSONSerialization dataWithJSONObject:options:error:]: Invalid top-level type in JSON write
+
+#0 CoreFoundation 0000000001814F805C ()
+#1 libobjc.A.dylib 000000000199A12F54 objc_exception_throw()
+#2 Foundation 000000000182CFDEAC ()
+#3 JHUniversalApp 0000000001016F38F4 -[JHLivePlayLibrary.LiveEvaluationVC initWithCoder:]
+#4 JHUniversalApp 0000000001016F34C8 -[JHLivePlayLibrary.LiveEvaluationVC initWithCoder:]
+#5 JHUniversalApp 0000000001039BE4D0 -[JHBase.JHBaseInfo .cxx_destruct]
+#6 JHUniversalApp 0000000001039C30F4 -[JHBase.JHBaseInfo .cxx_destruct]
+#7 JHUniversalApp 0000000001038A5B08 -[Kingfisher.AnimatedImageView initWithCoder:]
+#8 JHUniversalApp 000000000103839864 -[Kingfisher.AnimatedImageView initWithCoder:]
+#9 libdispatch.dylib 000000000181168C04 ()
+#10 libdispatch.dylib 00000000018116A950 ()
+#11 libdispatch.dylib 000000000181178D30 _dispatch_main_queue_callback_4CF()
+#12 CoreFoundation 0000000001814B0CE4 ()
+#13 CoreFoundation 00000000018146AEBC ()
+#14 CoreFoundation 00000000018147E3C8 CFRunLoopRunSpecific()
+#15 GraphicsServices 00000000019CC8F38C GSEventRunModal()
+#16 UIKitCore 000000000183E240BC -[UIApplication _run]
+#17 UIKitCore 000000000183BA1BE8 UIApplicationMain()
+#18 JHUniversalApp 0000000001033B00D8 -[VAUIFooterView .cxx_destruct]
+#19 dyld 000000000106891A24 start()
+
+
+
+  
+","已解决","0000-00-00","0","是","","霍曙光","2022-02-28 14:08:39","主干(#trunk)","霍曙光","2022-02-28 16:26:14","余朝阳","已解决","主干(#trunk)","2022-02-28 16:26:03","","0000-00-00 00:00:00","0","","","余朝阳","2022-02-28 16:26:14","",""
+"2224","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[__NSCFConstantString objectAtIndex:]: unrecognized selector sent","","1-Low","3","代码错误","","","当前展示的视图控制器:JHMessageCenterShellMainViewController
+
+最后实例化的视图控制器:JHMessageTableViewController
+
+2.6.0.122610 name:NSInvalidArgumentException
+reason:-[__NSCFConstantString objectAtIndex:]: unrecognized selector sent to instance 0x10658d960
+
+#0 CoreFoundation 00000000018FE8B928 ()
+#1 libobjc.A.dylib 0000000001A3C2A480 objc_exception_throw()
+#2 CoreFoundation 00000000018FD9A960 -[NSOrderedSet initWithSet:copyItems:]
+#3 CoreFoundation 00000000018FE8DF84 ()
+#4 CoreFoundation 00000000018FE8FF2C _CF_forwarding_prep_0()
+#5 JHUniversalApp 0000000001050D7E08 -[H5FileDownloadLibary alertView:clickedButtonAtIndex:]
+#6 UIKitCore 000000000191C1E4D8 -[UIAlertView _prepareToDismissForTappedIndex:]
+#7 UIKitCore 000000000191C1E018 ()
+#8 UIKitCore 000000000191C64A34 -[UIAlertController _dismissAnimated:triggeringAction:triggeredByPopoverDimmingView:dismissCompletion:]
+#9 UIKitCore 000000000191C86520 -[_UIAlertControllerView interfaceAction:invokeActionHandler:completion:]
+#10 UIKitCore 000000000191C2C2E0 -[UIInterfaceActionGroupView interfaceAction:invokeActionHandler:completion:]
+#11 UIKitCore 000000000191C282C0 -[UIInterfaceAction _invokeHandlerWithCompletionBlock:]
+#12 UIKitCore 000000000191C33AAC -[UIInterfaceActionSelectionTrackingController _handleActionSelectionGestureRecognizer:]
+#13 UIKitCore 0000000001922B093C ()
+#14 UIKitCore 0000000001922B9E78 ()
+#15 UIKitCore 0000000001922B6AE8 ()
+#16 UIKitCore 0000000001922B60B0 ()
+#17 UIKitCore 0000000001922AA718 ()
+#18 UIKitCore 0000000001922A9AA8 ()
+#19 UIKitCore 000000000192773D90 -[UIWindow sendEvent:]
+#20 UIKitCore 00000000019274F9D8 -[UIApplication sendEvent:]
+#21 UIKitCore 0000000001927D2DB4 ()
+#22 UIKitCore 0000000001927D75D8 ()
+#23 UIKitCore 0000000001927CE8C4 ()
+#24 CoreFoundation 00000000018FE0AFA8 ()
+#25 CoreFoundation 00000000018FE0AEA8 ()
+#26 CoreFoundation 00000000018FE0A1FC ()
+#27 CoreFoundation 00000000018FE04718 ()
+#28 CoreFoundation 00000000018FE03ED0 CFRunLoopRunSpecific()
+#29 GraphicsServices 0000000001A654F570 GSEventRunModal()
+#30 UIKitCore 0000000001927312D0 -[UIApplication _run]
+#31 UIKitCore
+
+
+
+  
+","已解决","0000-00-00","0","是","","霍曙光","2022-02-28 14:04:19","主干(#trunk)","李宽","2022-02-28 15:10:17","李宽","已解决","主干(#trunk)","2022-02-28 15:09:31","","0000-00-00 00:00:00","0","","","李宽","2022-02-28 15:10:17","",""
+"2213","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[CDEnLocation _mutate]: unrecognized selector sent to instance 0x280315090","","1-Low","3","代码错误","","","当前展示的视图控制器:JHMessageCenterShellMainViewController
+
+最后实例化的视图控制器:JHCPlusLoginViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[CDEnLocation _mutate]: unrecognized selector sent to instance 0x280315090
+
+#0 CoreFoundation 000000000180AD10FC ()
+#1 libobjc.A.dylib 000000000199321D64 objc_exception_throw()
+#2 CoreFoundation 000000000180BAE0C4 +[NSObject _copyDescription]
+#3 CoreFoundation 000000000180A66524 ()
+#4 CoreFoundation 000000000180A65660 _CF_forwarding_prep_0()
+#5 CoreFoundation 000000000180ACA230 -[__NSOrderedSetM _mutate]
+#6 CoreFoundation 000000000180A4B9D4 -[NSMutableOrderedSet removeObject:]
+#7 UIKitCore 0000000001834EEDC4 +[UIViewPropertyAnimator _removeTrackingAnimator:forUUID:andDescription:]
+#8 UIKitCore 000000000183482618 -[UIViewPropertyAnimator _clearAnimationState]
+#9 UIKitCore 0000000001830AE208 ()
+#10 UIKitCore 0000000001831A5DD0 -[UIViewAnimationBlockDelegate _didEndBlockAnimation:finished:context:]
+#11 UIKitCore 0000000001830712E8 -[UIViewAnimationState sendDelegateAnimationDidStop:finished:]
+#12 UIKitCore 000000000183085A5C -[UIViewAnimationState animationDidStop:finished:]
+#13 QuartzCore 00000000018485AA08 ()
+#14 libdispatch.dylib 000000000180743670 ()
+#15 libdispatch.dylib 000000000180751B70 _dispatch_main_queue_callback_4CF()
+#16 CoreFoundation 000000000180A89D84 ()
+#17 CoreFoundation 000000000180A43F5C ()
+#18 CoreFoundation 000000000180A57468 CFRunLoopRunSpecific()
+#19 GraphicsServices 00000000019C5FB38C GSEventRunModal()
+#20 UIKitCore 0000000001833FA5D0 -[UIApplication _run]
+#21 UIKitCore 000000000183178F74 UIApplicationMain()
+#22 JHUniversalApp 000000000104E48684 -[VAUIFooterView .cxx_destruct]
+#23 dyld 000000000107545AA4 start()
+
+
+
+  
+","已解决","0000-00-00","0","是","","霍曙光","2022-02-28 10:10:44","主干(#trunk)","李宽","2022-02-28 14:17:57","李宽","已解决","主干(#trunk)","2022-02-28 14:15:29","","0000-00-00 00:00:00","0","","","李宽","2022-02-28 14:17:57","",""
+"2102","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[CDEnLocation count]: unrecognized selector sent to instance 0x283ee5ea0","","1-Low","3","代码错误","","","当前展示的视图控制器:ShowStoreNewMapViewController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[CDEnLocation count]: unrecognized selector sent to instance 0x283ee5ea0
+
+#0 CoreFoundation 00000000018A3A9344 ()
+#1 libobjc.A.dylib 00000000018A0BECC0 objc_exception_throw()
+#2 CoreFoundation 00000000018A2A8110 -[NSOrderedSet initWithSet:copyItems:]
+#3 CoreFoundation 00000000018A3ADB20 ()
+#4 CoreFoundation 00000000018A3AFE10 _CF_forwarding_prep_0()
+#5 CFNetwork 00000000018D7F5C70 -[CFNetworkTimer dealloc]
+#6 CFNetwork 00000000018D6F71B0 _CFStreamErrorFromCFError()
+#7 CFNetwork 00000000018D6DFA7C -[BadPasswordProxyAuthenticationURLDelegate URLSession:task:didReceiveChallenge:completionHandler:]
+#8 CFNetwork 00000000018D68B1AC _CFURLRequestCreateArchiveList()
+#9 CFNetwork 00000000018D698624 CFCachedURLResponseCopyWrappedRequest()
+#10 libdispatch.dylib 00000000018A04A134 ()
+#11 libdispatch.dylib 00000000018A04B5AC ()
+#12 libdispatch.dylib 00000000018A051A64 ()
+#13 libdispatch.dylib 00000000018A052498 ()
+#14 libdispatch.dylib 00000000018A05BA5C ()
+#15 libsystem_pthread.dylib 00000000018A0B1718 _pthread_wqthread()
+#16 libsystem_pthread.dylib 00000000018A0B79C8 start_wqthread()
+
+
+
+","已解决","0000-00-00","0","是","","余朝阳","2022-02-24 14:31:52","主干(#trunk)","余朝阳","2022-03-01 11:05:59","柴志勇","已解决","主干(#trunk)","2022-03-01 10:58:53","","0000-00-00 00:00:00","0","","","柴志勇","2022-03-01 11:05:59","",""
+"2100","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","*** -[NSMutableIndexSet addIndexesInRange:]: Range {9223372036854775807, 1} exceeds maximum index value of NSNotFound - 1","","1-Low","3","代码错误","","","当前展示的视图控制器:JHTabBarController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSRangeException
+reason:*** -[NSMutableIndexSet addIndexesInRange:]: Range {9223372036854775807, 1} exceeds maximum index value of NSNotFound - 1
+
+#0 CoreFoundation 0000000001B8981654 ()
+#1 libobjc.A.dylib 0000000001B86A3BCC objc_exception_throw()
+#2 Foundation 0000000001B8C65830 -[NSIndexSet _indexOfRangeBeforeOrContainingIndex:]
+#3 UIKitCore 0000000001BC9C296C -[UIPickerTableView selectRow:animated:notify:updateChecked:]
+#4 UIKitCore 0000000001BC9CA6C8 -[UIPickerView _selectRow:inComponent:animated:notify:]
+#5 JHUniversalApp 000000000104EFF400 -[JHECWalletDatePickerView rebackToFromDate]
+#6 JHUniversalApp 000000000104EFF218 -[JHECWalletDatePickerView initDatePackerWithMinYear:selectedYear:selectedMonth:response:]
+#7 JHUniversalApp 000000000104EE93A8 -[JHECWalletOrderListViewController tableView:viewForHeaderInSection:]
+#8 JHUniversalApp 000000000104EE5224 -[JHECWalletOrderSectionView sectionDidTapped]
+#9 UIKitCore 0000000001BC60DCA4 -[UIGestureRecognizerTarget _sendActionWithGestureRecognizer:]
+#10 UIKitCore 0000000001BC61719C ()
+#11 UIKitCore 0000000001BC613BF0 ()
+#12 UIKitCore 0000000001BC613168 -[UIGestureRecognizer _updateGestureForActiveEvents]
+#13 UIKitCore 0000000001BC606BD8 ()
+#14 UIKitCore 0000000001BC606328 -[UIGestureEnvironment _deliverEvent:toGestureRecognizers:usingBlock:]
+#15 UIKitCore 0000000001BC6060F4 -[UIGestureEnvironment _updateForEvent:window:]
+#16 UIKitCore 0000000001BCA71C48 -[UIWindow sendEvent:]
+#17 UIKitCore 0000000001BCA4D8EC -[UIApplication sendEvent:]
+#18 UIKitCore 0000000001BCACE970 ()
+#19 UIKitCore 0000000001BCAD14EC ()
+#20 UIKitCore 0000000001BCAC9168 ()
+#21 CoreFoundation 0000000001B88FFAD8 ()
+#22 CoreFoundation 0000000001B88FFA30 ()
+#23 CoreFoundation 0000000001B88FF1B8 ()
+#24 CoreFoundation 0000000001B88FA1E8 ()
+#25 CoreFoundation 0000000001B88F9BA8 CFRunLoopRunSpecific()
+#26 GraphicsServices 0000000001C2A70344 GSEventRunModal()
+#27 UIKitCore 0000000001BCA353E4 UIApplicationMain()
+#28 JHUniversalApp 000000000105973DE8 -[VAUIFooterView .cxx_destruct]
+#29 libdyld.dylib 0000000001B87818F0 ()
+
+","已解决","0000-00-00","0","是","","余朝阳","2022-02-24 14:30:30","主干(#trunk)","杨峰","2022-02-25 10:10:45","杨峰","已解决","主干(#trunk)","2022-02-25 10:08:13","","0000-00-00 00:00:00","0","","","杨峰","2022-02-25 10:10:45","",""
+"2099","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[__NSCFConstantString stringValue]: unrecognized selector sent to instance 0x1097c81a0","","1-Low","3","代码错误","","","当前展示的视图控制器:JHTabBarController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[__NSCFConstantString stringValue]: unrecognized selector sent to instance 0x1097c81a0
+
+#0 CoreFoundation 0000000001A0160EC4 ()
+#1 libobjc.A.dylib 00000000019F331A40 objc_exception_throw()
+#2 CoreFoundation 0000000001A0079C24 -[NSOrderedSet initWithSet:copyItems:]
+#3 CoreFoundation 0000000001A01667DC ()
+#4 CoreFoundation 0000000001A016848C -[NSKVONotifying_MKUserLocation setCoordinate:]
+#5 JHUniversalApp 000000000106CEE92C -[JHHistoryCommissionFilterView resetOriginalData]
+#6 JHUniversalApp 000000000106CEE0B0 -[JHHistoryCommissionFilterView hideAnimation:]
+#7 UIKitCore 0000000001CD3302D4 -[UIApplication sendAction:to:from:forEvent:]
+#8 UIKitCore 0000000001CCDBDB94 -[UIControl sendAction:to:forEvent:]
+#9 UIKitCore 0000000001CCDBDEB4 -[UIControl _sendActionsForEvents:withEvent:]
+#10 UIKitCore 0000000001CCDBCEB4 -[UIControl touchesEnded:withEvent:]
+#11 JHUniversalApp 00000000010770AE30 -[UIButton touchesEnded:withEvent:]
+#12 UIKitCore 0000000001CCF44930 ()
+#13 UIKitCore 0000000001CCF3F62C ()
+#14 CoreFoundation 0000000001A00F07CC ()
+#15 CoreFoundation 0000000001A00EB460 ()
+#16 CoreFoundation 0000000001A00EBA00 ()
+#17 CoreFoundation 0000000001A00EB1F0 CFRunLoopRunSpecific()
+#18 GraphicsServices 0000000001A2364584 GSEventRunModal()
+#19 UIKitCore 0000000001CD32EBC0 UIApplicationMain()
+#20 JHUniversalApp 000000000107C0BDE8 -[VAUIFooterView .cxx_destruct]
+#21 libdyld.dylib 00000000019FBAABB4 ()
+
+
+
+","已解决","0000-00-00","0","是","","余朝阳","2022-02-24 14:28:29","主干(#trunk)","余朝阳","2022-02-28 11:12:58","余朝阳","已解决","主干(#trunk)","2022-02-28 11:09:20","","0000-00-00 00:00:00","0","","","余朝阳","2022-02-28 11:12:58","",""
+"2098","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","*** -[AVCapturePhotoOutput capturePhotoWithSettings:delegate:] No active and enabled video connection","","1-Low","3","代码错误","","","当前展示的视图控制器:JHTabBarController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:*** -[AVCapturePhotoOutput capturePhotoWithSettings:delegate:] No active and enabled video connection
+
+#0 CoreFoundation 000000000183236D3C ()
+#1 libobjc.A.dylib 00000000019A5B06A8 objc_exception_throw()
+#2 AVFCapture 0000000001A5FF6A0C -[AVCapturePhotoOutput capturePhotoWithSettings:delegate:]
+#3 JHUniversalApp 000000000104E7605C -[SCPhotoManager takeStillPhoto:completion:]
+#4 JHUniversalApp 000000000104EC1B30 -[SCCameraController takeStillPhotoAction:]
+#5 JHUniversalApp 000000000104EA8618 -[SCCameraView photoClick:]
+#6 UIKitCore 0000000001856D8D94 ()
+#7 UIKitCore 0000000001856A2AC0 ()
+#8 UIKitCore 00000000018566D4B8 ()
+#9 UIKitCore 0000000001856A4D98 ()
+#10 UIKitCore 00000000018565EF5C ()
+#11 UIKitCore 000000000185691944 ()
+#12 UIKitCore 00000000018569E2D8 -[UIWindow sendEvent:]
+#13 UIKitCore 00000000018584163C -[UIApplication sendEvent:]
+#14 UIKitCore 000000000185672E28 ()
+#15 UIKitCore 000000000185667D74 ()
+#16 UIKitCore 00000000018566D104 ()
+#17 CoreFoundation 0000000001832572B0 ()
+#18 CoreFoundation 0000000001832672D8 ()
+#19 CoreFoundation 0000000001831AA678 ()
+#20 CoreFoundation 0000000001831AFAA8 ()
+#21 CoreFoundation 0000000001831C2E1C CFRunLoopRunSpecific()
+#22 GraphicsServices 0000000001A35759A0 GSEventRunModal()
+#23 UIKitCore 0000000001859F6B90 -[UIApplication _run]
+#24 UIKitCore 00000000018578C16C UIApplicationMain()
+#25 JHUniversalApp 00000000010671FDE8 -[VAUIFooterView .cxx_destruct]
+#26 dyld 000000000109C24250 start()
+
+
+
+","已解决","0000-00-00","0","是","","余朝阳","2022-02-24 14:27:49","主干(#trunk)","余朝阳","2022-02-28 16:45:04","李聪","无法重现","主干(#trunk)","2022-02-28 16:39:46","","0000-00-00 00:00:00","0","","","李聪","2022-02-28 16:45:04","",""
+"2097","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","Modifications to the layout engine must not be performed from a background thread after it has been accessed from the main thread.","","1-Low","3","代码错误","","","当前展示的视图控制器:JHMessageCenterShellMainViewController
+
+最后实例化的视图控制器:JHCPlusLoginViewController
+
+2.6.0.012920 name:NSInternalInconsistencyException
+reason:Modifications to the layout engine must not be performed from a background thread after it has been accessed from the main thread.
+
+#0 CoreFoundation 000000000180E9D0FC ()
+#1 libobjc.A.dylib 0000000001996EDD64 objc_exception_throw()
+#2 CoreAutoLayout 0000000001999E17F0 -[NSISEngine withAutomaticOptimizationDisabled:]
+#3 CoreAutoLayout 0000000001999E45C4 -[NSISEngine withBehaviors:performModifications:]
+#4 UIKitCore 00000000018347B730 ()
+#5 UIKitCore 00000000018366A518 -[UIView _switchToLayoutEngine:]
+#6 UIKitCore 000000000183734F70 -[UIView _initializeHostedLayoutEngine]
+#7 UIKitCore 00000000018345DF2C -[UIView _layoutEngineCreateIfNecessary]
+#8 UIKitCore 0000000001837C2A5C ()
+#9 UIKitCore 0000000001835B20D4 ()
+#10 UIKitCore 00000000018351ECA0 ()
+#11 UIKitCore 0000000001834FED8C -[UIView nsli_addConstraint:]
+#12 CoreAutoLayout 0000000001999E3AE4 ()
+#13 UIKitCore 0000000001834F9B4C -[UINavigationController _setUpContentFocusContainerGuide]
+#14 UIKitCore 00000000018377C05C -[UINavigationController loadView]
+#15 UIKitCore 00000000018345CD84 -[UIViewController loadViewIfRequired]
+#16 UIKitCore 00000000018342FBF0 -[UIViewController view]
+#17 UIKitCore 0000000001835EA060 -[UINavigationController pushViewController:transition:forceImmediate:]
+#18 UIKitCore 000000000183592B04 -[UINavigationController swizzled_pushViewController:animated:]
+#19 JHUniversalApp 000000000104DF84BC -[UINavigationController pushViewController:animated:]
+#20 UIKitCore 00000000018353FD90 -[UINavigationController initWithRootViewController:]
+#21 JHUniversalApp 000000000102A82E58 -[JHCPlusLogin getCPlusRootVC]
+#22 JHUniversalApp 000000000102A81DC4 +[JHCPlusLogin CPlusLoginOut]
+#23 JHUniversalApp 00000000010478A6B4 -[jinherIUSuperDelegate forceQuit:]
+#24 JHUniversalApp 0000000001048AF850 -[OrgCore dealUserInfo::]
+#25 JHUniversalApp 0000000001048AB638 -[OrgCore newJC6requestOrgInfo:strDateTimeInfo:AndUrlStr:]
+#26 libdispatch.dylib 000000000180B0D924 ()
+#27 libdispatch.dylib 000000000180B0F670 ()
+#28 libdispatch.dylib 000000000180B12798 ()
+#29 libdispatch.dylib
+
+
+
+","已解决","0000-00-00","0","是","","余朝阳","2022-02-24 14:25:29","主干(#trunk)","余朝阳","2022-02-28 17:45:29","柴志勇","无法重现","","2022-02-28 17:44:21","","0000-00-00 00:00:00","0","","","柴志勇","2022-02-28 17:45:29","",""
+"2096","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[_NSCoreDataTaggedObjectID propertyDescription]: unrecognized selector sent to instance 0x84956b3738899241","","1-Low","3","代码错误","","","当前展示的视图控制器:ShowStoreNewMapViewController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[_NSCoreDataTaggedObjectID propertyDescription]: unrecognized selector sent to instance 0x84956b3738899241
+
+#0 CoreFoundation 0000000001809910FC ()
+#1 libobjc.A.dylib 0000000001991DDD64 objc_exception_throw()
+#2 CoreFoundation 000000000180A6E0C4 +[NSObject _copyDescription]
+#3 CoreFoundation 000000000180926524 ()
+#4 CoreFoundation 000000000180925660 -[NSKVONotifying_MKUserLocation setCoordinate:]
+#5 CoreData 000000000187F848F0 ()
+#6 CoreData 000000000187F88CA0 ()
+#7 CoreData 000000000187F8166C ()
+#8 CoreData 000000000187F823D0 -[NSSQLFetchRequestContext executeRequestCore:]
+#9 CoreData 0000000001880491F8 -[NSSQLStoreRequestContext executeRequestUsingConnection:]
+#10 CoreData 000000000187FA8EEC ()
+#11 CoreData 000000000187F7A674 ()
+#12 libdispatch.dylib 000000000180603670 ()
+#13 libdispatch.dylib 0000000001806128C4 ()
+#14 CoreData 000000000187F787B0 ()
+#15 CoreData 000000000187F857A4 -[NSSQLDefaultConnectionManager handleStoreRequest:]
+#16 CoreData 000000000187F985C0 ()
+#17 CoreData 000000000187F8E460 ()
+#18 CoreData 000000000187F7B7CC -[NSSQLCore executeRequest:withContext:error:]
+#19 CoreData 000000000188121C88 ()
+#20 CoreData 000000000187F830C4 ()
+#21 CoreData 000000000187FB4AC0 -[NSPersistentStoreCoordinator executeRequest:withContext:error:]
+#22 CoreData 000000000187F79724 -[NSManagedObjectContext executeFetchRequest:error:]
+#23 JHUniversalApp 00000000010664EE58 -[SMDataCollectionApi mainUploadDataWithServiceType:opeType:otherDict:]
+#24 JHUniversalApp 00000000010664EC18 -[SMDataCollectionApi uploadDataWithServiceType:opeType:otherDict:]
+#25 libdispatch.dylib 000000000180601924 ()
+#26 libdispatch.dylib 000000000180603670 ()
+#27 libdispatch.dylib 000000000180611B70 _dispatch_main_queue_callback_4CF()
+#28 CoreFoundation 000000000180949D84 ()
+#29 CoreFoundation 000000000180903F5C ()
+#30 CoreFoundation 000000000180917468 CFRunLoopRunSpecific()
+#31 GraphicsServices 00000000019C4B738C GSEventRunModa
+
+","已解决","0000-00-00","0","是","","余朝阳","2022-02-24 14:23:42","主干(#trunk)","余朝阳","2022-02-28 13:31:52","余朝阳","已解决","主干(#trunk)","2022-02-28 13:31:40","","0000-00-00 00:00:00","0","","","余朝阳","2022-02-28 13:31:52","",""
+"2095","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","Attempted to scroll the table view to an out-of-bounds row (0) when there are only 0 rows in section 0. Table view: ; layer = ; contentOffset: {0, 0}; contentSize: {414, 0}; adjustedContentInset: {0, 0, 44, 0}; dataSource: >","","1-Low","3","代码错误","","","当前展示的视图控制器:JHTabBarController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSRangeException
+reason:Attempted to scroll the table view to an out-of-bounds row (0) when there are only 0 rows in section 0. Table view: ; layer = ; contentOffset: {0, 0}; contentSize: {414, 0}; adjustedContentInset: {0, 0, 44, 0}; dataSource: >
+#0 CoreFoundation 0000000001A8C8986C ()
+#1 libobjc.A.dylib 0000000001BDBF8C50 objc_exception_throw()
+#2 CoreFoundation 0000000001A8B824A4 -[NSCache init]
+#3 UIKitCore 0000000001AB84B16C -[UITableView _contentOffsetForScrollingToRowAtIndexPath:atScrollPosition:usingPresentationValues:]
+#4 UIKitCore 0000000001AB84BE0C -[UITableView _scrollToRowAtIndexPath:atScrollPosition:animated:usingPresentationValues:]
+#5 UIKitCore 0000000001AB84BC74 -[UITableView scrollToRowAtIndexPath:atScrollPosition:animated:]
+#6 JHUniversalApp 000000000103CFB624 -[TCDeviceLiveListsViewController scrollViewDidEndDecelerating:]
+#7 UIKitCore 0000000001ABB1A53C -[UIScrollView _scrollViewDidEndDeceleratingForDelegate]
+#8 UIKitCore 0000000001ABB14D94 -[UIScrollView _stopScrollDecelerationNotify:]
+#9 UIKitCore 0000000001AB85D5A8 -[UITableView _stopScrollingNotify:pin:]
+#10 UIKitCore 0000000001ABB0C028 -[UIScrollView _smoothScrollWithUpdateTime:]
+#11 UIKitCore 0000000001ABB0C2B8 -[UIScrollView _smoothScrollDisplayLink:]
+#12 QuartzCore 0000000001ABF599E8 ()
+#13 QuartzCore 0000000001AC032EAC ()
+#14 CoreFoundation 0000000001A8BE0DD0 ()
+#15 CoreFoundation 0000000001A8C05FE8 ()
+#16 CoreFoundation 0000000001A8C05378 ()
+#17 CoreFoundation 0000000001A8BFF08C ()
+#18 CoreFoundation 0000000001A8BFE21C CFRunLoopRunSpecific()
+#19 GraphicsServices 0000000001C0702784 GSEventRunModal()
+#20 UIKitCore 0000000001AB63CFE0 -[UIApplication _run]
+#21 UIKitCore 0000000001AB642854 UIApplicationMain()
+#22 JHUniversalApp 00000000010676FDE8 -[VAUIFooterView .cxx_destruct]
+#23 libdyld.dylib 0000000001A88BE6B0 ()
+
+","已解决","0000-00-00","0","是","","余朝阳","2022-02-24 14:20:29","主干(#trunk)","余朝阳","2022-02-28 11:16:35","余朝阳","已解决","主干(#trunk)","2022-02-28 11:16:16","","0000-00-00 00:00:00","0","","","余朝阳","2022-02-28 11:16:35","",""
+"2092","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[UIScrollView removeAllSubViews]: unrecognized selector sent to instance 0x109129c00","","1-Low","3","代码错误","","","当前展示的视图控制器:ShowStoreNewMapViewController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[UIScrollView removeAllSubViews]: unrecognized selector sent to instance 0x109129c00
+
+#0 CoreFoundation 000000000180F090FC ()
+#1 libobjc.A.dylib 000000000199743D64 objc_exception_throw()
+#2 CoreFoundation 000000000180FE60C4 +[NSObject _copyDescription]
+#3 UIKitCore 000000000184284030 -[UIResponder doesNotRecognizeSelector:]
+#4 CoreFoundation 000000000180E9E524 ()
+#5 CoreFoundation 000000000180E9D660 -[NSKVONotifying_MKUserLocation setCoordinate:]
+#6 JHUniversalApp 00000000010271876C -[MsgAttachmentView showAttachMentsWith:]
+#7 JHUniversalApp 0000000001026B7638 -[NewStoreCMMsgItemView showDetialContentWithMsg:]
+#8 JHUniversalApp 0000000001026C5C38 -[StoreCMMsgCell showDetailWith:]
+#9 JHUniversalApp 00000000010271543C -[StoreCMMsgListViewController tableView:cellForRowAtIndexPath:]
+#10 UIKitCore 00000000018359F904 -[UITableView _createPreparedCellForGlobalRow:withIndexPath:willDisplay:]
+#11 UIKitCore 00000000018379F4C4 -[UITableView _updateVisibleCellsForRanges:createIfNecessary:]
+#12 UIKitCore 0000000001835C5750 -[UITableView _updateVisibleCellsNow:]
+#13 UIKitCore 000000000183494118 -[UITableView layoutSubviews]
+#14 UIKitCore 0000000001834A4798 -[UIView layoutSublayersOfLayer:]
+#15 QuartzCore 000000000184C07138 ()
+#16 QuartzCore 000000000184BF9958 ()
+#17 QuartzCore 000000000184C0DF80 ()
+#18 QuartzCore 000000000184C16874 ()
+#19 UIKitCore 00000000018385ACE0 ()
+#20 UIKitCore 000000000183AF55FC ()
+#21 UIKitCore 0000000001841715B0 ()
+#22 UIKitCore 000000000184170BA0 ()
+#23 CoreFoundation 000000000180F2B0D0 ()
+#24 CoreFoundation 000000000180F3BD90 ()
+#25 CoreFoundation 000000000180E76098 ()
+#26 CoreFoundation 000000000180E7B8A4 ()
+#27 CoreFoundation 000000000180E8F468 CFRunLoopRunSpecific()
+#28 GraphicsServices 00000000019CA1A38C GSEventRunModal()
+#29 UIKitCore 000000000183831088 -[UIApplication _run]
+#30 UIKitCore 0000000001835AF958 UIApplicationMain()
+#31 JHUniversalApp 000000000103DAB878 -[VAUIFooterView .cxx_destruct]
+#32 dyld
+
+
+
+","已解决","0000-00-00","0","是","","余朝阳","2022-02-24 14:11:46","主干(#trunk)","李宽","2022-02-28 11:46:12","郭旭","已解决","主干(#trunk)","2022-02-28 11:45:04","","0000-00-00 00:00:00","0","","","郭旭","2022-02-28 11:46:12","",""
+"2091","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","*** Collection  was mutated while being enumerated.","","1-Low","3","代码错误","","","当前展示的视图控制器:ShowStoreNewMapViewController
+
+最后实例化的视图控制器:ShowStoreNewMapViewController
+
+2.6.0.012920 name:NSGenericException
+reason:*** Collection <__NSArrayM: 0x28287ddd0> was mutated while being enumerated.
+
+#0 CoreFoundation 0000000001A0C69344 ()
+#1 libobjc.A.dylib 0000000001A097ECC0 objc_exception_throw()
+#2 CoreFoundation 0000000001A0C68CA0 -[__NSSingleObjectEnumerator initWithObject:collection:]
+#3 JHUniversalApp 00000000010156D7F8 -[NewUploadController upload:andIndex:callBack:]
+#4 JHUniversalApp 00000000010156D4EC -[NewUploadController getUploadDataWithRecordingModel:andIndex:callBack:]
+#5 libdispatch.dylib 0000000001A090A134 ()
+#6 libdispatch.dylib 0000000001A090B5AC ()
+#7 libdispatch.dylib 0000000001A090DA1C ()
+#8 libdispatch.dylib 0000000001A091A724 ()
+#9 libdispatch.dylib 0000000001A091AED0 ()
+#10 libsystem_pthread.dylib 0000000001A09716DC _pthread_wqthread()
+#11 libsystem_pthread.dylib 0000000001A09779C8 start_wqthread()
+ResponseCode = ““NotHaveUID““;
+}
+
+","已解决","0000-00-00","0","是","","余朝阳","2022-02-24 14:11:00","主干(#trunk)","余朝阳","2022-02-28 13:29:54","余朝阳","已解决","主干(#trunk)","2022-02-28 13:29:35","","0000-00-00 00:00:00","0","","","余朝阳","2022-02-28 13:29:54","",""
+"2088","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[NWConcrete_nw_resolver_config reachabilityChanged:]: unrecognized selector sent to instance 0x28081ff40","","1-Low","3","代码错误","","","当前展示的视图控制器:JHTabBarController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[NWConcrete_nw_resolver_config reachabilityChanged:]: unrecognized selector sent to instance 0x28081ff40
+
+#0 CoreFoundation 0000000001A1774878 ()
+#1 libobjc.A.dylib 0000000001B5CCAC50 objc_exception_throw()
+#2 CoreFoundation 0000000001A167B95C -[NSOrderedSet initWithSet:copyItems:]
+#3 CoreFoundation 0000000001A1777444 ()
+#4 CoreFoundation 0000000001A1779740 _CF_forwarding_prep_0()
+#5 JHUniversalApp 000000000105A18D50 -[Reachability startNotifier]
+#6 SystemConfiguration 0000000001A1C28BF8 ()
+#7 SystemConfiguration 0000000001A1C29540 ()
+#8 libnetwork.dylib 0000000001A23B6530 ()
+#9 libdispatch.dylib 0000000001A136724C ()
+#10 libdispatch.dylib 0000000001A1368DB0 ()
+#11 libdispatch.dylib 0000000001A137010C ()
+#12 libdispatch.dylib 0000000001A1370C5C ()
+#13 libdispatch.dylib 0000000001A137AD78 ()
+#14 libsystem_pthread.dylib 0000000001EAB8C804 _pthread_wqthread()
+#15 libsystem_pthread.dylib 0000000001EAB9375C start_wqthread()
+
+","已解决","0000-00-00","0","是","","余朝阳","2022-02-24 14:07:54","主干(#trunk)","余朝阳","2022-02-24 17:41:47","平康","已解决","主干(#trunk)","2022-02-24 17:41:24","","0000-00-00 00:00:00","0","","","平康","2022-02-24 17:41:47","",""
+"2086","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[LoginAndRegister getLoginStoreId]: unrecognized selector sent to instance 0x281a845a0","","1-Low","3","代码错误","","","当前展示的视图控制器:JHTabBarController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[LoginAndRegister getLoginStoreId]: unrecognized selector sent to instance 0x281a845a0
+
+#0 CoreFoundation 000000000180B2D04C ()
+#1 libobjc.A.dylib 0000000001991A1F54 objc_exception_throw()
+#2 CoreFoundation 000000000180C0A014 +[NSObject _copyDescription]
+#3 CoreFoundation 000000000180AC2474 ()
+#4 CoreFoundation 000000000180AC15B0 -[NSKVONotifying_MKUserLocation setCoordinate:]
+#5 JHUniversalApp 000000000105796264 -[JHAutoMineViewController userHasLogined]
+#6 CoreFoundation 000000000180ABEED8 ()
+#7 CoreFoundation 000000000180B5AB8C ()
+#8 CoreFoundation 000000000180B2DF44 ()
+#9 CoreFoundation 000000000180AD4D44 _CFXNotificationPost()
+#10 Foundation 0000000001822D0628 -[NSNotificationCenter postNotificationName:object:userInfo:]
+#11 JHUniversalApp 000000000106FF7B50 __108-[JHServeLoginComManage doLoginNewWithAccount:Pword:authCode:Type:isFromThirdLogin:loginType:oneLoginToken:]_block_invoke_4()
+#12 libdispatch.dylib 00000000010EE3E3B4 _dispatch_client_callout()
+#13 libdispatch.dylib 00000000010EE41580 _dispatch_continuation_pop()
+#14 libdispatch.dylib 00000000010EE57DC4 _dispatch_source_invoke()
+#15 libdispatch.dylib 00000000010EE4E6F4 _dispatch_main_queue_callback_4CF()
+#16 CoreFoundation 000000000180AE5CD4 ()
+#17 CoreFoundation 000000000180A9FEAC ()
+#18 CoreFoundation 000000000180AB33B8 CFRunLoopRunSpecific()
+#19 GraphicsServices 00000000019C44338C GSEventRunModal()
+#20 UIKitCore 0000000001834536A8 -[UIApplication _run]
+#21 UIKitCore 0000000001831D27F4 UIApplicationMain()
+#22 JHUniversalApp 000000000105CE794C main()
+#23 dyld 00000000010EC6DA24 start()
+
+
+
+","已解决","0000-00-00","0","是","","余朝阳","2022-02-24 14:05:50","主干(#trunk)","余朝阳","2022-02-25 13:28:25","邹丽","无法重现","主干(#trunk)","2022-02-25 13:27:15","","0000-00-00 00:00:00","0","","","邹丽","2022-02-25 13:28:25","",""
+"2085","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[JHWatermarkLocationView updateSubViewsWithInfoModel:]: unrecognized selector sent to instance 0x13232c550","","1-Low","3","代码错误","","","当前展示的视图控制器:JHTabBarController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[JHWatermarkLocationView updateSubViewsWithInfoModel:]: unrecognized selector sent to instance 0x13232c550
+
+#0 CoreFoundation 000000000180B2D04C ()
+#1 libobjc.A.dylib 0000000001991A1F54 objc_exception_throw()
+#2 CoreFoundation 000000000180C0A014 +[NSObject _copyDescription]
+#3 UIKitCore 000000000183EA35A0 -[UIResponder doesNotRecognizeSelector:]
+#4 CoreFoundation 000000000180AC2474 ()
+#5 CoreFoundation 000000000180AC15B0 -[NSKVONotifying_MKUserLocation setCoordinate:]
+#6 JHUniversalApp 000000000103E548F8 -[JHPhotoLeftInfoView reflectUI]
+#7 JHUniversalApp 000000000103E519A0 -[JHPhotoLeftInfoView setLayerModel:]
+#8 JHUniversalApp 000000000103E4B898 +[JHPhotoTool complexImageWithImage:textObj:]
+#9 JHUniversalApp 000000000103E4B4D4 +[JHPhotoTool complexTextWithImage:textObj:]
+#10 JHUniversalApp 000000000103EC4528 __44-[SCCameraController getselfPhotoWithImage:]_block_invoke_2()
+#11 JHUniversalApp 000000000103E58588 __42-[JHPhotoAutomaticCapture saveKeepMatImg:]_block_invoke_2()
+#12 libdispatch.dylib 00000000010D3206D4 _dispatch_call_block_and_release()
+#13 libdispatch.dylib 00000000010D3223B4 _dispatch_client_callout()
+#14 libdispatch.dylib 00000000010D332898 _dispatch_main_queue_callback_4CF()
+#15 CoreFoundation 000000000180AE5CD4 ()
+#16 CoreFoundation 000000000180A9FEAC ()
+#17 CoreFoundation 000000000180AB33B8 CFRunLoopRunSpecific()
+#18 GraphicsServices 00000000019C44338C GSEventRunModal()
+#19 UIKitCore 0000000001834536A8 -[UIApplication _run]
+#20 UIKitCore 0000000001831D27F4 UIApplicationMain()
+#21 JHUniversalApp 000000000104207AF4 main()
+#22 dyld 00000000010D09DA24 start()
+
+
+
+","已解决","0000-00-00","0","是","","余朝阳","2022-02-24 14:05:08","主干(#trunk)","余朝阳","2022-02-25 14:54:04","李聪","无法重现","主干(#trunk)","2022-02-25 14:53:49","","0000-00-00 00:00:00","0","","","李聪","2022-02-25 14:54:04","",""
+"2084","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","",":Application tried to present modally a view controller that is already being presented by .","","1-Low","3","代码错误","","","当前展示的视图控制器:ShowStoreNewMapViewController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:Application tried to present modally a view controller that is already being presented by .
+#0 CoreFoundation 000000000180B690FC ()
+#1 libobjc.A.dylib 0000000001993B9D64 objc_exception_throw()
+#2 UIKitCore 00000000018344D988 -[UIViewController _presentViewController:withAnimationController:completion:]
+#3 UIKitCore 0000000001833B4F20 ()
+#4 UIKitCore 0000000001830EC778 +[UIView performWithoutAnimation:]
+#5 UIKitCore 000000000183238478 ()
+#6 UIKitCore 0000000001831D5C74 ()
+#7 UIKitCore 00000000018334B2E0 -[UIViewController _presentViewController:animated:completion:]
+#8 UIKitCore 00000000018325D884 -[UIViewController jh_presentViewController:animated:completion:]
+#9 JHUniversalApp 0000000001034728D8 -[UIViewController presentViewController:animated:completion:]
+#10 JHUniversalApp 00000000010480CD44 -[AlertViewManager showView:]
+#11 libdispatch.dylib 0000000001807D9924 ()
+#12 libdispatch.dylib 0000000001807DB670 ()
+#13 libdispatch.dylib 0000000001807E9B70 _dispatch_main_queue_callback_4CF()
+#14 CoreFoundation 000000000180B21D84 ()
+#15 CoreFoundation 000000000180ADBF5C ()
+#16 CoreFoundation 000000000180AEF468 CFRunLoopRunSpecific()
+#17 GraphicsServices 00000000019C69338C GSEventRunModal()
+#18 UIKitCore 0000000001834925D0 -[UIApplication _run]
+#19 UIKitCore 000000000183210F74 UIApplicationMain()
+#20 JHUniversalApp 00000000010361597C -[VAUIFooterView .cxx_destruct]
+#21 dyld 000000000106B5DAA4 start()
+
+
+
+","已解决","0000-00-00","0","是","","余朝阳","2022-02-24 13:55:13","主干(#trunk)","李宽","2022-02-25 16:23:16","郭旭","已解决","主干(#trunk)","2022-02-25 16:19:00","","0000-00-00 00:00:00","0","","","郭旭","2022-02-25 16:23:16","",""
+"2082","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","*** -[__NSArray0 objectAtIndex:]: index 0 beyond bounds for empty NSArray","","1-Low","3","代码错误","","","当前展示的视图控制器:JHUIWebViewController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSRangeException
+reason:*** -[__NSArray0 objectAtIndex:]: index 0 beyond bounds for empty NSArray
+
+#0 CoreFoundation 000000000182B49C9C ()
+#1 libobjc.A.dylib 000000000199CFD758 objc_exception_throw()
+#2 CoreFoundation 000000000182BCA210 ()
+#3 JHUniversalApp 000000000106353564 -[CvVideoCamera createVideoDataOutput]
+#4 libdispatch.dylib 000000000182815194 ()
+#5 libdispatch.dylib 000000000182816198 ()
+#6 libdispatch.dylib 0000000001827C25D0 ()
+#7 CoreFoundation 000000000182B057E8 ()
+#8 CoreFoundation 000000000182AC30E8 ()
+#9 CoreFoundation 000000000182AD5D7C CFRunLoopRunSpecific()
+#10 GraphicsServices 00000000019CD4A9A0 GSEventRunModal()
+#11 UIKitCore 00000000018530805C -[UIApplication _run]
+#12 UIKitCore 00000000018509DCE0 UIApplicationMain()
+#13 JHUniversalApp 000000000105BB4218 -[VAUIFooterView .cxx_destruct]
+#14 dyld 0000000001076A8190 start()
+univer:=>21:09:34.430 -[JHMessageEntity dealloc] 消息体销毁了
+univer:=>21:09:35.405 -[JHMessageEntity dealloc] 消息体销毁了
+
+
+
+","已解决","0000-00-00","0","是","","余朝阳","2022-02-24 13:51:25","主干(#trunk)","余朝阳","2022-02-25 13:48:25","余朝阳","无法重现","主干(#trunk)","2022-02-25 13:47:58","","0000-00-00 00:00:00","0","","","余朝阳","2022-02-25 13:48:25","",""
+"2081","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[__NSDictionaryI InspectOptionGuideList]: unrecognized selector sent to instance 0x2810a02a0","","1-Low","3","代码错误","","","当前展示的视图控制器:ShowStoreNewMapViewController
+
+最后实例化的视图控制器:ShowStoreNewMapViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[__NSDictionaryI InspectOptionGuideList]: unrecognized selector sent to instance 0x2810a02a0
+
+#0 CoreFoundation 0000000001A3FA8128 ()
+#1 libobjc.A.dylib 0000000001B7CBB480 objc_exception_throw()
+#2 CoreFoundation 0000000001A3EB7138 -[NSOrderedSet initWithSet:copyItems:]
+#3 CoreFoundation 0000000001A3FAA784 ()
+#4 CoreFoundation 0000000001A3FAC9AC -[NSKVONotifying_MKUserLocation setCoordinate:]
+#5 JHUniversalApp 0000000001021CC370 -[SuPatrolAddController toCheckUploadInfoWithHandler:]
+#6 JHUniversalApp 0000000001021CB228 -[SuPatrolAddController submitData]
+#7 JHUniversalApp 0000000001021CB158 -[SuPatrolAddController ibaUploadAction]
+#8 JHUniversalApp 000000000102DA50B4 -[FiveWatermarkView didUploadImageUrl:isUploaded:]
+#9 JHUniversalApp 000000000102CE4E50 -[JHLazyTableImages addUploadImageForCell:withModel:]
+#10 JHUniversalApp 000000000102F2496C -[JHFileUpload secondMethod]
+#11 Foundation 0000000001A5289B0C ()
+#12 Foundation 0000000001A51868C8 -[NSBlockOperation main]
+#13 Foundation 0000000001A528BDA8 ()
+#14 Foundation 0000000001A5186584 -[NSOperation start]
+#15 Foundation 0000000001A528C7A0 ()
+#16 Foundation 0000000001A528C26C ()
+#17 libdispatch.dylib 0000000001A3B8F3E8 ()
+#18 libdispatch.dylib 0000000001A3BE0298 ()
+#19 libdispatch.dylib 0000000001A3B8ECE4 ()
+#20 CoreFoundation 0000000001A3F27170 ()
+#21 CoreFoundation 0000000001A3F215D0 ()
+#22 CoreFoundation 0000000001A3F206A8 CFRunLoopRunSpecific()
+#23 GraphicsServices 0000000001BA5D0570 GSEventRunModal()
+#24 UIKitCore 0000000001A683E370 -[UIApplication _run]
+#25 UIKitCore 0000000001A68438EC UIApplicationMain()
+#26 JHUniversalApp 000000000102D8A724 -[VAUIFooterView .cxx_destruct]
+#27 libdyld.dylib 0000000001A3BFF140 ()
+
+","已解决","0000-00-00","0","是","","余朝阳","2022-02-24 13:49:45","主干(#trunk)","李宽","2022-02-28 17:00:07","郭旭","已解决","主干(#trunk)","2022-02-28 16:57:39","","0000-00-00 00:00:00","0","","","郭旭","2022-02-28 17:00:07","",""
+"2080","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[__NSCFString reachabilityChanged:]: unrecognized selector sent to instance 0x282775e00","","1-Low","3","代码错误","","","当前展示的视图控制器:LayoutEngineViewController
+
+最后实例化的视图控制器:JHCSRotationImageViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[__NSCFString reachabilityChanged:]: unrecognized selector sent to instance 0x282775e00
+
+#0 CoreFoundation 0000000001AC45D9D4 ()
+#1 libobjc.A.dylib 0000000001BFE0EB54 objc_exception_throw()
+#2 CoreFoundation 0000000001AC36DBAC -[NSOrderedSet initWithSet:copyItems:]
+#3 CoreFoundation 0000000001AC460018 ()
+#4 CoreFoundation 0000000001AC461F8C _CF_forwarding_prep_0()
+#5 JHUniversalApp 0000000001053BA428 -[Reachability startNotifier]
+#6 SystemConfiguration 0000000001AC8FAD44 ()
+#7 SystemConfiguration 0000000001AC8FB5E0 ()
+#8 libnetwork.dylib 0000000001AD04FEAC ()
+#9 libdispatch.dylib 0000000001AC095298 ()
+#10 libdispatch.dylib 0000000001AC096280 ()
+#11 libdispatch.dylib 0000000001AC0724F0 ()
+#12 libdispatch.dylib 0000000001AC072FDC ()
+#13 libdispatch.dylib 0000000001AC07C800 ()
+#14 libsystem_pthread.dylib 0000000001F2A6A5A4 _pthread_wqthread()
+#15 libsystem_pthread.dylib 0000000001F2A6D874 start_wqthread()
+
+
+
+","已解决","0000-00-00","0","是","","余朝阳","2022-02-24 13:48:45","主干(#trunk)","余朝阳","2022-02-24 17:42:07","平康","已解决","主干(#trunk)","2022-02-24 17:41:50","","0000-00-00 00:00:00","0","","","平康","2022-02-24 17:42:07","",""
+"2078","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[__NSCFNumber stringByTrimmingCharactersInSet:]: unrecognized selector sent to instance 0xa0177b6c539c2fc9","","1-Low","3","代码错误","","","当前展示的视图控制器:JHTabBarController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[__NSCFNumber stringByTrimmingCharactersInSet:]: unrecognized selector sent to instance 0xa0177b6c539c2fc9
+
+#0 CoreFoundation 000000000180B2D04C ()
+#1 libobjc.A.dylib 0000000001991A1F54 objc_exception_throw()
+#2 CoreFoundation 000000000180C0A014 +[NSObject _copyDescription]
+#3 CoreFoundation 000000000180AC2474 ()
+#4 CoreFoundation 000000000180AC15B0 -[NSKVONotifying_MKUserLocation setCoordinate:]
+#5 JHUniversalApp 000000000105E277A8 +[NSString contentIsNullORNil:]
+#6 JHUniversalApp 00000000010599680C -[JHOldPhotoCapture changesFame:]
+#7 JHUniversalApp 000000000105997278 -[JHOldPhotoCapture showCameraView:completion:]
+#8 JHUniversalApp 000000000105905FA8 -[JHCommonIdentifyCapture captureCamera]
+#9 JHUniversalApp 000000000105905808 -[JHCommonIdentifyCapture captureImage:]
+#10 JHUniversalApp 0000000001059AD7C0 +[SCCameraController cameraExamIdentifyWithBusinessId:picType:CaptureMode:CaptureTmout:watermarkInfo:direction:andController:andCompleteBlock:isCaptureTmoutBlock:]
+#11 JHUniversalApp 0000000001058BDF44 -[WVCameraNode businessOfExamWithBusiness:]
+#12 JHUniversalApp 0000000001058BD704 __45-[WVCameraNode webViewShouldStartLoadRequest]_block_invoke()
+#13 JHUniversalApp 0000000001059AD0F0 __71+[SCCameraController requestCameraConfigWithTypeCode:andCompleteBlock:]_block_invoke()
+#14 JHUniversalApp 000000000105F16C9C __128+[JHNetworkComponent(Ext) requestWithString:queryParameters:params:header:httpMethod:showLoading:didFinishLoaded:didFailLoaded:]_block_invoke()
+#15 libdispatch.dylib 00000000010F8EC6D4 _dispatch_call_block_and_release()
+#16 libdispatch.dylib 00000000010F8EE3B4 _dispatch_client_callout()
+#17 libdispatch.dylib 00000000010F8FE898 _dispatch_main_queue_callback_4CF()
+#18 CoreFoundation 000000000180AE5CD4 ()
+#19 CoreFoundation 000000000180A9FEAC ()
+#20 CoreFoundation 000000000180AB33B8 CFRunLoopRunSpecific()
+#21 GraphicsServices 00000000019C44338C GSEventRunModal()
+#22 UIKitCore 0000000001834536A8 -[UIApplication _run]
+#23 UIKitCore 0000000001831D27F4 UIApplicationMain()
+#24 JHUniversalApp 000000000105CE5310 main()
+#25 dyld 00000000010EA85A24 start()
+
+
+
+","已解决","0000-00-00","0","是","","余朝阳","2022-02-24 13:39:58","主干(#trunk)","余朝阳","2022-02-25 14:53:35","邹丽","已解决","主干(#trunk)","2022-02-25 14:50:57","","0000-00-00 00:00:00","0","","","邹丽","2022-02-25 14:53:35","",""
+"2077","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","data parameter is nil","","1-Low","3","代码错误","","","当前展示的视图控制器:LayoutEngineViewController
+
+最后实例化的视图控制器:JHCSRotationImageViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:data parameter is nil
+
+#0 CoreFoundation 00000000019D86D794 ()
+#1 libobjc.A.dylib 00000000019D58FBCC objc_exception_throw()
+#2 Foundation 00000000019DB67214 -[_NSJSONReader init]
+#3 JHUniversalApp 0000000001075F24AC -[LayoutEngineViewController getStoreCount]
+#4 libdispatch.dylib 00000000019D5329A8 ()
+#5 libdispatch.dylib 00000000019D533524 ()
+#6 libdispatch.dylib 00000000019D4E55B4 ()
+#7 CoreFoundation 00000000019D7EB7FC ()
+#8 CoreFoundation 00000000019D7E66D0 ()
+#9 CoreFoundation 00000000019D7E5CE8 CFRunLoopRunSpecific()
+#10 GraphicsServices 0000000001A793038C GSEventRunModal()
+#11 UIKitCore 0000000001A1914444 UIApplicationMain()
+#12 JHUniversalApp 0000000001076003D4 -[VAUIFooterView .cxx_destruct]
+#13 libdyld.dylib 00000000019D66D8F0 ()
+
+
+
+","已解决","0000-00-00","0","是","","余朝阳","2022-02-24 13:36:10","主干(#trunk)","李宽","2022-02-24 17:53:01","李聪","已解决","主干(#trunk)","2022-02-24 17:47:11","","0000-00-00 00:00:00","0","","","李聪","2022-02-24 17:53:01","企业微信截图_cda09ef5-8431-4256-8e05-d5c5bcb210e7.png
+",""
+"2076","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[__NSCFNumber stringByTrimmingCharactersInSet:]: unrecognized selector sent to instance 0xa67a9e24ac5a5669","","1-Low","3","代码错误","","","当前展示的视图控制器:ShowStoreNewMapViewController
+
+最后实例化的视图控制器:ShowStoreNewMapViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[__NSCFNumber stringByTrimmingCharactersInSet:]: unrecognized selector sent to instance 0xa67a9e24ac5a5669
+
+#0 CoreFoundation 00000000019648B928 ()
+#1 libobjc.A.dylib 0000000001AA22A480 objc_exception_throw()
+#2 CoreFoundation 00000000019639A960 -[NSOrderedSet initWithSet:copyItems:]
+#3 CoreFoundation 00000000019648DF84 ()
+#4 CoreFoundation 00000000019648FF2C -[NSKVONotifying_MKUserLocation setCoordinate:]
+#5 JHUniversalApp 0000000001046E6544 +[NSString contentIsNullORNil:]
+#6 JHUniversalApp 0000000001046E6600 +[NSString replaceNilStr:]
+#7 JHUniversalApp 000000000103A610BC -[EmployeeChecklistVC setStatus:StatusValue:InspectOptionTaskId:callBack:]
+#8 JHUniversalApp 000000000103A5C378 -[EmployeeChecklistVC tableView:cellForRowAtIndexPath:]
+#9 JHUniversalApp 000000000103CA2434 -[SelfCheckCell segmentedControlClicked:]
+#10 UIKitCore 000000000198D37E8C -[UIApplication sendAction:to:from:forEvent:]
+#11 UIKitCore 0000000001986C8018 -[UIControl sendAction:to:forEvent:]
+#12 UIKitCore 0000000001986C8358 -[UIControl _sendActionsForEvents:withEvent:]
+#13 UIKitCore 0000000001991D0EE4 -[_UIAfterCACommitBlock run]
+#14 UIKitCore 000000000198D409C4 ()
+#15 UIKitCore 000000000198D2FE90 ()
+#16 UIKitCore 000000000198D611E0 ()
+#17 CoreFoundation 000000000196409C40 ()
+#18 CoreFoundation 000000000196404270 ()
+#19 CoreFoundation 00000000019640480C ()
+#20 CoreFoundation 000000000196403ED0 CFRunLoopRunSpecific()
+#21 GraphicsServices 0000000001ACB4F570 GSEventRunModal()
+#22 UIKitCore 000000000198D312D0 -[UIApplication _run]
+#23 UIKitCore 000000000198D3684C UIApplicationMain()
+#24 JHUniversalApp 00000000010461D05C -[VAUIFooterView .cxx_destruct]
+#25 libdyld.dylib 0000000001960E2140 ()
+univer:=>16:11:20.399 -[JHMessageEntity dealloc] 消息体销毁了
+univer:=>16:11:21.160 -[JHMessageEntity dealloc] 消息体销毁了
+
+
+
+","已解决","0000-00-00","0","是","","余朝阳","2022-02-24 13:33:48","主干(#trunk)","余朝阳","2022-02-25 11:15:48","邹丽","重复Bug","主干(#trunk)","2022-02-25 11:15:25","","0000-00-00 00:00:00","-[__NSCFNumber stringByTrimmingCharactersInSet:]: unrecognized selector sent to instance 0xbd49e5c9db293fe5(2069)","","","邹丽","2022-02-25 11:15:48","",""
+"2073","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","Set contentURL after setting controls.","","1-Low","3","代码错误","","","当前展示的视图控制器:JHStoreListViewController
+
+最后实例化的视图控制器:VAListeningStoryViewController
+
+2.6.0.121413 name:ALMoviePlayerController Exception
+reason:Set contentURL after setting controls.
+
+#0 CoreFoundation 000000000180B490FC ()
+#1 libobjc.A.dylib 000000000199399D64 objc_exception_throw()
+#2 CoreFoundation 000000000180C1F53C -[NSException init]
+#3 JHUniversalApp 0000000001044EDDA0 -[VAALMoviePlayerController setContentURL:]
+#4 MediaPlayer 000000000189B4A12C -[MPMoviePlayerController initWithContentURL:]
+#5 JHUniversalApp 0000000001044ED854 -[VAALMoviePlayerController initWithFrame:]
+#6 JHUniversalApp 0000000001044ED65C -[VAALMoviePlayerController init]
+#7 JHUniversalApp 00000000010449A500 -[VACGlodalManager Build]
+#8 JHUniversalApp 0000000001040410EC +[TLNewsHomepage myInit]
+#9 JHUniversalApp 0000000001051508C8 -[AppDelegate initialize]
+#10 JHUniversalApp 000000000105156EFC -[AppDelegate application:didFinishLaunchingWithOptions:]
+#11 UIKitCore 0000000001832819D8 -[UIApplication _handleDelegateCallbacksWithOptions:isSuspended:restoreState:]
+#12 UIKitCore 000000000183469A60 -[UIApplication _callInitializationDelegatesWithActions:forCanvas:payload:fromOriginatingProcess:]
+#13 UIKitCore 0000000001834523A0 -[UIApplication _runWithMainScene:transitionContext:completion:]
+#14 UIKitCore 0000000001832AF940 -[_UISceneLifecycleMultiplexer completeApplicationLaunchWithFBSScene:transitionContext:]
+#15 UIKitCore 000000000183107AF0 _UIScenePerformActionsWithLifecycleActionMask()
+#16 UIKitCore 000000000183233438 ()
+#17 UIKitCore 000000000183354104 -[_UISceneLifecycleMultiplexer _performBlock:withApplicationOfDeactivationReasons:fromReasons:]
+#18 UIKitCore 0000000001835952F8 -[_UISceneLifecycleMultiplexer _evalTransitionToSettings:fromSettings:forceExit:withTransitionStore:]
+#19 UIKitCore 000000000183520818 -[_UISceneLifecycleMultiplexer uiScene:transitionedFromState:withTransitionContext:]
+#20 UIKitCore 0000000001831088F4 ()
+#21 UIKitCore 0000000001831C9160 +[BSAnimationSettings tryAnimatingWithSettings:actions:completion:]
+#22 UIKitCore 00000000018310A804 _UISceneSettingsDiffActionPerformChangesWithTransitionContext()
+#23 UIKitCore 0000000001831F5448 -[_UIWindowSceneFBSSceneTransitionContextDrivenLifecycleSettingsDiffAction _performActionsForUIScene:withUpdatedFBSScene:settingsDiff:fromSettings:transitionContext:lifecycleActionType:]
+#24 UIKitCore
+
+
+
+","已解决","0000-00-00","0","是","","余朝阳","2022-02-24 11:43:55","主干(#trunk)","余朝阳","2022-02-24 17:33:22","平康","已解决","主干(#trunk)","2022-02-24 17:28:20","","0000-00-00 00:00:00","0","","","平康","2022-02-24 17:33:22","",""
+"2072","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","An instance 0x11464fe70 of class JHWebview was deallocated while key value observers were still registered with it. Current observation info","","1-Low","3","代码错误","","","当前展示的视图控制器:JHTabBarController
+
+最后实例化的视图控制器:JHMapTemplateOneViewController
+
+2.6.0.012920 name:NSInternalInconsistencyException
+reason:An instance 0x11464fe70 of class JHWebview was deallocated while key value observers were still registered with it. Current observation info: (
+Context: 0x0, Property: 0x172259230>
+)
+#0 CoreFoundation 000000000186396FE0 ()
+#1 libobjc.A.dylib 000000000184DF8538 objc_exception_throw()
+#2 CoreFoundation 000000000186396F28 -[NSException initWithCoder:]
+#3 Foundation 000000000186DF2120 -[NSKVONotifying_AVCaptureConnection dealloc]
+#4 JHUniversalApp 000000000100602E10 -[JHUIWebViewController .cxx_destruct]
+#5 libobjc.A.dylib 000000000184DF6F00 ()
+#6 libobjc.A.dylib 000000000184E04334 objc_destructInstance()
+#7 libobjc.A.dylib 000000000184E04398 object_dispose()
+#8 UIKit 00000000018C86A470 -[UIResponder dealloc]
+#9 UIKit 00000000018C649244 -[UIViewController dealloc]
+#10 JHUniversalApp 0000000001005FA9F0 -[JHUIWebViewController dealloc]
+#11 CoreFoundation 0000000001863869AC ()
+#12 CoreFoundation 00000000018627A9F0 -[__NSArrayM dealloc]
+#13 UIKit 00000000018C64921C -[UIViewController dealloc]
+#14 UIKit 00000000018C653D94 -[UINavigationController dealloc]
+#15 UIKit 00000000018C81D960 -[UIPresentationController .cxx_destruct]
+#16 libobjc.A.dylib 000000000184DF6F00 ()
+#17 libobjc.A.dylib 000000000184E04334 objc_destructInstance()
+#18 libobjc.A.dylib 000000000184E04398 object_dispose()
+#19 UIKit 00000000018C819348 -[UIPresentationController dealloc]
+#20 UIKit 00000000018CE99840 -[_UIFullscreenPresentationController dealloc]
+#21 UIKit 00000000018C819048 ()
+#22 libsystem_blocks.dylib 0000000001852A3A68 _Block_release()
+#23 UIKit 00000000018CF4A57C -[_UIViewControllerTransitionContext .cxx_destruct]
+#24 libobjc.A.dylib 000000000184DF6F00 ()
+#25 libobjc.A.dylib 000000000184E04334 objc_destructInstance()
+#26 libobjc.A.dylib 000000000184E04398 object_dispose()
+#27 UIKit 00000000018C5EDC48 -[_UIViewControllerTransitionContext dealloc]
+#28 UIKit 00000000018C5EDBF8 -[_UIViewControllerOneToOneTransitionContext dealloc]
+#29 libsyst
+
+
+
+","已解决","0000-00-00","0","是","","余朝阳","2022-02-24 11:42:13","主干(#trunk)","李宽","2022-02-25 16:32:54","李飞","已解决","主干(#trunk)","2022-02-25 16:27:17","","0000-00-00 00:00:00","0","","","李飞","2022-02-25 16:32:54","",""
+"2071","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[NSISRestrictedToZeroMarkerVariable reachabilityChanged:]: unrecognized selector sent to instance 0x282f28b40","","1-Low","3","代码错误","","","当前展示的视图控制器:JHTabBarController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[NSISRestrictedToZeroMarkerVariable reachabilityChanged:]: unrecognized selector sent to instance 0x282f28b40
+
+#0 CoreFoundation 0000000001AB2D69D8 ()
+#1 libobjc.A.dylib 0000000001BF65CB54 objc_exception_throw()
+#2 CoreFoundation 0000000001AB1E6BBC -[NSOrderedSet initWithSet:copyItems:]
+#3 CoreFoundation 0000000001AB2D901C ()
+#4 CoreFoundation 0000000001AB2DAF8C _CF_forwarding_prep_0()
+#5 JHUniversalApp 000000000108474D50 -[Reachability startNotifier]
+#6 SystemConfiguration 0000000001AB774204 ()
+#7 SystemConfiguration 0000000001AB774AA0 ()
+#8 libnetwork.dylib 0000000001ABECAF6C ()
+#9 libdispatch.dylib 0000000001AAF0E298 ()
+#10 libdispatch.dylib 0000000001AAF0F280 ()
+#11 libdispatch.dylib 0000000001AAEEB4F0 ()
+#12 libdispatch.dylib 0000000001AAEEBFDC ()
+#13 libdispatch.dylib 0000000001AAEF5800 ()
+#14 libsystem_pthread.dylib 0000000001F3AFD5A4 _pthread_wqthread()
+#15 libsystem_pthread.dylib 0000000001F3B00874 start_wqthread()
+
+
+
+","已解决","0000-00-00","0","是","","李聪","2022-02-24 11:39:02","主干(#trunk)","李聪","2022-02-24 17:42:28","平康","已解决","主干(#trunk)","2022-02-24 17:42:12","","0000-00-00 00:00:00","0","","","平康","2022-02-24 17:42:28","",""
+"2070","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[UIView removeAllSubViews]: unrecognized selector sent to instance 0x10e94bc70","","1-Low","3","代码错误","","","当前展示的视图控制器:ShowStoreNewMapViewController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[UIView removeAllSubViews]: unrecognized selector sent to instance 0x10e94bc70
+
+#0 CoreFoundation 0000000001810DD0FC ()
+#1 libobjc.A.dylib 000000000199918D64 objc_exception_throw()
+#2 CoreFoundation 0000000001811BA0C4 +[NSObject _copyDescription]
+#3 UIKitCore 000000000184458030 -[UIResponder doesNotRecognizeSelector:]
+#4 CoreFoundation 000000000181072524 ()
+#5 CoreFoundation 000000000181071660 -[NSKVONotifying_MKUserLocation setCoordinate:]
+#6 JHUniversalApp 0000000001040C0820 -[JHNewNotificationCell createCooperateLabel:]
+#7 JHUniversalApp 0000000001040BF940 -[JHNewNotificationCell setModel:]
+#8 libdispatch.dylib 000000000180D4D924 ()
+#9 libdispatch.dylib 000000000180D4F670 ()
+#10 libdispatch.dylib 000000000180D5DB70 _dispatch_main_queue_callback_4CF()
+#11 CoreFoundation 000000000181095D84 ()
+#12 CoreFoundation 00000000018104FF5C ()
+#13 CoreFoundation 000000000181063468 CFRunLoopRunSpecific()
+#14 GraphicsServices 00000000019CBEF38C GSEventRunModal()
+#15 UIKitCore 000000000183A05088 -[UIApplication _run]
+#16 UIKitCore 000000000183783958 UIApplicationMain()
+#17 JHUniversalApp 0000000001057560E4 -[VAUIFooterView .cxx_destruct]
+#18 dyld 00000000010830DAA4 start()
+
+
+
+","已解决","0000-00-00","0","是","","余朝阳","2022-02-24 11:38:30","主干(#trunk)","余朝阳","2022-02-28 10:12:40","余朝阳","已解决","主干(#trunk)","2022-02-28 10:11:58","","0000-00-00 00:00:00","0","","","余朝阳","2022-02-28 10:12:40","",""
+"2069","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[__NSCFNumber stringByTrimmingCharactersInSet:]: unrecognized selector sent to instance 0xbd49e5c9db293fe5","","1-Low","3","代码错误","","","当前展示的视图控制器:ShowStoreNewMapViewController
+
+最后实例化的视图控制器:ShowStoreNewMapViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[__NSCFNumber stringByTrimmingCharactersInSet:]: unrecognized selector sent to instance 0xbd49e5c9db293fe5
+
+#0 CoreFoundation 00000000018196D0FC ()
+#1 libobjc.A.dylib 00000000019A1B9D64 objc_exception_throw()
+#2 CoreFoundation 000000000181A4A0C4 +[NSObject _copyDescription]
+#3 CoreFoundation 000000000181902524 ()
+#4 CoreFoundation 000000000181901660 -[NSKVONotifying_MKUserLocation setCoordinate:]
+#5 JHUniversalApp 000000000106D8E6AC +[NSString contentIsNullORNil:]
+#6 JHUniversalApp 000000000106D8E768 +[NSString replaceNilStr:]
+#7 JHUniversalApp 000000000105AAEAB8 -[EmployeeChecklistVC setStatus:StatusValue:InspectOptionTaskId:callBack:]
+#8 JHUniversalApp 000000000105AAAD64 -[EmployeeChecklistVC tableView:cellForRowAtIndexPath:]
+#9 JHUniversalApp 000000000105C5D69C -[SelfCheckCell segmentedControlClicked:]
+#10 UIKitCore 000000000184245A98 -[UIApplication sendAction:to:from:forEvent:]
+#11 UIKitCore 000000000184371DB8 -[UIControl sendAction:to:forEvent:]
+#12 UIKitCore 0000000001840ECF90 -[UIControl _sendActionsForEvents:withEvent:]
+#13 UIKitCore 0000000001840A87F0 -[_UIAfterCACommitBlock run]
+#14 UIKitCore 000000000183FBA5D4 -[_UIAfterCACommitQueue flush]
+#15 UIKitCore 000000000183EE2F54 ()
+#16 UIKitCore 000000000183EE366C ()
+#17 UIKitCore 000000000183EE381C ()
+#18 CoreFoundation 000000000181915610 ()
+#19 CoreFoundation 0000000001818E48F4 ()
+#20 CoreFoundation 0000000001818DF98C ()
+#21 CoreFoundation 0000000001818F3468 CFRunLoopRunSpecific()
+#22 GraphicsServices 00000000019D49338C GSEventRunModal()
+#23 UIKitCore 0000000001842965D0 -[UIApplication _run]
+#24 UIKitCore 000000000184014F74 UIApplicationMain()
+#25 JHUniversalApp 000000000106CC18EC -[VAUIFooterView .cxx_destruct]
+#26 dyld 000000000108F8DAA4 start()
+univer:=>13:52:46.191 -[SMDCTxtUtil checkAllDataExtend] 十分钟上传一次采集数据-9-条
+univer:=>13:52:46.711 -[SMDCTxtUtil uploadData:]_block_invoke 上传埋点数据信息成功
+
+","已解决","0000-00-00","0","是","","李聪","2022-02-24 11:37:53","主干(#trunk)","李聪","2022-02-25 10:48:19","邹丽","已解决","主干(#trunk)","2022-02-25 10:43:18","","0000-00-00 00:00:00","0","","","邹丽","2022-02-25 10:48:19","WeChat765eb93d3fc112648565c9223556f0c2.png
+",""
+"2068","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","CALayer position contains NaN: [nan 1]","","1-Low","3","代码错误","","","当前展示的视图控制器:HomeMainController
+
+最后实例化的视图控制器:HomeMainController
+
+2.6.0.012920 name:CALayerInvalidGeometry
+reason:CALayer position contains NaN: [nan 1]
+
+#0 CoreFoundation 00000000018144ED8C ()
+#1 libobjc.A.dylib 0000000001806085EC objc_exception_throw()
+#2 CoreFoundation 00000000018144EC6C -[NSException initWithCoder:]
+#3 QuartzCore 0000000001855DED1C ()
+#4 QuartzCore 0000000001855D0BBC -[CALayer setPosition:]
+#5 QuartzCore 0000000001855D116C -[CALayer setFrame:]
+#6 UIKit 00000000018B02C360 -[UIView setFrame:]
+#7 JHUniversalApp 000000000104677CD0 -[YJHomeMeunCell scrollViewDidScroll:]
+#8 libdispatch.dylib 000000000180D40AA0 ()
+#9 libdispatch.dylib 000000000180D40A60 ()
+#10 libdispatch.dylib 000000000180D4D65C ()
+#11 CoreFoundation 0000000001813F7070 ()
+#12 CoreFoundation 0000000001813F4BC8 ()
+#13 CoreFoundation 000000000181314DA8 CFRunLoopRunSpecific()
+#14 GraphicsServices 0000000001832F9020 GSEventRunModal()
+#15 UIKit 00000000018B331758 UIApplicationMain()
+#16 JHUniversalApp 00000000010478BEA4 -[VAUIFooterView .cxx_destruct]
+#17 libdyld.dylib 000000000180DA5FC0 ()
+
+login:w>18:20:18.642 -[LoginAndRegister readyOnApplicationRun2] 正式登录并存在ApplicationContext
+
+","已解决","0000-00-00","0","是","","李聪","2022-02-24 11:36:42","主干(#trunk)","李聪","2022-02-24 18:30:19","杨峰","已解决","主干(#trunk)","2022-02-24 18:29:34","","0000-00-00 00:00:00","0","","","杨峰","2022-02-24 18:30:19","",""
+"2067","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[UIView removeAllSubViews]: unrecognized selector sent to instance 0x10fd3ed10","","1-Low","3","代码错误","","","当前展示的视图控制器:ShowStoreNewMapViewController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[UIView removeAllSubViews]: unrecognized selector sent to instance 0x10fd3ed10
+
+#0 CoreFoundation 0000000001810DD0FC ()
+#1 libobjc.A.dylib 000000000199918D64 objc_exception_throw()
+#2 CoreFoundation 0000000001811BA0C4 +[NSObject _copyDescription]
+#3 UIKitCore 000000000184458030 -[UIResponder doesNotRecognizeSelector:]
+#4 CoreFoundation 000000000181072524 ()
+#5 CoreFoundation 000000000181071660 -[NSKVONotifying_MKUserLocation setCoordinate:]
+#6 JHUniversalApp 000000000106314820 -[JHNewNotificationCell createCooperateLabel:]
+#7 JHUniversalApp 000000000106313940 -[JHNewNotificationCell setModel:]
+#8 libdispatch.dylib 000000000180D4D924 ()
+#9 libdispatch.dylib 000000000180D4F670 ()
+#10 libdispatch.dylib 000000000180D5DB70 _dispatch_main_queue_callback_4CF()
+#11 CoreFoundation 000000000181095D84 ()
+#12 CoreFoundation 00000000018104FF5C ()
+#13 CoreFoundation 000000000181063468 CFRunLoopRunSpecific()
+#14 GraphicsServices 00000000019CBEF38C GSEventRunModal()
+#15 UIKitCore 000000000183A05088 -[UIApplication _run]
+#16 UIKitCore 000000000183783958 UIApplicationMain()
+#17 JHUniversalApp 0000000001079AA0E4 -[VAUIFooterView .cxx_destruct]
+#18 dyld 00000000010A3DDAA4 start()
+
+
+
+","已解决","0000-00-00","0","是","","余朝阳","2022-02-24 11:35:16","主干(#trunk)","李宽","2022-02-25 11:12:44","郭旭","已解决","主干(#trunk)","2022-02-25 11:08:40","","0000-00-00 00:00:00","0","","","郭旭","2022-02-25 11:12:44","",""
+"2064","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","Attempt to insert non-property list object","","1-Low","3","代码错误","","","当前展示的视图控制器:JHTabBarController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:Attempt to insert non-property list object {
+StoreSecTypeId = ““00000000-0000-0000-0000-000000000000““;
+StoreName = ““佛山市高明区杨和镇蓓蕾托儿所““;
+StoreSecType = (null);
+StoreType = (null);
+StoreTypeId = (null);
+} for key JHStoreInfoThemData
+
+#0 CoreFoundation 0000000001806210FC ()
+#1 libobjc.A.dylib 000000000198E6DD64 objc_exception_throw()
+#2 CoreFoundation 00000000018072A564 ()
+#3 CoreFoundation 0000000001806E3EC8 ()
+#4 CoreFoundation 000000000180600AE4 ()
+#5 CoreFoundation 00000000018064383C ()
+#6 CoreFoundation 00000000018066A6C8 ()
+#7 CoreFoundation 000000000180616A08 ()
+#8 CoreFoundation 0000000001805DF3B8 ()
+#9 CoreFoundation 0000000001805B73D8 ()
+#10 CoreFoundation 0000000001805B045C ()
+#11 CoreFoundation 000000000180661100 -[_CFXPreferences setValue:forKey:appIdentifier:container:configurationURL:]
+#12 CoreFoundation 0000000001805E48AC _CFPreferencesSetAppValueWithContainerAndConfiguration()
+#13 Foundation 000000000181DE7DB4 -[NSUserDefaults setObject:forKey:]
+#14 JHUniversalApp 000000000101B09C38 -[StoreDetailCornerVC requestDataForStoresIn]
+#15 libdispatch.dylib 000000000180291924 ()
+#16 libdispatch.dylib 000000000180293670 ()
+#17 libdispatch.dylib 0000000001802A1B70 _dispatch_main_queue_callback_4CF()
+#18 CoreFoundation 0000000001805D9D84 ()
+#19 CoreFoundation 000000000180593F5C ()
+#20 CoreFoundation 0000000001805A7468 CFRunLoopRunSpecific()
+#21 GraphicsServices 00000000019C14738C GSEventRunModal()
+#22 UIKitCore 000000000182F4A5D0 -[UIApplication _run]
+#23 UIKitCore 000000000182CC8F74 UIApplicationMain()
+#24 JHUniversalApp 00000000010374C688 -[VAUIFooterView .cxx_destruct]
+#25 dyld 000000000106B5DAA4 start()
+univer:=>17:53:42.604 -[JHMessageEntity dealloc] 消息体销毁了
+univer:=>17:53:43.309 -[JHMessageEntity dealloc] 消息体销毁了
+
+
+
+","已解决","0000-00-00","0","是","","余朝阳","2022-02-24 11:32:11","主干(#trunk)","余朝阳","2022-02-28 10:09:15","余朝阳","已解决","主干(#trunk)","2022-02-28 10:08:30","","0000-00-00 00:00:00","0","","","余朝阳","2022-02-28 10:09:15","",""
+"2063","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[__NSCFString reachabilityChanged:]: unrecognized selector sent to instance 0x280457280","","1-Low","3","代码错误","","","当前展示的视图控制器:JHTabBarController
+
+最后实例化的视图控制器:JHMapTemplateOneViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[__NSCFString reachabilityChanged:]: unrecognized selector sent to instance 0x280457280
+
+#0 CoreFoundation 000000000186E3C98C ()
+#1 libobjc.A.dylib 000000000186B650A4 objc_exception_throw()
+#2 CoreFoundation 000000000186D4043C -[NSOrderedSet initWithSet:copyItems:]
+#3 CoreFoundation 000000000186E40E08 ()
+#4 CoreFoundation 000000000186E42BEC _CF_forwarding_prep_0()
+#5 JHUniversalApp 0000000001075826C8 -[Reachability startNotifier]
+#6 SystemConfiguration 0000000001870A8558 ()
+#7 SystemConfiguration 0000000001870A8D60 ()
+#8 libnetwork.dylib 000000000189176124 ()
+#9 libdispatch.dylib 000000000186B09610 ()
+#10 libdispatch.dylib 000000000186B0A184 ()
+#11 libdispatch.dylib 000000000186AE773C ()
+#12 libdispatch.dylib 000000000186AE8154 ()
+#13 libdispatch.dylib 000000000186AF143C ()
+#14 libsystem_pthread.dylib 000000000186B59FA4 _pthread_wqthread()
+#15 libsystem_pthread.dylib 000000000186B5CAE0 start_wqthread()
+
+
+
+","已解决","0000-00-00","0","是","","余朝阳","2022-02-24 11:31:00","主干(#trunk)","余朝阳","2022-02-24 17:42:45","平康","已解决","主干(#trunk)","2022-02-24 17:42:31","","0000-00-00 00:00:00","0","","","平康","2022-02-24 17:42:45","",""
+"2062","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[UIScrollView removeAllSubViews]: unrecognized selector sent to instance 0x1085bd800","","1-Low","3","代码错误","","","当前展示的视图控制器:ShowStoreNewMapViewController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[UIScrollView removeAllSubViews]: unrecognized selector sent to instance 0x1085bd800
+
+#0 CoreFoundation 00000000018219504C ()
+#1 libobjc.A.dylib 00000000019A809F54 objc_exception_throw()
+#2 CoreFoundation 000000000182272014 +[NSObject _copyDescription]
+#3 UIKitCore 00000000018550B5A0 -[UIResponder doesNotRecognizeSelector:]
+#4 CoreFoundation 00000000018212A474 ()
+#5 CoreFoundation 0000000001821295B0 -[NSKVONotifying_MKUserLocation setCoordinate:]
+#6 JHUniversalApp 000000000102036A5C -[MsgAttachmentView showAttachMentsWith:]
+#7 JHUniversalApp 000000000101FD5928 -[NewStoreCMMsgItemView showDetialContentWithMsg:]
+#8 JHUniversalApp 000000000101FE3F28 -[StoreCMMsgCell showDetailWith:]
+#9 JHUniversalApp 00000000010203372C -[StoreCMMsgListViewController tableView:cellForRowAtIndexPath:]
+#10 UIKitCore 00000000018482A5C4 -[UITableView _createPreparedCellForGlobalRow:withIndexPath:willDisplay:]
+#11 UIKitCore 000000000184832968 -[UITableView _prefetchCellAtGlobalRow:aboveVisibleRange:]
+#12 UIKitCore 00000000018477BB0C ()
+#13 UIKitCore 000000000184723FB4 ()
+#14 UIKitCore 0000000001849FAB00 -[UITableView _updateCycleIdleUntil:]
+#15 UIKitCore 00000000018473219C ()
+#16 libdispatch.dylib 000000000181E05914 ()
+#17 libdispatch.dylib 000000000181E07660 ()
+#18 libdispatch.dylib 000000000181E15B60 _dispatch_main_queue_callback_4CF()
+#19 CoreFoundation 00000000018214DCD4 ()
+#20 CoreFoundation 000000000182107EAC ()
+#21 CoreFoundation 00000000018211B3B8 CFRunLoopRunSpecific()
+#22 GraphicsServices 00000000019DAAB38C GSEventRunModal()
+#23 UIKitCore 000000000184ABB6A8 -[UIApplication _run]
+#24 UIKitCore 00000000018483A7F4 UIApplicationMain()
+#25 JHUniversalApp 00000000010364A0E4 -[VAUIFooterView .cxx_destruct]
+#26 dyld 0000000001060F9A24 start()
+
+","已解决","0000-00-00","0","是","","李聪","2022-02-24 11:30:29","主干(#trunk)","李宽","2022-02-28 13:04:32","郭旭","重复Bug","主干(#trunk)","2022-02-28 13:03:31","","0000-00-00 00:00:00","-[UIScrollView removeAllSubViews]: unrecognized selector sent to instance 0x109129c00(2092)","","","郭旭","2022-02-28 13:04:32","",""
+"2060","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","Modifications to the layout engine must not be performed from a background thread after it has been accessed from the main thread.","","1-Low","3","代码错误","","","当前展示的视图控制器:ShowStoreNewMapViewController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInternalInconsistencyException
+reason:Modifications to the layout engine must not be performed from a background thread after it has been accessed from the main thread.
+
+#0 CoreFoundation 00000000019046E5AC ()
+#1 libobjc.A.dylib 0000000001A455C42C objc_exception_throw()
+#2 CoreAutoLayout 0000000001A47E2D4C ()
+#3 CoreAutoLayout 0000000001A47E2A20 -[NSISEngine _optimizeWithoutRebuilding]
+#4 CoreAutoLayout 0000000001A47E24F8 -[NSISEngine optimize]
+#5 CoreAutoLayout 0000000001A47DDB34 -[NSISEngine performPendingChangeNotifications]
+#6 UIKitCore 0000000001932C1DB0 -[UIView layoutSublayersOfLayer:]
+#7 QuartzCore 0000000001937CD324 -[CALayer layoutSublayers]
+#8 QuartzCore 0000000001937CD7E0 ()
+#9 QuartzCore 0000000001937E1C08 ()
+#10 QuartzCore 0000000001937291B8 ()
+#11 QuartzCore 0000000001937544BC ()
+#12 QuartzCore 000000000193754CF0 ()
+#13 libsystem_pthread.dylib 0000000001D8365EC4 ()
+#14 libsystem_pthread.dylib 0000000001D835DD08 ()
+#15 libsystem_pthread.dylib 0000000001D835FC1C ()
+#16 libsystem_pthread.dylib 0000000001D835F998 _pthread_wqthread()
+#17 libsystem_pthread.dylib 0000000001D836677C start_wqthread()
+univer:=>10:58:32.070 -[SMDCTxtUtil checkAllData] 够十条上传一次采集数据-10-条
+univer:=>10:58:32.510 -[SMDCTxtUtil uploadData:]_block_invoke 上传埋点数据信息成功
+
+","已解决","0000-00-00","0","是","","李聪","2022-02-24 11:28:51","主干(#trunk)","李聪","2022-03-01 10:34:35","余朝阳","无法重现","主干(#trunk)","2022-03-01 10:34:17","","0000-00-00 00:00:00","0","","","余朝阳","2022-03-01 10:34:35","",""
+"2059","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","Attempt to insert non-property list object","","1-Low","3","代码错误","","","当前展示的视图控制器:JHTabBarController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:Attempt to insert non-property list object {
+StoreSecTypeId = ““00000000-0000-0000-0000-000000000000““;
+StoreName = ““佛山市禅城区张槎街道佳贝托儿所““;
+StoreSecType = (null);
+StoreType = (null);
+StoreTypeId = (null);
+} for key JHStoreInfoThemData
+
+#0 CoreFoundation 0000000001818450FC ()
+#1 libobjc.A.dylib 00000000019A095D64 objc_exception_throw()
+#2 CoreFoundation 00000000018194E564 ()
+#3 CoreFoundation 000000000181907EC8 ()
+#4 CoreFoundation 000000000181824AE4 ()
+#5 CoreFoundation 00000000018186783C ()
+#6 CoreFoundation 00000000018188E6C8 ()
+#7 CoreFoundation 00000000018183AA08 ()
+#8 CoreFoundation 0000000001818033B8 ()
+#9 CoreFoundation 0000000001817DB3D8 ()
+#10 CoreFoundation 0000000001817D445C ()
+#11 CoreFoundation 000000000181885100 -[_CFXPreferences setValue:forKey:appIdentifier:container:configurationURL:]
+#12 CoreFoundation 0000000001818088AC _CFPreferencesSetAppValueWithContainerAndConfiguration()
+#13 Foundation 00000000018300BDA4 -[NSUserDefaults setObject:forKey:]
+#14 JHUniversalApp 000000000103945C38 -[StoreDetailCornerVC requestDataForStoresIn]
+#15 libdispatch.dylib 0000000001814B5924 ()
+#16 libdispatch.dylib 0000000001814B7670 ()
+#17 libdispatch.dylib 0000000001814C5B70 _dispatch_main_queue_callback_4CF()
+#18 CoreFoundation 0000000001817FDD84 ()
+#19 CoreFoundation 0000000001817B7F5C ()
+#20 CoreFoundation 0000000001817CB468 CFRunLoopRunSpecific()
+#21 GraphicsServices 00000000019D36F38C GSEventRunModal()
+#22 UIKitCore 00000000018416E5D0 -[UIApplication _run]
+#23 UIKitCore 000000000183EECF74 UIApplicationMain()
+#24 JHUniversalApp 000000000105588688 -[VAUIFooterView .cxx_destruct]
+#25 dyld 000000000108739AA4 start()
+ResponseCode = ““NotHaveUID““;
+}
+
+
+
+","已解决","0000-00-00","0","是","","余朝阳","2022-02-24 11:28:18","主干(#trunk)","余朝阳","2022-02-28 10:05:43","余朝阳","已解决","主干(#trunk)","2022-02-28 10:03:37","","0000-00-00 00:00:00","0","","","余朝阳","2022-02-28 10:05:43","",""
+"2058","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","Collection  was mutated while being enumerated.","","1-Low","3","代码错误","","","当前展示的视图控制器:JHTabBarController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSGenericException
+reason:*** Collection <__NSArrayM: 0x2815ba400> was mutated while being enumerated.
+
+#0 CoreFoundation 000000000191EDB180 ()
+#1 libobjc.A.dylib 0000000001910B39F8 objc_exception_throw()
+#2 CoreFoundation 000000000191EDAA48 -[__NSSingleObjectEnumerator initWithObject:]
+#3 JHUniversalApp 0000000001029454B0 -[NewUploadController upload:andIndex:callBack:]
+#4 JHUniversalApp 0000000001029451C0 -[NewUploadController getUploadDataWithRecordingModel:andIndex:callBack:]
+#5 libdispatch.dylib 000000000191918A38 ()
+#6 libdispatch.dylib 0000000001919197D4 ()
+#7 libdispatch.dylib 0000000001918BDC80 ()
+#8 libdispatch.dylib 0000000001918CA030 ()
+#9 libdispatch.dylib 0000000001918CA8D4 ()
+#10 libsystem_pthread.dylib 000000000191AFA1B4 _pthread_wqthread()
+#11 libsystem_pthread.dylib 000000000191AFCCD4 start_wqthread()
+
+","已解决","0000-00-00","0","是","","李聪","2022-02-24 11:25:52","主干(#trunk)","李聪","2022-02-28 13:30:12","余朝阳","已解决","主干(#trunk)","2022-02-28 13:30:02","","0000-00-00 00:00:00","0","","","余朝阳","2022-02-28 13:30:12","",""
+"2057","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","Set contentURL after setting controls.","","1-Low","3","代码错误","","","最后实例化的视图控制器:VAListeningStoryViewController
+
+2.6.0.121413 name:ALMoviePlayerController Exception
+reason:Set contentURL after setting controls.
+
+#0 CoreFoundation 0000000001A97AE754 ()
+#1 libobjc.A.dylib 0000000001BE2757A8 objc_exception_throw()
+#2 CoreFoundation 0000000001A96B2874 -[NSObject isNSSet__]
+#3 JHUniversalApp 0000000001009F5DA0 -[VAALMoviePlayerController setContentURL:]
+#4 MediaPlayer 0000000001B0E2B2EC -[MPMoviePlayerController initWithContentURL:]
+#5 JHUniversalApp 0000000001009F5854 -[VAALMoviePlayerController initWithFrame:]
+#6 JHUniversalApp 0000000001009F565C -[VAALMoviePlayerController init]
+#7 JHUniversalApp 0000000001009A2500 -[VACGlodalManager Build]
+#8 JHUniversalApp 0000000001005490EC +[TLNewsHomepage myInit]
+#9 JHUniversalApp 0000000001016588C8 -[AppDelegate initialize]
+#10 JHUniversalApp 00000000010165EEFC -[AppDelegate application:didFinishLaunchingWithOptions:]
+#11 UIKitCore 0000000001AC1987A8 -[UIApplication _handleDelegateCallbacksWithOptions:isSuspended:restoreState:]
+#12 UIKitCore 0000000001AC19A23C -[UIApplication _callInitializationDelegatesWithActions:forCanvas:payload:fromOriginatingProcess:]
+#13 UIKitCore 0000000001AC1A0388 -[UIApplication _runWithMainScene:transitionContext:completion:]
+#14 UIKitCore 0000000001AB7F3C98 -[_UISceneLifecycleMultiplexer completeApplicationLaunchWithFBSScene:transitionContext:]
+#15 UIKitCore 0000000001ABD5CF58 _UIScenePerformActionsWithLifecycleActionMask()
+#16 UIKitCore 0000000001AB7F4830 ()
+#17 UIKitCore 0000000001AB7F4238 -[_UISceneLifecycleMultiplexer _performBlock:withApplicationOfDeactivationReasons:fromReasons:]
+#18 UIKitCore 0000000001AB7F4640 -[_UISceneLifecycleMultiplexer _evalTransitionToSettings:fromSettings:forceExit:withTransitionStore:]
+#19 UIKitCore 0000000001AB7F3E7C -[_UISceneLifecycleMultiplexer uiScene:transitionedFromState:withTransitionContext:]
+#20 UIKitCore 0000000001AB7FC3C0 ()
+#21 UIKitCore 0000000001ABC6A970 +[BSAnimationSettings tryAnimatingWithSettings:actions:completion:]
+#22 UIKitCore 0000000001ABD75D68 _UISceneSettingsDiffActionPerformChangesWithTransitionContext()
+#23 UIKitCore 0000000001AB7FC0B8 -[_UIWindowSceneFBSSceneTransitionContextDrivenLifecycleSettingsDiffAction _performActionsForUIScene:withUpdatedFBSScene:settingsDiff:fromSettings:transitionContext:lifecycleActionType:]
+#24 UIKitCore 0000000001AB623FA0 (","已解决","0000-00-00","0","是","","李聪","2022-02-24 11:22:21","主干(#trunk)","李宽","2022-02-24 18:50:32","郭旭","已解决","主干(#trunk)","2022-02-24 18:47:45","","0000-00-00 00:00:00","0","","","郭旭","2022-02-24 18:50:32","截屏2022-02-24 下午6.48.42.png
+",""
+"2056","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[OS_dispatch_semaphore statement]: unrecognized selector sent to instance 0x2804ad9a0","","1-Low","3","代码错误","","","当前展示的视图控制器:ShowStoreNewMapViewController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[OS_dispatch_semaphore statement]: unrecognized selector sent to instance 0x2804ad9a0
+
+#0 CoreFoundation 000000000184DBEDC0 ()
+#1 libobjc.A.dylib 00000000019991B7A8 objc_exception_throw()
+#2 CoreFoundation 000000000184CC22D0 -[NSOrderedSet initWithSet:copyItems:]
+#3 CoreFoundation 000000000184DC1918 ()
+#4 CoreFoundation 000000000184DC3C10 -[NSKVONotifying_MKUserLocation setCoordinate:]
+#5 JHUniversalApp 000000000103662D78 -[FMDatabase executeQuery:withArgumentsInArray:orDictionary:orVAList:]
+#6 JHUniversalApp 000000000103663214 -[FMDatabase executeQuery:]
+#7 JHUniversalApp 00000000010347E0C0 -[JHLiveSqlManage getCityWithName:]
+#8 JHUniversalApp 0000000001023C444C -[JHLongFormUploadManager uploadFiveLocationInfo:complete:fail:]
+#9 libdispatch.dylib 0000000001849A9A84 ()
+#10 libdispatch.dylib 0000000001849AB81C ()
+#11 libdispatch.dylib 0000000001849B9C70 _dispatch_main_queue_callback_4CF()
+#12 CoreFoundation 000000000184D38A2C ()
+#13 CoreFoundation 000000000184D32904 ()
+#14 CoreFoundation 000000000184D319F4 CFRunLoopRunSpecific()
+#15 GraphicsServices 00000000019C407734 GSEventRunModal()
+#16 UIKitCore 0000000001877B075C -[UIApplication _run]
+#17 UIKitCore 0000000001877B5FCC UIApplicationMain()
+#18 JHUniversalApp 00000000010354F424 -[VAUIFooterView .cxx_destruct]
+#19 libdyld.dylib 0000000001849EDCF8 ()
+
+
+
+","已解决","0000-00-00","0","是","","余朝阳","2022-02-24 11:19:46","主干(#trunk)","余朝阳","2022-02-25 17:12:37","余朝阳","无法重现","主干(#trunk)","2022-02-25 17:12:21","","0000-00-00 00:00:00","0","","","余朝阳","2022-02-25 17:12:37","",""
+"2052","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","-[__NSCFConstantString characterAtIndex:]: Range or index out of bounds","","1-Low","3","其他","","","
+  当前展示的视图控制器:ShowStoreNewMapViewController
+最后实例化的视图控制器:ShowStoreNewMapViewController
+2.6.0.012920 name:NSInvalidArgumentException
+reason:-[__NSCFConstantString characterAtIndex:]: Range or index out of bounds
+#0 CoreFoundation 0000000001AABDC128 ()
+#1 libobjc.A.dylib 0000000001BE8EF480 objc_exception_throw()
+#2 CoreFoundation 0000000001AAC47B70 ()
+#3 CoreFoundation 0000000001AAC47BA0 ()
+#4 CoreFoundation 0000000001AAAD0138 -[__NSDictionaryM copyWithZone:]
+#5 JHUniversalApp 000000000106F68454 -[CLTextSettingView textViewDidChange:]
+#6 UIKitCore 0000000001AD7B9ABC -[UITextView textInputDidChange:]
+#7 UIKitCore 0000000001AD7907A8 -[UITextInputController _sendDelegateChangeNotificationsForText:selection:]
+#8 UIKitCore 0000000001AD792CC4 -[UITextInputController _insertText:fromKeyboard:]
+#9 UIKitCore 0000000001AD794600 -[UITextInputController deleteBackward]
+#10 UIKitCore 0000000001AD7B5980 -[UITextView deleteBackward]
+#11 UIKitCore 0000000001AD26FD48 -[UIKeyboardImpl deleteBackwardAndNotify:]
+#12 UIKitCore 0000000001AD268A14 -[UIKeyboardImpl _performKeyboardOutput:shouldCheckDelegate:]
+#13 UIKitCore 0000000001AD268738 -[UIKeyboardImpl performKeyboardOutput:]
+#14 UIKitCore 0000000001AD267774 ()
+#15 UIKitCore 0000000001AD29A460 -[UIKeyboardTaskEntry execute:]
+#16 UIKitCore 0000000001AD299048 -[UIKeyboardTaskQueue continueExecutionOnMainThread]
+#17 UIKitCore 0000000001AD28DB4C -[UIKeyboardLayout touchDragged:]
+#18 UIKitCore 0000000001AD1BEA14 -[UIKeyboardLayoutStar touchDragged:]
+#19 UIKitCore 0000000001AD28ED0C -[UIKeyboardLayout touchesMoved:withEvent:]
+#20 UIKitCore 0000000001AD4B33D4 -[UIWindow _sendTouchesForEvent:]
+#21 UIKitCore 0000000001AD4B4E4C -[UIWindow sendEvent:]
+#22 UIKitCore 0000000001AD490A78 -[UIApplication sendEvent:]
+#23 UIKitCore 0000000001AD513E54 ()
+#24 UIKitCore 0000000001AD518678 ()
+#25 UIKitCore 0000000001AD50F964 ()
+#26 CoreFoundation 0000000001AAB5B780 ()
+#27 CoreFoundation 0000000001AAB5B680 ()
+#28 CoreFoundation 0000000001AAB5AA38 ()
+#29 CoreFoundation 0000000001AAB54EF0 ()
+#30 CoreFoundation 0000000001AAB546A8 CFRunLoopRunSpecific()
+#31 GraphicsServices
+  
+
+
+
+","已解决","0000-00-00","0","是","","李宽","2022-02-24 11:02:47","主干(#trunk)","李宽","2022-02-25 10:57:28","李飞","已解决","主干(#trunk)","2022-02-25 10:56:24","","0000-00-00 00:00:00","0","","","李飞","2022-02-25 10:57:28","",""
+"2228","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","Collection  was mutated while being enumerated.","","1-Low","3","代码错误","","","当前展示的视图控制器:JHTabBarController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSGenericException
+reason:*** Collection <__NSArrayM: 0x28b2f63a0> was mutated while being enumerated.
+
+#0 CoreFoundation 00000000019EA80878 ()
+#1 libobjc.A.dylib 0000000001B2FD6C50 objc_exception_throw()
+#2 CoreFoundation 00000000019EA8017C -[__NSSingleObjectEnumerator initWithObject:collection:]
+#3 JHUniversalApp 00000000010291D4B0 -[NewUploadController upload:andIndex:callBack:]
+#4 JHUniversalApp 00000000010291D1C0 -[NewUploadController getUploadDataWithRecordingModel:andIndex:callBack:]
+#5 libdispatch.dylib 00000000019E67324C ()
+#6 libdispatch.dylib 00000000019E674DB0 ()
+#7 libdispatch.dylib 00000000019E677DDC ()
+#8 libdispatch.dylib 00000000019E68593C ()
+#9 libdispatch.dylib 00000000019E686120 ()
+#10 libsystem_pthread.dylib 0000000001E7E987C8 _pthread_wqthread()
+#11 libsystem_pthread.dylib 0000000001E7E9F75C start_wqthread()
+
+
+
+
+
+  
+","已关闭","0000-00-00","0","是","","霍曙光","2022-02-28 14:10:47","主干(#trunk)","Closed","2022-02-28 14:12:53","霍曙光","重复Bug","","2022-02-28 14:12:25","霍曙光","2022-02-28 14:12:53","*** Collection <__NSArrayM: 0x283e4a790> was mutated while being enumerated.(2061)","","","霍曙光","2022-02-28 14:12:53","",""
+"2214","iOS  临时项目(#95)","/(#0)","【研发】【稳定性bug库】(#583)","","","Attempt to insert non-property list object","","1-Low","3","代码错误","","","当前展示的视图控制器:ShowStoreNewMapViewController
+
+最后实例化的视图控制器:JHUIWebViewController
+
+2.6.0.012920 name:NSInvalidArgumentException
+reason:Attempt to insert non-property list object {
+StoreSecTypeId = ““00000000-0000-0000-0000-000000000000““;
+StoreName = ““Tims咖啡福州上下杭店““;
+StoreSecType = (null);
+StoreType = (null);
+StoreTypeId = (null);
+} for key JHStoreInfoThemData
+
+#0 CoreFoundation 0000000001808910FC ()
+#1 libobjc.A.dylib 0000000001990CBD64 objc_exception_throw()
+#2 CoreFoundation 00000000018099A564 ()
+#3 CoreFoundation 000000000180953EC8 ()
+#4 CoreFoundation 000000000180870AE4 ()
+#5 CoreFoundation 0000000001808B383C ()
+#6 CoreFoundation 0000000001808DA6C8 ()
+#7 CoreFoundation 000000000180886A08 ()
+#8 CoreFoundation 00000000018084F3B8 ()
+#9 CoreFoundation 0000000001808273D8 ()
+#10 CoreFoundation 00000000018082045C ()
+#11 CoreFoundation 0000000001808D1100 -[_CFXPreferences setValue:forKey:appIdentifier:container:configurationURL:]
+#12 CoreFoundation 0000000001808548AC _CFPreferencesSetAppValueWithContainerAndConfiguration()
+#13 Foundation 000000000182055DB4 -[NSUserDefaults setObject:forKey:]
+#14 JHUniversalApp 000000000103A9D86C -[StoreDetailCornerVC requestDataForStoresIn]
+#15 libdispatch.dylib 000000000180501924 ()
+#16 libdispatch.dylib 000000000180503670 ()
+#17 libdispatch.dylib 000000000180511B70 _dispatch_main_queue_callback_4CF()
+#18 CoreFoundation 000000000180849D84 ()
+#19 CoreFoundation 000000000180803F5C ()
+#20 CoreFoundation 000000000180817468 CFRunLoopRunSpecific()
+#21 GraphicsServices 00000000019C3A238C GSEventRunModal()
+#22 UIKitCore 0000000001831B9088 -[UIApplication _run]
+#23 UIKitCore 000000000182F37958 UIApplicationMain()
+#24 JHUniversalApp 0000000001056D15D4 -[VAUIFooterView .cxx_destruct]
+#25 dyld 0000000001081D9AA4 start()
+ResponseCode = ““Success““;
+}
+
+
+
+  
+","已关闭","0000-00-00","0","是","","霍曙光","2022-02-28 10:12:35","主干(#trunk)","Closed","2022-02-28 10:16:39","霍曙光","重复Bug","","2022-02-28 10:16:15","霍曙光","2022-02-28 10:16:39","Attempt to insert non-property list object(2064)","","","霍曙光","2022-02-28 10:16:39","",""

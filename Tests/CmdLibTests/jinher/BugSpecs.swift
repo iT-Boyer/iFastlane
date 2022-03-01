@@ -29,7 +29,7 @@ class BugSpecs: QuickSpec {
         beforeEach {
             url = "http://oms.iuoooo.com/MError/GetLogList?random=0.7724948616202214"
             parameters = ["random": 0.9673897022258404,
-                          "fromTime":"2022-02-27 08:05:05",
+                          "fromTime":"2021-01-01 08:05:05",
                           "toTime":"2022-02-28 10:05:05",
                           "osType":1,
                           "runEnvi":3,
@@ -104,7 +104,7 @@ class BugSpecs: QuickSpec {
                 print(bug)
             }
             
-            fit("CSV文件解析") {
+            xit("CSV文件解析") {
                 let filePath = JHSources().string+"/bug.csv"
                 let stream = InputStream(fileAtPath: filePath)!
                 // hasHeaderRow must be true.
@@ -116,11 +116,157 @@ class BugSpecs: QuickSpec {
                 }
             }
             
+            fit("bug正则去重") {
+                //
+                parameters["rows"] = 1000
+                parameters["fromTime"] = "2022-02-28 08:05:05"
+                parameters["toTime"] = "2022-03-01 08:05:05"
+                JHBugly.parseJson(url, parameters: parameters) { bugArr in
+                    //去重
+                    let filterModels = bugArr.filterDuplicates({$0.name})
+                    let zentaoArr:[JHBuglyM] = JHBugly.parseCSV(JHSources() + Path("bug.csv"))
+                    filterModels.map { bug in
+                        // name类型去重
+                        let arr = bugArr.filter { buga in
+                            buga.name == bug.name
+                            && !Regex("-\\[.*?\\]").matches(buga.reason!) // 去除含方法-[] 的reason
+                        }
+                        //金和数据
+                        // 使用reason内容 正则去重
+                        var arr1 = arr.regexDuplicates({$0.reason})
+                        // 使用禅道reason内容去重
+                        let arr2 = arr1.compactMap { newbug -> JHBuglyM? in
+                            var new:JHBuglyM? = nil
+                            for item in zentaoArr {
+                                let reasion1 = Regex("(reason:|:)(Attempt|Modifications|CALayer|Set contentURL|.*?being enumerated)").firstMatch(in: newbug.reason!)?.matchedString
+                                let reasion2 = Regex("(reason:|:)(Attempt|Modifications|CALayer|Set contentURL|.*?being enumerated)").firstMatch(in: item.reason!)?.matchedString
+                                if reasion1 == reasion2 {
+                                    new = newbug
+                                    break
+                                }
+                            }
+                            return new ?? newbug
+                        }
+                        
+                     
+                        print("""
+                            \(arr.count)个\(bug.name!)
+                            正则去重：true
+                            去重总数：\(arr1.count)
+                            已录入：\(arr1.count - arr2.count)
+                            待录入：\(arr2.count)
+                            """)
+                        arr2.map { bug in
+                            print("待录----:\n\(bug.reason!)")
+                        }
+                    }
+                    expect.fulfill()
+                }
+                self.waitForExpectations(timeout: 100)
+            }
+            
+            xit("方法去重") {
+                parameters["rows"] = 1000
+                parameters["fromTime"] = "2022-02-28 08:05:05"
+                parameters["toTime"] = "2022-03-01 08:05:05"
+                JHBugly.parseJson(url, parameters: parameters) { bugArr in
+                    //去重
+                    let filterModels = bugArr.filterDuplicates({$0.name})
+                    print("""
+                        分析从\(parameters["fromTime"]!) 到 \(parameters["toTime"]!)
+                        crash总条数：\(bugArr.count)，其中类型数：\(filterModels.count)
+                        """)
+                    let zentaos = JHBugly.parseCSV(JHSources() + Path("bug.csv"))
+                    
+                    filterModels.map { bug in
+                        // name类型去重
+                        let arr = bugArr.filter { buga in
+                            buga.name == bug.name
+                        }
+                        // reason重复
+                        var arr1:[JHBuglyM] = []  // 去重resion title
+                        var arr2:[JHBuglyM] = [] // 待录入
+                        if let funcstr = bug.reason_func {
+                            arr1 = arr.filter { buga in
+                                buga.reason.contains(funcstr)
+                            }
+                            arr2 = arr1.filter { bug1 in
+                                var add = true
+                                zentaos.forEach { ztbug in
+                                    if(ztbug.reason.contains(funcstr)){
+                                        add = false
+                                        return
+                                    }
+                                }
+                                return add
+                            }
+                            print("""
+                                \(arr.count)个\(bug.name!)
+                                方法去重：\(bug.reason_func ?? "无")
+                                去重总数：\(arr1.count)
+                                已录入：\(arr1.count - arr2.count)
+                                待录入：\(arr2.count)
+                                """)
+                            arr1.map { bug in
+                                print(bug.reason!)
+                            }
+                            return
+                        }else{
+//                            arr1 = arr.filter { buga in
+//                                Regex(":(Attempt|Modifications|CALayer|Set contentURL|.*?being enumerated)").matches(buga.reason!)
+//                            }
+                            arr1 = arr.regexDuplicates({$0.reason})
+//                            arr1 = arr1 + arr
+//                            arr.forEach { bugr1 in
+//
+//                                arr1.forEach { addbug in
+//                                    let first = Regex(":(Attempt|Modifications|CALayer|Set contentURL|.*?being enumerated)").firstMatch(in: addbug.reason)?.matchedString
+//                                    let second = Regex(":(Attempt|Modifications|CALayer|Set contentURL|.*?being enumerated)").firstMatch(in: bugr1.reason)?.matchedString
+//                                    if first == second {
+////                                        arr1.removeAll(where: { $0 == addbug })
+//                                    }
+//                                }
+//                            }
+                            
+//                            arr2 = arr1.filter { bug1 in
+//                                var add = true
+//                                zentaos.forEach { ztbug in
+//                                    if(Regex(":(Attempt|Modifications|CALayer|Set contentURL|.*?being enumerated)").matches(ztbug.reason!)){
+//                                        add = false
+//                                        return
+//                                    }
+//                                }
+//                                return add
+//                            }
+//                            arr1.forEach { bugr2 in
+//
+//                                arr2.forEach { addbug in
+//                                    let first = Regex(":(Attempt|Modifications|CALayer|Set contentURL|.*?being enumerated)").firstMatch(in: addbug.reason)?.matchedString
+//                                    let second = Regex(":(Attempt|Modifications|CALayer|Set contentURL|.*?being enumerated)").firstMatch(in: bugr2.reason)?.matchedString
+//                                    if first != second {
+//                                        arr2.append(bugr2)
+//                                    }
+//                                }
+//                            }
+                        }
+                    }
+                    expect.fulfill()
+                }
+                self.waitForExpectations(timeout: 100)
+            }
+            
+            
+            xit("匹配oc方法的正则") {
+                let orgStr = "-[UIScrollView removeAllSubViews]: unrecognized selector sent to instance 0x109129c00"
+                let result = Regex("\\[.*?\\]").firstMatch(in: orgStr)?.matchedString
+                print("匹配结果：\(result)")
+            }
+            
             xit("读取两天的数据，去重，生成电子表格") {
                 JHBugly.parseJson(url, parameters: parameters) { bugArr in
                     //去重
                     let bugs = JHBugly.parseCSV(JHSources() + Path("bug.csv"))
-                    let canAddArr = bugArr.compactMap{ newbug-> JHBuglyM? in
+                    let canAddArr = bugArr.compactMap{ newbug -> JHBuglyM? in
                         //bug name相同的
                         //reason 相同的
                         //控制器相同的
