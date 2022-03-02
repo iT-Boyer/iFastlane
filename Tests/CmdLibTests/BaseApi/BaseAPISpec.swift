@@ -11,6 +11,19 @@ import Nimble
 
 class BaseAPISpec: QuickSpec {
     override func spec() {
+        describe("md5") {
+            //token为数字签名，其算法为：code、密钥、time字符串合并，再进行 md5。
+            //当前时间的时间戳
+            let timeInterval:TimeInterval = Date().timeIntervalSince1970
+            let timeStamp = Int(timeInterval)
+            print("当前时间的时间戳：\(timeStamp)")
+            
+            let code  = "jinher2bug"
+            let key   = "59871ac7135c224cddcb15bef85cdaf8"
+            let time  = timeStamp
+            let token = "\(code)\(key)\(time)".md5
+            print("密钥：\(token)")
+        }
         xdescribe("验证筛选对象数组的方法") {
             var stus:[Student] = []
             var persons:[Person] = []
@@ -71,7 +84,7 @@ class BaseAPISpec: QuickSpec {
         }
         
         
-        describe("验证swift属性用法") {
+        xdescribe("验证swift属性用法") {
             
             it("验证计算属性的setter方法") {
                 // 想要获取计算后的值，必须借助临时变量来辅助，例如：_number

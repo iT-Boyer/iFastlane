@@ -85,7 +85,7 @@ class JHBugly {
         for row:JSON in rows {
             var bug = JHBuglyM()
             bug.id = row["id"].stringValue
-            //其他信息
+            //其他信息:name/reason/version
             let cell = row["cell"].arrayValue
             bug.appname = cell[6].stringValue
             let content = cell[10].stringValue
