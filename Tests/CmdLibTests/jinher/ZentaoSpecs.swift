@@ -10,6 +10,7 @@ import Quick
 import Nimble
 import Alamofire
 import SwiftyJSON
+@testable import CmdLib
 
 //https://www.zentao.net/book/zentaopmshelp/integration-287.html
 /**
@@ -35,7 +36,7 @@ class ZentaoSpecs: QuickSpec {
             let timeInterval:TimeInterval = Date().timeIntervalSince1970
             let time = Int(timeInterval)
             let token = "\(code)\(key)\(time)".md5
-            
+
             url = "http://127.0.0.1:8084/api.php"
             parameters = ["m": "project",
                           "f": "view",
@@ -43,11 +44,11 @@ class ZentaoSpecs: QuickSpec {
                           "account":"hsg",
                           "code": code,
                           "time": time,
-                          "token":token,
+                          "token" :token
             ]
         }
-        
-        describe("demo") {
+
+        xdescribe("demo") {
             //
             xit("token免密码登录接口") {
 //                parameters["m"] = "user"
@@ -61,10 +62,10 @@ class ZentaoSpecs: QuickSpec {
                             let json = JSON(data)
                         }
                     expect.fulfill()
-                    }
+                }
                 self.waitForExpectations(timeout: 10)
             }
-            
+
             xit("帐号登录接口") {
                 parameters = ["m":"user",
                               "f":"login",
@@ -82,7 +83,7 @@ class ZentaoSpecs: QuickSpec {
                     }
                 self.waitForExpectations(timeout: 10)
             }
-            
+
             it("查看项目") {
                 parameters = ["m": "project",
                               "f": "view",
@@ -102,5 +103,42 @@ class ZentaoSpecs: QuickSpec {
                 self.waitForExpectations(timeout: 10)
             }
         }
+        
+        // 登录获取token
+        // 封装bug接口请求，解析bug module
+        describe("V1版本api") {
+            //登录token
+            var token = "l1mhdkdho45sjcdafatmj5o89o"
+            let server = "http://localhost:8084/api.php/v1/"
+            let expect = self.expectation(description: "request should complete")
+            
+            xit("打印token") {
+                let apiUrl = server + "tokens"
+                let param = ["account":"hsg","password":"jiwang3203"]
+                AF.request(apiUrl, method: .post, parameters: param, encoding: JSONEncoding.default)
+                    .response { resp in
+                        let json = JSON(resp.data!)
+                        token = json["token"].stringValue
+                        expect.fulfill()
+                }
+                self.waitForExpectations(timeout: 20)
+                print("获取到的token：\(token)")
+            }
+            
+            it("获取bug列表") {
+                let apiUrl = server + "products/1/bugs"
+                AF.request(apiUrl, method: .get, headers: ["token":token])
+                    .response { resp in
+                        let json = JSON(resp.data!)
+                        let total = json["total"].intValue
+                        print("bug条数：\(total)")
+                        let bugs:Data = try! json["bugs"].rawData()
+                        let array:[ZTBugM] = ZTBugM.parsed(data: bugs)
+                        expect.fulfill()
+                }
+                self.waitForExpectations(timeout: 10)
+            }
+        }
+        
     }
 }
