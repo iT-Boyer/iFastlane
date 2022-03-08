@@ -104,45 +104,47 @@ class ZentaoSpecs: QuickSpec {
             }
         }
         
+        sharedExamples("获取token") {
+            
+        }
         // 登录获取token
         // 封装bug接口请求，解析bug module
         describe("V1版本api") {
-            //登录token
-            var token = "l1mhdkdho45sjcdafatmj5o89o"
-//            let server = "http://localhost:8084/api.php/v1/"
-            let server = "http://10.147.19.89:8084/api.php/v1/"
-            let expect = self.expectation(description: "request should complete")
-            
-            xit("打印token") {
-                let apiUrl = server + "tokens"
-                let param = ["account":"hsg","password":"jiwang3203"]
-                AF.request(apiUrl, method: .post, parameters: param, encoding: JSONEncoding.default)
-                    .response { resp in
-                        let json = JSON(resp.data!)
-                        token = json["token"].stringValue
-                        expect.fulfill()
+            let server = "http://localhost:8084/api.php/v1/"
+//            let server = "http://10.147.19.89:8084/api.php/v1/"
+            var token = ""
+            beforeEach {
+                //登录获取token
+                waitUntil(timeout: .seconds(2)) { done in
+                    let apiUrl = server + "tokens"
+                    let param = ["account":"hsg","password":"jiwang3203"]
+                    AF.request(apiUrl, method: .post, parameters: param, encoding: JSONEncoding.default)
+                        .response { resp in
+                            let json = JSON(resp.data!)
+                            token = json["token"].stringValue
+                            print("获取到的token：\(token)")
+                            done()
+                    }
                 }
-                self.waitForExpectations(timeout: 20)
-                print("获取到的token：\(token)")
             }
             
             it("获取bug列表") {
                 let apiUrl = server + "products/1/bugs"
-                AF.request(apiUrl, method: .get, headers: ["token":token])
-                    .response { resp in
-                        let json = JSON(resp.data!)
-                        let total = json["total"].intValue
-                        print("bug条数：\(total)")
-                        let bugs:Data = try! json["bugs"].rawData()
-                        let array:[ZTBugM] = ZTBugM.parsed(data: bugs)
-                        array.forEach { bug in
-                            print(bug.title!)
-                        }
-                        expect.fulfill()
+                waitUntil(timeout: .seconds(10)) { done in
+                    AF.request(apiUrl, method: .get, headers: ["token":token])
+                        .response { resp in
+                            let json = JSON(resp.data!)
+                            let total = json["total"].intValue
+                            print("bug条数：\(total)")
+                            let bugs:Data = try! json["bugs"].rawData()
+                            let array:[ZTBugM] = ZTBugM.parsed(data: bugs)
+                            array.forEach { bug in
+                                print(bug.title!)
+                            }
+                            done()
+                    }
                 }
-                self.waitForExpectations(timeout: 10)
             }
         }
-        
     }
 }
