@@ -10,10 +10,10 @@ import Alamofire
 import SwiftyJSON
 
 class ZTApi {
-    
+    static var token = ""
+    static var server = "http://10.147.19.89:8084/api.php/v1/"
     // 登录禅道，获取token
-    static func login(_ server:String,account:String, pwd:String) -> String {
-        
+    static func login(account:String, pwd:String) -> String {
         var token = ""
         let url = server + "/api.php/v1/tokens"
         let semaphore = DispatchSemaphore(value: 0)
@@ -26,5 +26,18 @@ class ZTApi {
         _ = semaphore.wait(timeout: DispatchTime.distantFuture)
         
         return token
+    }
+    
+    // 指定迭代id，返回bug
+    static func bugs(of:Int) -> [ZTBugM]? {
+        var bugs:[ZTBugM]!
+        let apiUrl = server + "products/1/bugs"
+        AF.request(apiUrl, method: .get, headers: ["token":token])
+            .response { resp in
+                let json = JSON(resp.data!)
+                let data = try! json["bugs"].rawData()
+                bugs = ZTBugM.parsed(data: data)
+        }
+        return bugs
     }
 }

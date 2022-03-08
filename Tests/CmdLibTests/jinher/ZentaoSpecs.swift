@@ -109,7 +109,8 @@ class ZentaoSpecs: QuickSpec {
         describe("V1版本api") {
             //登录token
             var token = "l1mhdkdho45sjcdafatmj5o89o"
-            let server = "http://localhost:8084/api.php/v1/"
+//            let server = "http://localhost:8084/api.php/v1/"
+            let server = "http://10.147.19.89:8084/api.php/v1/"
             let expect = self.expectation(description: "request should complete")
             
             xit("打印token") {
@@ -134,6 +135,9 @@ class ZentaoSpecs: QuickSpec {
                         print("bug条数：\(total)")
                         let bugs:Data = try! json["bugs"].rawData()
                         let array:[ZTBugM] = ZTBugM.parsed(data: bugs)
+                        array.forEach { bug in
+                            print(bug.title!)
+                        }
                         expect.fulfill()
                 }
                 self.waitForExpectations(timeout: 10)
