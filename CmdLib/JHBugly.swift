@@ -39,7 +39,7 @@ public struct JHBuglyM {
 class JHBugly {
     
     var url = "http://oms.iuoooo.com/MError/GetLogList?random=0.7724948616202214"
-    static let parameters:[String:Any] = ["random": 0.9673897022258404,
+    static var parameters:[String:Any] = ["random": 0.9673897022258404,
                   "fromTime":"2022-02-27 08:05:05",
                   "toTime":"2022-02-28 10:05:05",
                   "osType":1,
@@ -58,7 +58,8 @@ class JHBugly {
     /**
       获取金和bug库的json数据
      */
-    public static func parseJson(_ url:String, parameters:[String:Any], handler:@escaping([JHBuglyM])->Void){
+    public static func parseJson(_ url:String, params:[String:Any], handler:@escaping([JHBuglyM])->Void){
+        parameters.merge(params) { (first, _) in first }
         let request = URLRequest(url: URL(string: url)!)
         var urlRequest = try! URLEncoding.default.encode(request, with: parameters)
         urlRequest.headers["Content-Type"] = "application/json; charset=utf-8"

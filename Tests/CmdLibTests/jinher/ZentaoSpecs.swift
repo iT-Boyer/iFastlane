@@ -47,7 +47,7 @@ class ZentaoSpecs: QuickSpec {
                 ]
             }
             
-            fit("查看项目7") {
+            it("查看项目7") {
                 var params = ["m": "project",
                               "f": "view",
                               "id": 7] as [String : Any]
@@ -67,6 +67,31 @@ class ZentaoSpecs: QuickSpec {
                     }
                 }
             }
+            fit("添加bug") {
+                //&branch=0&extra=moduleID=0
+                var params = ["m": "bug",
+                              "f": "create",
+                              "productID": 7,
+                              "branch": 7,
+                              "extra": "moduleID=0"] as [String : Any]
+                params.merge(zToken) { (first, _) in
+                    first
+                }
+                var bug = ZTBugM()
+                waitUntil(timeout: .seconds(10)) { done in
+                    let request = URLRequest(url: URL(string: url)!)
+                    let urlRequest = try! URLEncoding.default.encode(request, with: params)
+                    AF.request(urlRequest).response { resp in
+                        if resp.response?.statusCode == 200 {
+                            guard let data = resp.data else { return }
+                            let dataStr = String(data: data, encoding: .utf8)
+                            print("\(dataStr!)")
+                        }
+                        done()
+                    }
+                }
+            }
+            
         }
         describe("登录方式获取认证") {
             var token = ""

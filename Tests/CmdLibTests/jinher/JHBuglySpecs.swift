@@ -19,7 +19,7 @@ import PathKit
 /**
  http://oms.iuoooo.com/MError/GetLogList?random=0.7724948616202214&fromTime=2022-02-23%200:01:47&toTime=2022-02-23%2023:59:00&osType=1&runEnvi=3&logState=0&errorType=crash&_search=false&nd=1645667051272&rows=20&page=1&sidx=&sord=asc&appId=
  */
-class BugSpecs: QuickSpec {
+class JHBuglySpecs: QuickSpec {
     override func spec() {
         
         var parameters:[String : Any]!
@@ -92,6 +92,11 @@ class BugSpecs: QuickSpec {
                     2.6.0.012920 name:NSGenericException
                     reason:*** Collection <__NSArrayM: 0x28295e1c0> was mutated while being enumerated.
                 
+                    最后实例化的视图控制器:JHUIWebViewController
+
+                    2.6.0.012920 name:NSInvalidArgumentException
+                    reason:-[__NSCFString reachabilityChanged:]: unrecognized selector sent to instance 0x2835b0b80
+                
                 """
                 let reg = Regex(":.*\n",options: [.ignoreCase, .anchorsMatchLines])
                 let matchingLines = reg.allMatches(in: content)
@@ -121,10 +126,12 @@ class BugSpecs: QuickSpec {
                 parameters["rows"] = 1000
                 parameters["fromTime"] = "2022-02-28 08:05:05"
                 parameters["toTime"] = "2022-03-01 08:05:05"
-                JHBugly.parseJson(url, parameters: parameters) { bugArr in
-                    //去重
+                JHBugly.parseJson(url, params: parameters) { bugArr in
+                    //内部去重
                     let filterModels = bugArr.filterDuplicates({$0.name})
+                    //禅道bug清单
                     let zentaoArr:[JHBuglyM] = JHBugly.parseCSV(JHSources() + Path("bug.csv"))
+                    
                     filterModels.map { bug in
                         // name类型去重
                         let arr = bugArr.filter { buga in
@@ -164,12 +171,12 @@ class BugSpecs: QuickSpec {
                 }
                 self.waitForExpectations(timeout: 100)
             }
-            
+            //reason中包含方法名的bug，特征不包含16进制指针 例如：-[method:arg:arg:]
             xit("方法去重") {
                 parameters["rows"] = 1000
                 parameters["fromTime"] = "2022-02-28 08:05:05"
                 parameters["toTime"] = "2022-03-01 08:05:05"
-                JHBugly.parseJson(url, parameters: parameters) { bugArr in
+                JHBugly.parseJson(url, params: parameters) { bugArr in
                     //去重
                     let filterModels = bugArr.filterDuplicates({$0.name})
                     print("""
@@ -179,7 +186,7 @@ class BugSpecs: QuickSpec {
                     let zentaos = JHBugly.parseCSV(JHSources() + Path("bug.csv"))
                     
                     filterModels.map { bug in
-                        // name类型去重
+                        // 过滤name同类型bug组
                         let arr = bugArr.filter { buga in
                             buga.name == bug.name
                         }
@@ -187,11 +194,13 @@ class BugSpecs: QuickSpec {
                         var arr1:[JHBuglyM] = []  // 去重resion title
                         var arr2:[JHBuglyM] = [] // 待录入
                         if let funcstr = bug.reason_func {
+                            //
                             arr1 = arr.filter { buga in
                                 buga.reason.contains(funcstr)
                             }
                             arr2 = arr1.filter { bug1 in
                                 var add = true
+                                //和禅道数据比较，去重
                                 zentaos.forEach { ztbug in
                                     if(ztbug.reason.contains(funcstr)){
                                         add = false
@@ -263,7 +272,7 @@ class BugSpecs: QuickSpec {
             }
             
             xit("读取两天的数据，去重，生成电子表格") {
-                JHBugly.parseJson(url, parameters: parameters) { bugArr in
+                JHBugly.parseJson(url, params: parameters) { bugArr in
                     //去重
                     let bugs = JHBugly.parseCSV(JHSources() + Path("bug.csv"))
                     let canAddArr = bugArr.compactMap{ newbug -> JHBuglyM? in
