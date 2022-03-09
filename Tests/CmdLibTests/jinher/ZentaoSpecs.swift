@@ -26,122 +26,86 @@ import SwiftyJSON
 class ZentaoSpecs: QuickSpec {
     
     override func spec() {
-        var parameters:[String : Any]!
-        var url:String!
-        let expect = self.expectation(description: "request should complete")
-        beforeEach {
-            //md5 密钥
-            let code  = "jinher2bug"
-            let key   = "59871ac7135c224cddcb15bef85cdaf8"
-            let timeInterval:TimeInterval = Date().timeIntervalSince1970
-            let time = Int(timeInterval)
-            let token = "\(code)\(key)\(time)".md5
+        //禅道服务器
+        let url = "http://127.0.0.1:8084/api.php"
+        
 
-            url = "http://127.0.0.1:8084/api.php"
-            parameters = ["m": "project",
-                          "f": "view",
-                          "id": 7,
-                          "account":"hsg",
-                          "code": code,
+        xdescribe("免登录获取认证") {
+            //免密认证
+            var zToken:[String : Any]!
+            beforeEach {
+                //md5 密钥
+                let code  = "jinher2bug"
+                let key   = "59871ac7135c224cddcb15bef85cdaf8"
+                let timeInterval:TimeInterval = Date().timeIntervalSince1970
+                let time = Int(timeInterval)
+                let token = "\(code)\(key)\(time)".md5
+
+                zToken = ["code": code,
                           "time": time,
                           "token" :token
-            ]
-        }
-
-        xdescribe("demo") {
-            //
-            xit("token免密码登录接口") {
-//                parameters["m"] = "user"
-//                parameters["f"] = "apilogin"
-                let request = URLRequest(url: URL(string: url)!)
-                var urlRequest = try! URLEncoding.default.encode(request, with: parameters)
-                AF.request(urlRequest).response { resp in
+                ]
+            }
+            
+            fit("查看项目7") {
+                var params = ["m": "project",
+                              "f": "view",
+                              "id": 7] as [String : Any]
+                params.merge(zToken) { (first, _) in
+                    first
+                }
+                waitUntil(timeout: .seconds(10)) { done in
+                    let request = URLRequest(url: URL(string: url)!)
+                    let urlRequest = try! URLEncoding.default.encode(request, with: params)
+                    AF.request(urlRequest).response { resp in
                         if resp.response?.statusCode == 200 {
                             guard let data = resp.data else { return }
-                            let dataStr = String(data: resp.data!, encoding: .utf8)
-                            let json = JSON(data)
+                            let dataStr = String(data: data, encoding: .utf8)
+                            print("\(dataStr!)")
                         }
-                    expect.fulfill()
+                        done()
+                    }
                 }
-                self.waitForExpectations(timeout: 10)
             }
-
-            xit("帐号登录接口") {
-                parameters = ["m":"user",
+        }
+        describe("登录方式获取认证") {
+            var token = ""
+            beforeEach { //获取token凭证
+                let params = ["m":"user",
                               "f":"login",
                               "account":"hsg",
                               "password":"jiwang3203"]
-                let request = URLRequest(url: URL(string: url)!)
-                let urlRequest = try! URLEncoding.default.encode(request, with: parameters)
-                AF.request(urlRequest).response { resp in
+                waitUntil(timeout: .seconds(5)) { done in
+                    let request = URLRequest(url: URL(string: url)!)
+                    let urlRequest = try! URLEncoding.default.encode(request, with: params)
+                    AF.request(urlRequest).response { resp in
                         if resp.response?.statusCode == 200 {
                             guard let data = resp.data else { return }
-                            let dataStr = String(data: resp.data!, encoding: .utf8)
+//                            let dataStr = String(data: data, encoding: .utf8)
+//                            print("\(dataStr!)")
                             let json = JSON(data)
+                            token = json["user"]["token"].stringValue
+                            print(token)
                         }
-                    expect.fulfill()
-                    }
-                self.waitForExpectations(timeout: 10)
-            }
-
-            it("查看项目") {
-                parameters = ["m": "project",
-                              "f": "view",
-                              "id": 7,
-                              "account":"hsg",
-                              "password":"jiwang3203"]
-                let request = URLRequest(url: URL(string: url)!)
-                let urlRequest = try! URLEncoding.default.encode(request, with: parameters)
-                AF.request(urlRequest).response { resp in
-                        if resp.response?.statusCode == 200 {
-                            guard let data = resp.data else { return }
-                            let dataStr = String(data: resp.data!, encoding: .utf8)
-                            let json = JSON(data)
-                        }
-                    expect.fulfill()
-                    }
-                self.waitForExpectations(timeout: 10)
-            }
-        }
-        
-        sharedExamples("获取token") {
-            
-        }
-        // 登录获取token
-        // 封装bug接口请求，解析bug module
-        describe("V1版本api") {
-            let server = "http://localhost:8084/api.php/v1/"
-//            let server = "http://10.147.19.89:8084/api.php/v1/"
-            var token = ""
-            beforeEach {
-                //登录获取token
-                waitUntil(timeout: .seconds(2)) { done in
-                    let apiUrl = server + "tokens"
-                    let param = ["account":"hsg","password":"jiwang3203"]
-                    AF.request(apiUrl, method: .post, parameters: param, encoding: JSONEncoding.default)
-                        .response { resp in
-                            let json = JSON(resp.data!)
-                            token = json["token"].stringValue
-                            print("获取到的token：\(token)")
-                            done()
+                        done()
                     }
                 }
             }
-            
-            it("获取bug列表") {
-                let apiUrl = server + "products/1/bugs"
+            fit("通过get访问项目7") {
+                let params = ["m": "project",
+                              "f": "view",
+                              "id": 7] as [String : Any]
                 waitUntil(timeout: .seconds(10)) { done in
-                    AF.request(apiUrl, method: .get, headers: ["token":token])
-                        .response { resp in
-                            let json = JSON(resp.data!)
-                            let total = json["total"].intValue
-                            print("bug条数：\(total)")
-                            let bugs:Data = try! json["bugs"].rawData()
-                            let array:[ZTBugM] = ZTBugM.parsed(data: bugs)
-                            array.forEach { bug in
-                                print(bug.title!)
-                            }
-                            done()
+                    let request = URLRequest(url: URL(string: url)!)
+                    var urlRequest = try! URLEncoding.default.encode(request, with: params)
+                    urlRequest.headers["token"] = token
+                    AF.request(urlRequest).response { resp in
+                        if resp.response?.statusCode == 200 {
+                            guard let data = resp.data else { return }
+                            let dataStr = String(data: data, encoding: .utf8)
+                            print("\(dataStr!)")
+                        }
+                        done()
                     }
                 }
             }
