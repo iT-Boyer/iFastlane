@@ -13,6 +13,10 @@ import Regex
 import CSV
 import PathKit
 
+struct JHBuglyT {
+    var name:String!
+    var bugs:[JHBuglyM] = []
+}
 public struct JHBuglyM {
     public var currVC:String!
     public var lastVC:String!
@@ -38,7 +42,7 @@ public struct JHBuglyM {
 
 class JHBugly {
     
-    var url = "http://oms.iuoooo.com/MError/GetLogList?random=0.7724948616202214"
+    static var url = "http://oms.iuoooo.com/MError/GetLogList?random=0.7724948616202214"
     static var parameters:[String:Any] = ["random": 0.9673897022258404,
                   "fromTime":"2022-02-27 08:05:05",
                   "toTime":"2022-02-28 10:05:05",
@@ -116,6 +120,40 @@ class JHBugly {
         return bugArr
     }
     
+    static func parseBT(_ bms:[JHBuglyM]) -> [JHBuglyT] {
+        var bugArr:[JHBuglyT] = []
+        //读取resion
+        for bm in bms {
+            var exist = false
+            for index in 0..<bugArr.count {
+                var item = bugArr[index]
+                let regex = Regex("(0[xX])?[a-fA-F0-9]+")
+                let item_name = item.name.replacingFirst(matching: regex, with: "")
+                let bug_name = bm.name.replacingFirst(matching: regex, with: "")
+                if item_name == bug_name {
+                    exist = true
+//                    print("前：\(item.bugs.count)")
+                    item.bugs.append(bm)
+                    bugArr[index] = item
+//                    print("后：\(item.bugs.count)")
+                    break
+                }
+            }
+            if !exist {
+                var bt = JHBuglyT()
+                bt.name = bm.name
+                bt.bugs.append(bm)
+                bugArr.append(bt)
+            }
+            
+        }
+        return bugArr
+    }
+    
+    static func parseBm(_ bms:[JHBuglyM]) -> [JHBuglyM] {
+        let diffReason = bms.regexDuplicates({$0.reason})
+        return diffReason
+    }
     public static func parseCSV(_ csv:Path)->[JHBuglyM] {
         var bugArr:[JHBuglyM] = []
         let stream = InputStream(fileAtPath: csv.string)!

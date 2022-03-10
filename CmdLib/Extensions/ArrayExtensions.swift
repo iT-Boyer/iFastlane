@@ -28,8 +28,13 @@ extension Array {
         for value in self {
             let tmpArr = result.filter { xx in
                 let key:String = filter(value) as! String
-                return Regex(":(Attempt|Modifications|CALayer|Set contentURL|.*?being enumerated)").matches(key)
+                let key2:String = filter(xx) as! String
+                let regex = Regex("(0[xX])?[a-fA-F0-9]+")
+                let key_ = key.replacingFirst(matching: regex, with: "")
+                let key2_ = key2.replacingFirst(matching: regex, with: "")
+                return key_ == key2_
             }
+            
             if tmpArr.count == 0  {
                 result.append(value)
             }
