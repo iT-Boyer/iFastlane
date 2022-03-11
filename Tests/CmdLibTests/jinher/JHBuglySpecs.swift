@@ -22,24 +22,10 @@ import PathKit
 class JHBuglySpecs: QuickSpec {
     override func spec() {
         
-        var zToken:String!
-        var jhBugs:[JHBuglyM]!
         beforeEach {
             JHBugly.parameters["rows"] = 1000
             JHBugly.parameters["fromTime"] = "2022-02-28 08:05:05"
             JHBugly.parameters["toTime"] = "2022-03-10 08:05:05"
-            waitUntil{ done in
-                JHBugly.parseJson(JHBugly.url, params: JHBugly.parameters) { buglys in
-                    jhBugs = buglys
-                    done()
-                }
-            }
-            waitUntil{ done in
-                ZTApi.login(account: "hsg", pwd: "jiwang3203") { token in
-                    zToken = token
-                    done()
-                }
-            }
         }
         
         xdescribe("金和埋点库api请求") {
@@ -127,58 +113,29 @@ class JHBuglySpecs: QuickSpec {
         
         describe("分析埋点crash情况") {
             
-            it("统计crash类型和个数") {
-                //金和埋点同名类型去d重
-                let breason = jhBugs.regexDuplicates({$0.reason})
-                let bname = breason.regexDuplicates({$0.name})
-                print("""
-                    分析从\(JHBugly.parameters["fromTime"]!) 到 \(JHBugly.parameters["toTime"]!)
-                    本次收集crash总数：\(jhBugs.count) 类型数：\(bname.count) 问题数：\(breason.count)
-                    """)
-                let bt = JHBugly.parseBT(breason)
-                bt.forEach { item in
-                    print("类型-»:\(item.name ?? "")\n\(item.bugs.count)个bug")
-                    let diffReason = item.bugs.regexDuplicates({$0.reason})
-                    diffReason.forEach { bm in
-                        print("reason-»:\(bm.reason ?? "")")
-                    }
-                    print("----------")
-                }
-            }
-
-            it("bug正则去重") {
-                //
-                JHBugly.parameters["rows"] = 1000
-                JHBugly.parameters["fromTime"] = "2022-02-28 08:05:05"
-                JHBugly.parameters["toTime"] = "2022-03-01 08:05:05"
-                waitUntil(timeout: .seconds(5)) { done in
-                    //异步请求禅道接口
-                    ZTApi.bugs(of: 7, token: zToken) { ztbugs in
-                        let bms = JHBugly.parseBm(jhBugs)
-                        // 使用禅道reason内容去重
-                        let result = bms.filter { bm in
-                            var exist = false
-                            for zt in ztbugs {
-                                let regex = Regex("(0[xX])?[a-fA-F0-9]+")
-                                let zt_title = zt.title!.replacingFirst(matching: regex, with: "")
-                                let bm_reason = bm.reason.replacingFirst(matching: regex, with: "")
-                                if bm_reason == zt_title {
-                                    exist = true
-                                    break
-                                }
+            fit("统计crash类型和个数") { //JHBugly.crashInfo()
+                waitUntil(timeout: .seconds(10)) { done in
+                    JHBugly.parseJson(JHBugly.url, params: JHBugly.parameters) { jhBugs in
+                        let breason = jhBugs.regexDuplicates({$0.reason})
+                        let bname = breason.regexDuplicates({$0.name})
+                        print("""
+                            分析从\(JHBugly.parameters["fromTime"]!) 到 \(JHBugly.parameters["toTime"]!)
+                            本次收集crash总数：\(jhBugs.count) 类型数：\(bname.count) 问题数：\(breason.count)
+                            """)
+                        let bt = JHBugly.parseBT(breason)
+                        bt.forEach { item in
+                            print("类型-»:\(item.name ?? "")\n\(item.bugs.count)个bug")
+                            let diffReason = item.bugs.regexDuplicates({$0.reason})
+                            diffReason.forEach { bm in
+                                print("reason-»:\(bm.reason ?? "")")
                             }
-                            return exist
+                            print("----------")
                         }
-                        
-                        result.map { bug in
-                            print("待录----:\n\(bug.reason!)")
-                        }
-                        
                         done()
                     }
                 }
             }
-            
+
             xit("匹配oc方法的正则") {
                 let orgStr = "-[UIScrollView removeAllSubViews]: unrecognized selector sent to instance 0x109129c00"
                 let result = Regex("\\[.*?\\]").firstMatch(in: orgStr)?.matchedString

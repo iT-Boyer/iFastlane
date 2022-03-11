@@ -23,6 +23,7 @@ public struct JHBuglyM {
     public var name:String!
     public var id:String!
     public var version:String!
+    public var phoneName:String!
     public var appname:String!
     public var appid:String!
     public var reason:String!
@@ -45,7 +46,7 @@ class JHBugly {
     static var url = "http://oms.iuoooo.com/MError/GetLogList?random=0.7724948616202214"
     static var parameters:[String:Any] = ["random": 0.9673897022258404,
                   "fromTime":"2022-02-27 08:05:05",
-                  "toTime":"2022-02-28 10:05:05",
+                  "toTime":"2022-03-05 10:05:05",
                   "osType":1,
                   "runEnvi":3,
                   "logState":0,
@@ -59,6 +60,26 @@ class JHBugly {
                   "appId":"", //d8ee9511-8bfb-44e9-8195-e03c173fa2d7
     ]
     
+    //统计crash类型和个数
+    static func crashInfo() {
+        parseJson(JHBugly.url, params: JHBugly.parameters) { jhBugs in
+            let breason = jhBugs.regexDuplicates({$0.reason})
+            let bname = breason.regexDuplicates({$0.name})
+            print("""
+                分析从\(JHBugly.parameters["fromTime"]!) 到 \(JHBugly.parameters["toTime"]!)
+                本次收集crash总数：\(jhBugs.count) 类型数：\(bname.count) 问题数：\(breason.count)
+                """)
+            let bt = parseBT(breason)
+            bt.forEach { item in
+                print("类型-»:\(item.name ?? "")\n\(item.bugs.count)个bug")
+                let diffReason = item.bugs.regexDuplicates({$0.reason})
+                diffReason.forEach { bm in
+                    print("reason-»:\(bm.reason ?? "")")
+                }
+                print("----------")
+            }
+        }
+    }
     /**
       获取金和bug库的json数据
      */
@@ -92,11 +113,13 @@ class JHBugly {
             bug.id = row["id"].stringValue
             //其他信息:name/reason/version
             let cell = row["cell"].arrayValue
+            bug.phoneName = cell[5].stringValue
             bug.appname = cell[6].stringValue
-            let content = cell[10].stringValue
+            bug.version = cell[7].stringValue
+            bug.detail = cell[10].stringValue
             let reg = Regex(":.*\n",options: [.ignoreCase, .anchorsMatchLines])
             var index = 0
-            _ = reg.allMatches(in: content).map { result in
+            _ = reg.allMatches(in: bug.detail).map { result in
 //                let space = NSCharacterSet.whitespaces
                 let returnstr = CharacterSet(charactersIn: "\n")
                 let value = result.matchedString.trimmingCharacters(in: returnstr)
@@ -110,11 +133,17 @@ class JHBugly {
                 case 3:
                     bug.reason = value
                 default:
-                    let version = Regex("\\d\\.\\d\\.\\d.\\d{1,}").firstMatch(in: content)?.matchedString
+                    let version = Regex("\\d\\.\\d\\.\\d.\\d{1,}").firstMatch(in: bug.detail)?.matchedString
                     bug.version = version?.trimmingCharacters(in:returnstr)
                 }
                 index += 1
             }
+            bug.detail = """
+                        手机系统：\(bug.phoneName ?? "")
+                        APP版本：\(bug.version ?? "")
+                        app名称：\(bug.appname ?? "")
+                        详情：\(bug.detail ?? "")
+                        """
             bugArr.append(bug)
         }
         return bugArr

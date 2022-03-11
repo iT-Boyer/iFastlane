@@ -29,8 +29,7 @@ class ZentaoSpecs: QuickSpec {
         //禅道服务器
         let url = "http://127.0.0.1:8084/api.php"
         
-
-        xdescribe("免登录获取认证") {
+        describe("免登录获取认证") {
             //免密认证
             var zToken:[String : Any]!
             beforeEach {
@@ -67,7 +66,26 @@ class ZentaoSpecs: QuickSpec {
                     }
                 }
             }
-            fit("添加bug") {
+            it("查看项目7的bug清单") {
+                waitUntil(timeout: .seconds(10)) { done in
+                    ZTApi.bugs(of: .project, action: .bug, id: 7) { bugs in
+                        print("bugs条数: \(bugs.count)")
+                        done()
+                    }
+                }
+            }
+            fit("待添加的bug") {
+                JHBugly.parameters["rows"] = 1000
+                JHBugly.parameters["fromTime"] = "2022-02-28 08:05:05"
+                JHBugly.parameters["toTime"] = "2022-03-10 08:05:05"
+                waitUntil(timeout: .seconds(5)) { done in
+                    ZTApi.JHFilter { bugs in
+                        print("bugs条数: \(bugs.count)")
+                        done()
+                    }
+                }
+            }
+            it("添加bug") {
                 //&branch=0&extra=moduleID=0
                 var params = ["m": "bug",
                               "f": "create",
@@ -77,7 +95,7 @@ class ZentaoSpecs: QuickSpec {
                 params.merge(zToken) { (first, _) in
                     first
                 }
-                var bug = ZTBugM()
+//                var bug = ZTBugM()
                 waitUntil(timeout: .seconds(10)) { done in
                     let request = URLRequest(url: URL(string: url)!)
                     let urlRequest = try! URLEncoding.default.encode(request, with: params)
@@ -91,9 +109,8 @@ class ZentaoSpecs: QuickSpec {
                     }
                 }
             }
-            
         }
-        describe("登录方式获取认证") {
+        xdescribe("登录方式获取认证") {
             var token = ""
             beforeEach { //获取token凭证
                 let params = ["m":"user",

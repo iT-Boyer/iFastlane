@@ -95,6 +95,18 @@ class ZentaoV1Specs: QuickSpec {
                     }
                 }
             }
+           
+            fit("创建新bug") {
+                waitUntil(timeout: .seconds(5)) { done in
+                    ZTApi.JHFilter { bugs in
+                        ZTApi.imports(bugs, of: 7) { bug in
+                            print("已添加：\(bug!.title ?? "")")
+                            done()
+                        }
+                    }
+                }
+            }
+            
         }
     }
 }
