@@ -20,7 +20,28 @@ class TaskJugglerSpecs: QuickSpec {
                 let xmlData = try! filePath.read()
                 let project = try! XMLDecoder().decode(Project.self, from: xmlData)
 //                let encodedXML = try! XMLEncoder().encode(project, withRootKey: "Project")
-                print("解析taskjuggler项目：\(project.Name)")
+                let taskMain = project.Tasks?.items.first
+                let tasks:[Task] = project.Tasks!.items
+                let count = tasks.count
+                print("""
+                      项目名称：\(taskMain!.Name)
+                      任务数：\(count)
+                      """)
+                let level1 = tasks.filter { task in
+                    task.OutlineLevel == 1
+                }
+                level1.forEach { task in
+                    //1.1
+                    //1.1.1
+                    //1.1.1.1
+                    let wbs = task.WBS
+                    //子任务
+                    let level2
+                    for index in 0...4 {
+                        
+                    }
+                    
+                }
             }
        
             xit("图书馆") {
