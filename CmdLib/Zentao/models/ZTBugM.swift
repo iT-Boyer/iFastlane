@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+//子类字段无法转model的解决方案：https://www.coder.work/article/1460403
 class ZTAddBugM:Codable {
     ///是    所属产品
     var product:Int?
