@@ -36,7 +36,7 @@ class TaskJugglerSpecs: QuickSpec {
                     //1.1.1.1
                     let wbs = task.WBS
                     //子任务
-                    let level2
+//                    let level2
                     for index in 0...4 {
                         
                     }
