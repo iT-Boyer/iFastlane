@@ -69,8 +69,8 @@
         "repositoryURL": "https://github.com/groue/GRDB.swift.git",
         "state": {
           "branch": null,
-          "revision": "d63392799928d60679b90fbec6a7ecfde358cdf1",
-          "version": "5.17.0"
+          "revision": "f3992a034de5ae41fdc7836a517a5ac8a18b0414",
+          "version": "5.22.1"
         }
       },
       {
@@ -78,7 +78,7 @@
         "repositoryURL": "https://github.com/it-boyer/Nimble.git",
         "state": {
           "branch": "main",
-          "revision": "15f0d0beb0bbf69e5515cda2bc0394f05d36b52b",
+          "revision": "b9a3332c3287bdb08d3a5c7a0e36f57e45d2a6c3",
           "version": null
         }
       },
@@ -96,7 +96,7 @@
         "repositoryURL": "https://github.com/pvieito/PythonKit.git",
         "state": {
           "branch": "master",
-          "revision": "839ef68d9fe5c85ab212272fffbe54e229374d5c",
+          "revision": "8de2a3f1f8c1388e9fca84f192f96821d9ccd43d",
           "version": null
         }
       },
@@ -141,8 +141,8 @@
         "repositoryURL": "https://github.com/apple/swift-argument-parser",
         "state": {
           "branch": null,
-          "revision": "e1465042f195f374b94f915ba8ca49de24300a0d",
-          "version": "1.0.2"
+          "revision": "82905286cc3f0fa8adc4674bf49437cab65a8373",
+          "version": "1.1.1"
         }
       },
       {
@@ -174,7 +174,7 @@
       },
       {
         "package": "XMLCoder",
-        "repositoryURL": "https://github.com/maxdesiatov/XMLCoder.git",
+        "repositoryURL": "https://github.com/MaxDesiatov/XMLCoder.git",
         "state": {
           "branch": null,
           "revision": "f30119af03996939cc4f54e0bf0dda9f88a84da5",
