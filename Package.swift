@@ -52,7 +52,8 @@ let package = Package(
                                          .product(name: "ArgumentParser", package: "swift-argument-parser")
                                         ],
                           path: "swift",
-                          exclude: ["iTBoyer/APP/iBlink/gym.plist","iTBoyer/APP/SupervisionSel/gym.plist"],
+                          exclude: ["APP/iBlink/gym.plist",
+                                    "APP/SupervisionSel/gym.plist"],
                           sources:["."]
                          ),
         .target(
