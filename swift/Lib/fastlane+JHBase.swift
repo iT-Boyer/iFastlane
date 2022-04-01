@@ -10,6 +10,7 @@ import Fastlane
 
 extension Fastfile
 {
+    // spm 编译Framework
     //runner lane jhbase name libname
     func jhbaseLane(withOptions options:[String: String]?) {
         
