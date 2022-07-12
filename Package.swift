@@ -22,13 +22,16 @@ let package = Package(
         .package(name: "XcodeProj", url: "https://github.com/tuist/xcodeproj.git", .upToNextMajor(from: "7.11.1")),
         //quick行为测试
         .package(url: "https://github.com/Quick/Quick.git", .upToNextMajor(from: "4.0.0")),
-        .package(url: "https://github.com/it-boyer/Nimble.git",.branch("main")),
+        .package(url: "https://github.com/Quick/Nimble.git",.branch("main")),
         .package(url: "https://github.com/serhii-londar/GithubAPI.git",.branch("master")),
         .package(name: "GRDB", url: "https://github.com/groue/GRDB.swift.git", from: "5.17.0"),
         //ssh框架
         .package(name: "Shout", url: "https://github.com/jakeheis/Shout", from: "0.5.5"),
         .package(name: "CSV.swift", url: "https://github.com/yaslab/CSV.swift.git", .upToNextMinor(from: "2.4.3")),
         .package(url: "https://github.com/MaxDesiatov/XMLCoder.git", from: "0.13.1"),
+        //解析html
+        .package(url: "https://github.com/scinfu/SwiftSoup.git", from: "2.4.3"),
+        
         // CoreXLSX 依赖XMLCoder
         // .package(url: "https://github.com/CoreOffice/CoreXLSX.git", .upToNextMinor(from: "0.14.1")),
         //swift版本plantuml
@@ -47,6 +50,7 @@ let package = Package(
                                          "GithubAPI",
                                          "Alamofire",
                                          "XMLCoder",
+                                         "SwiftSoup",
                                          // "CoreXLSX",
                                          .product(name: "CSV", package: "CSV.swift"),
                                          .product(name: "ArgumentParser", package: "swift-argument-parser")
@@ -68,6 +72,7 @@ let package = Package(
                            "Shout",
                            "Alamofire",
                            "XMLCoder",
+                           "SwiftSoup",
                            // "CoreXLSX",
                            .product(name: "CSV", package: "CSV.swift"),
                            .product(name: "ArgumentParser", package: "swift-argument-parser")
