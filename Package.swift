@@ -3,9 +3,8 @@
 
 import PackageDescription
 
-let thirdPackages:[Package.Dependency] = ["CmdLib",
-                                     "Fastlane",
-                                     "Regex",
+var thirdLibs:[Target.Dependency] = ["Regex",
+                                     "SwiftShell",
                                      "SwiftyJSON",
                                      "PythonKit",
                                      "XcodeProj",
@@ -18,6 +17,7 @@ let thirdPackages:[Package.Dependency] = ["CmdLib",
                                      .product(name: "CSV", package: "CSV.swift"),
                                      .product(name: "ArgumentParser", package: "swift-argument-parser")
                                     ]
+
 let package = Package(
     name: "Runner",
     platforms: [
@@ -47,6 +47,7 @@ let package = Package(
         //解析html
         .package(url: "https://github.com/scinfu/SwiftSoup.git", from: "2.4.3"),
         .package(url: "https://github.com/iT-Boyer/AlfredSwift.git", .branch("main")),
+        .package(url: "https://github.com/kareman/SwiftShell", .upToNextMajor(from: "5.1.0")),
         // CoreXLSX 依赖XMLCoder
         // .package(url: "https://github.com/CoreOffice/CoreXLSX.git", .upToNextMinor(from: "0.14.1")),
         //swift版本plantuml
@@ -56,15 +57,16 @@ let package = Package(
     ],
     targets: [
         .executableTarget(name: "Runner",
-                          dependencies: thirdPackages,
+                          dependencies: thirdLibs + ["Fastlane", "CmdLib"],
                           path: "swift",
                           exclude: ["APP/iBlink/gym.plist",
-                                    "APP/SupervisionSel/gym.plist"],
+                                    "APP/SupervisionSel/gym.plist",
+                                    "Alfred/README.md"],
                           sources:["."]
                          ),
         .target(
             name: "CmdLib",
-            dependencies: thirdPackages,
+            dependencies: thirdLibs,
             path: "CmdLib",
             exclude: ["jazzy.yaml"],
             sources:["."]
@@ -81,7 +83,7 @@ addRunLib(name: "Alfred")
 
 func addRunLib(name:String) {
     let target = Target.executableTarget(name: name,
-                                         dependencies: thirdPackages,
+                                         dependencies: thirdLibs + ["CmdLib"],
                                                  path: name,
                                                  exclude: [],
                                                  sources:["."])

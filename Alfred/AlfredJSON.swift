@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftShell
 
 struct AlfredJSON:Codable {
     var items:[ResultModel]?
@@ -21,7 +20,6 @@ struct AlfredJSON:Codable {
             try resultData.write(to: url, options: .atomic)
         }catch{
             print("归档失败...\(error.localizedDescription)")
-            return nil
         }
     }
     
