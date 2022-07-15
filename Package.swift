@@ -3,6 +3,21 @@
 
 import PackageDescription
 
+let thirdPackages:[Package.Dependency] = ["CmdLib",
+                                     "Fastlane",
+                                     "Regex",
+                                     "SwiftyJSON",
+                                     "PythonKit",
+                                     "XcodeProj",
+                                     "GithubAPI",
+                                     "Alamofire",
+                                     "XMLCoder",
+                                     "SwiftSoup",
+                                     "AlfredSwift",
+                                     // "CoreXLSX",
+                                     .product(name: "CSV", package: "CSV.swift"),
+                                     .product(name: "ArgumentParser", package: "swift-argument-parser")
+                                    ]
 let package = Package(
     name: "Runner",
     platforms: [
@@ -31,7 +46,7 @@ let package = Package(
         .package(url: "https://github.com/MaxDesiatov/XMLCoder.git", from: "0.13.1"),
         //解析html
         .package(url: "https://github.com/scinfu/SwiftSoup.git", from: "2.4.3"),
-        
+        .package(url: "https://github.com/iT-Boyer/AlfredSwift.git", .branch("main")),
         // CoreXLSX 依赖XMLCoder
         // .package(url: "https://github.com/CoreOffice/CoreXLSX.git", .upToNextMinor(from: "0.14.1")),
         //swift版本plantuml
@@ -41,20 +56,7 @@ let package = Package(
     ],
     targets: [
         .executableTarget(name: "Runner",
-                          dependencies: ["CmdLib",
-                                         "Fastlane",
-                                         "Regex",
-                                         "SwiftyJSON",
-                                         "PythonKit",
-                                         "XcodeProj",
-                                         "GithubAPI",
-                                         "Alamofire",
-                                         "XMLCoder",
-                                         "SwiftSoup",
-                                         // "CoreXLSX",
-                                         .product(name: "CSV", package: "CSV.swift"),
-                                         .product(name: "ArgumentParser", package: "swift-argument-parser")
-                                        ],
+                          dependencies: thirdPackages,
                           path: "swift",
                           exclude: ["APP/iBlink/gym.plist",
                                     "APP/SupervisionSel/gym.plist"],
@@ -62,21 +64,7 @@ let package = Package(
                          ),
         .target(
             name: "CmdLib",
-            dependencies: ["Fastlane",
-                           "Regex",
-                           "SwiftyJSON",
-                           "PythonKit",
-                           "XcodeProj",
-                           "GithubAPI",
-                           "GRDB",
-                           "Shout",
-                           "Alamofire",
-                           "XMLCoder",
-                           "SwiftSoup",
-                           // "CoreXLSX",
-                           .product(name: "CSV", package: "CSV.swift"),
-                           .product(name: "ArgumentParser", package: "swift-argument-parser")
-                          ],
+            dependencies: thirdPackages,
             path: "CmdLib",
             exclude: ["jazzy.yaml"],
             sources:["."]
@@ -87,3 +75,18 @@ let package = Package(
     ],
     swiftLanguageVersions: [.v5]
 )
+
+addRunLib(name: "Alfred")
+
+
+func addRunLib(name:String) {
+    let target = Target.executableTarget(name: name,
+                                         dependencies: thirdPackages,
+                                                 path: name,
+                                                 exclude: [],
+                                                 sources:["."])
+    
+    let library = Product.executable(name: name, targets: [name]) //type: .static,
+    package.targets.append(target)
+    package.products.append(library)
+}

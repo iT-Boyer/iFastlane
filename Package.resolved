@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "AlfredSwift",
+        "repositoryURL": "https://github.com/iT-Boyer/AlfredSwift.git",
+        "state": {
+          "branch": "main",
+          "revision": "cf8683996446a7733e7ece80803faca3b1392c44",
+          "version": null
+        }
+      },
+      {
         "package": "BaseAPI",
         "repositoryURL": "https://github.com/serhii-londar/BaseAPI.git",
         "state": {
