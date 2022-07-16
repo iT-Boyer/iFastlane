@@ -35,7 +35,7 @@ let libraryXMLYN = """
 //图书馆
 struct Library: Codable {
     let count: Int
-    let books: [Book]//Books
+    let books: [XmlBook]//XmlBooks
 
     enum CodingKeys: String, CodingKey {
         case count
@@ -43,15 +43,15 @@ struct Library: Codable {
     }
 }
 
-struct Books:Codable {
-    let books:[Book]
+struct XmlBooks:Codable {
+    let books:[XmlBook]
     enum CodingKeys: String, CodingKey {
         case books = "book"
     }
 }
 
 //图书
-struct Book: Codable {
+struct XmlBook: Codable {
     let id: Int
     let author: String
     let gender: String

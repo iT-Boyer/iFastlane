@@ -1,33 +1,15 @@
 //
-//  HotopCmd.swift
+//  HotopServer.swift
 //  Alfred
 //
-//  Created by boyer on 2022/7/15.
+//  Created by boyer on 2022/7/16.
 //
 
 import Foundation
-import ArgumentParser
 
-//MARK: 定义子命令 struct结构体
-struct Hotop:ParsableCommand {
-    //MARK: 配置
-    static var configuration = CommandConfiguration(abstract:"热榜",
-                                                    shouldDisplay: true)
-    //加载封装好的指令
-    @OptionGroup()
-    var customOpts:AlfredOptions
+public struct HotopServer {
     
-    //MARK: flag
-    
-    //MARK: 校验
-    func validate() throws {
-        guard customOpts.list.count >= 2 else {
-            throw ValidationError("请输入正确的路径")
-        }
-    }
-    
-    func run() throws {
-        //MARK: 调用workflow脚本
+    public static func fetch(handler:@escaping(AlfredJSON)->Void) {
         //使用URLSession同步获取数据（通过添加信号量）
         //https://www.hangge.com/blog/cache/detail_816.html
         let semaphore = DispatchSemaphore(value: 0)
@@ -39,8 +21,7 @@ struct Hotop:ParsableCommand {
                 //解析
                 guard let posts:HotopModel =  HotopModel.parsed(data: data) else { return }
                 if let roots = posts.data {
-                    var wf = AlfredJSON()
-                    wf.items = roots.compactMap { root -> ResultModel? in
+                    let items = roots.compactMap { root -> ResultModel? in
                         if let target = root.target {
                             guard let tid = target.id else { return nil }
                             let targetid = String(tid)
@@ -55,11 +36,7 @@ struct Hotop:ParsableCommand {
                         }
                         return nil
                     }
-                    if let result = wf.toJson(){
-                        print(result)
-                    }
-                    //退出命令
-//                    Alfred.exit()
+                    handler(AlfredJSON(items: items))
                 }
             }
             semaphore.signal()

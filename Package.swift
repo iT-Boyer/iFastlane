@@ -4,6 +4,8 @@
 import PackageDescription
 
 var thirdLibs:[Target.Dependency] = ["Regex",
+                                     "GRDB",
+                                     "Shout",
                                      "SwiftShell",
                                      "SwiftyJSON",
                                      "PythonKit",
@@ -73,7 +75,7 @@ let package = Package(
         ),
         .testTarget(
             name: "CmdLibTests",
-            dependencies: ["CmdLib","Quick","Nimble"])
+            dependencies: ["CmdLib", "Quick", "Nimble"])
     ],
     swiftLanguageVersions: [.v5]
 )

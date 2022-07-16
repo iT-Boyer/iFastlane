@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct AlfredJSON:Codable {
+public struct AlfredJSON:Codable {
     var items:[ResultModel]?
     // 归档
-    func toArchive(file:String) {
+    public func toArchive(file:String) {
         do{
             let jsonEncoder = JSONEncoder()
             jsonEncoder.outputFormatting = .prettyPrinted
@@ -23,7 +23,7 @@ struct AlfredJSON:Codable {
         }
     }
     
-    func toJson()->String? {
+    public func toJson()->String? {
         let jsonEncoder = JSONEncoder()
         jsonEncoder.outputFormatting = .prettyPrinted
         guard let resultData = try? jsonEncoder.encode(self) else { return nil}

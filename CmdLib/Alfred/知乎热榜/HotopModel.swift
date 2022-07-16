@@ -67,7 +67,7 @@ struct HotTarget: Codable {
     let title: String?
     let url: String?
     let created, answerCount, followerCount: Int?
-    let author: Author?
+    let author: HotAuthor?
     let boundTopicIDS: [Int]?
     let commentCount: Int?
     let isFollowing: Bool?
@@ -86,7 +86,7 @@ struct HotTarget: Codable {
 }
 
 // MARK: - Author
-struct Author: Codable {
+struct HotAuthor: Codable {
     let id, urlToken, url: String?
     let headline: String?
     let avatarURL: String?
