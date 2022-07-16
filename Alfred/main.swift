@@ -75,17 +75,21 @@ struct Alfred: ParsableCommand {
                                                         subcommands: [],
                                                         defaultSubcommand: nil,
                                                         helpNames: nil)
-        
+        @Option(name: [.customShort("n"), .long], help:"请输入书名")
+        var name:String
+        @Option(name:[.customShort("r"), .long], help: "指定calibre根目录")
+        var root:String = "/Users/boyer/rclone/Ali/Calibre"
         @Argument
         var title:String = ""
         
-        var db:String = "/Users/boyer/Library/Mobile Documents/com~apple~CloudDocs/Emacs/elfeed/db"
         func validate() throws {
-            
+            if name.isEmpty{
+                throw ValidationError("请输入书名")
+            }
         }
         
         func run() throws {
-            if let json = CalibreDB.filter(title, db: db){
+            if let json = CalibreDB.filter(name, db: root){
                 print(json)
             }
         }
