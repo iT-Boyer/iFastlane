@@ -94,6 +94,16 @@ struct Alfred: ParsableCommand {
             }
         }
     }
+    
+    struct Snippets:ParsableCommand {
+        static var configuration = CommandConfiguration(commandName: "snippet", abstract: "制作Alfred snippets", discussion: "快速创建alfred snippets 批量导入等", version: "1.0", shouldDisplay: true, subcommands: [], defaultSubcommand: nil, helpNames: nil)
+        
+        func run() throws {
+            //TODO: 生成json文件，并打包为.alfredsnippets包
+            Snippets.save()
+            
+        }
+    }
 }
 
 
