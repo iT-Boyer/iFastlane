@@ -14,6 +14,8 @@ public struct RGB2HexAPI {
         guard let hex = rgbColor.hexString else {return nil}
         let startIndex = hex.index(hex.startIndex, offsetBy: 1)
         let arg = String(hex[startIndex..<hex.endIndex])
+//        let first1 = String(hex.removeFirst())
+//        let first2 = hex[hex.startIndex]
         let item = ResultModel(title:hex,arg: arg)
         return AlfredJSON(items: [item]).toJson()
     }

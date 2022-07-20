@@ -39,5 +39,6 @@ public struct Snippets {
         //TODO: 生成zip包，重命名snippet.alfredsnippets
         
         //TODO: 安装到Alfred，使用open命令
+        
     }
 }
