@@ -18,7 +18,7 @@ struct Alfred: ParsableCommand {
                            discussion: "使用swift命令实现alfred相关工作流",
                            version: "1.0.0",
                            shouldDisplay: true,
-                           subcommands: [Hotop.self, Calibre.self],
+                           subcommands: [Hotop.self, Calibre.self, RGB2Hex.self],
                            defaultSubcommand: Hotop.self,
                            helpNames: NameSpecification.customLong("h"))
     
@@ -100,8 +100,32 @@ struct Alfred: ParsableCommand {
         
         func run() throws {
             //TODO: 生成json文件，并打包为.alfredsnippets包
-            Snippets.save()
+//            Snippets.save()
             
+        }
+    }
+    
+    struct RGB2Hex:ParsableCommand {
+        static var configuration = CommandConfiguration(commandName: "rgb", abstract: "rgb to hex")
+        
+        @Option(name: [.customShort("r"), .long], help:"请输入色值：r,g,b")
+        var rgb:String
+        
+        func validate() throws {
+            let color = rgb.components(separatedBy: ",")
+            if color.count != 3 {
+                throw ValidationError("色值错误")
+            }
+        }
+        
+        func run() throws {
+            let color = rgb.components(separatedBy: ",").compactMap { item -> CGFloat in
+                guard let double = Double(item) else { return 0.0 }
+                return CGFloat(double)
+            }
+            if let hex = RGB2HexAPI.to(red: color[0], green: color[1], blue: color[2]){
+                print(hex)
+            }
         }
     }
 }
