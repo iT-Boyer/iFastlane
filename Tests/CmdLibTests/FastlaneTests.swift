@@ -8,7 +8,7 @@
 import Quick
 import Nimble
 import SwiftShell
-import Fastlane
+//import Fastlane
 @testable import CmdLib
 
 class FastlaneTests: QuickSpec {
@@ -20,10 +20,10 @@ class FastlaneTests: QuickSpec {
             print(output)
         }
         
-        it("版本控制") {
-            let branchname = gitBranch()
-            print("分支名称：\(branchname)")
-        }
+//        it("版本控制") {
+//            let branchname = gitBranch()
+//            print("分支名称：\(branchname)")
+//        }
 //        it("gym方法使用") {
 //            let outDir = "/Users/boyer/Desktop/libs"
 //            let projPath = "/Users/boyer/hsg/jhgsguesslikeshoppinglistcomponent/JHGuessLikesCommodityListComponent/JHGuessLikesCommodityListComponent.xcodeproj"

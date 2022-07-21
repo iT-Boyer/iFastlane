@@ -32,23 +32,30 @@ class Pathm3u8Specs: QuickSpec {
         
         describe("加载Ali目录") {
             
-//            let ali = Path("~/rclone/Ali")
-            let ali = Path("\(Path.home)/hsg/iFastlane/Tests")
-            let http = "http://localhost:8686"
+            let ali = Path("\(Path.home)/rclone/Ali")
+//            let ali = Path("\(Path.home)/hsg/iFastlane/Tests")
+            let http = "http://localhost:8686/"
             let m3u = Path.home+"/Desktop/vlc.m3u8"
+            let directory = Path("【船长精品】《樊登读书会》专题 2013-2021.10 全部VIP课程/【樊登小读者】专题/家长课堂")
+            let alil = ali + directory
             beforeEach {
                 
             }
             it("读取ali目录信息") {
                 
-                if ali.exists {
+                if alil.exists {
                     print("-----递归------")
-                    guard let childrens = try? ali.recursiveChildren() else { return }
+                    guard let childrens = try? alil.recursiveChildren() else { return }
                     childrens.map { pp in
                         if pp.isDirectory {
-                            print(pp.lastComponent)
-                            pp.glob("*swift").map { jj in
-                                print("--"+jj.lastComponent)
+                            pp.glob("*mp4").map { jj in
+                                let filename = pp.lastComponent
+                                let filePath = http + (directory + filename + jj.lastComponent).string
+                                let m3u8 = """
+                                    #EXTINF:1,\(pp.lastComponentWithoutExtension)
+                                    \(filePath)
+                                    """
+                                print(m3u8)
                             }
                         }
                         

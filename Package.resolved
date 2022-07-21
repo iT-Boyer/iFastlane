@@ -155,6 +155,15 @@
         }
       },
       {
+        "package": "SwiftFFmpeg",
+        "repositoryURL": "https://github.com/sunlubo/SwiftFFmpeg.git",
+        "state": {
+          "branch": null,
+          "revision": "28148a61189c2e3d3f55f5e7f7eb952f55f8890f",
+          "version": "1.5.0"
+        }
+      },
+      {
         "package": "SwiftShell",
         "repositoryURL": "https://github.com/kareman/SwiftShell",
         "state": {
@@ -192,7 +201,7 @@
       },
       {
         "package": "XMLCoder",
-        "repositoryURL": "https://github.com/MaxDesiatov/XMLCoder.git",
+        "repositoryURL": "https://github.com/maxdesiatov/XMLCoder.git",
         "state": {
           "branch": null,
           "revision": "f30119af03996939cc4f54e0bf0dda9f88a84da5",
