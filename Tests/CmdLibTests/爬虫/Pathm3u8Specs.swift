@@ -9,6 +9,7 @@
 import Quick
 import Nimble
 import PathKit
+import SwiftFFmpeg
 
 //let repoProjs = try! repo.recursiveChildren()
 //错误：Generic parameter 'ElementOfResult' could not be inferred
@@ -49,10 +50,19 @@ class Pathm3u8Specs: QuickSpec {
                     childrens.map { pp in
                         if pp.isDirectory {
                             pp.glob("*mp4").map { jj in
+                                var times:Int64 = 0
+                                if let fmtCtx = try? AVFormatContext(url: jj.string)
+                                {
+                                    if let _ = try? fmtCtx.findStreamInfo(){
+                                        times = fmtCtx.duration
+                                    }
+                                }
+                                
                                 let filename = pp.lastComponent
                                 let filePath = http + (directory + filename + jj.lastComponent).string
+                                
                                 let m3u8 = """
-                                    #EXTINF:1,\(pp.lastComponentWithoutExtension)
+                                    #EXTINF:\(times),\(pp.lastComponentWithoutExtension)
                                     \(filePath)
                                     """
                                 print(m3u8)
