@@ -65,7 +65,7 @@ public struct CalibreDB {
             let items = books.compactMap { bookInfo ->ResultModel? in
                 let path = dbFile + "/" + bookInfo.path!
                 let title = bookInfo.title
-                let subtitle = bookInfo.name
+                let subtitle = (bookInfo.name ?? "") + (bookInfo.format ?? "")
                 let arg = path + bookInfo.pyname! + "." + bookInfo.format!
                 let valid = true
                 let icon = path + "/cover.jpg"
