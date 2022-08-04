@@ -31,8 +31,10 @@ let package = Package(
         .library(name: "CmdLib", targets: ["CmdLib"])
     ],
     dependencies: [
-        .package(name: "Fastlane", path: "/Users/boyer/hsg/fastlane"),
-        .package(name: "Alamofire", path: "/Users/boyer/hsg/Alamofire"),
+//        .package(name: "Fastlane", path: "/Users/boyer/hsg/fastlane"),
+        .package(url: "https://github.com/it-boyer/fastlane.git", branch: "public"),
+//        .package(name: "Alamofire", path: "/Users/boyer/hsg/Alamofire"),
+        .package(url: "https://github.com/Alamofire/Alamofire", branch: "master"),
         .package(name: "Regex", url: "https://github.com/sharplet/Regex",.upToNextMajor(from: "2.1.1")),
         .package(url: "https://github.com/SwiftyJSON/SwiftyJSON.git", from: "5.0.1"),
         .package(url: "https://github.com/pvieito/PythonKit.git",  .branch("master")),
@@ -51,8 +53,8 @@ let package = Package(
         .package(url: "https://github.com/scinfu/SwiftSoup.git", from: "2.4.3"),
         .package(url: "https://github.com/iT-Boyer/AlfredSwift.git", .branch("main")),
         .package(url: "https://github.com/kareman/SwiftShell", .upToNextMajor(from: "5.1.0")),
-        // .package(url: "https://github.com/it-boyer/SwiftFFmpeg.git", .branch("binary_dependency")),
-        .package(name: "SwiftFFmpeg", path: "/Users/boyer/hsg/SwiftFFmpeg"),
+         .package(url: "https://github.com/it-boyer/SwiftFFmpeg.git", .branch("binary_dependency")),
+//        .package(name: "SwiftFFmpeg", path: "/Users/boyer/hsg/SwiftFFmpeg"),
         // CoreXLSX 依赖XMLCoder
         // .package(url: "https://github.com/CoreOffice/CoreXLSX.git", .upToNextMinor(from: "0.14.1")),
         //swift版本plantuml
