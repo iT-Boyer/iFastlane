@@ -14,9 +14,10 @@ import AppKit
 class Fastfile: LaneFile {
     
     // let iossdk = "iphoneos15.0" //xcodebuild -showsdks 查看当前支持的sdk清单
-    let iossdk = "iphoneos15.0"
+    let iossdk = "iphoneos16.0"
     let plus8 = "52eee8ae3cd6f61bdb77aa7551e3539fd755d023"
     let ipad  = "d22f8060709e390aaa4d36231b931c2d61a4173a"
+    let iphone13 = "00008110-000A3D88222B801E"
     var appName = "金和" //如果是中文时，必须赋值，例如：金和
     var ipaName = "金和" //ipa名称,必须是英文或全拼
     let iPappDir = "../hugo/dotfiles/ipa"  // 不识别`~`字符：~/hsg/hugo

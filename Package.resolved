@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire",
+        "state": {
+          "branch": "master",
+          "revision": "8dd85aee02e39dd280c75eef88ffdb86eed4b07b",
+          "version": null
+        }
+      },
+      {
         "package": "AlfredSwift",
         "repositoryURL": "https://github.com/iT-Boyer/AlfredSwift.git",
         "state": {
@@ -62,6 +71,15 @@
           "branch": null,
           "revision": "c21f7bab5ca8eee0a9998bbd17ca1d0eb45d4688",
           "version": "2.1.0"
+        }
+      },
+      {
+        "package": "Fastlane",
+        "repositoryURL": "https://github.com/it-boyer/fastlane.git",
+        "state": {
+          "branch": "public",
+          "revision": "567bd494f2f9de36d97733da99c6b46923112c09",
+          "version": null
         }
       },
       {

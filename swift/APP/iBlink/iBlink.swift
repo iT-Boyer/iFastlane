@@ -20,7 +20,7 @@ extension Fastfile
 //        match() //获取证书
         // 证书管理的模式开关
 //        automaticCodeSigning(path: "Blink.xcodeproj",useAutomaticSigning:true)
-        gym(project: "/Users/boyer/Desktop/blink/Blink.xcodeproj",
+        gym(project: "/Users/boyer/hsg/blink/Blink.xcodeproj",
             scheme:"Blink",
             outputDirectory: "build",
             configuration: "Debug",
@@ -29,10 +29,10 @@ extension Fastfile
             sdk: OptionalConfigValue("\(iossdk)")
         )
         
-        installOnDevice(deviceId: OptionalConfigValue("\(ipad)"), ipa: OptionalConfigValue("\(ipaPath)"))
-        //发布到蒲公英
-        pgyer(apiKey: "318c51ed714a80fa0beab1abc022965b", userKey: "5d4309fb86e31ab180ae6cbdf42f8e2f")
-        iPappLane()   //发布到github
+//        installOnDevice(deviceId: OptionalConfigValue("\(iphone13)"), ipa: OptionalConfigValue("\(ipaPath)"))
+//        //发布到蒲公英
+//        pgyer(apiKey: "318c51ed714a80fa0beab1abc022965b", userKey: "5d4309fb86e31ab180ae6cbdf42f8e2f")
+//        iPappLane()   //发布到github
     }
     
     //MARK:- 真机运行
