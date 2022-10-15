@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "5FEC9F34-EE81-479F-A023-155F1DDD1AB1",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Runner.xcodeproj",
+        "identifier" : "ifastlane::CmdLibTests",
+        "name" : "CmdLibTests"
+      }
+    }
+  ],
+  "version" : 1
+}

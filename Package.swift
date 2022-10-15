@@ -67,7 +67,8 @@ let package = Package(
                           path: "swift",
                           exclude: ["APP/iBlink/gym.plist",
                                     "APP/SupervisionSel/gym.plist",
-                                    "Alfred/README.md"],
+                                    "Alfred/README.md",
+                                    "Alfred/CmdLibTests.xctestplan"],
                           sources:["."]
                          ),
         .target(
