@@ -14,7 +14,7 @@ import PathKit
 
 class JinheTests: QuickSpec {
     override func spec() {
-        describe("演示JSONDecoder工具") {
+        xdescribe("演示JSONDecoder工具") {
             fit("解析iu平台的菜单清单json文件") {
                 let jsonPath = JHSources()+"iu-menu.json"
                 let jsonData = try! jsonPath.read()

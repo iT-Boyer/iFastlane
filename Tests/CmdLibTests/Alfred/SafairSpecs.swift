@@ -26,6 +26,7 @@ class SafairSpecs:QuickSpec
             
             do {
                 gdbQueue = try DatabaseQueue(path: googlePath)
+                print("错误信息：----------------")
             } catch {
                 print("错误信息：\(error)")
             }
