@@ -53,7 +53,7 @@ let package = Package(
         .package(url: "https://github.com/iT-Boyer/AlfredSwift.git", .branch("main")),
         .package(url: "https://github.com/kareman/SwiftShell", .upToNextMajor(from: "5.1.0")),
 //         .package(name: "SwiftFFmpeg", url: "https://github.com/it-boyer/SwiftFFmpeg.git", .branch("binary_dependency")),
-        .package(name: "SwiftFFmpeg", path: "/Users/boyer/hsg/SwiftFFmpeg"),
+        //.package(name: "SwiftFFmpeg", path: "/Users/boyer/hsg/SwiftFFmpeg"),
         // CoreXLSX 依赖XMLCoder
         // .package(url: "https://github.com/CoreOffice/CoreXLSX.git", .upToNextMinor(from: "0.14.1")),
         //swift版本plantuml
