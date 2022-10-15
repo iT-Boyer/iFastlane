@@ -18,7 +18,10 @@ struct Alfred: ParsableCommand {
                            discussion: "使用swift命令实现alfred相关工作流",
                            version: "1.0.0",
                            shouldDisplay: true,
-                           subcommands: [Hotop.self, Calibre.self, RGB2Hex.self],
+                           subcommands: [Hotop.self,
+                                         Calibre.self,
+                                         RGB2Hex.self,
+                                         Safari.self],
                            defaultSubcommand: Hotop.self,
                            helpNames: NameSpecification.customLong("h"))
     
@@ -125,6 +128,17 @@ struct Alfred: ParsableCommand {
             }
             if let hex = RGB2HexAPI.to(red: color[0], green: color[1], blue: color[2]){
                 print(hex)
+            }
+        }
+    }
+    
+    struct Safari:ParsableCommand {
+        static var configuration = CommandConfiguration(commandName: "sh",abstract: "查询历史记录")
+        @Option(name: [.customShort("u"),.long], help: "请输入关键字")
+        var keyword:String
+        func run() throws {
+            if let history = SafariDB.search(keyword){
+                print(history)
             }
         }
     }
