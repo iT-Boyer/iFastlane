@@ -1,6 +1,3 @@
-name: Swift
-
-on: [push]
 #https://augmentedcode.io/2021/04/26/running-tests-in-swift-package-with-github-actions/
 name: CI
 # 触发条件
