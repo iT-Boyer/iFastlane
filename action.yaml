@@ -12,6 +12,7 @@ runs:
       shell: bash
     - name: 安装插件
     - run: |
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         brew install xcbeautify
       shell: bash
     - if: ${{ inputs.argOne == 'build' }}
