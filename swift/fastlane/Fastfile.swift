@@ -66,6 +66,8 @@ class Fastfile: LaneFile {
         if let name = options?["name"], name == "hsg",
             let say:String = options?["say"], say.count > 0{
             // Only when submit is true
+            print("===========")
+            log(message: "+++++")
             echo(message: "：\(name)向你说：\(say)")
         }
     }
