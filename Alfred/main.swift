@@ -146,6 +146,6 @@ struct Alfred: ParsableCommand {
 
 
 
-
+print("-----")
 
 Alfred.main()
