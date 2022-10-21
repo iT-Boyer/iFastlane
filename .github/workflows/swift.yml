@@ -16,8 +16,8 @@ jobs:
       uses: swift-actions/setup-swift@v1.18.0
     - name: Repository checkout
       uses: actions/checkout@v2
-    - name: Lint
-      run: swiftlint
+    # - name: Lint
+      # run: swiftlint
     - name: Build for macOS
       run: swift build -v
     - name: Run macOS tests
