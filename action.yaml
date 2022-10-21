@@ -10,6 +10,10 @@ runs:
   steps:
     - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
       shell: bash
+    - name: 安装插件
+    - run: |
+        brew install xcbeautify
+      shell: bash
     - if: ${{ inputs.argOne == 'build' }}
       run: |
         #/Users/runner/work/_actions/it-boyer/UnitDemo/main/Sources/UnitLib/Test
