@@ -81,7 +81,10 @@ let package = Package(
         .testTarget(
             name: "CmdLibTests",
             dependencies: ["CmdLib", "Quick", "Nimble"],
-            exclude: ["ffmpeg/FFmpegSpecs.swift","爬虫/Pathm3u8Specs.swift"]
+            exclude: ["ffmpeg/FFmpegSpecs.swift", "爬虫/Pathm3u8Specs.swift", //依赖swiftffpmeg
+                      "ssh", //依赖libssh2,终端swift test失败
+                      "jinher", //禅道相关需要搭建新服务和项目ID环境
+            ]
         )
     ],
     swiftLanguageVersions: [.v5]
@@ -94,7 +97,7 @@ func addRunLib(name:String) {
     let target = Target.executableTarget(name: name,
                                          dependencies: thirdLibs + ["CmdLib"],
                                                  path: name,
-                                                 exclude: ["shortcuts/*"],
+                                                 exclude: ["shortcuts"],
                                                  sources:["."])
     
     let library = Product.executable(name: name, targets: [name]) //type: .static,

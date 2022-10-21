@@ -18,12 +18,12 @@ class ZTApi {
     //V1 api
     //http://127.0.0.1:8084/api.php/v1/products/1/bugs
     static let apiV1 = "http://localhost:8084/api.php/v1"
-    static let account = "hsg"
+    static let account = "admin"
     static let pwd = "jiwang3203"
     
     static let tokenParam: [String:Any] = {
         let code  = "jinher2bug"
-        let key   = "59871ac7135c224cddcb15bef85cdaf8"
+        let key   = "ned637noukviu803j1biqm5tfo"
         let timeInterval:TimeInterval = Date().timeIntervalSince1970
         let time = Int(timeInterval)
         let token = "\(code)\(key)\(time)".md5

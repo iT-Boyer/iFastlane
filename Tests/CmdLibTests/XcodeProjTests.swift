@@ -245,7 +245,7 @@ class XcodeProjTests: QuickSpec {
             }
         }
         
-        fdescribe("学习SwiftPM依赖的管理") {
+        xdescribe("学习SwiftPM依赖的管理") {
             
             var xcodeprj:XcodeProj!
             var prjPath:Path!
@@ -261,7 +261,7 @@ class XcodeProjTests: QuickSpec {
                     return
                 }
             }
-            fit("更新Proj项目中的SwiftPM依赖设置") {
+            it("更新Proj项目中的SwiftPM依赖设置") {
                 let project = try! pbxproj!.rootProject() // Returns a PBXProject
                 // When
                 let packagePath = Path("../RemoteImageView")

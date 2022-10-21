@@ -19,7 +19,7 @@ class SafairSpecs:QuickSpec
         beforeSuite {
             //初始化数据库
             let dbPath = "/Users/boyer/Library/Safari/History.db"
-            let googlePath = "/Users/boyer/Library/Application Support/Google/Chrome/Default/History"
+            let googlePath = "/Users/boyer/tmp/History"
             if let queue = try? DatabaseQueue(path: dbPath) {
                 dbQueue = queue
             }
