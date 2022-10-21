@@ -1,5 +1,5 @@
 #https://augmentedcode.io/2021/04/26/running-tests-in-swift-package-with-github-actions/
-name: CI
+name: swiftlane自测
 # 触发条件
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
       run: swift build -v
     - name: Run macOS tests
       run: swift test -v
-    - name: fastlane hello
+    - name: 测试hello world
       run: .build/debug/Runner lane hello name hsg say hahha
 
     # - name: Build for iOS

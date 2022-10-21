@@ -14,10 +14,10 @@ runs:
       run: |
         #/Users/runner/work/_actions/it-boyer/UnitDemo/main/Sources/UnitLib/Test
         cd ${{ github.action_path }} #$GITHUB_ACTION_PATH/script.sh
-        swift build
+        swift build -v
         ln -sf .build/debug/Runner swifttlane
         swifttlane lane hello name 小明 say 你好
       shell: bash
     - if: ${{ inputs.argOne == 'test'}}
-      run: swift test
+      run: swift test -v
       shell: bash
