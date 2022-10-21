@@ -20,8 +20,8 @@ jobs:
       # run: swiftlint
     - name: Build for macOS
       run: swift build -v
-    - name: Run macOS tests
-      run: swift test -v
+    #- name: Run macOS tests
+    #  run: swift test -v
     - name: 测试hello world
       run: .build/debug/Runner lane hello name hsg say hahha
 
