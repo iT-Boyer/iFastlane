@@ -1,0 +1,23 @@
+name: 'iFastlane'
+description: '在github模拟器上使用swift版本fastlane，实现对iOS自动化集成开发'
+inputs:
+  argOne:  # id of input
+    description: '编译或单元测试'
+    required: true
+    default: 'build'
+runs:
+  using: "composite"  #Required You must set this value to 'composite'.
+  steps:
+    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
+      shell: bash
+    - if: ${{ inputs.argOne == 'build' }}
+      run: |
+        #/Users/runner/work/_actions/it-boyer/UnitDemo/main/Sources/UnitLib/Test
+        cd ${{ github.action_path }} #$GITHUB_ACTION_PATH/script.sh
+        swift build
+        ln -sf .build/debug/Runner swifttlane
+        swifttlane lane hello name 小明 say 你好
+      shell: bash
+    - if: ${{ inputs.argOne == 'test'}}
+      run: swift test
+      shell: bash
