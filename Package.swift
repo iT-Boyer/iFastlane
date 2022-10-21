@@ -94,7 +94,7 @@ func addRunLib(name:String) {
     let target = Target.executableTarget(name: name,
                                          dependencies: thirdLibs + ["CmdLib"],
                                                  path: name,
-                                                 exclude: [],
+                                                 exclude: ["shortcuts/*"],
                                                  sources:["."])
     
     let library = Product.executable(name: name, targets: [name]) //type: .static,

@@ -1,0 +1,1 @@
+shortcuts run "$(iconv -f UTF8-MAC <<<$1)"
