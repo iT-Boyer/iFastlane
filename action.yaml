@@ -1,4 +1,4 @@
-name: 'iFastlane'
+name: 'swiftlane'
 description: '在github模拟器上使用swift版本fastlane，实现对iOS自动化集成开发'
 inputs:
   argOne:  # id of input
@@ -17,7 +17,7 @@ runs:
       shell: bash
     - if: ${{ inputs.argOne == 'build' }}
       run: |
-        #/Users/runner/work/_actions/it-boyer/UnitDemo/main/Sources/UnitLib/Test
+        #/Users/runner/work/_actions/it-boyer/iFastlane/main
         cd ${{ github.action_path }} #$GITHUB_ACTION_PATH/script.sh
         swift build -v
         ln -sf .build/debug/Runner swifttlane
