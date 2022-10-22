@@ -9,6 +9,7 @@ runs:
   using: "composite"  #Required You must set this value to 'composite'.
   steps:
     - if: ${{ inputs.argOne == 'build' }}
+      shell: bash
       run: |
         #/Users/runner/work/_actions/it-boyer/iFastlane/main
         cd ${{ github.action_path }} #$GITHUB_ACTION_PATH/script.sh
