@@ -25,22 +25,22 @@ extension Fastfile
 
     //MARK: 个人证书
     func swiftBuildLane() {
-//        desc("使用个人账号,实现真机运行")
-        //iossdk.stringLiteral
+        desc("使用个人账号,实现真机运行")
         // cocoapods()
         automaticCodeSigning(path: "FastlaneDemo.xcodeproj",useAutomaticSigning:true)
         gym(project:"FastlaneDemo.xcodeproj",
             scheme: "FastlaneDemo",
             outputDirectory: "./build",
             configuration: "Debug",
-            //                 exportMethod: "development",
-            //                 exportXcargs: "-allowProvisioningUpdates",
-            sdk: .userDefined(iossdk)
+            exportMethod: "development",
+            exportXcargs: "-allowProvisioningUpdates" //开启自动签名，xcodebuild默认禁用
+//            sdk: .userDefined(iossdk)
         )
         
 //        installOnDevice(deviceId: ipad, ipa: ipaPath)
 //        uploadPgyer() //发布到蒲公英
 //        iPappLane()   //发布到github
+        appetizeLane(path: "./build/FastlaneDemo.ipa")
     }
 
     

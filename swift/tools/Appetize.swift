@@ -11,8 +11,8 @@ import Fastlane
 extension Fastfile
 {
     
-    func appetizeLane(){
+    func appetizeLane(path:String){
         
-        appetize(apiToken: "tok_wkvivs35obwvkt4pmpyaavj6gu")
+        appetize(apiToken: "tok_wkvivs35obwvkt4pmpyaavj6gu",path: .userDefined(path))
     }
 }
