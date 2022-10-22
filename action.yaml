@@ -2,22 +2,17 @@ name: 'swiftlane'
 description: '在github模拟器上使用swift版本fastlane，实现对iOS自动化集成开发'
 inputs:
   argOne:  # id of input
-    description: '编译或单元测试'
+    description: '编译swiftlane'
     required: false
     default: ''
 runs:
   using: "composite"  #Required You must set this value to 'composite'.
   steps:
-    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
-      shell: bash
-    - name: 安装brew插件
-      run: brew bundle
-      shell: bash
     - if: ${{ inputs.argOne == 'build' }}
       run: |
         #/Users/runner/work/_actions/it-boyer/iFastlane/main
         cd ${{ github.action_path }} #$GITHUB_ACTION_PATH/script.sh
+        brew bundle
         swift build -v
         ln -sf .build/debug/Runner swifttlane
-        swifttlane lane hello name 小明 say 你好
-      shell: bash
+        echo "${{ github.action_path }}" >> $GITHUB_PATH #写入环境变量，便于外部调用改action目下的可执行文件
