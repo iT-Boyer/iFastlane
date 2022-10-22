@@ -16,6 +16,7 @@ jobs:
       uses: swift-actions/setup-swift@v1.18.0
     - name: Repository checkout
       uses: actions/checkout@v2
+    # 暂存
     - name: 执行swift-spm暂存操作
       uses: actions/cache@v3
       with:
@@ -28,6 +29,9 @@ jobs:
       run: swift build -v
     # - name: Lint
       # run: swiftlint
+    - name: 安装brew插件
+      run: brew bundle
+      #测试lane
     - name: 测试hello world
       run: .build/debug/Runner lane hello name hsg say hahha
 
