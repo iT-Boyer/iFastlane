@@ -15,6 +15,8 @@ runs:
     - id: swiftlane-hash
       run: |
         pwd
+        cd ${{ github.action_path }} #$GITHUB_ACTION_PATH/script.sh
+        pwd
         echo +++++++ ${{ hashFiles('**/Package.resolved') }}
         echo "swifthash=${{ hashFiles('**/Package.resolved') }}" >> $GITHUB_OUTPUT
       shell: bash
