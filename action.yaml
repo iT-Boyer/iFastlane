@@ -15,6 +15,9 @@ runs:
     - id: swiftlane-hash
       run: |
         pwd
+        hash=$(git rev-parse --short HEAD)
+        echo hhh: $hash
+        ls -al
         echo +++++++ ${{ hashFiles('./**/Package.resolved') }}
         echo "swifthash=${{ hashFiles('**/Package.resolved') }}" >> $GITHUB_OUTPUT
       shell: bash
