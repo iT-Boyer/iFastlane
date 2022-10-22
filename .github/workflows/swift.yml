@@ -16,12 +16,18 @@ jobs:
       uses: swift-actions/setup-swift@v1.18.0
     - name: Repository checkout
       uses: actions/checkout@v2
+    - name: 执行swift-spm暂存操作
+      uses: actions/cache@v3
+      with:
+        path: .build  #暂存项目内容
+        key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+        restore-keys: |
+          ${{ runner.os }}-spm-
+    - if: ${{ steps.cache-hello.outputs.cache-hit != 'true' }}
+      name: Build for macOS
+      run: swift build -v
     # - name: Lint
       # run: swiftlint
-    - name: Build for macOS
-      run: swift build -v
-    #- name: Run macOS tests
-    #  run: swift test -v
     - name: 测试hello world
       run: .build/debug/Runner lane hello name hsg say hahha
 
