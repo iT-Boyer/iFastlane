@@ -13,7 +13,10 @@ runs:
   using: "composite"  #Required You must set this value to 'composite'.
   steps:
     - id: swiftlane-hash
-      run: echo "swifthash=${{ hashFiles('**/Package.resolved') }}" >> $GITHUB_OUTPUT
+      run: |
+        pwd
+        echo +++++++ ${{ hashFiles('**/Package.resolved') }}
+        echo "swifthash=${{ hashFiles('**/Package.resolved') }}" >> $GITHUB_OUTPUT
       shell: bash
     - if: ${{ inputs.argOne == 'build' }}
       shell: bash
