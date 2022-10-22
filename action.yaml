@@ -3,8 +3,8 @@ description: '在github模拟器上使用swift版本fastlane，实现对iOS自�
 inputs:
   argOne:  # id of input
     description: '编译或单元测试'
-    required: true
-    default: 'build'
+    required: false
+    default: ''
 runs:
   using: "composite"  #Required You must set this value to 'composite'.
   steps:
@@ -20,7 +20,4 @@ runs:
         swift build -v
         ln -sf .build/debug/Runner swifttlane
         swifttlane lane hello name 小明 say 你好
-      shell: bash
-    - if: ${{ inputs.argOne == 'test'}}
-      run: swift test -v
       shell: bash
