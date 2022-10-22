@@ -17,7 +17,7 @@ runs:
         pwd
         cd ${{ github.action_path }} #$GITHUB_ACTION_PATH/script.sh
         pwd
-        echo +++++++ ${{ hashFiles('**/Package.resolved') }}
+        echo +++++++ ${{ hashFiles('./**/Package.resolved') }}
         echo "swifthash=${{ hashFiles('**/Package.resolved') }}" >> $GITHUB_OUTPUT
       shell: bash
     - if: ${{ inputs.argOne == 'build' }}
