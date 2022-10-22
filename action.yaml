@@ -5,9 +5,16 @@ inputs:
     description: '编译swiftlane'
     required: false
     default: ''
+outputs:
+  swiftlane-hash:
+    description: "swiftlane-hash"
+    value: ${{ steps.swiftlane-hash.outputs.swifthash }}
 runs:
   using: "composite"  #Required You must set this value to 'composite'.
   steps:
+    - id: swiftlane-hash
+      run: echo "swifthash=${{ hashFiles('**/Package.resolved') }}" >> $GITHUB_OUTPUT
+      shell: bash
     - if: ${{ inputs.argOne == 'build' }}
       shell: bash
       run: |
