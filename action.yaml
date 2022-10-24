@@ -14,10 +14,9 @@ runs:
   steps:
     - id: swiftlane-hash
       run: |
-        pwd
-        hash=$(git rev-parse --short HEAD)
-        echo hhh: $hash
-        ls -al
+        #在/work/_actions/中的库源码，不是git库，无法使用hashFiles()获取到git的hash值。
+        # hash=$(git rev-parse --short HEAD)
+        #echo hhh: $hash
         echo +++++++ ${{ hashFiles('./**/Package.resolved') }}
         echo "swifthash=${{ hashFiles('**/Package.resolved') }}" >> $GITHUB_OUTPUT
       shell: bash
