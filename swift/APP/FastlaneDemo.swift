@@ -34,14 +34,15 @@ extension Fastfile
             configuration: "Debug",
             exportMethod: "development",
             exportXcargs: "-allowProvisioningUpdates", //开启自动签名，xcodebuild默认禁用
+            buildPath: "./build",
            sdk: .userDefined("iphoneos")
         )
         
 //        installOnDevice(deviceId: ipad, ipa: ipaPath)
-//        uploadPgyer() //发布到蒲公英
+        uploadPgyer() //发布到蒲公英
 //        iPappLane()   //发布到github
         sh(command: "pwd", log: .userDefined(true))
-        appetizeLane(path: "./build/FastlaneDemo.ipa")
+        //appetizeLane(path: "./build/FastlaneDemo.ipa")
     }
 
 
