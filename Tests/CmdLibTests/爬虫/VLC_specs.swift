@@ -8,7 +8,7 @@ class VLC_specs: QuickSpec {
 
             // let ali = Path("\(Path.home)/rclone/Ali")
             let ali = Path("/Volumes/127.0.0.1/")
-            let http = "http://localhost:8686/"
+            let http = "http://192.168.31.244:8686/"
             let m3u = Path.home+"Desktop/管理课程.m3u8"
 //            let directory = Path("极客时间/70-算法面试通关40讲")
 //            let directory = Path("《黄渤》系列14部 (2006-2018)")
