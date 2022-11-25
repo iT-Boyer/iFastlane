@@ -6,9 +6,9 @@
 //
 
 import Foundation
-import Fastlane
+//import Fastlane
 
-extension Fastfile{
+//extension Fastfile{
     /**
      OVERVIEW: Build and run tests
 
@@ -136,4 +136,4 @@ extension Fastfile{
 //                                  args: args)
 //        _ = runner.executeCommand(command)
 //    }
-}
+//}
