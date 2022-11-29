@@ -21,7 +21,8 @@ struct Alfred: ParsableCommand {
                            subcommands: [Hotop.self,
                                          Calibre.self,
                                          RGB2Hex.self,
-                                         Safari.self],
+                                         Safari.self,
+                                         AliWebDAV.self],
                            defaultSubcommand: Hotop.self,
                            helpNames: NameSpecification.customLong("h"))
     
@@ -142,10 +143,17 @@ struct Alfred: ParsableCommand {
             }
         }
     }
+    
+    struct AliWebDAV:ParsableCommand{
+        static var configuration = CommandConfiguration(commandName: "ali",abstract: "aliWebDAV转为http")
+        @Option(name: [.customShort("d"),.long], help: "请输入dir地址")
+        var dir:String
+        func run() throws {
+            if let history = Ali.to(dir: dir){
+                print(history)
+            }
+        }
+    }
 }
-
-
-
-print("-----")
 
 Alfred.main()
