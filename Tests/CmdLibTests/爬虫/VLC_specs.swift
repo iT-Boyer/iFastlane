@@ -10,8 +10,8 @@ class VLC_specs: QuickSpec {
             beforeEach {
 
             }
-            xit("aliPlaylist") {
-                let _ = CmdLib.Ali.to(dir: "【插座学院】大神教你抖音涨粉/2一、技能篇：零基础也能制作爆款抖音（3节）")
+            it("aliPlaylist") {
+                let _ = CmdLib.Ali.to(dir: "【船长精品】《 得 到 》平台专题 2016-2021.10 全部VIP课程/08 训练营/01 脱不花 30天沟通训练营")
             }
             
             xit("glob") {
@@ -24,7 +24,7 @@ class VLC_specs: QuickSpec {
                 }
             }
             
-            it("children") {
+            xit("children") {
                 let dir = Path("/Volumes/127.0.0.1")
                 let _ = try! dir.recursiveChildren().map { path in
                     print("目录: \(path.string)")
