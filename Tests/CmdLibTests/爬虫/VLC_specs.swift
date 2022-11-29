@@ -24,13 +24,15 @@ class VLC_specs: QuickSpec {
                     guard let childrens = try? alil.recursiveChildren() else { return }
                     var content = ""
                     let times = "0"
-                    let _ = childrens.map { pp in
-                        let _ = (pp.glob("*mp4") + pp.glob("*MP4") + pp.glob("*mp3") + pp.glob("*mp4a") + pp.glob("*avi") + pp.glob("*wav") + pp.glob("*wma")).map{ path in
+                    let media = ["mp4", "mp3", "mp4a", "avi", "wav", "wma"]
+                    print("文件个数：\(childrens.count)")
+                    let _ = childrens.map { path in
+                        if path.isFile && media.contains(path.extension!) {
                             let m3u8 = """
-                                \n#EXTINF:\(times),\(path.lastComponentWithoutExtension)
-                                \(path)
-                                """
-                           content.append(m3u8)
+                              \n#EXTINF:\(times),\(path.lastComponentWithoutExtension)
+                              \(path)
+                              """
+                            content.append(m3u8)
                         }
                     }
                     //replacingOccurrences
