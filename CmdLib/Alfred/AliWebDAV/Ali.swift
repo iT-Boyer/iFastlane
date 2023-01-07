@@ -11,9 +11,11 @@ public struct Ali {
     
     public static func to(dir:String)->String? {
         //volumeDir:/Volumes/127.0.0.1/
-        let ali = "/Volumes/127.0.0.1/"
-        let aliPath = Path(ali+dir)
-        let http = "http://192.168.31.244:8686/"
+        //$ aliyundrive-fuse -r b81d200fec5b4ed2ac2ce3e72162fa33 -w /var/run/aliyundrive-fuse ~/rclone/Ali
+        // 使用aliyundrive-fuse工具简化云盘的挂载机制，m3u8只需要关注目录结构。
+        let ali = "rclone/Ali"
+        let aliPath = Path.home + ali + dir
+        // let http = "http://192.168.31.244:8686/"
         let m3u = Path.home+"Desktop/\(Path(dir).lastComponent).m3u8"
         var item = ResultModel(title:m3u.lastComponent,arg: m3u.string)
         if aliPath.exists {
@@ -35,7 +37,7 @@ public struct Ali {
                 }
             }
             //replacingOccurrences
-            content = content.replacingOccurrences(of: ali, with: http)
+            // content = content.replacingOccurrences(of: ali, with: http)
             try! m3u.write(content)
         }else{
             item.title = "目录不存在"
