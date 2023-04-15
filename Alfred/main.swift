@@ -22,6 +22,7 @@ struct Alfred: ParsableCommand {
                                          Calibre.self,
                                          RGB2Hex.self,
                                          Safari.self,
+                                         SnippetsCmd.self,
                                          AliWebDAV.self],
                            defaultSubcommand: Hotop.self,
                            helpNames: NameSpecification.customLong("h"))
@@ -99,13 +100,16 @@ struct Alfred: ParsableCommand {
         }
     }
     
-    struct Snippets:ParsableCommand {
+    struct SnippetsCmd:ParsableCommand {
+        // 把promot 转为 alfred / emacs snippet
         static var configuration = CommandConfiguration(commandName: "snippet", abstract: "制作Alfred snippets", discussion: "快速创建alfred snippets 批量导入等", version: "1.0", shouldDisplay: true, subcommands: [], defaultSubcommand: nil, helpNames: nil)
-        
+        @Option(name: [.customShort("f"),.long], help: "json文件的路径")
+        var file:String
         func run() throws {
             //TODO: 生成json文件，并打包为.alfredsnippets包
-//            Snippets.save()
-            
+            if let history = Snippets.toSnippets(json: file){
+                print(history)
+            }
         }
     }
     

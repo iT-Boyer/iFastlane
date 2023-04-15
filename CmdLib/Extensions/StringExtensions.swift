@@ -30,4 +30,37 @@ public extension String {
         result.deallocate()
         return hash as String
     }
+    //  返回字符串的全拼首字母
+    var pinyin:String{
+        let str = CFStringCreateMutableCopy(nil, 0, self as CFString)
+        CFStringTransform(str, nil, kCFStringTransformToLatin, false)
+        CFStringTransform(str, nil, kCFStringTransformStripCombiningMarks, false)
+        var py = ""
+        for x in (str! as String).components(separatedBy:" ") {
+            py += PYFirst(string:x)
+        }
+        return py
+    }
+    
+    //  获取拼音首字母，支持取一句话中每字拼音首字母
+    func PYFirst(string:String?, _ allFirst:Bool=false)->String{
+            var py="#"
+            if let s = string {
+                if s == "" {
+                    return py
+                }
+                let str = CFStringCreateMutableCopy(nil, 0, s as CFString)
+                CFStringTransform(str, nil, kCFStringTransformToLatin, false)
+                CFStringTransform(str, nil, kCFStringTransformStripCombiningMarks, false)
+                py = ""
+                if allFirst {
+                    for x in (str! as String).components(separatedBy:" ") {
+                        py += PYFirst(string:x)
+                    }
+                } else {
+                    py  = (str! as NSString).substring(to: 1).uppercased()
+                }
+            }
+            return py
+        }
 }
