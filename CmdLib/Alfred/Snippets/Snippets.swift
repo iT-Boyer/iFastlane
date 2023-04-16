@@ -69,7 +69,10 @@ public struct Snippets {
         let prompt = try! JSONDecoder().decode(Prompt.self, from: data)
         prompt.roles.map { role in
             // 保存为json 文件
+            var wrapper = role.wrapper
+            wrapper.replaceAll(matching: "\n.*$", with: "")
             do {
+                // alfred -----
                 let jsonEncoder = JSONEncoder()
                 let alfred = SnippetModel(uid: UUID().uuidString,
                                           name: role.title,
@@ -78,30 +81,40 @@ public struct Snippets {
                 let alfredM = AlfredModel(alfredsnippet: alfred)
                 jsonEncoder.outputFormatting = .prettyPrinted
                 let resultData = try jsonEncoder.encode(alfredM)
-                let filename = alfred.name.pinyin.lowercased() + " [\(alfred.uid)]"
+                let filename = alfred.name + " [\(alfred.uid)]"
                 print(alfred.name+filename)
                 let newfile = "/Users/boyer/Desktop/propmt/\(filename).json"
                 let url = URL(fileURLWithPath: newfile)
                 try resultData.write(to: url, options: .atomic)
                 
-                // 把字符串保存为文件
-                var wrapper = role.wrapper
-                wrapper.replaceAll(matching: "\n.*$", with: "")
+                // emacs-snippet ---把字符串保存为文件 ---
                 let snippet = """
                     # -*- mode: snippet -*-
-                    # name: \(alfred.name)
+                    # name: \(role.title)
                     # key: \(alfred.keyword)
                     # group: \(role.tags.first ?? "")
                     # --
                     #+begin_ai markdown :max-tokens 250
-                    [SYS]: \(alfred.snippet)
+                    [SYS]: \(role.descn)
 
-                    [ME]: \(wrapper)$0
+                    [ME]: \(wrapper)
+                    $0
                     #+end_ai
                     """
                 let snippetfile = ".doom.d/snippets/org-mode/ai/\(alfred.name)"
                 let emacsnippet = Path.home+snippetfile
                 try! emacsnippet.write(snippet)
+                
+                //auto-gpt -----
+                let auto_gpt = """
+                    ai_goals:
+                    - \(role.remark)
+                    ai_name: \(role.title)
+                    ai_role: \(role.descn)
+                    """
+                let autofile = ".dotfiles/auto-gpt/roles/\(role.title).yaml"
+                let autogpt = Path.home+autofile
+                try! autogpt.write(auto_gpt)
             } catch {
                 print("生成失败")
             }
