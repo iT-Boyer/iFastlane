@@ -82,7 +82,6 @@ public struct Snippets {
                 jsonEncoder.outputFormatting = .prettyPrinted
                 let resultData = try jsonEncoder.encode(alfredM)
                 let filename = alfred.name + " [\(alfred.uid)]"
-                print(alfred.name+filename)
                 let newfile = "/Users/boyer/Desktop/propmt/\(filename).json"
                 let url = URL(fileURLWithPath: newfile)
                 try resultData.write(to: url, options: .atomic)
@@ -106,6 +105,7 @@ public struct Snippets {
                 try! emacsnippet.write(snippet)
                 
                 //auto-gpt -----
+                //使用方法：python -m auto-gpt --settings-file role.yaml
                 let auto_gpt = """
                     ai_goals:
                     - \(role.remark)
@@ -115,6 +115,19 @@ public struct Snippets {
                 let autofile = ".dotfiles/auto-gpt/roles/\(role.title).yaml"
                 let autogpt = Path.home+autofile
                 try! autogpt.write(auto_gpt)
+                
+                //生成chatfred 的aliases
+                //使用方法：把chatfred的内容拷贝到chatfred 配置项中。
+                let alfred_aliases = role.title.pinyin.lowercased() + "=" + role.descn + ";\n"
+                let fred = "Desktop/chatfred.txt"
+                let chatfred = Path.home+fred
+//                try! chatfred.append(alfred_aliases)
+                let fileHandle = try FileHandle(forWritingTo: chatfred.url)
+                    fileHandle.seekToEndOfFile()
+                    if let data = alfred_aliases.data(using: .utf8) {
+                        fileHandle.write(data)
+                    }
+                    fileHandle.closeFile()
             } catch {
                 print("生成失败")
             }
