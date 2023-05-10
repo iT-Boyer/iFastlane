@@ -103,7 +103,62 @@ public struct Snippets {
                 let snippetfile = ".doom.d/snippets/org-mode/ai/\(alfred.name)"
                 let emacsnippet = Path.home+snippetfile
                 try! emacsnippet.write(snippet)
-                
+
+                // emacs snippets
+                let mindfile = ".doom.d/snippets/mind-wave-chat-mode/\(alfred.name)"
+                let mindnippet = Path.home+mindfile
+                let mindsnippet = """
+                    # -*- mode: snippet -*-
+                    # name: \(role.title)
+                    # key: \(alfred.keyword)
+                    # group: \(role.tags.first ?? "")
+                    # --
+                    \(role.descn)
+                    """
+                try! mindnippet.write(mindsnippet)
+
+                /*
+                ---
+                 PromptInfo:
+                 promptId: accountantAwesome
+                 name: 💰 Accountant
+                 description: I want you to act as an accountant and come up with creative ways to manage finances. Youll need to consider budgeting, investment strategies and risk management when creating a financial plan for your client. In some cases, you may also need to provide advice on taxation laws and regulations in order to help them maximize their profits.
+                 required_values:
+                 author: awesome-chatgpt-prompts
+                 tags:
+                 version: 0.0.1
+                 config:
+                 mode: insert
+                 system: I want you to act as an accountant and come up with creative ways to manage finances. Youll need to consider budgeting, investment strategies and risk management when creating a financial plan for your client. In some cases, you may also need to provide advice on taxation laws and regulations in order to help them maximize their profits.
+                 ---
+
+                 {{{selection}}}
+
+                 */
+                // obsidian text generator
+                let obsidianfile = "hsg/iNotes/Obsidian/textgenerator/prompts/roles/\(alfred.name)"
+                let obsidiansnippet = Path.home+obsidianfile
+                print("生成文件: \(obsidiansnippet)")
+                let obsnippet = """
+                  ---
+                  \(alfred.name)
+                  PromptInfo:
+                  promptId: \(alfred.uid)
+                  name: \(alfred.name)
+                  description: \(alfred.snippet)
+                  required_values:
+                  author: it-boyer
+                  tags:
+                  version: 0.0.1
+                  config:
+                  mode: insert
+                  system: \(alfred.snippet)
+                  ---
+
+                  {{{selection}}}
+                  """
+                try! obsidiansnippet.write(obsnippet)
+
                 //auto-gpt -----
                 //使用方法：python -m auto-gpt --settings-file role.yaml
                 let auto_gpt = """
@@ -138,12 +193,10 @@ public struct Snippets {
     
     func export(file:String?) {
         //TODO: 写入json文件，文件名格式：snippet [uid].json
-        
+       
         //TODO: 生成zip包，重命名snippet.alfredsnippets
         
         //TODO: 安装到Alfred，使用open命令
         
     }
 }
-
-
