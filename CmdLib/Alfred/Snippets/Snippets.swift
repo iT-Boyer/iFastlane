@@ -136,23 +136,22 @@ public struct Snippets {
 
                  */
                 // obsidian text generator
-                let obsidianfile = "hsg/iNotes/Obsidian/textgenerator/prompts/roles/\(alfred.name)"
+                let obsidianfile = "hsg/iNotes/Obsidian/textgenerator/prompts/roles/\(alfred.name).md"
                 let obsidiansnippet = Path.home+obsidianfile
                 print("生成文件: \(obsidiansnippet)")
                 let obsnippet = """
                   ---
-                  \(alfred.name)
                   PromptInfo:
-                  promptId: \(alfred.uid)
-                  name: \(alfred.name)
-                  description: \(alfred.snippet)
-                  required_values:
-                  author: it-boyer
-                  tags:
-                  version: 0.0.1
+                    promptId: \(alfred.uid)
+                    name: \(alfred.name)
+                    description: \(role.remark)
+                    required_values:
+                    author: it-boyer
+                    tags:
+                    version: 0.0.1
                   config:
-                  mode: insert
-                  system: \(alfred.snippet)
+                    mode: insert
+                    system: \(alfred.snippet)
                   ---
 
                   {{{selection}}}
