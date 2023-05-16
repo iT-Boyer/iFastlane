@@ -163,9 +163,9 @@ public struct Snippets {
                 let auto_gpt = """
                     ai_name: \(role.title)
                     ai_role: \(role.descn)
+                    api_budget: 0.2
                     ai_goals:
                     - \(role.remark)
-                    - api_budget: 0.2
                     """
                 let autofile = ".dotfiles/auto-gpt/roles/\(role.title).yaml"
                 let autogpt = Path.home+autofile
