@@ -15,6 +15,7 @@ var thirdLibs:[Target.Dependency] = ["Regex",
                                      "XMLCoder",
                                      "SwiftSoup",
                                      "AlfredSwift",
+                                     "OpenAISwift",
 //                                     "SwiftFFmpeg",
                                      // "CoreXLSX",
                                      .product(name: "CSV", package: "CSV.swift"),
@@ -52,6 +53,8 @@ let package = Package(
         .package(url: "https://github.com/scinfu/SwiftSoup.git", from: "2.4.3"),
         .package(url: "https://github.com/iT-Boyer/AlfredSwift.git", .branch("main")),
         .package(url: "https://github.com/kareman/SwiftShell", .upToNextMajor(from: "5.1.0")),
+        //chatgpt api
+        .package(url: "https://github.com/adamrushy/OpenAISwift.git", from: "1.2.0")
 //         .package(name: "SwiftFFmpeg", url: "https://github.com/it-boyer/SwiftFFmpeg.git", .branch("binary_dependency")),
         //.package(name: "SwiftFFmpeg", path: "/Users/boyer/hsg/SwiftFFmpeg"),
         // CoreXLSX 依赖XMLCoder

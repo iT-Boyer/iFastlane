@@ -161,10 +161,11 @@ public struct Snippets {
                 //auto-gpt -----
                 //使用方法：python -m auto-gpt --settings-file role.yaml
                 let auto_gpt = """
-                    ai_goals:
-                    - \(role.remark)
                     ai_name: \(role.title)
                     ai_role: \(role.descn)
+                    ai_goals:
+                    - \(role.remark)
+                    - api_budget: 0.2
                     """
                 let autofile = ".dotfiles/auto-gpt/roles/\(role.title).yaml"
                 let autogpt = Path.home+autofile
