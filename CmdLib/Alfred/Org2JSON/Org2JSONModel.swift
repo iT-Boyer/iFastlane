@@ -22,6 +22,14 @@ struct Org2JSONModel: Codable {
         case dataType = "$$data_type"
         case properties, contents
     }
+    static func parsed<T:Decodable>(data:Data) -> T {
+        do{
+            let decoder = JSONDecoder()
+            return try decoder.decode(T.self, from: data)
+        }catch{
+            fatalError(#function+"解析失败：\(error)")
+        }
+    }
 }
 
 // MARK: - FirstProperties
@@ -53,7 +61,31 @@ struct SecondContent: Codable {
     let dataType: DataType
     let type, ref: String
     let properties: SecondProperties
-    let contents: [SecondContent]
+    let contents: [ThirdContent]
+    let drawer: OrgDrawer?
+
+    enum CodingKeys: String, CodingKey {
+        case dataType = "$$data_type"
+        case type, ref, properties, contents, drawer
+    }
+}
+struct ThirdContent: Codable {
+    let dataType: DataType
+    let type, ref: String
+    let properties: SecondProperties
+    let contents: [FourContent]
+    let drawer: OrgDrawer?
+
+    enum CodingKeys: String, CodingKey {
+        case dataType = "$$data_type"
+        case type, ref, properties, contents, drawer
+    }
+}
+struct FourContent: Codable {
+    let dataType: DataType
+    let type, ref: String
+    let properties: SecondProperties
+    let contents: [String]
     let drawer: OrgDrawer?
 
     enum CodingKeys: String, CodingKey {

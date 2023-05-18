@@ -35,7 +35,7 @@ struct SnippetModel: Codable {
 
 // MARK: - Prompt
 struct Prompt: Codable {
-    let tags: Tags
+//    let tags: Tags
     let roles: [Role]
 }
 
@@ -174,8 +174,8 @@ public struct Snippets {
                 //json 转 org-mode
                 var orgTag = ""
                 role.tags.map { key in
-                    let tag = prompt.tags.dic[key] ?? ""
-                    orgTag = "\(orgTag):\(tag)"
+//                    let tag = prompt.tags.dic[key] ?? ""
+                    orgTag = "\(orgTag):\(key)"
                 }
                 let org_gpt = """
                     * \(role.title) \t \(orgTag):
