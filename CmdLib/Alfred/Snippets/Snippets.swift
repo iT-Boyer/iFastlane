@@ -52,6 +52,24 @@ struct Tags: Codable {
     let text, comments, code, life: String
     let interesting, language, speech, social: String
     let philosophy: String
+    
+    var dic: [String:String] {
+        return [
+            "favorite": favorite,
+            "mind" : mind,
+            "write" : write,
+            "article" : article,
+            "text" : text,
+            "comments" : comments,
+            "code" : code,
+            "life" : life,
+            "interesting" : interesting,
+            "language" : language,
+            "speech" : speech,
+            "social" : social,
+            "philosophy" : philosophy
+        ]
+    }
 }
 
 
@@ -117,24 +135,6 @@ public struct Snippets {
                     """
                 try! mindnippet.write(mindsnippet)
 
-                /*
-                ---
-                 PromptInfo:
-                 promptId: accountantAwesome
-                 name: 💰 Accountant
-                 description: I want you to act as an accountant and come up with creative ways to manage finances. Youll need to consider budgeting, investment strategies and risk management when creating a financial plan for your client. In some cases, you may also need to provide advice on taxation laws and regulations in order to help them maximize their profits.
-                 required_values:
-                 author: awesome-chatgpt-prompts
-                 tags:
-                 version: 0.0.1
-                 config:
-                 mode: insert
-                 system: I want you to act as an accountant and come up with creative ways to manage finances. Youll need to consider budgeting, investment strategies and risk management when creating a financial plan for your client. In some cases, you may also need to provide advice on taxation laws and regulations in order to help them maximize their profits.
-                 ---
-
-                 {{{selection}}}
-
-                 */
                 // obsidian text generator
                 let obsidianfile = "hsg/iNotes/Obsidian/textgenerator/prompts/roles/\(alfred.name).md"
                 let obsidiansnippet = Path.home+obsidianfile
@@ -170,6 +170,34 @@ public struct Snippets {
                 let autofile = ".dotfiles/auto-gpt/roles/\(role.title).yaml"
                 let autogpt = Path.home+autofile
                 try! autogpt.write(auto_gpt)
+                
+                //json 转 org-mode
+                var orgTag = ""
+                role.tags.map { key in
+                    let tag = prompt.tags.dic[key] ?? ""
+                    orgTag = "\(orgTag):\(tag)"
+                }
+                let org_gpt = """
+                    * \(role.title) \t \(orgTag):
+                    :PROPERTIES:
+                    :remark: \(role.remark)
+                    :END:
+
+                    ** prompt
+                    \(role.descn)
+                    ** 模板
+                    \(wrapper)
+                    
+                    """
+                let org = "Desktop/prompt.org"
+                let orgPrompt = Path.home+org
+//                try! chatfred.append(alfred_aliases)
+                let orgfileHandle = try FileHandle(forWritingTo: orgPrompt.url)
+                orgfileHandle.seekToEndOfFile()
+                    if let data = org_gpt.data(using: .utf8) {
+                        orgfileHandle.write(data)
+                    }
+                orgfileHandle.closeFile()
                 
                 //生成chatfred 的aliases
                 //使用方法：把chatfred的内容拷贝到chatfred 配置项中。

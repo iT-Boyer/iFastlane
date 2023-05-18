@@ -23,6 +23,7 @@ struct Alfred: ParsableCommand {
                                          RGB2Hex.self,
                                          Safari.self,
                                          SnippetsCmd.self,
+                                         Org2JSONCmd.self,
                                          AliWebDAV.self],
                            defaultSubcommand: Hotop.self,
                            helpNames: NameSpecification.customLong("h"))
@@ -108,6 +109,19 @@ struct Alfred: ParsableCommand {
         func run() throws {
             //TODO: 生成json文件，并打包为.alfredsnippets包
             if let history = Snippets.toSnippets(json: file){
+                print(history)
+            }
+        }
+    }
+    
+    struct Org2JSONCmd:ParsableCommand {
+        // 把promot 转为 alfred / emacs snippet
+        static var configuration = CommandConfiguration(commandName: "org2json", abstract: "org转json格式", discussion: "用于管理prompt", version: "1.0", shouldDisplay: true, subcommands: [], defaultSubcommand: nil, helpNames: nil)
+        @Option(name: [.customShort("f"),.long], help: "json文件的路径")
+        var file:String
+        func run() throws {
+            //TODO: 生成json文件，并打包为.alfredsnippets包
+            if let history = Org2JSON.toPrompt(json: file){
                 print(history)
             }
         }

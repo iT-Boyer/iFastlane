@@ -85,9 +85,9 @@ let package = Package(
             name: "CmdLibTests",
             dependencies: ["CmdLib", "Quick", "Nimble"],
             exclude: ["ffmpeg/FFmpegSpecs.swift", "爬虫/Pathm3u8Specs.swift", //依赖swiftffpmeg
-                      "ssh", //依赖libssh2,终端swift test失败
-                      "jinher", //禅道相关需要搭建新服务和项目ID环境
-                      "Alfred", //alfred依赖本地环境
+                      //"ssh", //依赖libssh2,终端swift test失败
+                      //"jinher", //禅道相关需要搭建新服务和项目ID环境
+                      //"Alfred", //alfred依赖本地环境
             ]
         )
     ],
