@@ -45,15 +45,14 @@ class OrgJOSNSpecs:QuickSpec
         describe("加载json文件") {
             
             it("读取JSON数据") {
-                let orgtool = Org2JSON()
                 print(orgModels.properties.author)
                 var prompts = orgModels.contents.compactMap{ first -> Role  in
                     // 一级 headline ：AI Prompt
                     let remark = first.drawer?.remark
                     let title = first.properties.rawValue
                     let tags = first.properties.tags
-                    let prompt = orgtool.getOrgPrompt(type: "prompt", firstContent: first)
-                    let template = orgtool.getOrgPrompt(type: "模板", firstContent: first)
+                    let prompt = Org2JSON.getOrgPrompt(type: "system", firstContent: first)
+                    let template = Org2JSON.getOrgPrompt(type: "user", firstContent: first)
                     print(template + "\n" + prompt)
                     
                     let role = Role(title: title ?? "",

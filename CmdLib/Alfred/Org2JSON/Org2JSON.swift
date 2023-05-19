@@ -6,13 +6,13 @@
 //
 
 import Foundation
-// 用法：./af org2json -f ~/hsg/chatgpt-on-wechat/plugins/role/roles.jso
+// 用法：./af org2json -f ~/hsg/iNotes/content-org/prompt/prompt.json
+// 需要先使用 ox-json 把 prompt.org 文件转为 json 文件
 public struct Org2JSON {
     
     public static func toPrompt(json:String) -> String? {
         // 使用 JSONEncoder 解析本地的json 文件，转为model 对象。
-        let jsonFile = "/Users/boyer/Desktop/prompt.json"
-        let url = URL(fileURLWithPath: jsonFile)
+        let url = URL(fileURLWithPath: json)
         let data = try! Data(contentsOf: url)
 //        let orgModels = Org2JSONModel.parsed(data:data)
         let orgModels = try! JSONDecoder().decode(Org2JSONModel.self, from: data)
@@ -21,8 +21,8 @@ public struct Org2JSON {
             let remark = first.drawer?.remark
             let title = first.properties.rawValue
             let tags = first.properties.tags
-            let prompt = getOrgPrompt(type: "prompt", firstContent: first)
-            let template = getOrgPrompt(type: "模板", firstContent: first)
+            let prompt = getOrgPrompt(type: "system", firstContent: first)
+            let template = getOrgPrompt(type: "user", firstContent: first)
 //            print(template + "\n" + prompt)
             
             let role = Role(title: title ?? "",

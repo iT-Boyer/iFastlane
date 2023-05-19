@@ -136,7 +136,7 @@ public struct Snippets {
                 try! mindnippet.write(mindsnippet)
 
                 // obsidian text generator
-                let obsidianfile = "hsg/iNotes/Obsidian/textgenerator/prompts/roles/\(alfred.name).md"
+                let obsidianfile = "hsg/iHabit/textgenerator/prompts/roles/\(alfred.name).md"
                 let obsidiansnippet = Path.home+obsidianfile
                 print("生成文件: \(obsidiansnippet)")
                 let obsnippet = """
@@ -183,9 +183,9 @@ public struct Snippets {
                     :remark: \(role.remark)
                     :END:
 
-                    ** prompt
+                    ** system
                     \(role.descn)
-                    ** 模板
+                    ** user
                     \(wrapper)
                     
                     """
