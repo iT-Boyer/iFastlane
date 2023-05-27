@@ -119,10 +119,22 @@ struct Alfred: ParsableCommand {
         static var configuration = CommandConfiguration(commandName: "org2json", abstract: "org转json格式", discussion: "用于管理prompt", version: "1.0", shouldDisplay: true, subcommands: [], defaultSubcommand: nil, helpNames: nil)
         @Option(name: [.customShort("f"),.long], help: "json文件的路径")
         var file:String
+        
+        @Option(name: [.customShort("t"), .long], help:"输入转换的类型：obs，alfred，bot-json")
+        var type:String
+       
         func run() throws {
-            //TODO: 生成json文件，并打包为.alfredsnippets包
-            if let history = Org2JSON.toPrompt(json: file){
-                print(history)
+            if(type == "obs"){
+                if let history = Org2JSON.toObsidian(org: file){
+                    print(history)
+                }
+            }
+            if(type == "alfred")
+            {
+                //TODO: 生成json文件，并打包为.alfredsnippets包
+                if let history = Org2JSON.toPrompt(json: file){
+                    print(history)
+                }
             }
         }
     }

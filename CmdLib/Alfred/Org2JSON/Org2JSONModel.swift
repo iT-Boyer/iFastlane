@@ -85,7 +85,7 @@ struct FourContent: Codable {
     let dataType: DataType
     let type, ref: String
     let properties: SecondProperties
-    let contents: [String]
+    let contents: [String?]
     let drawer: OrgDrawer?
 
     enum CodingKeys: String, CodingKey {
