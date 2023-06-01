@@ -31,12 +31,15 @@ public extension String {
         return hash as String
     }
     //  返回字符串的全拼首字母
-    var pinyin:String{
+    var quanpinyin:String{
         let str = CFStringCreateMutableCopy(nil, 0, self as CFString)
         CFStringTransform(str, nil, kCFStringTransformToLatin, false)
         CFStringTransform(str, nil, kCFStringTransformStripCombiningMarks, false)
+        return str! as String
+    }
+    var pinyin:String{
         var py = ""
-        for x in (str! as String).components(separatedBy:" ") {
+        for x in (self.quanpinyin as String).components(separatedBy:" ") {
             py += PYFirst(string:x)
         }
         return py

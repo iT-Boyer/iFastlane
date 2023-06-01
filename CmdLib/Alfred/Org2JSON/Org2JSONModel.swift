@@ -150,9 +150,11 @@ enum DataType: String, Codable {
 // MARK: - FluffyDrawer
 struct OrgDrawer: Codable {
     let remark: String?
+    let alias: String?
 
     enum CodingKeys: String, CodingKey {
         case remark = "REMARK"
+        case alias = "ALIAS"
     }
 }
 
