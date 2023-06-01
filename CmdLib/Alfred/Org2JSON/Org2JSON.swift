@@ -43,49 +43,82 @@ public struct Org2JSON {
     
     public static func toObsidian(org:String) -> String? {
         // 使用 JSONEncoder 解析本地的json 文件，转为model 对象。
-        let prompt_org = SwiftShell.run(bash: "/usr/local/bin/emacsclient -s doom --eval '(ox-json-export-prompt)'").stdout
+        SwiftShell.run(bash: "/usr/local/bin/emacsclient -s doom --eval '(ox-json-export-prompt)'")
         let jsonFile = "/Users/boyer/hsg/iNotes/content-org/prompt/prompt.json"
         let url = URL(fileURLWithPath: jsonFile)
         let data = try! Data(contentsOf: url)
 //        let orgModels = Org2JSONModel.parsed(data:data)
         let orgModels = try! JSONDecoder().decode(Org2JSONModel.self, from: data)
-        var prompts = orgModels.contents.map {first in
-            // 一级 headline ：AI Prompt
-            var prompts = orgModels.contents.map{ first in
-                let remark = first.drawer?.remark
-                let title = first.properties.rawValue
-                let tags = first.properties.tags
-                let prompt = Org2JSON.getOrgPrompt(type: "system", firstContent: first)
-                let template = Org2JSON.getOrgPrompt(type: "user", firstContent: first)
-                print(template + "\n" + prompt)
-                // obsidian text generator
-                let obsidianfile = "hsg/iHabit/textgenerator/prompts/roles/\(title).md"
-                let obsidiansnippet = Path.home+obsidianfile
-                print("生成文件: \(obsidiansnippet)")
-                let obsnippet = """
-                  ---
-                  PromptInfo:
-                    promptId: \(UUID().uuidString)
-                    name: \(title)
-                    description: \(remark)
-                    required_values:
-                    author: it-boyer
-                    tags:
-                    version: 0.0.1
-                  config:
-                    mode: insert
-                    system: \(prompt)
-                  ---
-                  
-                  {{{selection}}}
-                  """
-                try! obsidiansnippet.write(obsnippet)
-            }
+        // 一级 headline ：AI Prompt
+        _ = orgModels.contents.map{ first in
+            let remark = first.drawer?.remark ?? ""
+            let title = first.properties.rawValue ?? ""
+//                let tags = first.properties.tags
+            let prompt = Org2JSON.getOrgPrompt(type: "system", firstContent: first)
+            let template = Org2JSON.getOrgPrompt(type: "user", firstContent: first)
+            print(template + "\n" + prompt)
+            // obsidian text generator
+            let obsidianfile = "hsg/iHabit/textgenerator/prompts/roles/\(title).md"
+            let obsidiansnippet = Path.home+obsidianfile
+            print("生成文件: \(obsidiansnippet)")
+            let obsnippet = """
+              ---
+              PromptInfo:
+                promptId: \(UUID().uuidString)
+                name: \(title)
+                description: \(remark)
+                required_values:
+                author: it-boyer
+                tags:
+                version: 0.0.1
+              config:
+                mode: insert
+                system: \(prompt)
+              ---
+              
+              {{{selection}}}
+              """
+            try! obsidiansnippet.write(obsnippet)
         }
         return ""
     }
     
-    
+    public static func toRimeDicts(org:String) -> String? {
+        // 使用 JSONEncoder 解析本地的json 文件，转为model 对象。
+        SwiftShell.run(bash: "/usr/local/bin/emacsclient -s doom --eval '(ox-json-export-prompt)'")
+        let jsonFile = "/Users/boyer/hsg/iNotes/content-org/prompt/prompt.json"
+        let url = URL(fileURLWithPath: jsonFile)
+        let data = try! Data(contentsOf: url)
+        //        let orgModels = Org2JSONModel.parsed(data:data)
+        let orgModels = try! JSONDecoder().decode(Org2JSONModel.self, from: data)
+        var dicStr = """
+          ---
+          name: chatgpt-prompts promot.scels
+          version: "1.0"
+          sort: by_weight
+          use_preset_vocabulary: true
+          # 此处为扩充词库（基本）默认链接载入的词库
+          # import_tables:
+          # - luna_pinyin
+          # - luna_pinyin.sogou
+          ...
+          
+          """
+        
+        _ = orgModels.contents.map{item in
+            let title = item.properties.rawValue ?? ""
+            let alias = item.drawer?.alias ?? ""
+            let prompt = Org2JSON.getOrgPrompt(type: "system", firstContent: item)
+            let tmp = "\(prompt)\t\(alias)\t1\n"
+            dicStr = dicStr + "\n" + tmp
+        }
+        
+        print("--------")
+        let rime_dicfile = "hsg/rime-trime/chatgpt-prompts.dict.yaml"
+        let rime_dic = Path.home+rime_dicfile
+        try! rime_dic.write(dicStr)
+        return ""
+    }
     static func getOrgPrompt(type:String, firstContent:FirstContent) -> String {
         var result = ""
         _ =  firstContent.contents.map { second in

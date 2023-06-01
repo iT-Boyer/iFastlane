@@ -120,12 +120,17 @@ struct Alfred: ParsableCommand {
         @Option(name: [.customShort("f"),.long], help: "json文件的路径")
         var file:String
         
-        @Option(name: [.customShort("t"), .long], help:"输入转换的类型：obs，alfred，bot-json")
+        @Option(name: [.customShort("t"), .long], help:"输入转换的类型：obs，rime , alfred，bot-json")
         var type:String
        
         func run() throws {
             if(type == "obs"){
                 if let history = Org2JSON.toObsidian(org: file){
+                    print(history)
+                }
+            }
+            if(type == "rime"){
+                if let history = Org2JSON.toRimeDicts(org: file){
                     print(history)
                 }
             }
