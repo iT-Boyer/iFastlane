@@ -120,13 +120,26 @@ class OrgJOSNSpecs:QuickSpec
         fdescribe("更新org文件批量添加新字段"){
             it("添加别名字段"){
                 // 在 org 属性中添加 alias 字段：title 的全拼
-                var content = ""
+                var content = """
+                  :PROPERTIES:
+                  :ID:       6383d4a7-e799-40e9-92e7-2529e81d5cb1
+                  :END:
+                  #+TITLE: AI角色
+                  #+STARTUP: hidestars
+
+                  #+hugo_base_dir: ~/hsg/iT-Boyer/
+                  #+hugo_section: post/日志随笔
+                  #+hugo_auto_set_lastmod: t
+                  #+filetags: prompt AI
+
+
+                  """
                 _ = orgModels.contents.map{item in
                     let remark = item.drawer?.remark ?? ""
                     let alias = item.drawer?.alias ?? ""
                     let orgID = item.drawer?.ID ?? UUID().uuidString
                     let title = item.properties.rawValue ?? ""
-                    let tags = item.properties.tags
+                    let tags = item.properties.tags ?? []
                     let prompt = Org2JSON.getOrgPrompt(type: "system", firstContent: item)
                     let template = Org2JSON.getOrgPrompt(type: "user", firstContent: item)
                     let priority = item.properties.priority ?? 0
@@ -136,15 +149,19 @@ class OrgJOSNSpecs:QuickSpec
                         priorityvalue = " [#A] "
                     }
 
+                    if(title == ""){
+                        return
+                    }
                     if (title == "充当打火机"
                         || title == "语言输入优化"
                         || title == "论文式回答"
-                        || title == "诗人"){
+                        || title == "诗人"
+                        || title == "充当时间旅行指南"){
                         print("\(title) priority: \(priority)")
                         print("别名：\(alias) ID: \(orgID)")
                     }
                     var orgTag = ""
-                    _ = tags!.map { key in
+                    _ = tags.map { key in
                         //let tag = prompt.tags.dic[key] ?? ""
                         orgTag = "\(orgTag):\(key)"
                     }
@@ -154,9 +171,9 @@ class OrgJOSNSpecs:QuickSpec
                     let org_gpt = """
                       *\(priorityvalue)\(title)   \(orgTag)
                       :PROPERTIES:
-                      :remark: \(remark)
-                      :alias: \(alias)
                       :ID: \(orgID)
+                      :alias: \(alias)
+                      :remark: \(remark)
                       :END:
 
                       ** system
@@ -167,7 +184,7 @@ class OrgJOSNSpecs:QuickSpec
                       """
                     content = content + org_gpt
                 }
-                let org = "Desktop/prompt.org"
+                let org = "/Users/boyer/hsg/iNotes/content-org/prompt/prompt.org"
                 let orgFile = Path.home+org
                 try! orgFile.write(content)
             }
