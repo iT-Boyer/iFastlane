@@ -29,7 +29,7 @@ class ZentaoSpecs: QuickSpec {
         //禅道服务器
         let url = "http://127.0.0.1:8084/api.php"
         
-        describe("免登录获取认证") {
+        xdescribe("免登录获取认证") {
             //免密认证
             var zToken:[String : Any]!
             beforeEach {

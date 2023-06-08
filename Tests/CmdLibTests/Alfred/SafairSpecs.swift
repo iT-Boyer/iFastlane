@@ -58,7 +58,7 @@ ORDER BY visit_time DESC
             }
         }
         
-        fdescribe("查询chrome记录") {
+        xdescribe("查询chrome记录") {
             it("sql查询") {
                 let url = "zerotier"
                 let googleQuery = "select url, title from urls WHERE url LIKE '%\(url)%' OR title LIKE '%\(url)%'"

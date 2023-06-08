@@ -13,7 +13,7 @@ import XCTest
 
 class GitHubTests: QuickSpec {
     override func spec() {
-        describe("github api 身份认证") {
+        xdescribe("github api 身份认证") {
             var expectation:XCTestExpectation!
             beforeEach {
         //        let semaphore = DispatchSemaphore(value: 0)

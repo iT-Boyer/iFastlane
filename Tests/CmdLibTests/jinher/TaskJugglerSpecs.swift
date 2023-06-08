@@ -14,7 +14,7 @@ import XMLCoder
 
 class TaskJugglerSpecs: QuickSpec {
     override func spec() {
-        describe("解析tj3项目xml文件") {
+        xdescribe("解析tj3项目xml文件") {
             fit("获取项目名称") {
                 let filePath = JHSources()+"project.xml"
                 let xmlData = try! filePath.read()

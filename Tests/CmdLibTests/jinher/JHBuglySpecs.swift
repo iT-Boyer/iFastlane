@@ -111,7 +111,7 @@ class JHBuglySpecs: QuickSpec {
             }
         }
         
-        describe("分析埋点crash情况") {
+        xdescribe("分析埋点crash情况") {
             
             fit("统计crash类型和个数") { //JHBugly.crashInfo()
                 waitUntil(timeout: .seconds(10)) { done in

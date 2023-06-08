@@ -151,10 +151,12 @@ enum DataType: String, Codable {
 struct OrgDrawer: Codable {
     let remark: String?
     let alias: String?
+    let ID: String?
 
     enum CodingKeys: String, CodingKey {
         case remark = "REMARK"
         case alias = "ALIAS"
+        case ID = "ID"
     }
 }
 

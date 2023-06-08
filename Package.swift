@@ -16,6 +16,7 @@ var thirdLibs:[Target.Dependency] = ["Regex",
                                      "SwiftSoup",
                                      "AlfredSwift",
                                      "OpenAISwift",
+                                     "StableDiffusion",
 //                                     "SwiftFFmpeg",
                                      // "CoreXLSX",
                                      .product(name: "CSV", package: "CSV.swift"),
@@ -54,7 +55,8 @@ let package = Package(
         .package(url: "https://github.com/iT-Boyer/AlfredSwift.git", .branch("main")),
         .package(url: "https://github.com/kareman/SwiftShell", .upToNextMajor(from: "5.1.0")),
         //chatgpt api
-        .package(url: "https://github.com/adamrushy/OpenAISwift.git", from: "1.2.0")
+        .package(url: "https://github.com/adamrushy/OpenAISwift.git", from: "1.2.0"),
+        .package(name: "StableDiffusion", url: "https://github.com/apple/ml-stable-diffusion.git", branch: "main")
 //         .package(name: "SwiftFFmpeg", url: "https://github.com/it-boyer/SwiftFFmpeg.git", .branch("binary_dependency")),
         //.package(name: "SwiftFFmpeg", path: "/Users/boyer/hsg/SwiftFFmpeg"),
         // CoreXLSX 依赖XMLCoder

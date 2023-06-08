@@ -59,7 +59,7 @@ class ZentaoV1Specs: QuickSpec {
         itBehavesLike("获取token")
         // 登录获取token
         // 封装bug接口请求，解析bug module
-        describe("V1版本api") {
+        xdescribe("V1版本api") {
             let server = "http://localhost:8084/api.php/v1/"
 //            let server = "http://10.147.19.89:8084/api.php/v1/"
             var token = ""

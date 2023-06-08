@@ -50,7 +50,7 @@ class OrgJOSNSpecs:QuickSpec
             }
             
         }
-        describe("加载json文件") {
+        xdescribe("加载json文件") {
             //该单例，主要是验证目的： 解析 ox-json 生成的json 文件，验证结果。
             it("读取JSON数据") {
                 print(orgModels.properties.author)
@@ -117,28 +117,31 @@ class OrgJOSNSpecs:QuickSpec
         //第一步：在 orgDrawer model 中添加声明
         //第二步：解析 prompt.org 文件，拼接字符串，写入文件中。
         //例如下面单元测试：
-        xdescribe("更新org文件批量添加新字段"){
+        fdescribe("更新org文件批量添加新字段"){
             it("添加别名字段"){
                 // 在 org 属性中添加 alias 字段：title 的全拼
                 var content = ""
                 _ = orgModels.contents.map{item in
                     let remark = item.drawer?.remark ?? ""
                     let alias = item.drawer?.alias ?? ""
+                    let orgID = item.drawer?.ID ?? UUID().uuidString
                     let title = item.properties.rawValue ?? ""
                     let tags = item.properties.tags
                     let prompt = Org2JSON.getOrgPrompt(type: "system", firstContent: item)
                     let template = Org2JSON.getOrgPrompt(type: "user", firstContent: item)
                     let priority = item.properties.priority ?? 0
-                    //json 转 org-mode
+                    //json 转 org-mode ,ox-json only parse #A
                     var priorityvalue = " "
                     if (priority == 65)  {
                         priorityvalue = " [#A] "
                     }
+
                     if (title == "充当打火机"
                         || title == "语言输入优化"
                         || title == "论文式回答"
                         || title == "诗人"){
                         print("\(title) priority: \(priority)")
+                        print("别名：\(alias) ID: \(orgID)")
                     }
                     var orgTag = ""
                     _ = tags!.map { key in
@@ -153,6 +156,7 @@ class OrgJOSNSpecs:QuickSpec
                       :PROPERTIES:
                       :remark: \(remark)
                       :alias: \(alias)
+                      :ID: \(orgID)
                       :END:
 
                       ** system

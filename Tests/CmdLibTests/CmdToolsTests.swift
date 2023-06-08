@@ -16,7 +16,7 @@ import SwiftyJSON
 //https://github.com/Quick/Quick/blob/main/Documentation/zh-cn/NimbleAssertions.md
 class CmdToolsTests: QuickSpec {
     override func spec() {
-        it("求差集") {
+        xit("求差集") {
             //
             let arr1 = "1,2,3".split(separator: ",")
             let arr2 = "3,4,5".split(separator: ",")
@@ -32,7 +32,7 @@ class CmdToolsTests: QuickSpec {
             expect(["Atlantic", "Pacific"]).toNot(contain("Mississippi"))
         }
         
-        describe("repo库管理：clone,pull,push") {
+        xdescribe("repo库管理：clone,pull,push") {
             it("push测试") {
                 let repos = try! (JHSources()+"done.txt").read().split(separator: "\n")
                 CmdTools.reposAction(repos: repos, action: "push", branch: "pri-deploy-step2")
@@ -43,7 +43,7 @@ class CmdToolsTests: QuickSpec {
             }
         }
         
-        describe("workspac中添加项目") {
+        xdescribe("workspac中添加项目") {
             it("通过库名清单，添加到YGPatrol的 其他 分组") {
                 let workspacePath = Path("/Users/boyer/hsg/jhygpatrol/YGPatrol.xcworkspace")
                 let abCheckPath:Path = JHSources()+"abcheck.txt"
@@ -58,7 +58,7 @@ class CmdToolsTests: QuickSpec {
                 }
             }
         }
-        describe("生成xcscheme") {
+        xdescribe("生成xcscheme") {
             it("批量编译proj项目中的target") {
                 let abCheckPath:Path = JHSources()+"done.txt"
                 let abCheck:String = try! abCheckPath.read()
@@ -76,7 +76,7 @@ class CmdToolsTests: QuickSpec {
                 }
             }
         }
-        fdescribe("target操作练习") {
+        xdescribe("target操作练习") {
             //源文件+头文件+宏文件
             var projPath:Path!
             beforeEach {
@@ -116,7 +116,7 @@ class CmdToolsTests: QuickSpec {
             }
         }
         
-        describe("检查repo目录") {
+        xdescribe("检查repo目录") {
             var repoName:String!
             beforeEach {
                 repoName = "jhygpatrol"
