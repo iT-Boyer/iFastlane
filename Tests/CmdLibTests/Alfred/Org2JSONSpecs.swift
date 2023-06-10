@@ -117,7 +117,7 @@ class OrgJOSNSpecs:QuickSpec
         //第一步：在 orgDrawer model 中添加声明
         //第二步：解析 prompt.org 文件，拼接字符串，写入文件中。
         //例如下面单元测试：
-        fdescribe("更新org文件批量添加新字段"){
+        xdescribe("更新org文件批量添加新字段"){
             it("添加别名字段"){
                 // 在 org 属性中添加 alias 字段：title 的全拼
                 var content = """

@@ -24,6 +24,7 @@ struct Alfred: ParsableCommand {
                                          Safari.self,
                                          SnippetsCmd.self,
                                          Org2JSONCmd.self,
+                                         EmacsCmd.self,
                                          AliWebDAV.self],
                            defaultSubcommand: Hotop.self,
                            helpNames: NameSpecification.customLong("h"))
@@ -140,6 +141,20 @@ struct Alfred: ParsableCommand {
                 if let history = Org2JSON.toPrompt(json: file){
                     print(history)
                 }
+            }
+        }
+    }
+    
+    struct EmacsCmd:ParsableCommand {
+        // 把promot 转为 alfred / emacs snippet
+        static var configuration = CommandConfiguration(commandName: "emacs", abstract: "about elisp tools", discussion: "about elisp tools", version: "1.0", shouldDisplay: true, subcommands: [], defaultSubcommand: nil, helpNames: nil)
+        @Option(name: [.customShort("f"),.long], help: "readme文件的路径")
+        var file:String
+       
+        func run() throws {
+            //TODO: 生成json文件，并打包为.alfredsnippets包
+            if let history = Emacs.build(readme: file){
+                print(history)
             }
         }
     }

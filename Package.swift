@@ -33,7 +33,6 @@ let package = Package(
         .library(name: "CmdLib", targets: ["CmdLib"])
     ],
     dependencies: [
-//        .package(name: "Fastlane", path: "/Users/boyer/hsg/fastlane"),
         .package(name: "Fastlane", url: "https://github.com/it-boyer/fastlane.git", branch: "public"),
         .package(name: "Alamofire", url: "https://github.com/Alamofire/Alamofire", branch: "master"),
         .package(name: "Regex", url: "https://github.com/sharplet/Regex",.upToNextMajor(from: "2.1.1")),
