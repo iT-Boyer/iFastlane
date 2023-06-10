@@ -53,7 +53,8 @@ public struct Emacs {
             var blog  = ""
             for item in rss.channel.item{
                 let link = item.link.replacingFirst(matching: "localhost:1313", with: "it-boyer.github.io")
-                blog = blog + "<a herf=\(link)>\(item.title)</a>\n"
+//                blog = blog + "<a herf=\(link)>\(item.title)</a>\n"
+                blog = blog + "[\(item.title)](\(link))   \n"
             }
             //print(blog)
             //regex
