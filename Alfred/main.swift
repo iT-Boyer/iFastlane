@@ -25,7 +25,8 @@ struct Alfred: ParsableCommand {
                                          SnippetsCmd.self,
                                          Org2JSONCmd.self,
                                          EmacsCmd.self,
-                                         AliWebDAV.self],
+                                         AliWebDAV.self,
+                                         Music.self],
                            defaultSubcommand: Hotop.self,
                            helpNames: NameSpecification.customLong("h"))
     
@@ -200,6 +201,17 @@ struct Alfred: ParsableCommand {
         var dir:String
         func run() throws {
             if let history = Ali.to(dir: dir){
+                print(history)
+            }
+        }
+    }
+    
+    struct Music:ParsableCommand{
+        static var configuration = CommandConfiguration(commandName: "music",abstract: "把音乐文件导入music app")
+        @Option(name: [.customShort("d"),.long], help: "请输入dir地址")
+        var dir:String
+        func run() throws {
+            if let history = Ali.wmaTowav(path: dir){
                 print(history)
             }
         }

@@ -10,8 +10,8 @@ class VLC_specs: QuickSpec {
             beforeEach {
 
             }
-            it("aliPlaylist") {
-                let _ = CmdLib.Ali.to(dir: "【船长精品】《 得 到 》平台专题 2016-2021.10 全部VIP课程/08 训练营/01 脱不花 30天沟通训练营")
+            fit("aliPlaylist") {
+                let _ = CmdLib.Ali.to(dir: "镖人 (2023)")
             }
             
             xit("glob") {
