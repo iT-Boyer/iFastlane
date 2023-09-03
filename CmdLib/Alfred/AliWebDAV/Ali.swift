@@ -59,8 +59,10 @@ public struct Ali {
         if aliPath.exists {
 //            print("-----递归------")
             print("正在从ali盘中读取列表..")
+//            .filter{ $0.string.hasSuffix("wma") }
             guard let childrens = try? aliPath.recursiveChildren() else { return nil }
             print("文件个数：\(childrens.count)")
+            
             let media = ["mp3", "wav", "wma", "m4a"]
             let _ = childrens.map { path in
                 if path.isFile && media.contains(path.extension ?? "") {
@@ -68,10 +70,12 @@ public struct Ali {
                     if path.extension == "wma" {
                         let filename = path.lastComponentWithoutExtension
                         let wavPath = toPath + "\(filename).wav"
-                        let bashCmd = "/opt/homebrew/bin/ffmpeg -i \"\(path)\" -ar 16000 -ac 1 -c:a pcm_s16le \"\(wavPath)\""
-                        print("开始转换：\(filename).wav:\n\(bashCmd)")
-                        let result = SwiftShell.run(bash: bashCmd).stdout
-                        print("完成转换：\(filename).wav\n \(result)")
+                        let bashCmd = "ffmpeg -i \"\(path)\" -ar 16000 -ac 1 -c:a pcm_s16le \"\(wavPath)\""
+                        print("开始转换:\(filename).wav--:\n\(bashCmd)")
+                        SwiftShell.runAsync(bash: bashCmd).onCompletion { cmd in
+                            print("测试结果:-----\(cmd.isRunning)")
+                            print("完成转换：\(filename).wav")
+                        }
                     }else{
                         // 拷贝到 音乐 app
 //                        try? path.copy(toPath)
@@ -84,6 +88,7 @@ public struct Ali {
             item.title = "目录不存在"
             item.arg = ""
         }
+
         return AlfredJSON(items: [item]).toJson()
     }
 }

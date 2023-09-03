@@ -214,6 +214,7 @@ struct Alfred: ParsableCommand {
             if let history = Ali.wmaTowav(path: dir){
                 print(history)
             }
+//            Music.exit()
         }
     }
 }

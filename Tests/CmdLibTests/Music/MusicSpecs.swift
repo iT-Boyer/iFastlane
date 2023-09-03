@@ -36,9 +36,9 @@ class MusicSpecs: QuickSpec {
                 self.wmaToWav(wmaPath: wmaFile)
             }
             
-            it("集成到Ali 工具") {
+            fit("集成到Ali 工具") {
                 waitUntil(timeout: .seconds(10)) { done in
-                    _ = CmdLib.Ali.wmaTowav(path: "/Volumes/下载/2018-2021抖音经典歌曲/2019年抖音精选")
+                    _ = CmdLib.Ali.wmaTowav(path: "/Users/boyer/Downloads/Test")
                     done()
                 }
             }
