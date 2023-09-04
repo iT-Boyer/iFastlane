@@ -4,7 +4,7 @@ import PathKit
 import CmdLib
 
 class VLC_specs: QuickSpec {
-    override func spec() {
+    override class func spec() {
         describe("aliplaylist") {
 
             beforeEach {

@@ -23,7 +23,7 @@ import Foundation
  //7. copy到主工程，并替换
  */
 class XcodeProjTests: QuickSpec {
-    override func spec() {
+    override class func spec() {
         
         describe("Path 创建folder") {
             it("创建folder目录") {

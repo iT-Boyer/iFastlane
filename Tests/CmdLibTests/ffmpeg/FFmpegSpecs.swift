@@ -12,7 +12,7 @@ import SwiftFFmpeg
 import PathKit
 
 class FFmpegSpecs: QuickSpec {
-    override func spec() {
+    override class func spec() {
         
         var videoPath:Path!
         beforeSuite {

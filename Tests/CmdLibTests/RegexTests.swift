@@ -12,7 +12,7 @@ import Regex
 import PathKit
 import CmdLib
 class RegexTests: QuickSpec {
-    override func spec() {
+    override class func spec() {
         describe("练习正则") {
             it("练习正则：打印匹配regexDemo清单") {
                 //方案一

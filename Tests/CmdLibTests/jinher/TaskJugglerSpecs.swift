@@ -13,7 +13,7 @@ import XMLCoder
 @testable import CmdLib
 
 class TaskJugglerSpecs: QuickSpec {
-    override func spec() {
+    override class func spec() {
         xdescribe("解析tj3项目xml文件") {
             fit("获取项目名称") {
                 let filePath = JHSources()+"project.xml"

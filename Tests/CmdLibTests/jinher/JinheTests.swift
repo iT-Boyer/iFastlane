@@ -13,7 +13,7 @@ import PathKit
 @testable import CmdLib
 
 class JinheTests: QuickSpec {
-    override func spec() {
+    override class func spec() {
         xdescribe("演示JSONDecoder工具") {
             fit("解析iu平台的菜单清单json文件") {
                 let jsonPath = JHSources()+"iu-menu.json"

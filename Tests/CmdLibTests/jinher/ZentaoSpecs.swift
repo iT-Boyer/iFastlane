@@ -25,7 +25,7 @@ import SwiftyJSON
 // 禅道API 联调
 class ZentaoSpecs: QuickSpec {
     
-    override func spec() {
+    override class func spec() {
         //禅道服务器
         let url = "http://127.0.0.1:8084/api.php"
         

@@ -13,7 +13,7 @@ import SwiftyJSON
 @testable import CmdLib
 
 class myconfig: QuickConfiguration {
-    override class func configure(_ configuration: Configuration) {
+    override class func configure(_ configuration: QCKConfiguration) {
         //添加全局闭包
         configuration.beforeEach {
             print("开始-------")
@@ -39,7 +39,7 @@ class myconfig: QuickConfiguration {
 }
 
 class ZentaoV1Specs: QuickSpec {
-    override func spec() {
+    override class func spec() {
         sharedExamples("获取token") {
             it("局部共享用例") {
                 print("局部共享用例++++++")

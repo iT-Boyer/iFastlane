@@ -20,7 +20,7 @@ import PathKit
  http://oms.iuoooo.com/MError/GetLogList?random=0.7724948616202214&fromTime=2022-02-23%200:01:47&toTime=2022-02-23%2023:59:00&osType=1&runEnvi=3&logState=0&errorType=crash&_search=false&nd=1645667051272&rows=20&page=1&sidx=&sord=asc&appId=
  */
 class JHBuglySpecs: QuickSpec {
-    override func spec() {
+    override class func spec() {
         
         beforeEach {
             JHBugly.parameters["rows"] = 1000

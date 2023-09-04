@@ -13,7 +13,7 @@ import SwiftShell
 
 class FastlaneTests: QuickSpec {
  
-    override func spec() {
+    override class func spec() {
         xit("编译静态库到桌面目录") {
             let runner = "/Users/boyer/hsg/iFastlane/Runner"
             let output = try! runAsync(runner, "lane", "buildLib").finish().stdout.read()

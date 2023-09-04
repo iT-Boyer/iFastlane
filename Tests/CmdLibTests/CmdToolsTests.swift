@@ -15,7 +15,7 @@ import SwiftyJSON
 
 //https://github.com/Quick/Quick/blob/main/Documentation/zh-cn/NimbleAssertions.md
 class CmdToolsTests: QuickSpec {
-    override func spec() {
+    override class func spec() {
         xit("求差集") {
             //
             let arr1 = "1,2,3".split(separator: ",")

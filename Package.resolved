@@ -105,7 +105,7 @@
         "repositoryURL": "https://gh.con.sh/https://github.com/apple/ml-stable-diffusion.git",
         "state": {
           "branch": "main",
-          "revision": "e3875a584b173774357c76beda659df9f62527ec",
+          "revision": "c5063225aa1473522116425268bb7285e6020f9b",
           "version": null
         }
       },
@@ -113,9 +113,9 @@
         "package": "Nimble",
         "repositoryURL": "https://gh.con.sh/https://github.com/Quick/Nimble.git",
         "state": {
-          "branch": "main",
-          "revision": "371f7d278ba95a5511c248aaeec84f5dbe770491",
-          "version": null
+          "branch": null,
+          "revision": "f552a16f434eef1f18b62985172489f41d37a18e",
+          "version": "12.2.0"
         }
       },
       {
@@ -150,8 +150,8 @@
         "repositoryURL": "https://gh.con.sh/https://github.com/Quick/Quick.git",
         "state": {
           "branch": null,
-          "revision": "bd86ca0141e3cfb333546de5a11ede63f0c4a0e6",
-          "version": "4.0.0"
+          "revision": "494eff9ad74a37047782b0d5d8d84c7ff49a60e4",
+          "version": "7.2.0"
         }
       },
       {

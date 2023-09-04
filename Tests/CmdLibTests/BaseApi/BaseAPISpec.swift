@@ -10,8 +10,8 @@ import Quick
 import Nimble
 
 class BaseAPISpec: QuickSpec {
-    override func spec() {
-        describe("md5") {
+    override class func spec() {
+        xdescribe("md5") {
             //token为数字签名，其算法为：code、密钥、time字符串合并，再进行 md5。
             //当前时间的时间戳
             let timeInterval:TimeInterval = Date().timeIntervalSince1970

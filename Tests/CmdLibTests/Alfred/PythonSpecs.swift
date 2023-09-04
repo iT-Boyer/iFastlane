@@ -14,7 +14,7 @@ import SwiftyJSON
 import AlfredSwift
 
 class PythonSpecs: QuickSpec {
-    override func spec() {
+    override class func spec() {
         
         beforeSuite {
             //设置使用的版本

@@ -10,7 +10,7 @@ import Quick
 import PathKit
 
 class PathSpecs: QuickSpec {
-    override func spec() {
+    override class func spec() {
         describe("拷贝文件") {
             
             it("拷贝chrome到临时目录") {

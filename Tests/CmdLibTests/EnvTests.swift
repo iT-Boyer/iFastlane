@@ -12,7 +12,7 @@ import Nimble
 
 
 class EnvTests: QuickSpec {
-    override func spec() {
+    override class func spec() {
         describe("验证环境变量") {
             it("根目录") {
                 print(root())

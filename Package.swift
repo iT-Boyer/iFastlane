@@ -44,8 +44,8 @@ let package = Package(
         .package(url: proxy + "pvieito/PythonKit.git",  .branch("master")),
         .package(name: "XcodeProj", url: proxy + "tuist/xcodeproj.git", .upToNextMajor(from: "7.11.1")),
         //quick行为测试
-        .package(url: proxy + "Quick/Quick.git", .upToNextMajor(from: "4.0.0")),
-        .package(url: proxy + "Quick/Nimble.git",.branch("main")),
+        .package(url: proxy + "Quick/Quick.git", from: "7.0.0"),
+        .package(url: proxy + "Quick/Nimble.git", from: "12.0.0"),
         .package(url: proxy + "serhii-londar/GithubAPI.git",.branch("master")),
         .package(name: "GRDB", url: proxy + "groue/GRDB.swift.git", from: "5.17.0"),
         //ssh框架

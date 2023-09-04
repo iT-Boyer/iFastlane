@@ -14,7 +14,7 @@ import PathKit
 
 class OrgJOSNSpecs:QuickSpec
 {
-    override func spec(){
+    override class func spec(){
         
         var orgModels:Org2JSONModel!
         var botModels:Prompt!

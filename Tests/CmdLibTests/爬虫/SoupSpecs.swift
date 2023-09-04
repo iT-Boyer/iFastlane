@@ -11,7 +11,7 @@ import Nimble
 import SwiftSoup
 
 class SoupSpecs: QuickSpec {
-    override func spec() {
+    override class func spec() {
         
         describe("解析html标签") {
             

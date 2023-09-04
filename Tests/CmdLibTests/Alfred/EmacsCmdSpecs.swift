@@ -40,7 +40,7 @@ import SwiftShell
  */
 
 class EmacsCmdSpecs: QuickSpec {
-    override func spec() {
+    override class func spec() {
         describe("在emacs当前窗口打开文件") {
             
             //命令：在emacs当前窗口打开文件

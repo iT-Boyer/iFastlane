@@ -28,7 +28,7 @@ import SwiftFFmpeg
 //        print("proj文件：\(paths)")
 
 class Pathm3u8Specs: QuickSpec {
-    override func spec() {
+    override class func spec() {
         
         
         describe("加载Ali目录") {

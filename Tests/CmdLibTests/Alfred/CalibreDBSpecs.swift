@@ -12,7 +12,7 @@ import GRDB
 @testable import CmdLib
 
 class CalibreDBSpecs: QuickSpec {
-    override func spec() {
+    override class func spec() {
         
         var dbQueue:DatabaseQueue!
         beforeSuite {

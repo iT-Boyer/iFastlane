@@ -11,19 +11,20 @@ import SwiftShell
 @testable import CmdLib
 
 class ThreadSpecs:QuickSpec {
-    override func spec(){
+    override class func spec(){
         describe("线程演练"){
             /* DispatchQueue 队列
              1. 创建串行队列：串行为默认创建的队列
              2. 向队列中添加block事件，并异步步执行
              */
-            it("串行队列，异步执行"){
+            xit("串行队列，异步执行"){
                 //串行队列
                 let serialQueue = DispatchQueue.init(label: "串行队列")
                 for i in 1 ... 3 {
                     serialQueue.async {
                         if i == 2{
-                            sleep(1)
+                            Thread.sleep(forTimeInterval: 2)
+//                            sleep(1)
                             print("\(Thread.current)---\(i)👌💕")
                         }else{
                             print("\(Thread.current)---\(i)👌💕")
@@ -36,7 +37,7 @@ class ThreadSpecs:QuickSpec {
                 }
             }
             
-            it("并行队列，异步执行") {
+            fit("并行队列，异步执行") {
                 //1. 创建并行队列 concurrent
                 let concurrentQueue = DispatchQueue.init(label: "并行队列",
                                                          attributes: .concurrent,

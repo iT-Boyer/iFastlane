@@ -15,7 +15,7 @@ import SwiftyJSON
  2. 使用ssh 拷贝远程文件到本地联调工程
  */
 class SSHSpecs: QuickSpec {
-    override func spec() {
+    override class func spec() {
         describe("链接设备") {
             it("链接Test服务器") {
                 let ssh = try SSH(host: "ipa.fileserver.iuoooo.com")

@@ -11,7 +11,7 @@ import Nimble
 @testable import CmdLib
 
 class QuickDemo: QuickSpec {
-    override func spec() {
+    override class func spec() {
         describe("案例") {
             beforeEach({
                 //方法1:访问控制器的View，来触发控制器的.viewDidLoad()

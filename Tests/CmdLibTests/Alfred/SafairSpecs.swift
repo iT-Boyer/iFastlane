@@ -13,7 +13,7 @@ import Nimble
 
 class SafairSpecs:QuickSpec
 {
-    override func spec(){
+    override class func spec(){
         var dbQueue: DatabaseQueue!
         var gdbQueue: DatabaseQueue!
         beforeSuite {

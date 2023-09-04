@@ -13,7 +13,7 @@ import PathKit
 
 class SnippetsSpecs:QuickSpec
 {
-    override func spec(){
+    override class func spec(){
         
         var promotdict:[Dictionary<String,String>]!
         beforeSuite {

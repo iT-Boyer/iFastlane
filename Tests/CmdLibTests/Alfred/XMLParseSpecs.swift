@@ -10,7 +10,7 @@ import Regex
 
 
 class XMLParseSpecs:QuickSpec{
-    override func spec(){
+    override class func spec(){
         fdescribe("获取xml 数据") {
 
             it("xml 数据") {
