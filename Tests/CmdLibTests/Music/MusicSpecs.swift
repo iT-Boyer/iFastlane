@@ -36,7 +36,7 @@ class MusicSpecs: QuickSpec {
                 wmaToWav(wmaPath: wmaFile)
             }
             
-            fit("集成到Ali 工具") {
+            it("集成到Ali 工具") {
                 waitUntil(timeout: .seconds(10)) { done in
                     _ = CmdLib.Ali.wmaTowav(path: "/Users/boyer/Downloads/Test")
                     done()

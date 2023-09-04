@@ -11,7 +11,7 @@ import Regex
 
 class XMLParseSpecs:QuickSpec{
     override class func spec(){
-        fdescribe("获取xml 数据") {
+        describe("获取xml 数据") {
 
             it("xml 数据") {
                 guard let url = URL(string: "http://localhost:1313/index.xml") else {

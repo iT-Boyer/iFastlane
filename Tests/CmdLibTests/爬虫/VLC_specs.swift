@@ -10,11 +10,11 @@ class VLC_specs: QuickSpec {
             beforeEach {
 
             }
-            fit("aliPlaylist") {
+            it("aliPlaylist") {
                 let _ = CmdLib.Ali.to(dir: "镖人 (2023)")
             }
             
-            xit("glob") {
+            it("glob") {
                 let dir = Path("/Volumes/127.0.0.1")
                 let _ = dir.glob("*拆为己用").map { path in
                         print("文件路径：\(path.string)")
