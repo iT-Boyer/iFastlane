@@ -210,11 +210,13 @@ struct Alfred: ParsableCommand {
         static var configuration = CommandConfiguration(commandName: "music",abstract: "把音乐文件导入music app")
         @Option(name: [.customShort("d"),.long], help: "请输入dir地址")
         var dir:String
+        @Option(name: [.customShort("t"),.long], help: "请设置目标目录")
+        var to:String = "/Volumes/AIGO/Media.localized/Automatically Add to Music.localized/"
         func run() throws {
-            if let history = Ali.wmaTowav(path: dir){
+            if let history = Ali.wmaTowav(path: dir,to: to){
                 print(history)
             }
-//            Music.exit()
+            Music.exit()
         }
     }
 }
