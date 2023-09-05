@@ -61,41 +61,49 @@ public struct Ali {
             print("文件个数：\(childrens.count)")
             //最大限制5个线程
             let queue = DispatchQueue(label: "queue", attributes: .concurrent)
+            let group = DispatchGroup()
+            
             let maxConcurrency = 5
             var semaphore = DispatchSemaphore(value: maxConcurrency)
             let total = childrens.count
             var completed = 0
-            _ = childrens.map { wmaPath in
+            let cmds = childrens.compactMap { wmaPath -> PrintedAsyncCommand? in
                 let filename = wmaPath.lastComponentWithoutExtension
                 let wavPath = toPath + "\(filename).wav"
                 let bashCmd = "/opt/homebrew/bin/ffmpeg -i \"\(wmaPath)\" -ar 16000 -ac 1 -c:a pcm_s16le \"\(wavPath)\" &> /dev/null"
+                group.enter()
                 semaphore.wait()
-                print("开始：\(filename)")
-//                queue.async {
-//                    let sucess = SwiftShell.run(bash:bashCmd).succeeded
-//                    if sucess {
-//                        completed += 1
-//                        let num = semaphore.signal()
-//                        print("转换完成：\(completed)个，当前信号量： \(num)个 \(Thread.current)")
-//                        if completed == total {
-//                            print("全部完成")
-//                            //                        try? wmaPath.delete()
-//                        }
-//                    }
-//                    
-//                }
-                SwiftShell.runAsync(bash: bashCmd).onCompletion { cmd in
+                return SwiftShell.runAsync(bash: bashCmd).onCompletion { cmd in
                     completed += 1
-                    let concurrency = min(total - completed, maxConcurrency)
-                    semaphore = DispatchSemaphore(value: concurrency)
-                    if completed == total {
-                        print("下载完成")
-//                        try? wmaPath.delete()
-                    }
-                    let num = semaphore.signal()
-                    print("转换完成：\(completed)个，当前信号量： \(num)个")
+                    group.leave()
+                    semaphore.signal()
+                    print("转换完成：\(completed)个")
                 }
             }
+            
+            var allcomplated = false
+            group.notify(queue: .main) {
+                let msg = cmds.compactMap { cmd -> Bool in
+                    return cmd.isRunning
+                }
+                //转换进度状态
+                print(msg)
+                allcomplated = true
+            }
+//            while !allcomplated {
+//                print("等待...")
+//                sleep(1)
+//            }
+            
+            
+//            while cmds.allSatisfy({$0.isRunning == true}) {
+//                let msg = cmds.compactMap { cmd -> Bool in
+//                    return cmd.isRunning
+//                }
+//                //转换进度状态
+//                print(msg)
+//                sleep(1)
+//            }
         }else{
             item.title = "目录不存在"
             item.arg = ""

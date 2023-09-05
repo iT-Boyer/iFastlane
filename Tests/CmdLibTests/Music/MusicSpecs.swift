@@ -37,7 +37,7 @@ class MusicSpecs: QuickSpec {
                 return "/opt/homebrew/bin/ffmpeg -i \"\(wmaPath)\" -ar 16000 -ac 1 -c:a pcm_s16le \"\(wavPath)\" &> /dev/null"
             }
         }
-        describe("wma转wav文件") {
+        xdescribe("wma转wav文件") {
             
             xit("使用数组元素的状态") {
                 // 循环每个WMA文件并转换为WAV
@@ -93,7 +93,7 @@ class MusicSpecs: QuickSpec {
                 }
             }
             
-            fit("使用队列组管理信号量，开启多线程") {
+            xit("使用队列组管理信号量，开启多线程") {
                 //
                 let convertQueue = DispatchQueue(label: "queue", qos: .userInitiated, attributes: .concurrent)
                 let group = DispatchGroup()
@@ -120,9 +120,9 @@ class MusicSpecs: QuickSpec {
             }
         }
         
-        xdescribe("Ali工具集") {
+        describe("Ali工具集") {
             
-            it("测试1") {
+            fit("测试1") {
                 waitUntil(timeout: .seconds(1000)) { done in
                     _ = CmdLib.Ali.wmaTowav(path: "/Users/boyer/Downloads/Test")
                     done()
