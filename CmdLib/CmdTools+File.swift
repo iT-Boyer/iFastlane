@@ -8,7 +8,7 @@
 import Foundation
 
 extension CmdTools{
-    
+    ///把数据存储为json文件
     public static func writeToFile(data:Codable, to:String) {
         do {
             let jsonEncoder = JSONEncoder()

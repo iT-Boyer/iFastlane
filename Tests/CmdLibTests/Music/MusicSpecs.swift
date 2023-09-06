@@ -56,67 +56,8 @@ class MusicSpecs: QuickSpec {
                 print("下载完成")
             }
             
-            xit("使用队列组判断多线程完成") {
-                let group = DispatchGroup()
-                // 循环每个WMA文件并转换为WAV
-                _ = wmaCmds.map{ bashCmd in
-                    group.enter()
-                    SwiftShell.runAsyncAndPrint(bash: bashCmd).onCompletion { cmd in
-                        group.leave()
-                    }
-                }
-                var completed = false
-                group.notify(queue: DispatchQueue.main) {
-                    print("下载完成-----")
-                    completed = true
-                }
-                while !completed {
-                    sleep(1)
-                }
-                print("下载完成")
-            }
-
-            xit("使用信号量，开启多线程") {
-                var semaphore = DispatchSemaphore(value: 5)
-                let total = wmaCmds.count
-                var completed = 0
-                wmaCmds.forEach { cmd in
-                    semaphore.wait()
-                    SwiftShell.runAsyncAndPrint(bash: cmd).onCompletion { cmd in
-                        completed += 1
-                        print("完成：\(completed)个 \(Thread.current)")
-                        semaphore.signal()
-                        if completed == total{
-                            print("下载完成")
-                        }
-                    }
-                }
-            }
-            
-            xit("使用队列组管理信号量，开启多线程") {
-                //
-                let convertQueue = DispatchQueue(label: "queue", qos: .userInitiated, attributes: .concurrent)
-                let group = DispatchGroup()
-                let maxConcurrency = 5
-                let semaphore = DispatchSemaphore(value: maxConcurrency)
-
-                let total = wmaCmds.count
-                print("总文件数：\(total)")
-                var completed = 0
-                for cmd in wmaCmds{
-                    group.enter()
-                    semaphore.wait()
-                    convertQueue.async(group: group) {
-                        SwiftShell.run(bash:cmd)
-                        completed += 1
-                        print("完成：\(completed)个 \(Thread.current)")
-                        group.leave()
-                        semaphore.signal()
-                    }
-                }
-                group.notify(queue: .main) {
-                    print("下载完成")
-                }
+            fit("使用信号量阻塞，限制5个线程执行任务") {
+                _ = CmdLib.CmdTasks.runShell(cmds: wmaCmds)
             }
         }
         

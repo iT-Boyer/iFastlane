@@ -26,7 +26,8 @@ struct Alfred: ParsableCommand {
                                          Org2JSONCmd.self,
                                          EmacsCmd.self,
                                          AliWebDAV.self,
-                                         Music.self],
+                                         Music.self,
+                                         CmdTask.self],
                            defaultSubcommand: Hotop.self,
                            helpNames: NameSpecification.customLong("h"))
     
@@ -206,6 +207,8 @@ struct Alfred: ParsableCommand {
         }
     }
     
+    // 在命令行多线程阻塞
+    // 使用单元测试完成该功能：MusicSpecs--> Ali工具集--> 测试1
     struct Music:ParsableCommand{
         static var configuration = CommandConfiguration(commandName: "music",abstract: "把音乐文件导入music app")
         @Option(name: [.customShort("d"),.long], help: "请输入dir地址")
@@ -217,6 +220,18 @@ struct Alfred: ParsableCommand {
                 print(history)
             }
             Music.exit()
+        }
+    }
+    
+    struct CmdTask:ParsableCommand{
+        static var configuration = CommandConfiguration(commandName: "Tasks",abstract: "多线程执行指定的命令")
+        @Option(name: [.customShort("c"),.long], help: "要多线程执行的命令")
+        var cmd:String
+        func run() throws {
+            if let history = CmdTasks.runShell(cmds:[cmd]){
+                print(history)
+            }
+            CmdTask.exit()
         }
     }
 }
