@@ -12,16 +12,16 @@
       },
       {
         "package": "Alamofire",
-        "repositoryURL": "https://gh.con.sh/https://github.com/Alamofire/Alamofire",
+        "repositoryURL": "git@github.com:Alamofire/Alamofire",
         "state": {
           "branch": null,
-          "revision": "b2fa556e4e48cbf06cf8c63def138c98f4b811fa",
-          "version": "5.8.0"
+          "revision": "3dc6a42c7727c49bf26508e29b0a0b35f9c7e1ad",
+          "version": "5.8.1"
         }
       },
       {
         "package": "AlfredSwift",
-        "repositoryURL": "https://gh.con.sh/https://github.com/iT-Boyer/AlfredSwift.git",
+        "repositoryURL": "git@github.com:iT-Boyer/AlfredSwift.git",
         "state": {
           "branch": "main",
           "revision": "cf8683996446a7733e7ece80803faca3b1392c44",
@@ -48,7 +48,7 @@
       },
       {
         "package": "CSV.swift",
-        "repositoryURL": "https://gh.con.sh/https://github.com/yaslab/CSV.swift.git",
+        "repositoryURL": "git@github.com:yaslab/CSV.swift.git",
         "state": {
           "branch": null,
           "revision": "81d2874c51db364d7e1d71b0d99018a294c87ac1",
@@ -75,7 +75,7 @@
       },
       {
         "package": "Fastlane",
-        "repositoryURL": "https://gh.con.sh/https://github.com/it-boyer/fastlane.git",
+        "repositoryURL": "git@github.com:it-boyer/fastlane.git",
         "state": {
           "branch": "public",
           "revision": "567bd494f2f9de36d97733da99c6b46923112c09",
@@ -84,7 +84,7 @@
       },
       {
         "package": "GithubAPI",
-        "repositoryURL": "https://gh.con.sh/https://github.com/serhii-londar/GithubAPI.git",
+        "repositoryURL": "git@github.com:serhii-londar/GithubAPI.git",
         "state": {
           "branch": "master",
           "revision": "7705cde68eaabe5fbd884af72627a4147228ba8f",
@@ -93,7 +93,7 @@
       },
       {
         "package": "GRDB",
-        "repositoryURL": "https://gh.con.sh/https://github.com/groue/GRDB.swift.git",
+        "repositoryURL": "git@github.com:groue/GRDB.swift.git",
         "state": {
           "branch": null,
           "revision": "dd7e7f39e8e4d7a22d258d9809a882f914690b01",
@@ -102,25 +102,25 @@
       },
       {
         "package": "stable-diffusion",
-        "repositoryURL": "https://gh.con.sh/https://github.com/apple/ml-stable-diffusion.git",
+        "repositoryURL": "git@github.com:apple/ml-stable-diffusion.git",
         "state": {
           "branch": "main",
-          "revision": "c5063225aa1473522116425268bb7285e6020f9b",
+          "revision": "bea04420b5958935a975d3b7aeb071bbbaa9a097",
           "version": null
         }
       },
       {
         "package": "Nimble",
-        "repositoryURL": "https://gh.con.sh/https://github.com/Quick/Nimble.git",
+        "repositoryURL": "git@github.com:Quick/Nimble.git",
         "state": {
           "branch": null,
-          "revision": "f552a16f434eef1f18b62985172489f41d37a18e",
-          "version": "12.2.0"
+          "revision": "edaedc1ec86f14ac6e2ca495b94f0ff7150d98d0",
+          "version": "12.3.0"
         }
       },
       {
         "package": "OpenAISwift",
-        "repositoryURL": "https://gh.con.sh/https://github.com/adamrushy/OpenAISwift.git",
+        "repositoryURL": "git@github.com:adamrushy/OpenAISwift.git",
         "state": {
           "branch": null,
           "revision": "ca66fb720d6ebb657601db5a0852b830ae310a4c",
@@ -138,7 +138,7 @@
       },
       {
         "package": "PythonKit",
-        "repositoryURL": "https://gh.con.sh/https://github.com/pvieito/PythonKit.git",
+        "repositoryURL": "git@github.com:pvieito/PythonKit.git",
         "state": {
           "branch": "master",
           "revision": "060e1c8b0d14e4d241b3623fdbe83d0e3c81a993",
@@ -147,16 +147,16 @@
       },
       {
         "package": "Quick",
-        "repositoryURL": "https://gh.con.sh/https://github.com/Quick/Quick.git",
+        "repositoryURL": "git@github.com:Quick/Quick.git",
         "state": {
           "branch": null,
-          "revision": "494eff9ad74a37047782b0d5d8d84c7ff49a60e4",
-          "version": "7.2.0"
+          "revision": "ef9aaf3f634b3a1ab6f54f1173fe2400b36e7cb8",
+          "version": "7.3.0"
         }
       },
       {
         "package": "Regex",
-        "repositoryURL": "https://gh.con.sh/https://github.com/sharplet/Regex",
+        "repositoryURL": "git@github.com:sharplet/Regex",
         "state": {
           "branch": null,
           "revision": "76c2b73d4281d77fc3118391877efd1bf972f515",
@@ -165,7 +165,7 @@
       },
       {
         "package": "Shout",
-        "repositoryURL": "https://gh.con.sh/https://github.com/jakeheis/Shout",
+        "repositoryURL": "git@github.com:jakeheis/Shout",
         "state": {
           "branch": null,
           "revision": "fbcae228bc68d5e2352f0790079995d27b610dbc",
@@ -182,8 +182,26 @@
         }
       },
       {
+        "package": "swift-argument-parser",
+        "repositoryURL": "https://github.com/apple/swift-argument-parser.git",
+        "state": {
+          "branch": null,
+          "revision": "fddd1c00396eed152c45a46bea9f47b98e59301d",
+          "version": "1.2.0"
+        }
+      },
+      {
+        "package": "SwiftShell",
+        "repositoryURL": "https://github.com/kareman/SwiftShell",
+        "state": {
+          "branch": null,
+          "revision": "99680b2efc7c7dbcace1da0b3979d266f02e213c",
+          "version": "5.1.0"
+        }
+      },
+      {
         "package": "SwiftSoup",
-        "repositoryURL": "https://gh.con.sh/https://github.com/scinfu/SwiftSoup.git",
+        "repositoryURL": "git@github.com:scinfu/SwiftSoup.git",
         "state": {
           "branch": null,
           "revision": "8b6cf29eead8841a1fa7822481cb3af4ddaadba6",
@@ -192,7 +210,7 @@
       },
       {
         "package": "SwiftyJSON",
-        "repositoryURL": "https://gh.con.sh/https://github.com/SwiftyJSON/SwiftyJSON.git",
+        "repositoryURL": "git@github.com:SwiftyJSON/SwiftyJSON.git",
         "state": {
           "branch": null,
           "revision": "b3dcd7dbd0d488e1a7077cb33b00f2083e382f07",
@@ -201,7 +219,7 @@
       },
       {
         "package": "XcodeProj",
-        "repositoryURL": "https://gh.con.sh/https://github.com/tuist/xcodeproj.git",
+        "repositoryURL": "git@github.com:tuist/xcodeproj.git",
         "state": {
           "branch": null,
           "revision": "45e349e1c4e4da1a85a7b9392b737acde2e2f2a8",
@@ -210,7 +228,7 @@
       },
       {
         "package": "XMLCoder",
-        "repositoryURL": "https://gh.con.sh/https://github.com/MaxDesiatov/XMLCoder.git",
+        "repositoryURL": "git@github.com:MaxDesiatov/XMLCoder.git",
         "state": {
           "branch": null,
           "revision": "b1e944cbd0ef33787b13f639a5418d55b3bed501",

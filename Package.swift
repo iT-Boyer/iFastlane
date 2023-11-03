@@ -22,8 +22,9 @@ var thirdLibs:[Target.Dependency] = ["Regex",
                                      .product(name: "CSV", package: "CSV.swift"),
                                      .product(name: "ArgumentParser", package: "swift-argument-parser")
                                     ]
-//
-let proxy = "https://gh.con.sh/https://github.com/"
+//https://gitclone.com/
+//let proxy = "https://gitclone.com/github.com/"
+let proxy = "git@github.com:"
 let package = Package(
     name: "Runner",
     platforms: [
@@ -36,8 +37,8 @@ let package = Package(
     dependencies: [
         .package(url: proxy + "apple/swift-argument-parser", from: "1.2.0"),
         .package(url: proxy + "kareman/SwiftShell", .upToNextMajor(from: "5.1.0")),
-        .package(name: "Fastlane", url: proxy + "it-boyer/fastlane.git", branch: "public"),
-        //.package(name: "Fastlane", path: "/Users/boyer/hsg/fastlane"),
+        .package(name: "Fastlane", url: proxy +  "it-boyer/fastlane.git", branch: "public"),
+//        .package(name: "Fastlane", path: "/Users/boyer/hsg/fastlane"),
         .package(name: "Alamofire", url: proxy + "Alamofire/Alamofire",.upToNextMajor(from: "5.6.4")),
         .package(name: "Regex", url: proxy + "sharplet/Regex",.upToNextMajor(from: "2.1.1")),
         .package(url: proxy + "SwiftyJSON/SwiftyJSON.git", from: "5.0.1"),
@@ -49,7 +50,7 @@ let package = Package(
         .package(url: proxy + "serhii-londar/GithubAPI.git",.branch("master")),
         .package(name: "GRDB", url: proxy + "groue/GRDB.swift.git", from: "5.17.0"),
         //ssh框架
-        .package(name: "Shout", url: proxy + "jakeheis/Shout", from: "0.5.5"),
+        .package(name: "Shout", url: proxy + "jakeheis/Shout", .upToNextMinor(from: "0.5.5")),
         .package(name: "CSV.swift", url: proxy + "yaslab/CSV.swift.git", .upToNextMinor(from: "2.4.3")),
         .package(url: proxy + "MaxDesiatov/XMLCoder.git", from: "0.13.1"),
         //解析html
